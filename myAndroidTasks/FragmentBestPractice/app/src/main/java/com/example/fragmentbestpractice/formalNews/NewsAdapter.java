@@ -9,10 +9,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.fragmentbestpractice.NewsContentActivity;
 import com.example.fragmentbestpractice.R;
 import com.example.fragmentbestpractice.rawNews.News;
 
 import java.util.List;
+
+import static android.content.ContentValues.TAG;
 
 
 /**
@@ -29,24 +32,21 @@ public class NewsAdapter extends ArrayAdapter<News> {
 
         super(context,textViewResourceId,objects);
         resourceId=textViewResourceId;
-        Log.e("size",objects.size() + "");
-
-
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        News news=getItem(position);
+        final News news=getItem(position);
         View view;
         ViewHolder viewHolder;
         if (convertView==null){
             view=LayoutInflater.from(getContext()).inflate(resourceId,parent,false);
             viewHolder=new ViewHolder();
-//            viewHolder.iv_pic=(ImageView)convertView.findViewById(R.id.news_pic);
+//            viewHolder.iv_pic=(ImageView)view.findViewById(R.id.news_pic);
             viewHolder.tv_title=(TextView) view.findViewById(R.id.news_title);
-//            viewHolder.tv_desc=(TextView)convertView.findViewById(R.id.news_desc);
-//            viewHolder.tv_ctime=(TextView)convertView.findViewById(R.id.news_ctime);
-//            viewHolder.tv_url=(TextView)convertView.findViewById(R.id.news_url);
+//            viewHolder.tv_desc=(TextView)view.findViewById(R.id.news_desc);
+//            viewHolder.tv_ctime=(TextView)view.findViewById(R.id.news_ctime);
+//            viewHolder.tv_url=(TextView)view.findViewById(R.id.news_url);
             view.setTag(viewHolder);
         }else{
                 view=convertView;
@@ -58,6 +58,13 @@ public class NewsAdapter extends ArrayAdapter<News> {
         viewHolder.tv_title.setText(news.getTitle());
 //        viewHolder.tv_url.setText("Just For Test,No other meanings");
 
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NewsContentActivity.actionStart(getContext(),news.getTitle(),news.getUrl());
+            }
+        });
 
         return view;
     }
@@ -72,7 +79,6 @@ public class NewsAdapter extends ArrayAdapter<News> {
 //        private TextView tv_desc;
 //        private TextView tv_ctime;
 //        private TextView tv_url;
-
 
     }
 

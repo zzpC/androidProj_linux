@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -16,6 +18,8 @@ import com.example.fragmentbestpractice.parseDatatoString.ParseDatas;
 
 public class NewsContentFragment extends Fragment {
     private static final String TAG = "NewsContentFragment";
+
+    private WebView webView;
 
     private View view;
 
@@ -27,14 +31,10 @@ public class NewsContentFragment extends Fragment {
     }
 
     public void refresh(String newsTitle, String newsContent) {
-        View visibilityLayout = view.findViewById(R.id.visibility_layout);
-        visibilityLayout.setVisibility(View.VISIBLE);
-        TextView newsTitleText = (TextView) view.findViewById (R.id.news_title);
-        TextView newsContentText = (TextView) view.findViewById(R.id.news_content);
-
-
-        newsTitleText.setText(newsTitle); // 刷新新闻的标题
-        newsContentText.setText(newsContent); // 刷新新闻的内容
+        webView = (WebView) view.findViewById(R.id.web_view);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.setWebViewClient(new WebViewClient());
+        webView.loadUrl(newsContent);
     }
 
 }

@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.Button;
 import android.widget.ListView;
 
 
@@ -27,15 +28,25 @@ public class NewsTitleFragment extends Fragment {
     private boolean isTwoPane;
     private static List<News> newsList = new ArrayList<>();
     ListView newsTitleListView;
+    Button moreNewsButton;
     NewsAdapter adapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        initNews();
 
         View view = inflater.inflate(R.layout.news_title_frag, container, false);
         newsTitleListView = (ListView) view.findViewById(R.id.news_title_list_view);
+        moreNewsButton=(Button)view.findViewById(R.id.news_title_button);
+        initNews();
+
+        moreNewsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                initNews();
+            }
+        });
+
         return view;
     }
 

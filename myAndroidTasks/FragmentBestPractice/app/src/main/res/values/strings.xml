@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">FragmentBestPractice</string>
-    <string name="news_url">"http://api.tianapi.com/wxnew/?key=8d6e3228d25298f13af4fc40ce6c9679&#38;num=10&#38;page=1"</string>
+    <string name="news_url">"http://api.tianapi.com/wxnew/?key=8d6e3228d25298f13af4fc40ce6c9679&#38;num=10&#38;rand=1"</string>
 </resources>

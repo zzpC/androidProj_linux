@@ -24,7 +24,6 @@ public class NewsContentActivity extends AppCompatActivity {
         NewsContentFragment newsContentFragment = (NewsContentFragment) getSupportFragmentManager().findFragmentById(R.id.news_content_fragment);
         newsContentFragment.refresh(newsTitle, newsContent); // 刷新NewsContentFragment界面
 
-
     }
 
 }

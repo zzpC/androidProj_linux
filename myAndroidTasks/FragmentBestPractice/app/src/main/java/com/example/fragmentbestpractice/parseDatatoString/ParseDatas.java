@@ -30,11 +30,7 @@ public class ParseDatas {
                 String picUrl = jsonObject.getString("picUrl");
                 String url = jsonObject.getString("url");
                 String desc = jsonObject.getString("description");
-                Log.d(TAG, "parseJSONWithJSONObject: " + ctime);
-                Log.d(TAG, "parseJSONWithJSONObject: " + title);
-                Log.d(TAG, "parseJSONWithJSONObject: " + picUrl);
-                Log.d(TAG, "parseJSONWithJSONObject: " + url);
-                Log.d(TAG, "parseJSON: " + desc);
+
 
                 result.add(new NewsBuilder().setCtime(ctime).setDescription(desc).setPicUrl(picUrl).setTitle(title).setUrl(url).createNews());
 
