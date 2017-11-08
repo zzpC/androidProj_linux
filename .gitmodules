@@ -1,0 +1,3 @@
+[submodule "TabLayoutDemo"]
+	path = TabLayoutDemo
+	url = https://github.com/powerfulheart/TabLayoutDemo.git
