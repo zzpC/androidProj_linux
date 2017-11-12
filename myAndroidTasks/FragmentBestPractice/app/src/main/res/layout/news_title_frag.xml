@@ -17,7 +17,7 @@
         android:id="@+id/news_title_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="加载更多"
+        android:text="@string/load_more_news"
         android:visibility="visible" />
 
 </LinearLayout>
