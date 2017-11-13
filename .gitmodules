@@ -1,6 +1,6 @@
 [submodule "TabLayoutDemo"]
 	path = TabLayoutDemo
 	url = https://github.com/powerfulheart/TabLayoutDemo.git
-[submodule "DrawerAndTab"]
-	path = DrawerAndTab
-	url = https://github.com/cenoo/DrawerAndTab.git
+[submodule "LoadMoreListView"]
+	path = LoadMoreListView
+	url = https://github.com/RaphetS/LoadMoreListView.git

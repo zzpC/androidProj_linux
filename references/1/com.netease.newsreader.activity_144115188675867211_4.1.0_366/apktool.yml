@@ -1,0 +1,29 @@
+!!brut.androlib.meta.MetaInfo
+apkFileName: com.netease.newsreader.activity_144115188675867211_4.1.0_366.apk
+compressionType: false
+doNotCompress:
+- arsc
+isFrameworkApk: false
+packageInfo:
+  forcedPackageId: '127'
+  renameManifestPackage: null
+sdkInfo:
+  minSdkVersion: '9'
+  targetSdkVersion: '15'
+sharedLibrary: false
+unknownFiles:
+  org/jsoup/nodes/entities-base.properties: '8'
+  org/jsoup/nodes/entities-full.properties: '8'
+  org/apache/http/entity/mime/version.properties: '8'
+  com/tencent/javascript/js.zip: '8'
+  com/netease/pushservice/configuration/code.properties: '8'
+  com/netease/pushservice/configuration/config.properties: '8'
+  cfg/ts.tab: '8'
+usesFramework:
+  ids:
+  - 1
+  tag: null
+version: 2.3.0
+versionInfo:
+  versionCode: '366'
+  versionName: 4.1.0

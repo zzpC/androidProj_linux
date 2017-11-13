@@ -1,0 +1,21 @@
+.class public interface abstract Lcom/huawei/appmarket/service/appdetail/view/card/DetailReplyCard$SoftInputModeChangeListener;
+.super Ljava/lang/Object;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/huawei/appmarket/service/appdetail/view/card/DetailReplyCard;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "SoftInputModeChangeListener"
+.end annotation
+
+
+# virtual methods
+.method public abstract hideSoftInputMode()V
+.end method
+
+.method public abstract setSoftInputMode()V
+.end method

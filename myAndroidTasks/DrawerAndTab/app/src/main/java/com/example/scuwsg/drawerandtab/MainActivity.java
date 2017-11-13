@@ -63,9 +63,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.nav_call:
+            case R.id.nav_news:
                 break;
-            case R.id.nav_camera:
+            case R.id.nav_picture:
+                break;
+            case R.id.nav_video:
                 break;
             default:
                 //实现相应菜单项的功能

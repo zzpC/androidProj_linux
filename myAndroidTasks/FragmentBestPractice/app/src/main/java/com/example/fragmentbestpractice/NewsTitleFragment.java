@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +13,11 @@ import android.widget.Button;
 import android.widget.ListView;
 
 
+import com.example.fragmentbestpractice.customWidget.LoadMoreListView;
 import com.example.fragmentbestpractice.fetchNews.HttpCallbackListener;
 import com.example.fragmentbestpractice.fetchNews.HttpUtil;
 import com.example.fragmentbestpractice.formalNews.NewsAdapter;
+import com.example.fragmentbestpractice.globalStatus.MyApplication;
 import com.example.fragmentbestpractice.parseDatatoString.ParseDatas;
 
 import com.example.fragmentbestpractice.rawNews.News;
@@ -23,11 +26,13 @@ import com.example.fragmentbestpractice.rawNews.News;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.content.ContentValues.TAG;
+
 
 public class NewsTitleFragment extends Fragment {
     private boolean isTwoPane;
     private static List<News> newsList = new ArrayList<>();
-    ListView newsTitleListView;
+    LoadMoreListView newsTitleListView;
     Button moreNewsButton;
     NewsAdapter adapter;
 
@@ -36,19 +41,57 @@ public class NewsTitleFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.news_title_frag, container, false);
-        newsTitleListView = (ListView) view.findViewById(R.id.news_title_list_view);
-        moreNewsButton=(Button)view.findViewById(R.id.news_title_button);
+        newsTitleListView = (LoadMoreListView) view.findViewById(R.id.news_title_list_view);
         initNews();
 
-        moreNewsButton.setOnClickListener(new View.OnClickListener() {
+        newsTitleListView.setOnLoadMoreListener(new LoadMoreListView.OnLoadMoreListener() {
             @Override
-            public void onClick(View view) {
-                initNews();
+            public void onloadMore() {
+                loadMore();
+
             }
         });
 
+
+//        moreNewsButton=(Button)view.findViewById(R.id.news_title_button);
+//        initNews();
+//
+//        moreNewsButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                initNews();
+//            }
+//        });
+
         return view;
     }
+
+
+    private void loadMore() {
+        new Thread(){
+            @Override
+            public void run() {
+                super.run();
+                try {
+                    Thread.sleep(2);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                initNews();
+
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        adapter.notifyDataSetChanged();
+                        newsTitleListView.setLoadCompleted();
+                    }
+                });
+                Log.e(TAG, "run: " );
+            }
+        }.start();
+    }
+
+
 
 
     //------------------------------------
