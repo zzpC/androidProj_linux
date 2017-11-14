@@ -20,4 +20,7 @@ public class MyApplication extends Application {
     public static Context getContext(){
         return context;
     }
+
+    public static final int TAB_SHORT_COUNT=4;
+    public static final int TAB_LONG_COUNT=9;
 }
