@@ -33,6 +33,8 @@ public class NewsContentFragment extends Fragment {
     public void refresh(String newsTitle, String newsContent) {
         webView = (WebView) view.findViewById(R.id.web_view);
         webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setUseWideViewPort(true);
+        webView.getSettings().setLoadWithOverviewMode(true);
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl(newsContent);
     }

@@ -18,7 +18,7 @@ import static android.content.ContentValues.TAG;
 
 public class LoadMoreListView extends ListView implements AbsListView.OnScrollListener {
     private Context mContext;
-    private View mFootView;
+//    private View mFootView;
     private int mTotalItemCount;
     private OnLoadMoreListener mLoadMoreListener;
     private boolean mIsLoading = false;
@@ -40,7 +40,7 @@ public class LoadMoreListView extends ListView implements AbsListView.OnScrollLi
 
     private void init(Context context) {
         this.mContext = context;
-        mFootView = LayoutInflater.from(context).inflate(R.layout.foot_view, null);
+//        mFootView = LayoutInflater.from(context).inflate(R.layout.foot_view, null);
         setOnScrollListener(this);
     }
 
@@ -53,7 +53,7 @@ public class LoadMoreListView extends ListView implements AbsListView.OnScrollLi
                 //加载更多功能的代码
 
                 mIsLoading = true;
-                addFooterView(mFootView);
+//                addFooterView(mFootView);
                 if (mLoadMoreListener != null) {
                     mLoadMoreListener.onloadMore();
                     setLoadCompleted();
@@ -61,14 +61,6 @@ public class LoadMoreListView extends ListView implements AbsListView.OnScrollLi
             }
         }
     }
-
-
-
-
-
-
-
-
 
 
     @Override
@@ -87,6 +79,6 @@ public class LoadMoreListView extends ListView implements AbsListView.OnScrollLi
 
     public void setLoadCompleted() {
         mIsLoading = false;
-        removeFooterView(mFootView);
+//        removeFooterView(mFootView);
     }
 }

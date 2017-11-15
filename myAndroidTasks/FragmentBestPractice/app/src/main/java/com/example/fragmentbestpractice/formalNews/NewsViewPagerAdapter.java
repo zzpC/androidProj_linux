@@ -1,5 +1,7 @@
 package com.example.fragmentbestpractice.formalNews;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -10,6 +12,11 @@ import com.example.fragmentbestpractice.TabAndViewPagerAndListView.BaseFragment;
 import com.example.fragmentbestpractice.TabAndViewPagerAndListView.PagerFragmentFactory;
 import com.example.fragmentbestpractice.globalStatus.MyApplication;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
 
@@ -25,7 +32,7 @@ public class NewsViewPagerAdapter extends FragmentPagerAdapter {
 
     public NewsViewPagerAdapter(FragmentManager fragmentManager) {
         super(fragmentManager);
-        mTilte = Arrays.asList( MyApplication.getContext().getResources().getStringArray(R.array.tab_long_Title));
+        mTilte = Arrays.asList(MyApplication.getContext().getResources().getStringArray(R.array.tab_long_Title_name));
     }
 
 
@@ -37,15 +44,7 @@ public class NewsViewPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public BaseFragment getItem(int position) {
-        if (baseFragment==null){
-            Log.e(TAG, "getItem: NULL" );
-        }else {
-            Log.e(TAG, "getItem: NOT**" );
-        }
-        baseFragment=PagerFragmentFactory.createFragment(position);
-
-        Log.e(TAG, "getItem: weizhi "+position );
-        return baseFragment;
+        return PagerFragmentFactory.createFragment(position);
     }
 
 
@@ -53,4 +52,5 @@ public class NewsViewPagerAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return MyApplication.TAB_LONG_COUNT;
     }
+
 }

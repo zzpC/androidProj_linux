@@ -23,7 +23,7 @@ import java.util.List;
 //没有重写viewpager,,,,没空!
 public class NewsTitleFragment extends Fragment {
     private boolean isTwoPane;
-    private static List<News> newsList = new ArrayList<>();
+    private  List<News> newsList = new ArrayList<>();
 
     LoadMoreListView newsTitleListView;
     Button moreNewsButton;

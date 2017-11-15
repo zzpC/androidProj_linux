@@ -4,11 +4,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
 import com.example.fragmentbestpractice.R;
 import com.example.fragmentbestpractice.customWidget.LoadMoreListView;
@@ -21,87 +19,50 @@ import com.example.fragmentbestpractice.rawNews.News;
 import java.util.ArrayList;
 import java.util.List;
 
-
-import static android.content.ContentValues.TAG;
-
 /**
- * Created by zzp on 17-11-13.
+ * Created by zzp on 17-11-14.
  */
 
-public class TopLineFragment extends BaseFragment {
-    private static final String TAG = "TopLineFragment";
-
+public class TechnologyFragment extends BaseFragment {
     //Listview改造
     private LoadMoreListView newsTitleListView;
-    //适配机型
-    private boolean isTwoPane;
+
     //网络抓取来的数据
-    private static List<News> newsList = new ArrayList<>();
+    private  List<News> newsList6 = new ArrayList<>();
     //适配
     NewsAdapter listviewAdapter;
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+    //
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
 
-        View view = inflater.inflate(R.layout.news_title_topline, container, false);
+
+        View view = inflater.inflate(R.layout.news_title_technology, container, false);
         newsTitleListView = (LoadMoreListView) view.findViewById(R.id.news_title_list_view);
 
-        initNews();
+
+        Bundle bundle=getArguments();
+        String string=bundle.getString("name");
+
+        if (newsTitleListView.getCount()==0) {
+            initNews();
+        }
 
         newsTitleListView.setOnLoadMoreListener(new LoadMoreListView.OnLoadMoreListener() {
             @Override
             public void onloadMore() {
                 loadMore();
-
             }
         });
-
-
         return view;
 
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        if (getActivity().findViewById(R.id.news_content_layout) != null) {
-            isTwoPane = true; // 可以找到news_content_layout布局时，为双页模式
-        } else {
-            isTwoPane = false; // 找不到news_content_layout布局时，为单页模式
-        }
 
-
-    }
-
-
-
-            //    @Override
-//    protected void loadData() {
-//
-//    }
-//
-//    @Override
-//    protected View initView(View view) {
-//        return null;
-//    }
-
-
-
-
-
-
-
-
-
-    private void loadMore() {
-        new Thread(){
+    protected void loadMore() {
+        new Thread() {
             @Override
             public void run() {
                 super.run();
@@ -120,12 +81,9 @@ public class TopLineFragment extends BaseFragment {
                         newsTitleListView.setLoadCompleted();
                     }
                 });
-                Log.e(TAG, "run: " );
             }
         }.start();
     }
-
-
 
 
     //------------------------------------
@@ -140,12 +98,16 @@ public class TopLineFragment extends BaseFragment {
     };
 
 
-    private void initNews() {
-        HttpUtil.sendHttpRequest(getResources().getString(R.string.news_url), new HttpCallbackListener() {
+    protected void initNews() {
+        Bundle bundle=getArguments();
+        String string=bundle.getString("url");
+
+        HttpUtil.sendHttpRequest(string, new HttpCallbackListener() {
+
             @Override
             public void onFinish(String response) {
-                newsList = ParseDatas.parseJSON(response);
-                listviewAdapter = new NewsAdapter(getActivity(), R.layout.news_item, newsList);
+                newsList6 = ParseDatas.parseJSON(response);
+                listviewAdapter = new NewsAdapter(getActivity(), R.layout.news_item7, newsList6);
 
 
                 //---------------------------

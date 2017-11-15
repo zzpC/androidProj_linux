@@ -24,21 +24,11 @@ public class News {
 //
 
 
-
-
-
-
-
-
-
-
-
     private String ctime;
     private String title;
     private String description;
     private String picUrl;
     private String url;
-
 
 
     public News(String ctime, String title, String description, String picUrl, String url) {

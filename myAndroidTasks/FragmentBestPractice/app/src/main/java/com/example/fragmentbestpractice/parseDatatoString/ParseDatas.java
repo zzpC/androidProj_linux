@@ -31,6 +31,7 @@ public class ParseDatas {
                 String url = jsonObject.getString("url");
                 String desc = jsonObject.getString("description");
 
+                Log.e(TAG, "parseJSON: "+newslist.length() );
 
                 result.add(new NewsBuilder().setCtime(ctime).setDescription(desc).setPicUrl(picUrl).setTitle(title).setUrl(url).createNews());
 
@@ -38,6 +39,7 @@ public class ParseDatas {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
+            Log.e(TAG, "parseJSON: "+result.size() );
             return result;
         }
     }

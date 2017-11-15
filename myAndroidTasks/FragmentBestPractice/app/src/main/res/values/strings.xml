@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">WYNews</string>
-    <string name="news_url">"http://api.tianapi.com/wxnew/?key=8d6e3228d25298f13af4fc40ce6c9679&#38;num=10&#38;rand=1"</string>
+    <string name="news_url">"http://api.tianapi.com/social/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=10"</string>
     <string name="load_more_news">加载更多</string>
+    <string name="tian_api_key">99045f5139f5f6be0de4946eb6bcc78b</string>
 </resources>

@@ -1,6 +1,7 @@
 package com.example.fragmentbestpractice;
 
 import android.content.Intent;
+import android.os.Process;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -30,37 +31,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Log.e("main", Process.myTid()+ "");
 
         setContentView(R.layout.activity_main);
         tabLayout = (TabLayout) findViewById(R.id.tab);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
 
 
-        mTilte = Arrays.asList(MyApplication.getContext().getResources().getStringArray(R.array.tab_long_Title));
+        mTilte = Arrays.asList(MyApplication.getContext().getResources().getStringArray(R.array.tab_long_Title_name));
 
 
         //NewsViewPagerAdapter已提供tab的标题
         NewsViewPagerAdapter adapter = new NewsViewPagerAdapter(getSupportFragmentManager());
-//        viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
-//
-//            @Override
-//            public Fragment getItem(int position) {
-//                if ((baseFragment = PagerFragmentFactory.createFragment(position) )== null) {
-//                    Log.e("Main", "getItem: NUll~ ");
-//                } else {
-//                    Log.e("Main", "getItem: NOT NULL");
-//                }
-//                return baseFragment;
-//            }
-//
-//            @Override
-//            public int getCount() {
-//                return MyApplication.TAB_LONG_COUNT;
-//            }
-//        });
         viewPager.setAdapter(adapter);
-         tabLayout.setupWithViewPager(viewPager);
+        tabLayout.setupWithViewPager(viewPager);
 
 
     }
