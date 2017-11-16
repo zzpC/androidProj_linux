@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.viewpager);
 
 
-        mTilte = Arrays.asList(MyApplication.getContext().getResources().getStringArray(R.array.tab_long_Title_name));
+//        mTilte = Arrays.asList(MyApplication.getContext().getResources().getStringArray(R.array.tab_long_Title_name));
 
 
         //NewsViewPagerAdapter已提供tab的标题

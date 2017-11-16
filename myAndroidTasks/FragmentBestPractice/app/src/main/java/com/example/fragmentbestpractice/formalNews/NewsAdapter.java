@@ -40,7 +40,7 @@ import static com.example.fragmentbestpractice.globalStatus.MyApplication.getCon
 
 public class NewsAdapter extends BaseAdapter {
 
-    //Adapter 将泛型List转为专用格式
+    //Adapter
     private int resourceId;
     private News news;
     private ViewHolder viewHolder;
@@ -55,20 +55,20 @@ public class NewsAdapter extends BaseAdapter {
         mList = objects;
         resourceId = textViewResourceId;
 
-        handler =  new Handler() {
-
-            public void handleMessage(Message msg) {
-                Log.e(TAG, "handleMessage1: " );
-                switch (msg.what) {
-                    case SET_BITMAP:
-                        if (mbitmap != null) {
-                            Log.e(TAG, "handleMessage: " );
-                            viewHolder.iv_pic.setImageBitmap(mbitmap);
-                        }
-                        break;
-                }
-            }
-        };
+//        handler =  new Handler() {
+//
+//            public void handleMessage(Message msg) {
+//                Log.e(TAG, "handleMessage1: " );
+//                switch (msg.what) {
+//                    case SET_BITMAP:
+//                        if (mbitmap != null) {
+//                            Log.e(TAG, "handleMessage: " );
+//                            viewHolder.iv_pic.setImageBitmap(mbitmap);
+//                        }
+//                        break;
+//                }
+//            }
+//        };
     }
 
     @Override
@@ -104,7 +104,8 @@ public class NewsAdapter extends BaseAdapter {
 
         viewHolder.tv_title.setText(news.getTitle());
 
-        initPicture();
+//        initPicture();
+
 //        Bitmap bitmap = getHttpBitmap(news.getPicUrl());
 //        if (bitmap != null) {
 //            Log.e(TAG, "getView: ok2");

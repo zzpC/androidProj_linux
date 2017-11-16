@@ -40,7 +40,7 @@ public class SocialFragment extends BaseFragment {
     private LoadMoreListView newsTitleListView;
 
     //网络抓取来的数据
-    private  List<News> newsList = new ArrayList<>();
+    private List<News> newsList = new ArrayList<>();
     //适配
     private NewsAdapter listviewAdapter;
     //
@@ -55,13 +55,13 @@ public class SocialFragment extends BaseFragment {
         newsTitleListView = (LoadMoreListView) view.findViewById(R.id.news_title_list_view);
 
         listviewAdapter = new NewsAdapter(getActivity(), R.layout.news_item, newsList);
-        Log.e(TAG, "onCreateView: 传入社会适配器" );
+        Log.e(TAG, "onCreateView: 传入社会适配器");
 
-        Bundle bundle=getArguments();
-        String string=bundle.getString("name");
-        Log.e(TAG, "onCreateView: count "+newsTitleListView.getCount() );
+        Bundle bundle = getArguments();
+        String string = bundle.getString("name");
+        Log.e(TAG, "onCreateView: count " + newsTitleListView.getCount());
 
-        if (newsTitleListView.getCount()==0) {
+        if (newsTitleListView.getCount() == 0) {
             initNews();
 
         }
@@ -78,30 +78,38 @@ public class SocialFragment extends BaseFragment {
 
 
     protected void loadMore() {
-        new Thread() {
-            @Override
-            public void run() {
-                super.run();
-                try {
-                    Thread.sleep(2);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                initNews();
 
-
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        listviewAdapter
-                                .notifyDataSetChanged();
-                        newsTitleListView.setLoadCompleted();
-                    }
-                });
-                Log.e(TAG, "run: ");
-            }
-        }.start();
+        initNews();
+//        listviewAdapter.notifyDataSetChanged();
+        newsTitleListView.setLoadCompleted();
     }
+
+
+//    protected void loadMore() {
+//        new Thread() {
+//            @Override
+//            public void run() {
+//                super.run();
+//                try {
+//                    Thread.sleep(2);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//                initNews();
+//
+//
+//                getActivity().runOnUiThread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        listviewAdapter
+//                                .notifyDataSetChanged();
+//                        newsTitleListView.setLoadCompleted();
+//                    }
+//                });
+//                Log.e(TAG, "run: ");
+//            }
+//        }.start();
+//    }
 
 
     //------------------------------------
@@ -110,12 +118,7 @@ public class SocialFragment extends BaseFragment {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case SET_LISTVIEW_RECYCLE:
-
-                    Log.e(TAG, "onCreateView: 传入社会Listview之前" + newsTitleListView.getCount());
                     newsTitleListView.setAdapter(listviewAdapter);
-                    Log.e(TAG, "onCreateView: 传入社会Listview" + newsTitleListView.getCount());
-
-//                    newsList.clear();
                     break;
             }
         }
@@ -124,32 +127,33 @@ public class SocialFragment extends BaseFragment {
 
     protected void initNews() {
 
-        Bundle bundle=getArguments();
-        String string=bundle.getString("url");
+        Bundle bundle = getArguments();
+        String string = bundle.getString("url");
 
         HttpUtil.sendHttpRequest(string, new HttpCallbackListener() {
 
             @Override
             public void onFinish(String response) {
-//                newsList.clear();
 
 
-                   List<News> lists     = ParseDatas.parseJSON(response);
-                   for (News n : lists){
-                       newsList.add(n);
-                   }
+                ArrayList<News> lists = ParseDatas.parseJSON(response);
+//                for (News n : lists) {
+//                    newsList.add(n);
+//                }
+//                listviewAdapter = new NewsAdapter(getActivity(), R.layout.news_item, newsList);
 
-
-
+            if (lists!=null) {
+                newsList.clear();
+                newsList.addAll(lists);
+                listviewAdapter = new NewsAdapter(getActivity(), R.layout.news_item, newsList);
                 Message message = new Message();
                 message.what = SET_LISTVIEW_RECYCLE;
                 handler.sendMessage(message); // 将 Message 对象发送出去
-
             }
 
 
 
-
+            }
 
             @Override
             public void onError(Exception e) {

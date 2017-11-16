@@ -73,7 +73,7 @@ public class LoadMoreListView extends ListView implements AbsListView.OnScrollLi
         mLoadMoreListener = listener;
     }
 
-    public interface OnLoadMoreListener {
+    public abstract interface OnLoadMoreListener {
         void onloadMore();
     }
 
@@ -81,4 +81,6 @@ public class LoadMoreListView extends ListView implements AbsListView.OnScrollLi
         mIsLoading = false;
 //        removeFooterView(mFootView);
     }
+
+
 }

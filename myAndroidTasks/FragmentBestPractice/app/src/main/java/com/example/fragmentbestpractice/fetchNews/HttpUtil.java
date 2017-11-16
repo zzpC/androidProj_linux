@@ -31,6 +31,7 @@ public class HttpUtil {
 
     //    public static void sendHttpRequest(final String address, final HttpCallbackListener listener) {
     public static void sendHttpRequest(final String address, final HttpCallbackListener listener) {
+        Log.e(TAG, "sendHttpRequest: "+address );
         if (!isNetworkAvailable()) {
             Toast.makeText(MyApplication.getContext(), "network is unavailable",
                     Toast.LENGTH_SHORT).show();
@@ -52,9 +53,9 @@ public class HttpUtil {
                     connection.setReadTimeout(8000);
                     connection.setDoInput(true);
                     connection.setDoOutput(true);
-                    Log.d(TAG, "run: ");
+
                     InputStream in = connection.getInputStream();
-                    Log.d(TAG, "run: ");
+
                     BufferedReader reader = new BufferedReader(new InputStreamReader(in));
                     StringBuilder response = new StringBuilder();
                     String line;
@@ -112,25 +113,22 @@ public class HttpUtil {
                     Log.e(TAG, "run: " + url.toString());
                     url1 = new URL(url);
                     HttpURLConnection conn = (HttpURLConnection) url1.openConnection();
-                    Log.e(TAG, "run: bitmap not null5");
+
 //            conn.setConnectTimeout(5000);//限定时间5s，0表示没有时间限制
                     conn.setDoInput(true);
                     conn.setDoOutput(true);
                     conn.setUseCaches(false);//不设置用户缓存
                     //获取流资源
                     InputStream is = conn.getInputStream();
-                    Log.e(TAG, "run: bitmap not null4");
+
                     //解析流得到图片
                     bitmap = BitmapFactory.decodeStream(is);
                     is.close();
-                    if (bitmap != null)
-                        Log.e(TAG, "run: bitmap not null3");
+
                     //is.close();
 
                     if (pictureCallbackListener != null) {
-                        Log.e(TAG, "run: bitmap not null");
                         pictureCallbackListener.onFinish(bitmap);
-                        Log.e(TAG, "run: bitmap not null2");
 
                     }
 
