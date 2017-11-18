@@ -30,4 +30,20 @@
         <item>http://api.tianapi.com/keji/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=10</item>
         <item>http://api.tianapi.com/startup/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=10</item>
     </string-array>
+
+
+
+
+    <string-array name="sample_array">
+        <item>item 1</item>
+        <item>item 2</item>
+        <item>item 3</item>
+        <item>item 4</item>
+    </string-array>
+    <string-array name="array_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
 </resources>

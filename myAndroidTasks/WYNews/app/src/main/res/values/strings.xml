@@ -7,4 +7,7 @@
     <string name="title_home1">首页</string>
     <string name="title_dashboard2">视频</string>
     <string name="title_notifications3">分享</string>
+
+
+    <string name="title_activity_launcher">LauncherActivity</string>
 </resources>
