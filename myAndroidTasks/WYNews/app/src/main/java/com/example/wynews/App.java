@@ -1,4 +1,4 @@
-package com.example.wynews.shareUtils;
+package com.example.wynews;
 
 import android.app.Activity;
 import android.app.Application;
@@ -6,6 +6,8 @@ import android.content.Context;
 import android.os.Build;
 import android.os.StrictMode;
 
+import com.example.wynews.shareUtils.LogUtil;
+import com.example.wynews.shareUtils.MeasureUtil;
 import com.tencent.smtt.sdk.QbSdk;
 
 import java.util.LinkedList;
@@ -17,28 +19,20 @@ import java.util.List;
 
 public class App extends Application {
 
+    //
+    public static boolean pic_only_WIFI=false;
+    public static boolean isWIFI=false;
 
-    public static Context getContext(){
+
+    //
+    public static Context getContext() {
         return context;
     }
 
-    public static final int TAB_SHORT_COUNT=4;
+    public static final int TAB_SHORT_COUNT = 4;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //
     public static Context context;
     private static List<Activity> activities = new LinkedList<>();
     private static App application;
@@ -60,8 +54,8 @@ public class App extends Application {
         }
         int width = MeasureUtil.getWidth(App.getContext());
         int height = MeasureUtil.getHeight(App.getContext());
-        LogUtil.e("手机的宽——————————"+width);
-        LogUtil.e("手机的高——————————"+height);
+        LogUtil.e("手机的宽——————————" + width);
+        LogUtil.e("手机的高——————————" + height);
 
         initX5();
 //        initLeakCanary();
@@ -86,12 +80,10 @@ public class App extends Application {
             }
         };
         //x5内核初始化接口
-        QbSdk.initX5Environment(getApplicationContext(),  cb);
-
+        QbSdk.initX5Environment(getApplicationContext(), cb);
 
 
     }
-
 
 
 }

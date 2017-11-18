@@ -12,8 +12,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.wynews.shareUtils.App;
-
 import java.util.List;
 
 import static android.content.ContentValues.TAG;

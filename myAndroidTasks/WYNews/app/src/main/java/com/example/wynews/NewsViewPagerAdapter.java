@@ -3,8 +3,6 @@ package com.example.wynews;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.example.wynews.shareUtils.App;
-
 import java.util.Arrays;
 import java.util.List;
 

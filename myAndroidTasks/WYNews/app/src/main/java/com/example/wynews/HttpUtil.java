@@ -8,8 +8,6 @@ import android.net.NetworkInfo;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.example.wynews.shareUtils.App;
-
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -32,7 +30,7 @@ public class HttpUtil {
                     Toast.LENGTH_SHORT).show();
             return;
         } else {
-            if (isNetworkAvailable()){
+            if (isNetworkAvailable()) {
 
                 new Thread(new Runnable() {
                     @Override
@@ -79,26 +77,31 @@ public class HttpUtil {
 
     }
 
+    //是否有网络
     private static boolean isNetworkAvailable() {
         //To-do
         Context context = App.getContext();
         ConnectivityManager connectivityManager = (ConnectivityManager) context
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-        if (networkInfo != null && networkInfo.isAvailable()) {
-            return true;
+        if (connectivityManager != null) {
+            NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+            if (networkInfo != null && networkInfo.isAvailable()) {
+                return true;
+            }
         }
+
         return false;
     }
 
-
-    private boolean isConnectedViaWifi() {
-        Context context = App.getContext();
-        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo mWifi = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-        return mWifi.isConnected();
+    //是否为WIFI
+    private static boolean isConnectedViaWifi() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) App.getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connectivityManager != null) {
+            NetworkInfo mWifi = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+            return mWifi.isConnected();
+        }
+        return false;
     }
-
 
 
     public static void getHttpBitmap(final String url, final PictureCallbackListener pictureCallbackListener) {
@@ -106,95 +109,57 @@ public class HttpUtil {
             Toast.makeText(App.getContext(), "network is unavailable",
                     Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(App.getContext(), "network is available",
-                    Toast.LENGTH_SHORT).show();
-        }
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
+            if (App.pic_only_WIFI && !isConnectedViaWifi()) {
+                Toast.makeText(App.getContext(), "非WIFI不联网",
+                        Toast.LENGTH_SHORT).show();
+            } else {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
 
-                URL url1;
+                        URL url1;
 
-                try {
-                    Log.e(TAG, "run: " + url.toString());
-                    url1 = new URL(url);
-                    HttpURLConnection conn = (HttpURLConnection) url1.openConnection();
-                    Log.e(TAG, "run: bitmap not null5");
+                        try {
+                            Log.e(TAG, "run: " + url.toString());
+                            url1 = new URL(url);
+                            HttpURLConnection conn = (HttpURLConnection) url1.openConnection();
+                            Log.e(TAG, "run: bitmap not null5");
 //            conn.setConnectTimeout(5000);//限定时间5s，0表示没有时间限制
-                    conn.setDoInput(true);
-                    conn.setDoOutput(true);
-                    conn.setUseCaches(false);//不设置用户缓存
-                    //获取流资源
-                    InputStream is = conn.getInputStream();
-                    Log.e(TAG, "run: bitmap not null4");
-                    //解析流得到图片
-                    bitmap = BitmapFactory.decodeStream(is);
-                    is.close();
-                    if (bitmap != null)
-                        Log.e(TAG, "run: bitmap not null3");
-                    //is.close();
+                            conn.setDoInput(true);
+                            conn.setDoOutput(true);
+                            conn.setUseCaches(false);//不设置用户缓存
+                            //获取流资源
+                            InputStream is = conn.getInputStream();
+                            Log.e(TAG, "run: bitmap not null4");
+                            //解析流得到图片
+                            bitmap = BitmapFactory.decodeStream(is);
+                            is.close();
+                            if (bitmap != null)
+                                Log.e(TAG, "run: bitmap not null3");
+                            //is.close();
 
-                    if (pictureCallbackListener != null) {
-                        Log.e(TAG, "run: bitmap not null");
-                        pictureCallbackListener.onFinish(bitmap);
-                        Log.e(TAG, "run: bitmap not null2");
+                            if (pictureCallbackListener != null) {
+                                Log.e(TAG, "run: bitmap not null");
+                                pictureCallbackListener.onFinish(bitmap);
+                                Log.e(TAG, "run: bitmap not null2");
 
+                            }
+
+                        } catch (Exception e) {
+                            if (pictureCallbackListener != null) {
+                                pictureCallbackListener.onError(e);
+                            }
+                        }
                     }
-
-                } catch (Exception e) {
-                    if (pictureCallbackListener != null) {
-                        pictureCallbackListener.onError(e);
-                    }
-                }
+                }).start();
             }
-        }).start();
+        }
+
+//        if (WifiReceiver.mSSID)
+
 
     }
 }
-
-
-//    public static Bitmap getHttpBitmap(final String url) {
-//
-//        if (!isNetworkAvailable()) {
-//            Toast.makeText(App.getContext(), "network is unavailable",
-//                    Toast.LENGTH_SHORT).show();
-////            return null;
-//        }else {
-//            Toast.makeText(App.getContext(), "network is available",
-//                    Toast.LENGTH_SHORT).show();
-//        }
-//
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//
-//                URL url1;
-//                Bitmap bitmap = null;
-//                try {
-//                    url1 = new URL(url);
-//                    HttpURLConnection conn = (HttpURLConnection) url1.openConnection();
-////            conn.setConnectTimeout(5000);//限定时间5s，0表示没有时间限制
-//                    conn.setDoInput(true);
-//                    conn.setDoOutput(true);
-//                    conn.setUseCaches(false);//不设置用户缓存
-//                    //获取流资源
-//                    InputStream is = conn.getInputStream();
-//                    //解析流得到图片
-//                    bitmap = BitmapFactory.decodeStream(is);
-//                    is.close();
-//
-//                } catch (MalformedURLException e) {
-//                    e.printStackTrace();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//
-//
-//            }
-//
-//        }
-//    }
-//
 
 
 

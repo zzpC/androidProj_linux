@@ -30,6 +30,6 @@ dependencies {
     compile files('libs/rxAndroid-1.1.0.jar')
     compile files('libs/libammsdk.jar')
 
-
+    compile project(path: ':materialpreference')
 
 }

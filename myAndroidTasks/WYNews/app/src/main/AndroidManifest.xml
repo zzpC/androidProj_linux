@@ -9,7 +9,6 @@
 
 
 
-
     <!-- Required  一些系统要求的权限，如访问网络等 -->
     <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -32,7 +31,7 @@
 
     <application
 
-        android:name=".shareUtils.App"
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -51,7 +50,16 @@
 
         <activity android:name=".NewsContentActivity" />
 
+        <activity android:name=".settings.SettingsActivity" />
 
+
+
+
+        <receiver android:name="com.example.wynews.WifiReceiver" >
+            <intent-filter android:priority="100">
+                <action android:name="android.net.wifi.STATE_CHANGE" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

@@ -19,6 +19,8 @@ import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.example.wynews.App;
+
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileFilter;
