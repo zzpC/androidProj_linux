@@ -62,7 +62,6 @@ public class ListViewLoadMore extends ListView implements AbsListView.OnScrollLi
     @Override
     public void onScroll(AbsListView absListView, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
         mTotalItemCount = totalItemCount;
-        Log.e(TAG, "onScroll: "+totalItemCount );
     }
 
     public void setOnLoadMoreListener(OnLoadMoreListener listener) {

@@ -35,15 +35,15 @@
 
 
     <string-array name="sample_array">
-        <item>item 1</item>
-        <item>item 2</item>
-        <item>item 3</item>
-        <item>item 4</item>
+        <item>微信</item>
+        <item>朋友圈</item>
+        <item>取消</item>
+
     </string-array>
     <string-array name="array_values">
-        <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
+
     </string-array>
 </resources>

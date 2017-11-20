@@ -25,10 +25,10 @@ public class HttpUtil {
 
     //    public static void sendHttpRequest(final String address, final HttpCallbackListener listener) {
     public static void sendHttpRequest(final String address, final HttpCallbackListener listener) {
+        Log.e(TAG, "sendHttpRequest: " );
         if (!isNetworkAvailable()) {
             Toast.makeText(App.getContext(), "network is unavailable",
                     Toast.LENGTH_SHORT).show();
-            return;
         } else {
             if (isNetworkAvailable()) {
 
@@ -38,6 +38,8 @@ public class HttpUtil {
 
                         HttpURLConnection connection = null;
                         try {
+
+                            Log.e(TAG, "run: url"+address );
                             URL url = new URL(address);
                             connection = (HttpURLConnection) url.openConnection();
                             connection.setRequestMethod("GET");
@@ -57,6 +59,7 @@ public class HttpUtil {
                             }
                             in.close();//????????????
                             if (listener != null) {
+                                Log.e(TAG, "run: response"+response.length() );
                                 // 回调onFinish()方法
                                 listener.onFinish(response.toString());
                             }
@@ -109,10 +112,12 @@ public class HttpUtil {
             Toast.makeText(App.getContext(), "network is unavailable",
                     Toast.LENGTH_SHORT).show();
         } else {
+            Log.e(TAG, "getHttpBitmap: " + App.pic_only_WIFI);
             if (App.pic_only_WIFI && !isConnectedViaWifi()) {
                 Toast.makeText(App.getContext(), "非WIFI不联网",
                         Toast.LENGTH_SHORT).show();
             } else {
+                Log.e(TAG, "run: ???");
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
@@ -120,33 +125,29 @@ public class HttpUtil {
                         URL url1;
 
                         try {
-                            Log.e(TAG, "run: " + url.toString());
                             url1 = new URL(url);
+                            Log.e(TAG, "run: " + url1);
                             HttpURLConnection conn = (HttpURLConnection) url1.openConnection();
-                            Log.e(TAG, "run: bitmap not null5");
 //            conn.setConnectTimeout(5000);//限定时间5s，0表示没有时间限制
                             conn.setDoInput(true);
                             conn.setDoOutput(true);
                             conn.setUseCaches(false);//不设置用户缓存
                             //获取流资源
                             InputStream is = conn.getInputStream();
-                            Log.e(TAG, "run: bitmap not null4");
                             //解析流得到图片
                             bitmap = BitmapFactory.decodeStream(is);
                             is.close();
-                            if (bitmap != null)
-                                Log.e(TAG, "run: bitmap not null3");
-                            //is.close();
+
 
                             if (pictureCallbackListener != null) {
-                                Log.e(TAG, "run: bitmap not null");
+                                Log.e(TAG, "run: "+bitmap );
                                 pictureCallbackListener.onFinish(bitmap);
-                                Log.e(TAG, "run: bitmap not null2");
 
                             }
 
                         } catch (Exception e) {
                             if (pictureCallbackListener != null) {
+
                                 pictureCallbackListener.onError(e);
                             }
                         }

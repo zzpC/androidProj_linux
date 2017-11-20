@@ -27,6 +27,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
+
     compile files('libs/rxAndroid-1.1.0.jar')
     compile files('libs/libammsdk.jar')
 

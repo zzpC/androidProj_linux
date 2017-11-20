@@ -19,9 +19,17 @@ import java.util.List;
 
 public class App extends Application {
 
+    private static Context context;
+//    @Override
+//    public void onCreate() {
+//        context = getApplicationContext();
+//    }
+
+
     //
-    public static boolean pic_only_WIFI=false;
-    public static boolean isWIFI=false;
+    public static boolean pic_only_WIFI=true;
+    public static boolean dark_theme=false;
+    public static String share_default_item="3";
 
 
     //
@@ -33,7 +41,6 @@ public class App extends Application {
 
 
     //
-    public static Context context;
     private static List<Activity> activities = new LinkedList<>();
     private static App application;
 
@@ -46,7 +53,10 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        context = this;
+//        context = this;
+
+        context=getApplicationContext();
+
         //7.0Uri适配
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();

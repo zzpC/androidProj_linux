@@ -2,6 +2,7 @@ package com.example.wynews;
 
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.view.ViewGroup;
 
 import java.util.Arrays;
 import java.util.List;
@@ -29,14 +30,17 @@ public class NewsViewPagerAdapter extends FragmentPagerAdapter {
     }
 
     @Override
-    public BaseFragment getItem(int position) {
+    public NewsTitleFragment getItem(int position) {
         return PagerFragmentFactory.createFragment(position);
     }
-
 
     @Override
     public int getCount() {
         return App.TAB_SHORT_COUNT;
     }
 
+    @Override
+    public void destroyItem(ViewGroup container, int position, Object object) {
+//        super.destroyItem(container, position, object);
+    }
 }

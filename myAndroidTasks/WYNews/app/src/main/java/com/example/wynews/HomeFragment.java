@@ -17,6 +17,14 @@ import android.view.ViewGroup;
  */
 
 public class HomeFragment extends Fragment {
+    private NewsViewPagerAdapter mNewsViewPagerAdapter;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        mNewsViewPagerAdapter=new NewsViewPagerAdapter(getActivity().getSupportFragmentManager());
+    }
 
     @Nullable
     @Override
@@ -26,9 +34,10 @@ public class HomeFragment extends Fragment {
         TabLayout tabLayout=(TabLayout) view.findViewById(R.id.tab_home);
         ViewPager viewPager=(ViewPager)view.findViewById(R.id.viewpager_home);
 
-       NewsViewPagerAdapter adapter = new NewsViewPagerAdapter(getActivity().getSupportFragmentManager());
-        viewPager.setAdapter(adapter);
+
+        viewPager.setAdapter(mNewsViewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
+        mNewsViewPagerAdapter.notifyDataSetChanged();
 
         return view;
 

@@ -18,7 +18,6 @@ public class Fragment1 extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Log.e(TAG, "onCreateView: " );
         super.onCreateView(inflater, container, savedInstanceState);
         View view=inflater.inflate(R.layout.layout1,container,false);
         TextView textView=(TextView)view.findViewById(R.id.message1);

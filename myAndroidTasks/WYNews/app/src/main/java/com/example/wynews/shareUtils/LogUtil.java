@@ -127,8 +127,6 @@ public class LogUtil {
 
         if (customLogger != null) {
             customLogger.e(tag, content);
-        } else {
-            Log.e(tag, content);
         }
         if (isSaveLog) {
             point(LOG_PATH, tag, content);

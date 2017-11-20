@@ -17,9 +17,10 @@ public class ParseDatas {
 
     public static ArrayList<News> parseJSON(String jsonData) {
         try {
+            result.clear();
             JSONObject object = new JSONObject(jsonData);
             JSONArray newslist = object.getJSONArray("newslist");
-
+            Log.e(TAG, "parseJSON1: "+newslist.length() );
             for (int i = 0; i < newslist.length(); i++) {
                 JSONObject jsonObject = newslist.getJSONObject(i);
                 String ctime = jsonObject.getString("ctime");
@@ -28,7 +29,7 @@ public class ParseDatas {
                 String url = jsonObject.getString("url");
                 String desc = jsonObject.getString("description");
 
-                Log.e(TAG, "parseJSON: "+newslist.length() );
+
 
                 result.add(new NewsBuilder().setCtime(ctime).setDescription(desc).setPicUrl(picUrl).setTitle(title).setUrl(url).createNews());
 
@@ -36,7 +37,7 @@ public class ParseDatas {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            Log.e(TAG, "parseJSON: "+result.size() );
+            Log.e(TAG, "parseJSON2: "+result.size() );
             return result;
         }
     }
