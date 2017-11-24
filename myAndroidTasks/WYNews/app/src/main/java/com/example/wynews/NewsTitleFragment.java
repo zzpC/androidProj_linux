@@ -30,7 +30,6 @@ public class NewsTitleFragment extends BaseFragment {
 
     @Override
     protected void onFragmentFirstVisible() {
-//        Log.e(TAG, "onFragmentFirstVisible: cishu" );
         initNews();
     }
 
@@ -38,11 +37,10 @@ public class NewsTitleFragment extends BaseFragment {
     @Override
     protected void onFragmentVisibleChange(boolean isVisible) {
         if (isVisible) {
-            if (mListViewLoadMore.getCount()==0){
+            if (mListViewLoadMore.getCount() == 0) {
 //                initNews();
             }
             mNewsAdapter.notifyDataSetChanged();
-
         }
     }
 
@@ -50,10 +48,14 @@ public class NewsTitleFragment extends BaseFragment {
     private void initView(View view) {
 
         mListViewLoadMore = (ListViewLoadMore) view.findViewById(R.id.news_title_list_view);
-//        mListViewLoadMore.setLayoutMan
         mNewsAdapter = new NewsItemsAdapter(getActivity(), mRawNews);
-//        mNewsAdapter.setOnItemClickListener();
         mListViewLoadMore.setAdapter(mNewsAdapter);
+        mListViewLoadMore.setOnLoadMoreListener(new ListViewLoadMore.OnLoadMoreListener() {
+            @Override
+            public void onloadMore() {
+                loadMore();
+            }
+        });
 
     }
 
@@ -63,27 +65,10 @@ public class NewsTitleFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
 
-//        Log.e(TAG, "onCreateView: 创建视图 " );
-
         View view = inflater.inflate(R.layout.news_title_social, container, false);
         initView(view);
 
-//        mListViewLoadMore = view.findViewById(R.id.news_title_list_view);
 
-
-//        mNewsAdapter = new NewsItemsAdapter(getActivity(), mRawNews);
-//        mListViewLoadMore.setAdapter(mNewsAdapter);
-
-//        if (mListViewLoadMore.getCount() == 0) {
-//            initNews();
-//        }
-
-//        mListViewLoadMore.setOnLoadMoreListener(new ListViewLoadMore.OnLoadMoreListener() {
-//            @Override
-//            public void onloadMore() {
-//                loadMore();
-//            }
-//        });
         return view;
 
     }
@@ -115,10 +100,9 @@ public class NewsTitleFragment extends BaseFragment {
                 List<News> lists = ParseDatas.parseJSON(response);
 
                 Log.e(TAG, "onFinish response: " + response.length());
-                Log.e(TAG, "onFinish: lists"+lists.size() );
+                Log.e(TAG, "onFinish: lists" + lists.size());
 //                mRawNews.clear();
                 mRawNews.addAll(lists);
-//                Log.e(TAG, "onFinish: ");
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {

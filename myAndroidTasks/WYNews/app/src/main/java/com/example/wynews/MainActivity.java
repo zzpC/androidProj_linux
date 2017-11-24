@@ -61,13 +61,15 @@ public class MainActivity extends AppCompatActivity {
         switch (ftNo) {
             case 0:
                 manager.beginTransaction().replace(R.id.content, new HomeFragment()).addToBackStack(null).commit();
+//                manager.beginTransaction().replace(R.id.content, PagerFragmentFactory.createFragment(0)).addToBackStack(null).commit();
+
                 break;
             case 1:
                 manager.beginTransaction().replace(R.id.content, new Fragment1()).addToBackStack(null).commit();
                 break;
             case 2:
 //                manager.beginTransaction().replace(R.id.content, new Fragment2()).commit();
-                Intent intent = new Intent(MainActivity.this,SettingsActivity.class);
+                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
                 startActivity(intent);
                 break;
             default:

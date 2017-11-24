@@ -88,7 +88,6 @@ public abstract class BaseFragment extends Fragment {
     private void initVariable() {
 
         isFirstVisible = true;
-        Log.e(TAG, "initVariable: ??first"+isFirstVisible );
         isFragmentVisible = false;
         rootView = null;
         isReuseView = true;

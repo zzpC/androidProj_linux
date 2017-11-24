@@ -38,6 +38,7 @@ public class HomeFragment extends Fragment {
         viewPager.setAdapter(mNewsViewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
         mNewsViewPagerAdapter.notifyDataSetChanged();
+        mNewsViewPagerAdapter.getItem(0);
 
         return view;
 
