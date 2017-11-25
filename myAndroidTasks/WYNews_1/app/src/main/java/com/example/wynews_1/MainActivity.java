@@ -5,10 +5,11 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SwipeRefreshLayoutBasicFragment.OnWebViewListener {
 
     private TextView mTextMessage;
 
@@ -36,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
     };
 
     @Override
+    public void onWebView(String info) {
+        Log.e("main", "onWebView:  "+info);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -51,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
         switch (ftNo) {
             case 0:
                 manager.beginTransaction().replace(R.id.bottom_pager, new SlidingTabsColorsFragment()).addToBackStack(null).commit();
+
+//                manager.beginTransaction().replace(R.id.bottom_pager, new NewsContentFragment()).addToBackStack(null).commit();
+
 //                manager.beginTransaction().replace(R.id.content, PagerFragmentFactory.createFragment(0)).addToBackStack(null).commit();
 
                 break;

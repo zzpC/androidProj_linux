@@ -5,13 +5,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
     <com.example.wynews_1.common.view.SlidingTabLayout
         android:id="@+id/sliding_tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabPaddingStart="50dp"
         app:tabPaddingEnd="55dp"
-        />
+        app:tabPaddingStart="50dp" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"

@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.example.wynews_1;
+package com.example.wynews_1.copy;
 
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.text.Spannable;
@@ -31,17 +31,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
+import com.example.wynews_1.R;
+import com.example.wynews_1.SwipeRefreshLayoutBasicFragment;
 import com.example.wynews_1.common.view.SlidingTabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
 
 //创建TabLayout+viewpager的视图作为acitvity一部分,getitem生成新的fragment,覆盖本fragment
-public class SlidingTabsColorsFragment extends Fragment {
+public class SlidingTabsColorsFragment1 extends Fragment {
     private static final String TAG = "SlidingTabsColorsFragme";
-
-
     /**
      * This class represents a tab to be displayed by {@link ViewPager} and it's associated
      * {@link SlidingTabLayout}.
@@ -49,24 +48,23 @@ public class SlidingTabsColorsFragment extends Fragment {
     static class SamplePagerItem {
         private final CharSequence mTitle;
         private final int mTitleImage;
-
+        private final int mPageNo;
         private final int mIndicatorColor;
         private final int mDividerColor;
 
-        SamplePagerItem(CharSequence title, int titleImage, int indicatorColor, int dividerColor) {
+        SamplePagerItem(int pageno,CharSequence title, int titleImage, int indicatorColor, int dividerColor) {
             mTitle = title;
             mTitleImage = titleImage;
             mIndicatorColor = indicatorColor;
             mDividerColor = dividerColor;
-
+            mPageNo=pageno;
         }
 
         /**
          * @return A new {@link Fragment} to be displayed by a {@link ViewPager}
          */
-        Fragment createFragment(int i) {
-            return SwipeRefreshLayoutBasicFragment.newInstance(i);
-
+        Fragment createFragment() {
+            return SwipeRefreshLayoutBasicFragment.newInstance();
         }
 
         /**
@@ -109,6 +107,7 @@ public class SlidingTabsColorsFragment extends Fragment {
          * color, which are used by {@link SlidingTabLayout}.
          */
         mTabs.add(new SamplePagerItem(
+                0,
                 getString(R.string.top_tab_social), // Title
                 R.mipmap.topline,
                 Color.BLUE, // Indicator color
@@ -116,6 +115,7 @@ public class SlidingTabsColorsFragment extends Fragment {
         ));
 
         mTabs.add(new SamplePagerItem(
+                1,
                 getString(R.string.top_tab_chinese), // Title
                 R.mipmap.news,
                 Color.RED, // Indicator color
@@ -123,6 +123,7 @@ public class SlidingTabsColorsFragment extends Fragment {
         ));
 
         mTabs.add(new SamplePagerItem(
+                2,
                 getString(R.string.top_tab_internation), // Title
                 R.mipmap.entertainment,
                 Color.YELLOW, // Indicator color
@@ -130,6 +131,7 @@ public class SlidingTabsColorsFragment extends Fragment {
         ));
 
         mTabs.add(new SamplePagerItem(
+                3,
                 getString(R.string.top_tab_PE), // Title
                 R.mipmap.sports,
                 Color.GREEN, // Indicator color
@@ -145,7 +147,6 @@ public class SlidingTabsColorsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         return inflater.inflate(R.layout.slidingtabscolorsfragment, container, false);
     }
 
@@ -207,14 +208,14 @@ public class SlidingTabsColorsFragment extends Fragment {
 
     /**
      * The {@link FragmentPagerAdapter} used to display pages in this sample. The individual pages
-     * are instances of {@link } which just display three lines of text. Each page is
+     * are instances of {@link ContentFragment} which just display three lines of text. Each page is
      * created by the relevant {@link SamplePagerItem} for the requested position.
      * <p>
      * The important section of this class is the {@link #getPageTitle(int)} method which controls
      * what is displayed in the {@link SlidingTabLayout}.
      */
     //与viewpager关联,同时可改变Tab的外观和行为
-    class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
+    class SampleFragmentPagerAdapter extends FragmentStatePagerAdapter {
 
 
         SampleFragmentPagerAdapter(FragmentManager fm) {
@@ -222,13 +223,13 @@ public class SlidingTabsColorsFragment extends Fragment {
         }
 
         /**
-         * Return the {@link android.support.v4.app.Fragment} to be displayed at {@code position}.
+         * Return the {@link Fragment} to be displayed at {@code position}.
          * <p>
-         * Here we return the value returned from {@link SamplePagerItem#()}.
+         * Here we return the value returned from {@link SamplePagerItem#createFragment()}.
          */
         @Override
         public Fragment getItem(int i) {
-            return mTabs.get(i).createFragment(i);
+            return mTabs.get(i).createFragment();
         }
 
         @Override
@@ -250,7 +251,7 @@ public class SlidingTabsColorsFragment extends Fragment {
             Drawable drawable = ContextCompat.getDrawable(getContext(), mTabs.get(position).mTitleImage);
             drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
             ImageSpan imageSpan = new ImageSpan(drawable, ImageSpan.ALIGN_BOTTOM);
-            SpannableString spannableString = new SpannableString(" " + mTabs.get(position).getTitle());
+            SpannableString spannableString = new SpannableString(" "+mTabs.get(position).getTitle());
             spannableString.setSpan(imageSpan, 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             return spannableString;
 
