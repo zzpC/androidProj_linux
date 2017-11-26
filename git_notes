@@ -1,0 +1,13 @@
+git checkout -b iss53
+#equal git branch iss53 && git checkout iss53
+
+git checkout -b hotfix && git checkout master &&   git merge hotfix && git branch hotfix
+#merge another one to current branch
+
+git checkout iss53 && vim temp.html && git commit -a -m 'finished the new footer [issue 53]' && git checkout master && git merge iss53 
+&& git branch -d iss53
+
+#create new branch and delete it after merging to master
+
+git status -> git mergetool
+#handle conflict

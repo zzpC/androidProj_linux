@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <PreferenceCategory
+            android:title="App" >
+            <SwitchPreference
+                android:defaultValue="false"
+                android:key="switch_pref"
+                android:summary="WIFI下加载图片以省流"
+                android:title="图片仅WIFI" />
+            <SwitchPreference android:title="Sound"
+                android:key="sound"
+                android:defaultValue="true"/>
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:title="Results" >
+            <android.support.v7.preference.ListPreference
+                android:entries="@array/sample_array"
+                android:entryValues="@array/array_values"
+                android:key="list_preference"
+                android:summary="将App发送到微信朋友圈等其他App"
+                android:title="分享App"
+                android:defaultValue="3"
+                />
+            <SwitchPreference android:title="Average"
+                android:summary="Toggle to display your average"
+                android:defaultValue="true"
+                android:key="Average" />
+        </PreferenceCategory>
+
+    </PreferenceScreen>
