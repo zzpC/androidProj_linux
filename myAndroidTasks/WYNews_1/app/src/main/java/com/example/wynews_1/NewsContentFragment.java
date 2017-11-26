@@ -32,12 +32,13 @@ public class NewsContentFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.newscontentfragment, container, false);
         mWebView = (WebView) v.findViewById(R.id.webview);
-        mWebView.loadUrl("https://www.baidu.com");
+        mWebView.loadUrl(getArguments().getString("url"));
 
         // Enable Javascript
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(false);
-
+        mWebView.getSettings().setUseWideViewPort(true);
+        mWebView.getSettings().setLoadWithOverviewMode(true);
         // Force links and redirects to open in the WebView instead of in a browser
         mWebView.setWebViewClient(new WebViewClient());
         mIsWebViewAvailable = true;

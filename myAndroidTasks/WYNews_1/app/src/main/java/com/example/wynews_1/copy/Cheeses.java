@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.wynews_1;
+package com.example.wynews_1.copy;
 
 import android.util.Log;
 

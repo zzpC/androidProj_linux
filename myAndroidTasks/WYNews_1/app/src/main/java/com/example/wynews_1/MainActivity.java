@@ -7,11 +7,11 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.TextView;
+
 
 public class MainActivity extends AppCompatActivity implements SwipeRefreshLayoutBasicFragment.OnWebViewListener {
 
-    private TextView mTextMessage;
+//    private TextView mTextMessage;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -20,15 +20,12 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-//                    mTextMessage.setText(R.string.title_home);
                     switchToFragment(0);
                     return true;
                 case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
                     switchToFragment(1);
                     return true;
                 case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
                     switchToFragment(2);
                     return true;
             }
@@ -37,8 +34,15 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     };
 
     @Override
-    public void onWebView(String info) {
-        Log.e("main", "onWebView:  "+info);
+    public void onWebView(final String info) {
+        Log.e("main", "onWebView:  " + info);
+
+        NewsContentFragment newsContentFragment = new NewsContentFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("url", info);
+        newsContentFragment.setArguments(bundle);
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.bottom_pager, newsContentFragment).addToBackStack(null).commit();
     }
 
     @Override
@@ -46,9 +50,11 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
+//        mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        switchToFragment(0);
     }
 
     public void switchToFragment(int ftNo) {
@@ -57,19 +63,12 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         switch (ftNo) {
             case 0:
                 manager.beginTransaction().replace(R.id.bottom_pager, new SlidingTabsColorsFragment()).addToBackStack(null).commit();
-
-//                manager.beginTransaction().replace(R.id.bottom_pager, new NewsContentFragment()).addToBackStack(null).commit();
-
-//                manager.beginTransaction().replace(R.id.content, PagerFragmentFactory.createFragment(0)).addToBackStack(null).commit();
-
                 break;
             case 1:
                 manager.beginTransaction().replace(R.id.bottom_pager, new Fragment1()).addToBackStack(null).commit();
                 break;
             case 2:
-                manager.beginTransaction().replace(R.id.bottom_pager, new Fragment2()).commit();
-//                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
-//                startActivity(intent);
+                manager.beginTransaction().replace(R.id.bottom_pager, new SettingsFragment()).commit();
                 break;
             default:
                 break;

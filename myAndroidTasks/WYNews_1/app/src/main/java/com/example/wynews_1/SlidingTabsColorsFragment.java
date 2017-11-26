@@ -34,6 +34,7 @@ import android.view.ViewGroup;
 
 import com.example.wynews_1.common.view.SlidingTabLayout;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,9 +50,9 @@ public class SlidingTabsColorsFragment extends Fragment {
     static class SamplePagerItem {
         private final CharSequence mTitle;
         private final int mTitleImage;
-
         private final int mIndicatorColor;
         private final int mDividerColor;
+
 
         SamplePagerItem(CharSequence title, int titleImage, int indicatorColor, int dividerColor) {
             mTitle = title;
@@ -113,6 +114,7 @@ public class SlidingTabsColorsFragment extends Fragment {
                 R.mipmap.topline,
                 Color.BLUE, // Indicator color
                 Color.GRAY // Divider color
+
         ));
 
         mTabs.add(new SamplePagerItem(

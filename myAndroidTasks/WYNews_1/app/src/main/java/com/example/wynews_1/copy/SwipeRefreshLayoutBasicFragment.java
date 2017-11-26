@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.wynews_1;
+package com.example.wynews_1.copy;
 
 
 import android.content.Context;
@@ -34,6 +34,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.wynews_1.HttpUtil;
+import com.example.wynews_1.News;
+import com.example.wynews_1.NewsApp;
+import com.example.wynews_1.ParseDatas;
+import com.example.wynews_1.R;
 import com.example.wynews_1.bitmapUtils.MyBitmapUtils;
 
 import java.io.BufferedReader;
@@ -44,7 +49,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.content.ContentValues.TAG;
 import static com.example.wynews_1.HttpUtil.isNetworkAvailable;
 
 public class SwipeRefreshLayoutBasicFragment extends Fragment {
@@ -324,7 +328,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                 case TYPE_1:
                     viewHolder.tv_title.setText(news.getTitle());
                     if (viewHolder.iv_pic != null) {
-                        if (!NewsApp.pic_only_WIFI || HttpUtil.isConnectedViaWifi()) {
+                        if (NewsApp.pic_only_WIFI != true || HttpUtil.isConnectedViaWifi()) {
                             myBitmapUtils.disPlay(viewHolder.iv_pic, news.getPicUrl());
 //                            myBitmapUtils.disPlay(viewHolder.iv_pic, news.getPicUrl());
                         }
@@ -333,8 +337,8 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
                     break;
                 case TYPE_2:
-                    if (viewHolder1.iv_pic != null) {
-                        if (!NewsApp.pic_only_WIFI || HttpUtil.isConnectedViaWifi()) {
+                    if (viewHolder1.iv_pic != null && news != null) {
+                        if (NewsApp.pic_only_WIFI != true || HttpUtil.isConnectedViaWifi()) {
                             myBitmapUtils.disPlay(viewHolder1.iv_pic, news.getPicUrl());
                         }
                     }
