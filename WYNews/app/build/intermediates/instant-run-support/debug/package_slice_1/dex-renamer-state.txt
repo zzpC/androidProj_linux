@@ -1,0 +1,4 @@
+#Sat Dec 02 05:14:35 CST 2017
+base.0=/tmp/c/androidProj_linux/WYNews/app/build/intermediates/transforms/dexMerger/debug/1
+path.0=classes.dex
+renamed.0=classes.dex
