@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/tmp/c/androidProj_linux/WYNews/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml",
+            "outputFile": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml",
             "map": [
                 {
                     "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/values-ldltr-v21/values-ldltr-v21.xml",
