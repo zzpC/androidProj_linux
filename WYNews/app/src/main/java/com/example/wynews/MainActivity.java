@@ -8,8 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 
-import com.example.wynews_1.R;
-
 
 public class MainActivity extends AppCompatActivity implements SwipeRefreshLayoutBasicFragment.OnWebViewListener {
 
@@ -76,6 +74,8 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                 break;
         }
     }
+
+
 
     @Override
     protected void onDestroy() {

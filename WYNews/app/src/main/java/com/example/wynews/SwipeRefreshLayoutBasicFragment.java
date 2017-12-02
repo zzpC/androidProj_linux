@@ -34,7 +34,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.wynews_1.R;
 import com.example.wynews.bitmapUtils.MyBitmapUtils;
 
 import java.io.BufferedReader;

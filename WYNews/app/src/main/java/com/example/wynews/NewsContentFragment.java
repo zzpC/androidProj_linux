@@ -10,8 +10,6 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.example.wynews_1.R;
-
 /**
  * Created by zzp on 17-11-25.
  */
@@ -38,7 +36,7 @@ public class NewsContentFragment extends Fragment {
 
         // Enable Javascript
         WebSettings webSettings = mWebView.getSettings();
-        webSettings.setJavaScriptEnabled(false);
+        webSettings.setJavaScriptEnabled(true);
         mWebView.getSettings().setUseWideViewPort(true);
         mWebView.getSettings().setLoadWithOverviewMode(true);
         // Force links and redirects to open in the WebView instead of in a browser
