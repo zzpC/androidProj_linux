@@ -4,12 +4,12 @@
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.0.aar/5b12258e92dacb7736f524ebf581bd20/res/layout/notification_template_big_media_narrow.xml"
     },
     {
-        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable_abc_ic_clear_material.xml.flat",
-        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable/abc_ic_clear_material.xml"
-    },
-    {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/layout_select_dialog_multichoice_material.xml.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/layout/select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable_abc_ic_clear_material.xml.flat",
+        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable/abc_ic_clear_material.xml"
     },
     {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/color-v23_abc_tint_btn_checkable.xml.flat",
@@ -84,12 +84,12 @@
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.0.aar/33530cc54e80624cc556001da2a4dbf1/res/drawable/notification_icon_background.xml"
     },
     {
-        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_abc_ic_star_black_16dp.png.flat",
-        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-xhdpi-v4/abc_ic_star_black_16dp.png"
-    },
-    {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/anim_abc_popup_exit.xml.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_abc_ic_star_black_16dp.png.flat",
+        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-xhdpi-v4/abc_ic_star_black_16dp.png"
     },
     {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-xxxhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
@@ -144,12 +144,12 @@
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/aa12c40593f51c1ccc3ffae4e0a865bd/res/drawable-xhdpi-v4/design_ic_visibility_off.png"
     },
     {
-        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
-        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-ldrtl-xxxhdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
-    },
-    {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/anim_tooltip_enter.xml.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/anim/tooltip_enter.xml"
+    },
+    {
+        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-ldrtl-xxxhdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4_design_ic_visibility.png.flat",
@@ -228,36 +228,36 @@
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-xxxhdpi-v4/abc_ic_star_black_48dp.png"
     },
     {
-        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable_abc_seekbar_tick_mark_material.xml.flat",
-        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable/abc_seekbar_tick_mark_material.xml"
-    },
-    {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4_notification_bg_normal.9.png.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.0.aar/33530cc54e80624cc556001da2a4dbf1/res/drawable-hdpi-v4/notification_bg_normal.9.png"
+    },
+    {
+        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable_abc_seekbar_tick_mark_material.xml.flat",
+        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable/abc_seekbar_tick_mark_material.xml"
     },
     {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-xxhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
-        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/color_abc_btn_colored_borderless_text_material.xml.flat",
-        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/color/abc_btn_colored_borderless_text_material.xml"
-    },
-    {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-ldrtl-hdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-ldrtl-hdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/color_abc_btn_colored_borderless_text_material.xml.flat",
+        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/color/abc_btn_colored_borderless_text_material.xml"
     },
     {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/color_abc_primary_text_material_dark.xml.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/color/abc_primary_text_material_dark.xml"
     },
     {
-        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable_abc_dialog_material_background.xml.flat",
-        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable/abc_dialog_material_background.xml"
-    },
-    {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_abc_list_focused_holo.9.png.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-xhdpi-v4/abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable_abc_dialog_material_background.xml.flat",
+        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable/abc_dialog_material_background.xml"
     },
     {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
@@ -276,12 +276,12 @@
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
-        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/color-v23_abc_tint_edittext.xml.flat",
-        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/color-v23/abc_tint_edittext.xml"
-    },
-    {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/color-v23_design_tint_password_toggle.xml.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/aa12c40593f51c1ccc3ffae4e0a865bd/res/color-v23/design_tint_password_toggle.xml"
+    },
+    {
+        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/color-v23_abc_tint_edittext.xml.flat",
+        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/color-v23/abc_tint_edittext.xml"
     },
     {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/layout_design_text_input_password_icon.xml.flat",
@@ -360,12 +360,12 @@
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable/abc_switch_thumb_material.xml"
     },
     {
-        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/layout_abc_activity_chooser_view.xml.flat",
-        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/layout/abc_activity_chooser_view.xml"
-    },
-    {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable_tooltip_frame_light.xml.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable/tooltip_frame_light.xml"
+    },
+    {
+        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/layout_abc_activity_chooser_view.xml.flat",
+        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/layout/abc_activity_chooser_view.xml"
     },
     {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/color_abc_primary_text_disable_only_material_light.xml.flat",
@@ -380,28 +380,28 @@
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/layout/select_dialog_singlechoice_material.xml"
     },
     {
-        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-ldrtl-xhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
-        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-ldrtl-xhdpi-v17/abc_spinner_mtrl_am_alpha.9.png"
-    },
-    {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/layout_abc_alert_dialog_material.xml.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/layout/abc_alert_dialog_material.xml"
     },
     {
-        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_share_wxcircle.png.flat",
-        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/sharesdk-0.0.9.aar/0b0c14b497ccb074e5b5666eab019280/res/drawable-xhdpi-v4/share_wxcircle.png"
+        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-ldrtl-xhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
+        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-ldrtl-xhdpi-v17/abc_spinner_mtrl_am_alpha.9.png"
     },
     {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable_abc_spinner_textfield_background_material.xml.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable/abc_spinner_textfield_background_material.xml"
     },
     {
-        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/anim_design_snackbar_out.xml.flat",
-        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/aa12c40593f51c1ccc3ffae4e0a865bd/res/anim/design_snackbar_out.xml"
+        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_share_wxcircle.png.flat",
+        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/sharesdk-0.0.9.aar/0b0c14b497ccb074e5b5666eab019280/res/drawable-xhdpi-v4/share_wxcircle.png"
     },
     {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/layout_abc_screen_simple_overlay_action_mode.xml.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/layout/abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/anim_design_snackbar_out.xml.flat",
+        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/aa12c40593f51c1ccc3ffae4e0a865bd/res/anim/design_snackbar_out.xml"
     },
     {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_share_wechat.png.flat",
@@ -456,20 +456,20 @@
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/layout/abc_action_bar_title_item.xml"
     },
     {
-        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
-        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-xxhdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-xxxhdpi-v4_abc_ic_star_black_36dp.png.flat",
-        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-xxxhdpi-v4/abc_ic_star_black_36dp.png"
+        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
+        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-hdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
     },
     {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-mdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
-        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
-        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-hdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
+        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-xxxhdpi-v4_abc_ic_star_black_36dp.png.flat",
+        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-xxxhdpi-v4/abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
+        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-xxhdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/layout_select_dialog_item_material.xml.flat",
@@ -544,12 +544,12 @@
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable/abc_tab_indicator_material.xml"
     },
     {
-        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/color_abc_tint_btn_checkable.xml.flat",
-        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/color/abc_tint_btn_checkable.xml"
-    },
-    {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-xxhdpi-v4/abc_ic_star_half_black_48dp.png"
+    },
+    {
+        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/color_abc_tint_btn_checkable.xml.flat",
+        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/color/abc_tint_btn_checkable.xml"
     },
     {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
@@ -560,12 +560,12 @@
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-hdpi-v4/abc_list_divider_mtrl_alpha.9.png"
     },
     {
-        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
-        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-xhdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
-    },
-    {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-xxhdpi-v4/abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
+        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-xhdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
@@ -632,12 +632,12 @@
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-hdpi-v4/abc_ic_star_black_36dp.png"
     },
     {
-        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
-        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-xhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
-    },
-    {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-xxxhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-xxxhdpi-v4/abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-xhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/layout-v21_notification_template_icon_group.xml.flat",
@@ -664,12 +664,12 @@
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
-        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/color_abc_hint_foreground_material_dark.xml.flat",
-        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/color/abc_hint_foreground_material_dark.xml"
-    },
-    {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/drawable-v21_preference_list_divider_material.xml.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/preference-v14-27.0.0.aar/1c07ff6b9d5467e654d4654dad1243eb/res/drawable-v21/preference_list_divider_material.xml"
+    },
+    {
+        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/color_abc_hint_foreground_material_dark.xml.flat",
+        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/color/abc_hint_foreground_material_dark.xml"
     },
     {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/layout_notification_media_action.xml.flat",

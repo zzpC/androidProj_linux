@@ -1,123 +1,88 @@
 package com.example.wynews;
 
-import android.Manifest;
-import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.database.Cursor;
-import android.net.Uri;
-import android.os.Build;
+import android.content.res.Configuration;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Surface;
-import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
-
-import static android.app.Activity.RESULT_OK;
-
 
 /**
- * Created by zzp on 17-11-22.
+ * Created by zzp on 17-12-3.
  */
 
 public class VideoFragment extends Fragment {
-    private VideoView surfaceView;
-    private static final int REQUEST_READ_WRITE = 1;
-    private static final int SELECT_VIDEO = 2;
-    private static final String TAG = "VideoFragment";
+    private SimplePlayer mSimplePlayer;
 
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
+    public VideoFragment() {
+        super();
     }
+
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+         super.onCreateView(inflater, container, savedInstanceState);
+         View view;
 
-        View view = inflater.inflate(R.layout.fragment_video, container, false);
+        view=inflater.inflate (R.layout.fragment_video,container,false);
+        mSimplePlayer = (SimplePlayer)view.findViewById(R.id.video_in_fragment);
 
-        surfaceView = view.findViewById(R.id.sv);
-        surfaceView.setRotation(270);
+        mSimplePlayer.setTitle("美食—教你做蛋糕");
+        mSimplePlayer.play("http://ips.ifeng.com/video19.ifeng.com/video09/2016/07/25/34595-102-009-0533.mp4");
 
-        TextView textView = view.findViewById(R.id.sample_text);
-        textView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Video.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(intent, SELECT_VIDEO);
-            }
-        });
+        mSimplePlayer.setTitle("cctv-6");
+        mSimplePlayer.play("http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8");
+        mSimplePlayer.live(true);
+        mSimplePlayer.start();
 
 
-        if (ContextCompat.checkSelfPermission(NewsApp.getContext(), Manifest.permission.
-                WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            if (getActivity() == null) {
-                Log.e(TAG, "onCreateView: null");
-                return view;
-            }
-            ActivityCompat.requestPermissions(getActivity(), new String[]{
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_READ_WRITE);
+
+         return  view;
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (mSimplePlayer != null) {
+            mSimplePlayer.onResume();
         }
-
-        return view;
-
-
     }
 
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == RESULT_OK) {
-            if (requestCode == SELECT_VIDEO) {
-                final Uri selectedImageUri = data.getData();
-
-                final String s = getPath(selectedImageUri);
-
-                new Thread() {
-                    public void run() {
-                        plays(s, surfaceView.getHolder().getSurface());
-                    }
-                }.start();
-            }
+    public void onPause() {
+        super.onPause();
+        if (mSimplePlayer != null) {
+            mSimplePlayer.onPause();
         }
     }
 
-//    //点击播放视频
-//    public void onClick(View view) {
-//        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Video.Media.EXTERNAL_CONTENT_URI);
-//        startActivityForResult(intent, SELECT_VIDEO);
-//
-//    }
-
-    public native void plays(String videoPath, Surface surface);
-
-    // UPDATED!
-    public String getPath(Uri uri) {
-        String[] projection = {MediaStore.Video.Media.DATA};
-        @SuppressLint("Recycle") Cursor cursor = NewsApp.getContext().getContentResolver().query(uri, projection, null, null, null);
-        if (cursor != null) {
-            // HERE YOU WILL GET A NULLPOINTER IF CURSOR IS NULL
-            // THIS CAN BE, IF YOU USED OI FILE MANAGER FOR PICKING THE MEDIA
-            int column_index = cursor
-                    .getColumnIndexOrThrow(MediaStore.Video.Media.DATA);
-            cursor.moveToFirst();
-            return cursor.getString(column_index);
-        } else
-            return null;
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mSimplePlayer != null) {
+            mSimplePlayer.onDestroy();
+        }
     }
 
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if (mSimplePlayer != null) {
+            mSimplePlayer.onConfigurationChanged(newConfig);
+        }
+    }
+
+//    @Override
+//    public void onBackPressed() {
+//        if (mSimplePlayer != null && mSimplePlayer.onBackPressed()) {
+//            return;
+//        }
+//        super.onBackPressed();
+//    }
 }

@@ -11,6 +11,10 @@ MERGED from [com.xyzlf.share:sharesdk:0.0.9] /home/zzp/.gradle/caches/transforms
 MERGED from [tv.danmaku.ijk.media:ijkplayer-exo:0.8.4] /home/zzp/.gradle/caches/transforms-1/files-1.1/ijkplayer-exo-0.8.4.aar/2d8f3eed58806997ea58411e490ed05c/AndroidManifest.xml:2:1-15:12
 MERGED from [tv.danmaku.ijk.media:ijkplayer-java:0.8.4] /home/zzp/.gradle/caches/transforms-1/files-1.1/ijkplayer-java-0.8.4.aar/576740aa641733cb13b4e7229ef0bdc4/AndroidManifest.xml:2:1-9:12
 MERGED from [tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.4] /home/zzp/.gradle/caches/transforms-1/files-1.1/ijkplayer-armv7a-0.8.4.aar/fba2f0f262010ea7a1faea8da4ff2be0/AndroidManifest.xml:2:1-9:12
+MERGED from [tv.danmaku.ijk.media:ijkplayer-armv5:0.8.4] /home/zzp/.gradle/caches/transforms-1/files-1.1/ijkplayer-armv5-0.8.4.aar/9a420f152051c881d6afac7b24987e8f/AndroidManifest.xml:2:1-9:12
+MERGED from [tv.danmaku.ijk.media:ijkplayer-arm64:0.8.4] /home/zzp/.gradle/caches/transforms-1/files-1.1/ijkplayer-arm64-0.8.4.aar/343722eadb9bf3bcf8bd9a23f733215a/AndroidManifest.xml:2:1-9:12
+MERGED from [tv.danmaku.ijk.media:ijkplayer-x86:0.8.4] /home/zzp/.gradle/caches/transforms-1/files-1.1/ijkplayer-x86-0.8.4.aar/626d58b461dd9a918d1559cb7df4758d/AndroidManifest.xml:2:1-9:12
+MERGED from [tv.danmaku.ijk.media:ijkplayer-x86_64:0.8.4] /home/zzp/.gradle/caches/transforms-1/files-1.1/ijkplayer-x86_64-0.8.4.aar/c0450f3efa7baf0d2f24a6a0c90f0383/AndroidManifest.xml:2:1-9:12
 MERGED from [com.android.support:design:26.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/aa12c40593f51c1ccc3ffae4e0a865bd/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:appcompat-v7:27.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/zzp/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/76833537c8236bb552b6800a1e809693/AndroidManifest.xml:2:1-11:12
@@ -155,6 +159,14 @@ MERGED from [tv.danmaku.ijk.media:ijkplayer-java:0.8.4] /home/zzp/.gradle/caches
 MERGED from [tv.danmaku.ijk.media:ijkplayer-java:0.8.4] /home/zzp/.gradle/caches/transforms-1/files-1.1/ijkplayer-java-0.8.4.aar/576740aa641733cb13b4e7229ef0bdc4/AndroidManifest.xml:5:5-7:41
 MERGED from [tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.4] /home/zzp/.gradle/caches/transforms-1/files-1.1/ijkplayer-armv7a-0.8.4.aar/fba2f0f262010ea7a1faea8da4ff2be0/AndroidManifest.xml:5:5-7:41
 MERGED from [tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.4] /home/zzp/.gradle/caches/transforms-1/files-1.1/ijkplayer-armv7a-0.8.4.aar/fba2f0f262010ea7a1faea8da4ff2be0/AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-armv5:0.8.4] /home/zzp/.gradle/caches/transforms-1/files-1.1/ijkplayer-armv5-0.8.4.aar/9a420f152051c881d6afac7b24987e8f/AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-armv5:0.8.4] /home/zzp/.gradle/caches/transforms-1/files-1.1/ijkplayer-armv5-0.8.4.aar/9a420f152051c881d6afac7b24987e8f/AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-arm64:0.8.4] /home/zzp/.gradle/caches/transforms-1/files-1.1/ijkplayer-arm64-0.8.4.aar/343722eadb9bf3bcf8bd9a23f733215a/AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-arm64:0.8.4] /home/zzp/.gradle/caches/transforms-1/files-1.1/ijkplayer-arm64-0.8.4.aar/343722eadb9bf3bcf8bd9a23f733215a/AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-x86:0.8.4] /home/zzp/.gradle/caches/transforms-1/files-1.1/ijkplayer-x86-0.8.4.aar/626d58b461dd9a918d1559cb7df4758d/AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-x86:0.8.4] /home/zzp/.gradle/caches/transforms-1/files-1.1/ijkplayer-x86-0.8.4.aar/626d58b461dd9a918d1559cb7df4758d/AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-x86_64:0.8.4] /home/zzp/.gradle/caches/transforms-1/files-1.1/ijkplayer-x86_64-0.8.4.aar/c0450f3efa7baf0d2f24a6a0c90f0383/AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-x86_64:0.8.4] /home/zzp/.gradle/caches/transforms-1/files-1.1/ijkplayer-x86_64-0.8.4.aar/c0450f3efa7baf0d2f24a6a0c90f0383/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:design:26.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/aa12c40593f51c1ccc3ffae4e0a865bd/AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:design:26.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/aa12c40593f51c1ccc3ffae4e0a865bd/AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:appcompat-v7:27.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/AndroidManifest.xml:20:5-44

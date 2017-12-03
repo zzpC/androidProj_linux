@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         newsContentFragment.setArguments(bundle);
             FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().replace(R.id.bottom_pager, newsContentFragment).addToBackStack(null).commit();
+
     }
 
 
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
         switch (ftNo) {
             case 0:
-                manager.beginTransaction().replace(R.id.bottom_pager, new SlidingTabsColorsFragment()).addToBackStack(null).commit();
+                manager.beginTransaction().replace(R.id.bottom_pager, new SlidingTabsColorsFragment()).commit();
                 break;
             case 1:
                 manager.beginTransaction().replace(R.id.bottom_pager, new VideoFragment()).addToBackStack(null).commit();
