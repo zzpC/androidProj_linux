@@ -1,0 +1,110 @@
+
+{
+	"buildFiles" : [ "/home/zzp/AndroidStudioProjects/WYNews/app/CMakeLists.txt" ],
+	"cFileExtensions" : [ "c" ],
+	"cleanCommands" : 
+	[
+		"/home/zzp/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/zzp/AndroidStudioProjects/WYNews/app/.externalNativeBuild/cmake/debug/armeabi --target clean"
+	],
+	"libraries" : 
+	{
+		"libavcodec-56-lib-Debug-armeabi" : 
+		{
+			"abi" : "armeabi",
+			"artifactName" : "libavcodec-56-lib",
+			"buildType" : "debug",
+			"output" : "/home/zzp/AndroidStudioProjects/WYNews/app/libs//armeabi/libavcodec-56.so",
+			"toolchain" : "1861936953847363080"
+		},
+		"libavdevice-56-lib-Debug-armeabi" : 
+		{
+			"abi" : "armeabi",
+			"artifactName" : "libavdevice-56-lib",
+			"buildType" : "debug",
+			"output" : "/home/zzp/AndroidStudioProjects/WYNews/app/libs//armeabi/libavdevice-56.so",
+			"toolchain" : "1861936953847363080"
+		},
+		"libavfilter-5-lib-Debug-armeabi" : 
+		{
+			"abi" : "armeabi",
+			"artifactName" : "libavfilter-5-lib",
+			"buildType" : "debug",
+			"output" : "/home/zzp/AndroidStudioProjects/WYNews/app/libs//armeabi/libavfilter-5.so",
+			"toolchain" : "1861936953847363080"
+		},
+		"libavformat-56-lib-Debug-armeabi" : 
+		{
+			"abi" : "armeabi",
+			"artifactName" : "libavformat-56-lib",
+			"buildType" : "debug",
+			"output" : "/home/zzp/AndroidStudioProjects/WYNews/app/libs//armeabi/libavformat-56.so",
+			"toolchain" : "1861936953847363080"
+		},
+		"libavutil-54-lib-Debug-armeabi" : 
+		{
+			"abi" : "armeabi",
+			"artifactName" : "libavutil-54-lib",
+			"buildType" : "debug",
+			"output" : "/home/zzp/AndroidStudioProjects/WYNews/app/libs//armeabi/libavutil-54.so",
+			"toolchain" : "1861936953847363080"
+		},
+		"libpostproc-53-lib-Debug-armeabi" : 
+		{
+			"abi" : "armeabi",
+			"artifactName" : "libpostproc-53-lib",
+			"buildType" : "debug",
+			"output" : "/home/zzp/AndroidStudioProjects/WYNews/app/libs//armeabi/libpostproc-53.so",
+			"toolchain" : "1861936953847363080"
+		},
+		"libswresample-1-lib-Debug-armeabi" : 
+		{
+			"abi" : "armeabi",
+			"artifactName" : "libswresample-1-lib",
+			"buildType" : "debug",
+			"output" : "/home/zzp/AndroidStudioProjects/WYNews/app/libs//armeabi/libswresample-1.so",
+			"toolchain" : "1861936953847363080"
+		},
+		"libswscale-3-lib-Debug-armeabi" : 
+		{
+			"abi" : "armeabi",
+			"artifactName" : "libswscale-3-lib",
+			"buildType" : "debug",
+			"output" : "/home/zzp/AndroidStudioProjects/WYNews/app/libs//armeabi/libswscale-3.so",
+			"toolchain" : "1861936953847363080"
+		},
+		"libyuv-lib-Debug-armeabi" : 
+		{
+			"abi" : "armeabi",
+			"artifactName" : "libyuv-lib",
+			"buildType" : "debug",
+			"output" : "/home/zzp/AndroidStudioProjects/WYNews/app/libs//armeabi/libyuv.so",
+			"toolchain" : "1861936953847363080"
+		},
+		"native-lib-Debug-armeabi" : 
+		{
+			"abi" : "armeabi",
+			"artifactName" : "native-lib",
+			"buildCommand" : "/home/zzp/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/zzp/AndroidStudioProjects/WYNews/app/.externalNativeBuild/cmake/debug/armeabi --target native-lib",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=armv5te-none-linux-androideabi --gcc-toolchain=/home/zzp/Android/Sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64 --sysroot=/home/zzp/Android/Sdk/ndk-bundle/sysroot -Dnative_lib_EXPORTS -I../../../../src/main/cpp/include  -isystem /home/zzp/Android/Sdk/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=22 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv5te -mtune=xscale -msoft-float -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/zzp/AndroidStudioProjects/WYNews/app/src/main/cpp/native-lib.c",
+					"workingDirectory" : "/home/zzp/AndroidStudioProjects/WYNews/app/.externalNativeBuild/cmake/debug/armeabi"
+				}
+			],
+			"output" : "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/cmake/debug/obj/armeabi/libnative-lib.so",
+			"toolchain" : "1861936953847363080"
+		}
+	},
+	"toolchains" : 
+	{
+		"1861936953847363080" : 
+		{
+			"cCompilerExecutable" : "/home/zzp/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang",
+			"cppCompilerExecutable" : "/home/zzp/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++"
+		}
+	}
+}
