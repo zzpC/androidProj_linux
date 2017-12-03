@@ -1,0 +1,60 @@
+(1)候选码:AB
+CREATE TABLE title_1_1 
+(
+A INT,
+B INT,
+C INT,
+PRIMARY KEY (A,B)
+);
+
+CREATE TABLE title_1_2
+(
+B INT,
+D INT,
+PRIMARY KEY (B)
+);
+
+(2)候选码:A
+CREATE TABLE title_2_1
+(
+A INT,
+B INT,
+C INT,
+PRIMARY KEY (A)
+);
+
+(3)候选码:AD
+CREATE TABLE title_3_1
+(
+A INT,
+C INT,
+PRIMARY KEY (A)
+);
+
+CREATE TABLE title_3_2
+(
+B INT,
+D INT,
+PRIMARY KEY (D)
+);
+
+(4)候选码:ACD
+CREATE TABLE title_4_1
+(
+A INT,
+C INT,
+PRIMARY KEY (A)
+);
+
+CREATE TABLE title_4_2
+(
+B INT,
+C INT,
+D INT,
+PRIMARY KEY (C,D)
+);
+
+
+ 
+
+
