@@ -1,7 +1,0 @@
-#Internal package file, do not edit.
-#Sun Dec 03 17:41:06 CST 2017
-0.baseType=DIRECTORY
-0.base=/home/zzp/AndroidStudioProjects/SDL4Android1/app/build/intermediates/assets/debug
-0.path=zx.bmp
-0.set=ASSET
-count=1
