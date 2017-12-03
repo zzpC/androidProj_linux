@@ -1,0 +1,111 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:2:1-27:12
+MERGED from [com.android.support:support-v4:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/0a7102ba8c01295a8fa71c8278401524/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/c8185e3e223860c70aa33800f93f5efc/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-media-compat:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/c4415222c14f2efb9b1f3c583ac4701c/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-utils:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/9067aef1f959ef712b7181dcef3ca841/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-ui:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/749f75edf3ef1f3422138f7fd2790f92/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/08d8428a95b60984ac33b5ac125b3e42/AndroidManifest.xml:17:1-31:12
+INJECTED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:2:1-27:12
+	package
+		ADDED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:3:5-29
+		INJECTED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml
+	android:versionName
+		ADDED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:5:5-30
+		INJECTED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:4:5-28
+		INJECTED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml
+uses-sdk
+ADDED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:7:5-9:41
+INJECTED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:7:5-9:41
+INJECTED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-v4:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/0a7102ba8c01295a8fa71c8278401524/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/0a7102ba8c01295a8fa71c8278401524/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/c8185e3e223860c70aa33800f93f5efc/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/c8185e3e223860c70aa33800f93f5efc/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/c4415222c14f2efb9b1f3c583ac4701c/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/c4415222c14f2efb9b1f3c583ac4701c/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-utils:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/9067aef1f959ef712b7181dcef3ca841/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/9067aef1f959ef712b7181dcef3ca841/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-ui:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/749f75edf3ef1f3422138f7fd2790f92/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/749f75edf3ef1f3422138f7fd2790f92/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/08d8428a95b60984ac33b5ac125b3e42/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/08d8428a95b60984ac33b5ac125b3e42/AndroidManifest.xml:21:5-23:58
+INJECTED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:7:5-9:41
+INJECTED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:7:5-9:41
+	tools:overrideLibrary
+		ADDED from [com.android.support:support-v4:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/0a7102ba8c01295a8fa71c8278401524/AndroidManifest.xml:23:9-51
+	android:targetSdkVersion
+		ADDED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:9:9-38
+		INJECTED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:8:9-35
+		INJECTED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml
+application
+ADDED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:11:5-25:19
+MERGED from [com.android.support:support-v4:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/0a7102ba8c01295a8fa71c8278401524/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-v4:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/0a7102ba8c01295a8fa71c8278401524/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/c8185e3e223860c70aa33800f93f5efc/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/c8185e3e223860c70aa33800f93f5efc/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/c4415222c14f2efb9b1f3c583ac4701c/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/c4415222c14f2efb9b1f3c583ac4701c/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/9067aef1f959ef712b7181dcef3ca841/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/9067aef1f959ef712b7181dcef3ca841/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/749f75edf3ef1f3422138f7fd2790f92/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/749f75edf3ef1f3422138f7fd2790f92/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/08d8428a95b60984ac33b5ac125b3e42/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/08d8428a95b60984ac33b5ac125b3e42/AndroidManifest.xml:29:5-20
+	android:label
+		ADDED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:14:9-41
+	android:icon
+		ADDED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:13:9-45
+	android:allowBackup
+		ADDED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:12:9-35
+	android:theme
+		ADDED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:15:9-40
+activity#org.libsdl.app.SDLActivity
+ADDED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:16:9-24:20
+	android:label
+		ADDED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:18:13-45
+	android:name
+		ADDED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:17:13-40
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:19:13-23:29
+action#android.intent.action.MAIN
+ADDED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:20:17-69
+	android:name
+		ADDED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:20:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:22:17-77
+	android:name
+		ADDED from /home/zzp/AndroidStudioProjects/SDL4Android/app/src/main/AndroidManifest.xml:22:27-74
+meta-data#android.support.VERSION
+ADDED from [com.android.support:support-v4:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/0a7102ba8c01295a8fa71c8278401524/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/c8185e3e223860c70aa33800f93f5efc/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/c8185e3e223860c70aa33800f93f5efc/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/c4415222c14f2efb9b1f3c583ac4701c/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/c4415222c14f2efb9b1f3c583ac4701c/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/9067aef1f959ef712b7181dcef3ca841/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/9067aef1f959ef712b7181dcef3ca841/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/749f75edf3ef1f3422138f7fd2790f92/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/749f75edf3ef1f3422138f7fd2790f92/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/08d8428a95b60984ac33b5ac125b3e42/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/08d8428a95b60984ac33b5ac125b3e42/AndroidManifest.xml:25:5-27:34
+	android:value
+		ADDED from [com.android.support:support-v4:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/0a7102ba8c01295a8fa71c8278401524/AndroidManifest.xml:27:9-31
+	android:name
+		ADDED from [com.android.support:support-v4:25.3.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/0a7102ba8c01295a8fa71c8278401524/AndroidManifest.xml:26:9-47

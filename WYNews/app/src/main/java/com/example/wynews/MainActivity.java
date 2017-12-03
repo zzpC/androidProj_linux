@@ -1,17 +1,23 @@
 package com.example.wynews;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.Surface;
+import android.view.View;
 
 
 public class MainActivity extends AppCompatActivity implements SwipeRefreshLayoutBasicFragment.OnWebViewListener {
 
-//    private TextView mTextMessage;
+    static {
+        System.loadLibrary("native-lib");
+    }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -41,9 +47,10 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         Bundle bundle = new Bundle();
         bundle.putString("url", info);
         newsContentFragment.setArguments(bundle);
-        FragmentManager manager = getSupportFragmentManager();
+            FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().replace(R.id.bottom_pager, newsContentFragment).addToBackStack(null).commit();
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +62,9 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         switchToFragment(0);
+
     }
+
 
     public void switchToFragment(int ftNo) {
         FragmentManager manager = getSupportFragmentManager();
@@ -65,16 +74,15 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                 manager.beginTransaction().replace(R.id.bottom_pager, new SlidingTabsColorsFragment()).addToBackStack(null).commit();
                 break;
             case 1:
-                manager.beginTransaction().replace(R.id.bottom_pager, new Fragment1()).addToBackStack(null).commit();
+                manager.beginTransaction().replace(R.id.bottom_pager, new VideoFragment()).addToBackStack(null).commit();
                 break;
             case 2:
-                manager.beginTransaction().replace(R.id.bottom_pager, new SettingsFragment()).commit();
+                manager.beginTransaction().replace(R.id.bottom_pager, new SettingsFragment()).addToBackStack(null).commit();
                 break;
             default:
                 break;
         }
     }
-
 
 
     @Override

@@ -41,7 +41,7 @@ import java.util.List;
 //创建TabLayout+viewpager的视图作为acitvity一部分,getitem生成新的fragment,覆盖本fragment
 public class SlidingTabsColorsFragment extends Fragment {
     private static final String TAG = "SlidingTabsColorsFragme";
-
+    private boolean Isfirst=true;
 
     /**
      * This class represents a tab to be displayed by {@link ViewPager} and it's associated
@@ -263,4 +263,13 @@ public class SlidingTabsColorsFragment extends Fragment {
 
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (Isfirst){
+            Isfirst=false;
+            return;
+        }
+        getActivity().finish();
+    }
 }

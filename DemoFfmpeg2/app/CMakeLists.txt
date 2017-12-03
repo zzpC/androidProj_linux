@@ -102,6 +102,7 @@ find_library( # Sets the name of the path variable.
 include_directories(src/main/cpp/include/)
 target_link_libraries( # Specifies the target library.
                        native-lib
+                       -ljnigraphics
 
                        # Links the target library to the log library
                        # included in the NDK.

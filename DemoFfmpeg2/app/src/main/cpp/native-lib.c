@@ -11,18 +11,40 @@
 #include <android/native_window.h>
 #include<unistd.h>
 #include "libyuv.h"
-#define LOGI(FORMAT,...) __android_log_print(ANDROID_LOG_INFO,"	FMY",FORMAT,##__VA_ARGS__);
-#define LOGE(FORMAT,...) __android_log_print(ANDROID_LOG_ERROR,"FMY",FORMAT,##__VA_ARGS__);
-char * output_cstr;
+#include <stdio.h>
+
+#include <pthread.h>
+#include <wchar.h>
+
+
+#define LOGI(FORMAT, ...) __android_log_print(ANDROID_LOG_INFO,"	FMY",FORMAT,##__VA_ARGS__);
+#define LOGE(FORMAT, ...) __android_log_print(ANDROID_LOG_ERROR,"FMY",FORMAT,##__VA_ARGS__);
+char *output_cstr;
 /**
  * 播放视频
  *
  */
 
+//参考教程准备的一些变量,可能有无效的部分
+ANativeWindow *window;
+char *videoFileName;
+AVFormatContext *formatCtx = NULL;
+int videoStream;
+AVCodecContext *codecCtx = NULL;
+AVFrame *decodedFrame = NULL;
+AVFrame *frameRGBA = NULL;
+jobject bitmap;
+void *buffer;
+struct SwsContext *sws_ctx = NULL;
+int width;
+int height;
+int stop;
+
+
 JNIEXPORT void JNICALL
 Java_com_example_demoffmpeg_MainActivity_plays(JNIEnv *env, jobject instance, jstring input,
                                                jobject surface) {
-    char * input_char = (*env)->GetStringUTFChars(env,input,NULL);
+    const char *input_char = (*env)->GetStringUTFChars(env, input, NULL);
 
 
 
@@ -42,8 +64,7 @@ Java_com_example_demoffmpeg_MainActivity_plays(JNIEnv *env, jobject instance, js
     av_register_all();
 
     // 封装格式上下文结构体，也是统领全局的结构体，保存了视频文件封装格式相关信息。
-    AVFormatContext * pFormatCtx = avformat_alloc_context();
-
+    AVFormatContext *pFormatCtx = avformat_alloc_context();
     /**
      * 打开输入流并且读取头信息。但解码器没有打开
      * 这个输入流必须使用avformat_close_input()关闭
@@ -59,8 +80,8 @@ Java_com_example_demoffmpeg_MainActivity_plays(JNIEnv *env, jobject instance, js
      *
      * @note 如果你想自定义IO,你需要预分配格式内容并且设置pd属性
      */
-    if(avformat_open_input(&pFormatCtx,input_char,NULL,NULL)!=0){
-        LOGE("NDK>>>%s","avformat_open_input打开失败");
+    if (avformat_open_input(&pFormatCtx, input_char, NULL, NULL) != 0) {
+        LOGE("NDK>>>%s", "avformat_open_input打开失败");
         return;
     }
 
@@ -86,11 +107,11 @@ Java_com_example_demoffmpeg_MainActivity_plays(JNIEnv *env, jobject instance, js
      * Let the user decide somehow what information is needed so that
      *       we do not waste time getting stuff the user does not need.
      */
-    if(	avformat_find_stream_info(pFormatCtx,NULL)<0){
-        LOGE("NDK>>>%s","avformat_find_stream_info失败");
-        return ;
+    if (avformat_find_stream_info(pFormatCtx, NULL) < 0) {
+        LOGE("NDK>>>%s", "avformat_find_stream_info失败");
+        return;
     }
-    LOGE("NDK>>>%s","成功");
+    LOGE("NDK>>>%s", "成功");
     //	//输出视频信息
     //	LOGI("视频的文件格式：%s",pFormatCtx->iformat->name);
     //	LOGI("视频时长：%d", (pFormatCtx->duration)/1000000);
@@ -106,31 +127,30 @@ Java_com_example_demoffmpeg_MainActivity_plays(JNIEnv *env, jobject instance, js
         //pFormatCtx->streams[i]->codec获取编码器
         //codec_type获取编码器类型
         //当前流等于视频 记录下标
-        if (pFormatCtx->streams[i]->codec->codec_type ==AVMEDIA_TYPE_VIDEO) {
+        if (pFormatCtx->streams[i]->codec->codec_type == AVMEDIA_TYPE_VIDEO) {
             v_stream_idx = i;
             break;
         }
     }
-    if (v_stream_idx==-1) {
+    if (v_stream_idx == -1) {
         LOGE("没有找视频流")
-    }else{
+    } else {
         LOGE("找到视频流")
     }
 
     //编码器上下文结构体，保存了视频（音频）编解码相关信息
     //得到视频流编码器
     AVCodecContext *pCodecCtx = pFormatCtx->streams[v_stream_idx]->codec;
-
+    LOGE("6540", "PcoDEXCTX NULL")
     //	 每种视频（音频）编解码器(例如H.264解码器)对应一个该结构体。
-    AVCodec *pCodec =avcodec_find_decoder(pCodecCtx->codec_id);
-
+    AVCodec *pCodec = avcodec_find_decoder(pCodecCtx->codec_id);
     //（迅雷看看，找不到解码器，临时下载一个解码器）
-    if (pCodec == NULL)
-    {
-        LOGE("%s","找不到解码器\n");
+    if (pCodec == NULL) {
+        LOGE("%s", "找不到解码器\n");
         return;
-    }else{
-        LOGE("%s","找到解码器\n");
+    } else {
+        LOGE("%s", "找到解码器\n");
+        codecCtx=pCodecCtx;
     }
 
 
@@ -173,33 +193,34 @@ Java_com_example_demoffmpeg_MainActivity_plays(JNIEnv *env, jobject instance, js
      * @see avcodec_alloc_context3(), avcodec_find_decoder(), avcodec_find_encoder(),
      *      av_dict_set(), av_opt_find().
      */
-    if(avcodec_open2(pCodecCtx,pCodec,NULL)==0){
-        LOGE("%s","打开编码器成功\n");
-    }else{
-        LOGE("%s","打开编码器失败\n");
+    if (avcodec_open2(pCodecCtx, pCodec, NULL) == 0) {
+        LOGE("%s", "打开编码器成功\n");
+    } else {
+        LOGE("%s", "打开编码器失败\n");
         return;
     }
     //输出视频信息
-    LOGE("视频的文件格式：%s",pFormatCtx->iformat->name);
+    LOGE("视频的文件格式：%s", pFormatCtx->iformat->name);
     //得到视频播放时长
-    if(pFormatCtx->duration != AV_NOPTS_VALUE){
+    if (pFormatCtx->duration != AV_NOPTS_VALUE) {
         int hours, mins, secs, us;
         int64_t duration = pFormatCtx->duration + 5000;
         secs = duration / AV_TIME_BASE;
         us = duration % AV_TIME_BASE;
         mins = secs / 60;
         secs %= 60;
-        hours = mins/ 60;
+        hours = mins / 60;
         mins %= 60;
         LOGE("%02d:%02d:%02d.%02d\n", hours, mins, secs, (100 * us) / AV_TIME_BASE);
 
     }
-    LOGE("视频的宽高：%d,%d",pCodecCtx->width,pCodecCtx->height);
-    LOGE("解码器的名称：%s",pCodec->name);
+    LOGE("视频的宽高：%d,%d", pCodecCtx->width, pCodecCtx->height);
+    LOGE("解码器的名称：%s", pCodec->name);
+
 
     //
     //	//存储一帧压缩编码数据。
-    AVPacket *packet =av_malloc(sizeof(AVPacket));
+    AVPacket *packet = av_malloc(sizeof(AVPacket));
     //
     //	//输出转码文件地址
     //	FILE *fp_yuv = fopen(output_cstr,"wb+");
@@ -271,13 +292,14 @@ Java_com_example_demoffmpeg_MainActivity_plays(JNIEnv *env, jobject instance, js
     int got_picture, ret;
     //
 //	//	//返回和java surface关联的ANativeWindow通过本地本地方法交互
-    ANativeWindow * nativeWindow =ANativeWindow_fromSurface(env,surface);
+    ANativeWindow *nativeWindow = ANativeWindow_fromSurface(env, surface);
     ////	//缓存
     ANativeWindow_Buffer outBuffer;
     ////	//设置缓存的几何信息
     AVFrame *rgb_frame = av_frame_alloc();
 
-    uint8_t *out_buffer = av_malloc(avpicture_get_size(AV_PIX_FMT_RGBA,pCodecCtx->width,pCodecCtx->height));
+    uint8_t *out_buffer = av_malloc(
+            avpicture_get_size(AV_PIX_FMT_RGBA, pCodecCtx->width, pCodecCtx->height));
     //
     //
     //读取每一帧
@@ -299,11 +321,11 @@ Java_com_example_demoffmpeg_MainActivity_plays(JNIEnv *env, jobject instance, js
      * @return 0表示成功, < 0 错误或者文结束
      */
 
-    while(av_read_frame(pFormatCtx,packet)>=0){
+    while (av_read_frame(pFormatCtx, packet) >= 0) {
 
         //一个包里有很多种类型如音频视频等 所以判断 这个包对应的流的在封装格式的下表
         //如果这个包是视频频包那么得到压缩的视频包
-        if (packet->stream_index==v_stream_idx) {
+        if (packet->stream_index == v_stream_idx) {
             LOGE("测试");
             /**
              * 解码视频帧 从avpkt->data读取数据并且解码avpkt->size的大小后转化为图片.
@@ -343,8 +365,8 @@ Java_com_example_demoffmpeg_MainActivity_plays(JNIEnv *env, jobject instance, js
              * @return 再错误时返回一个负数 , 否则返回使用字节数或者或者0(没有帧被解压返回0)otherwise the number of bytes
              *
              */
-            ret=avcodec_decode_video2(pCodecCtx,pFrame,&got_picture,packet);
-            if(ret>=0){
+            ret = avcodec_decode_video2(pCodecCtx, pFrame, &got_picture, packet);
+            if (ret >= 0) {
                 LOGE("解压成功");
                 //AVFrame转为像素格式YUV420，宽高
                 //2 6输入、输出数据
@@ -359,20 +381,23 @@ Java_com_example_demoffmpeg_MainActivity_plays(JNIEnv *env, jobject instance, js
                 //Y 亮度 UV 色度（压缩了） 人对亮度更加敏感
                 //U V 个数是Y的1/4
                 //				int y_size = pCodecCtx->width * pCodecCtx->height;
-                ANativeWindow_lock(nativeWindow,&outBuffer,NULL);
+                ANativeWindow_lock(nativeWindow, &outBuffer, NULL);
 //				////
-                ANativeWindow_setBuffersGeometry(nativeWindow,pCodecCtx->width,pCodecCtx->height,WINDOW_FORMAT_RGBA_8888);
-                avpicture_fill((AVPicture *)rgb_frame,out_buffer, AV_PIX_FMT_RGBA, pCodecCtx->width, pCodecCtx->height);
+                ANativeWindow_setBuffersGeometry(nativeWindow, pCodecCtx->width, pCodecCtx->height,
+                                                 WINDOW_FORMAT_RGBA_8888);
+                avpicture_fill((AVPicture *) rgb_frame, out_buffer, AV_PIX_FMT_RGBA,
+                               pCodecCtx->width, pCodecCtx->height);
 //
 //
-                I420ToARGB(pFrame->data[0],pFrame->linesize[0],
-                           pFrame->data[2],pFrame->linesize[2],
-                           pFrame->data[1],pFrame->linesize[1],
+                I420ToARGB(pFrame->data[0], pFrame->linesize[0],
+                           pFrame->data[2], pFrame->linesize[2],
+                           pFrame->data[1], pFrame->linesize[1],
                            rgb_frame->data[0], rgb_frame->linesize[0],
-                           pCodecCtx->width,pCodecCtx->height);
+                           pCodecCtx->width, pCodecCtx->height);
                 int h = 0;
                 for (h = 0; h < pCodecCtx->height; h++) {
-                    memcpy(outBuffer.bits + h * outBuffer.stride*4, out_buffer + h * rgb_frame->linesize[0], rgb_frame->linesize[0]);
+                    memcpy(outBuffer.bits + h * outBuffer.stride * 4,
+                           out_buffer + h * rgb_frame->linesize[0], rgb_frame->linesize[0]);
 //				memcpy(outBuffer.bits,out_buffer,pCodecCtx->width*pCodecCtx->height*4);
                 }
                 LOGE("锁定成功");
@@ -392,7 +417,7 @@ Java_com_example_demoffmpeg_MainActivity_plays(JNIEnv *env, jobject instance, js
     }
 
 
-    (*env)->ReleaseStringUTFChars(env,input,input_char);
+    (*env)->ReleaseStringUTFChars(env, input, input_char);
 
 
     //关闭文件
@@ -411,4 +436,94 @@ Java_com_example_demoffmpeg_MainActivity_plays(JNIEnv *env, jobject instance, js
 
 
 }
+
+JNIEXPORT jintArray JNICALL
+Java_com_example_demoffmpeg_MainActivity_naGetVideoRes(JNIEnv *env, jclass type) {
+
+    // TODO
+    jintArray lRes;
+    if (NULL == codecCtx) {
+        LOGE("6541", "NULL RES")
+        return NULL;
+    }
+    lRes = (*env)->NewIntArray(env, 2);
+    if (lRes == NULL) {
+        LOGI("6542", "cannot allocate memory for video size");
+        LOGE("654", "NULL MEM")
+        return NULL;
+    }
+    LOGE("6543", "OK");
+    jint lVideoRes[2];
+    lVideoRes[0] = codecCtx->width;
+    lVideoRes[1] = codecCtx->height;
+    (*env)->SetIntArrayRegion(env, lRes, 0, 2, lVideoRes);
+    return lRes;
+
+
+}
+
+
+jobject createBitmap(JNIEnv *pEnv, int pWidth, int pHeight) {
+    int i;
+    //get Bitmap class and createBitmap method ID
+    jclass javaBitmapClass = (jclass) (*pEnv)->FindClass(pEnv, "android/graphics/Bitmap");
+    jmethodID mid = (*pEnv)->GetStaticMethodID(pEnv, javaBitmapClass, "createBitmap",
+                                               "(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;");
+    //create Bitmap.Config
+    //reference: https://forums.oracle.com/thread/1548728
+    const wchar_t *configName = (const wchar_t *) L"ARGB_8888";
+    int len = sizeof(configName);
+    jstring jConfigName;
+    jchar *str = (jchar *) malloc((len + 1) * sizeof(jchar));
+    for (i = 0; i < len; ++i) {
+        str[i] = (jchar) configName[i];
+    }
+    str[len] = 0;
+    jConfigName = (*pEnv)->NewString(pEnv, (const jchar *) str, len);
+    jclass bitmapConfigClass = (*pEnv)->FindClass(pEnv, "android/graphics/Bitmap$Config");
+    jobject javaBitmapConfig = (*pEnv)->CallStaticObjectMethod(pEnv, bitmapConfigClass,
+                                                               (*pEnv)->GetStaticMethodID(pEnv,
+                                                                                          bitmapConfigClass,
+                                                                                          "valueOf",
+                                                                                          "(Ljava/lang/String;)Landroid/graphics/Bitmap$Config;"),
+                                                               jConfigName);
+    //create the bitmap
+    return (*pEnv)->CallStaticObjectMethod(pEnv, javaBitmapClass, mid, pWidth, pHeight,
+                                           javaBitmapConfig);
+}
+
+JNIEXPORT jint JNICALL
+Java_com_example_demoffmpeg_MainActivity_naSetup(JNIEnv *env, jclass type, jint pWidth,
+                                                 jint pHeight) {
+
+    // TODO
+    width = pWidth;
+    height = pHeight;
+    //create a bitmap as the buffer for frameRGBA
+    bitmap = createBitmap(env, pWidth, pHeight);
+    if (AndroidBitmap_lockPixels(env, createBitmap(env, pWidth, pHeight), &buffer) < 0)
+        return -1;
+    //get the scaling context
+    sws_ctx = sws_getContext(
+            codecCtx->width,
+            codecCtx->height,
+            codecCtx->pix_fmt,
+            pWidth,
+            pHeight,
+            AV_PIX_FMT_RGBA,
+            SWS_BILINEAR,
+            NULL,
+            NULL,
+            NULL
+    );
+    // Assign appropriate parts of bitmap to image planes in pFrameRGBA
+    // Note that pFrameRGBA is an AVFrame, but AVFrame is a superset
+    // of AVPicture
+    avpicture_fill((AVPicture *) frameRGBA, buffer, AV_PIX_FMT_RGBA,
+                   pWidth, pHeight);
+    return 0;
+}
+
+
+
 
