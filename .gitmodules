@@ -1,0 +1,9 @@
+[submodule "TabLayoutDemo"]
+	path = TabLayoutDemo
+	url = https://github.com/powerfulheart/TabLayoutDemo.git
+[submodule "LoadMoreListView"]
+	path = LoadMoreListView
+	url = https://github.com/RaphetS/LoadMoreListView.git
+[submodule "references/GanHuo"]
+	path = references/GanHuo
+	url = https://github.com/woshidasusu/GanHuo.git
