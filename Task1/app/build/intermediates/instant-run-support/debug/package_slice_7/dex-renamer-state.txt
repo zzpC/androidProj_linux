@@ -1,0 +1,4 @@
+#Mon Dec 04 05:44:35 CST 2017
+base.0=/home/zzp/mAdditions/ThirdTask/app/build/intermediates/transforms/dexMerger/debug/7
+path.0=classes.dex
+renamed.0=classes.dex

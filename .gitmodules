@@ -7,3 +7,6 @@
 [submodule "references/GanHuo"]
 	path = references/GanHuo
 	url = https://github.com/woshidasusu/GanHuo.git
+[submodule "VideoTasks_18/others/OpenGLESLearn"]
+	path = VideoTasks_18/others/OpenGLESLearn
+	url = https://github.com/SquarePants1991/OpenGLESLearn.git
