@@ -660,6 +660,10 @@
         "source": "/home/zzp/AndroidStudioProjects/WYNews/app/src/main/res/xml/preferences.xml"
     },
     {
+        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/debug/layout_fragment_video_listitem.xml.flat",
+        "source": "/home/zzp/AndroidStudioProjects/WYNews/app/src/main/res/layout/fragment_video_listitem.xml"
+    },
+    {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/debug/drawable_share_grid_item_pressed.xml.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/sharesdk-0.0.9.aar/0b0c14b497ccb074e5b5666eab019280/res/drawable/share_grid_item_pressed.xml"
     },
@@ -1172,12 +1176,12 @@
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-mdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
     },
     {
-        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/debug/layout_design_layout_tab_text.xml.flat",
-        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/aa12c40593f51c1ccc3ffae4e0a865bd/res/layout/design_layout_tab_text.xml"
-    },
-    {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_fullscreen_white_24dp.png.flat",
         "source": "/home/zzp/AndroidStudioProjects/WYNews/app/src/main/res/drawable-xxhdpi/ic_fullscreen_white_24dp.png"
+    },
+    {
+        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/debug/layout_design_layout_tab_text.xml.flat",
+        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/aa12c40593f51c1ccc3ffae4e0a865bd/res/layout/design_layout_tab_text.xml"
     },
     {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_fullscreen_exit_white_36dp.png.flat",

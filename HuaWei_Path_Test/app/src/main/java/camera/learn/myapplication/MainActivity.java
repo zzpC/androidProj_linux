@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -17,6 +18,8 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.widget.TextView;
 
+import java.io.File;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
@@ -27,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
 
         if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.
@@ -45,18 +47,39 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
             if (requestCode == SELECT_VIDEO) {
+                String path = Environment.getExternalStorageDirectory().toString();
+                File file = new File(path + File.pa
+                        thSeparator + "a.mp4");
+                if (file.exists()) {
+                    if (file.canRead()) {
+                        Log.e(TAG, "onActivityResult: r");
+
+                    }
+                    if (file.canWrite()) {
+                        Log.e(TAG, "onActivityResult: w");
+
+                    }
+                    if (file.canExecute()) {
+                        Log.e(TAG, "onActivityResult: x");
+                    }
+
+                    file.delete();
+                }
+                Log.e(TAG, "onActivityResult: environment " + path);
+
                 final Uri selectedImageUri = data.getData();
-                Log.e(TAG, "onActivityResult: "+selectedImageUri );
+//                Log.e(TAG, "onActivityResult: " + selectedImageUri);
                 final String s = getPath(selectedImageUri);
-                Log.e(TAG, "onActivityResult: "+s );
+
+
+                Log.e(TAG, "onActivityResult: 我的代码" + s);
 
             }
         }
     }
 
 
-
-    //点击播放视频
+    //点击播放视频f
     public void onClick(View view) {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Video.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(intent, SELECT_VIDEO);

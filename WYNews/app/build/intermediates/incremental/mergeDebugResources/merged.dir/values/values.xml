@@ -863,7 +863,9 @@
     <string name="top_tab_social">社会</string>
     <string name="v7_preference_off">OFF</string>
     <string name="v7_preference_on">ON</string>
+    <string name="video_playurl">"http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8"</string>
     <string name="video_text">播放视频!</string>
+    <string name="video_title">"视频标题1"</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>

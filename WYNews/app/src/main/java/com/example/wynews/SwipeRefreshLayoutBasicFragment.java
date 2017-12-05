@@ -122,7 +122,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         // Retrieve the ListView
         mListView = view.findViewById(R.id.swiperefresh_list);
 
-        mListAdapter = new MyAdapter(mNewsInfoList);
+        mListAdapter = new MyAdapter();
         // Set the adapter between the ListView and its backing data.
         mListView.setAdapter(mListAdapter);
         if (mListView.getCount() == 0) {
@@ -244,26 +244,19 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         private final int TYPE_1 = 0;
         private final int TYPE_2 = 1;
 
+        private LayoutInflater inflater_ = LayoutInflater.from(getContext());
 
-        private List<News> list_;
-        protected LayoutInflater inflater_;
-
-
-        public MyAdapter(List<News> list) {
-            this.list_ = list;
-            inflater_ = LayoutInflater.from(getContext());
-        }
 
 
         @Override
         public int getCount() {
-            Log.e("123", "getCount: size" + list_.size());
-            return list_.size();
+            Log.e("123", "getCount: size" + mNewsInfoList.size());
+            return mNewsInfoList.size();
         }
 
         @Override
         public Object getItem(int position) {
-            return list_.get(position);
+            return mNewsInfoList.get(position);
         }
 
         @Override
@@ -360,8 +353,8 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
         public void addAll(List<News> collection) {
             Log.e("123", "addAll: collectiton" + collection.size());
-            list_.addAll(0, collection);
-            Log.e("123", "addAll: list_" + list_.size());
+            mNewsInfoList.addAll(0, collection);
+            Log.e("123", "addAll: list_" + mNewsInfoList.size());
             notifyDataSetChanged();
         }
 
