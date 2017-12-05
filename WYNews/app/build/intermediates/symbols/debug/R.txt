@@ -1309,8 +1309,10 @@ int string top_tab_social 0x7f0e004a
 int string v7_preference_off 0x7f0e004b
 int string v7_preference_on 0x7f0e004c
 int string video_playurl 0x7f0e004d
-int string video_text 0x7f0e004e
-int string video_title 0x7f0e004f
+int string video_playurl1 0x7f0e004e
+int string video_text 0x7f0e004f
+int string video_title 0x7f0e0050
+int string video_title1 0x7f0e0051
 int style AlertDialog_AppCompat 0x7f0f0000
 int style AlertDialog_AppCompat_Light 0x7f0f0001
 int style Animation_AppCompat_Dialog 0x7f0f0002

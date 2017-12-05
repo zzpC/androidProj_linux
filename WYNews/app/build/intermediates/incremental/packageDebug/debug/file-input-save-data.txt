@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Dec 05 23:21:05 CST 2017
+#Wed Dec 06 00:03:10 CST 2017
 17.baseType=DIRECTORY
 4.path=lib/x86/libijkplayer.so
 25.base=/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/transforms/stripDebugSymbol/debug/0

@@ -52,8 +52,8 @@ public class VideoFragment extends Fragment {
         videoData.setPlayurl(getResources().getString(R.string.video_playurl));
         videoData.setTitle(getResources().getString(R.string.video_title));
         VideoData videoData1 = new VideoData();
-        videoData1.setPlayurl(getResources().getString(R.string.video_playurl));
-        videoData1.setTitle(getResources().getString(R.string.video_title));
+        videoData1.setPlayurl(getResources().getString(R.string.video_playurl1));
+        videoData1.setTitle(getResources().getString(R.string.video_title1));
         mVideoDataList.add(videoData);
         mVideoDataList.add(videoData1);
 
@@ -133,7 +133,7 @@ public class VideoFragment extends Fragment {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            VideoData videoData = mVideoDataList.get(position);
+            final VideoData videoData = mVideoDataList.get(position);
 
             if (convertView == null) {
                 videoHolder_ = new VideoHolder();
@@ -151,15 +151,21 @@ public class VideoFragment extends Fragment {
                 videoHolder_ = (VideoHolder) convertView.getTag();
             }
 
-//            videoHolder.title.setText(videoData.getTitle());
-//            videoHolder.playurl.setText(videoData.getPlayurl());+
-            if (videoHolder_ == null) {
-                Log.e("111", "getView: null");
-            } else {
-                Log.e("111", "getView: not null");
+            videoHolder_.tv_title.setText(videoData.getTitle());
+            videoHolder_.tv_playurl.setText(videoData.getPlayurl());
+
+//            videoHolder_.tv_title.setText(m);
+//            videoHolder_.tv_playurl.setText("http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8");
+
+            if (convertView!=null){
+                convertView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mSimplePlayer.setTitle(videoData.getTitle());
+                        mSimplePlayer.play(videoData.getPlayurl());
+                    }
+                });
             }
-            videoHolder_.tv_title.setText("视频标题1");
-            videoHolder_.tv_playurl.setText("http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8");
 
             return convertView;
         }

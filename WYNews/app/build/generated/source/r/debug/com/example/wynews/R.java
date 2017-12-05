@@ -4352,8 +4352,10 @@ public final class R {
     public static final int v7_preference_off=0x7f0e004b;
     public static final int v7_preference_on=0x7f0e004c;
     public static final int video_playurl=0x7f0e004d;
-    public static final int video_text=0x7f0e004e;
-    public static final int video_title=0x7f0e004f;
+    public static final int video_playurl1=0x7f0e004e;
+    public static final int video_text=0x7f0e004f;
+    public static final int video_title=0x7f0e0050;
+    public static final int video_title1=0x7f0e0051;
   }
   public static final class style {
     public static final int AlertDialog_AppCompat=0x7f0f0000;

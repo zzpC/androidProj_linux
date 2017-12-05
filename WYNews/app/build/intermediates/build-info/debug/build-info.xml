@@ -5,24 +5,23 @@
     build-mode="COLD"
     density="xxhdpi"
     format="10"
-    ir-eligibility="FIELD_TYPE_CHANGE"
     plugin-version="3.0.1"
-    timestamp="1512489348376"
+    timestamp="1512489958184"
     token="8011784295001842282"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="FIELD_ADDED" >
 
     <task
         name="javac"
-        duration="117" />
+        duration="142" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="6" />
+        duration="44" />
     <task
         name="verifier"
-        duration="1" />
+        duration="3" />
 
     <artifact
         location="/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
@@ -71,9 +70,16 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="FIELD_TYPE_CHANGE"
-        timestamp="1512489348376"
-        verifier="COLD_SWAP_REQUESTED" >
+        timestamp="1512489786309"
+        verifier="R_CLASS_CHANGE" >
+        <artifact
+            location="/home/zzp/AndroidStudioProjects/WYNews/app/build/outputs/apk/debug/app-debug.apk"
+            type="SPLIT_MAIN" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1512489958184"
+        verifier="FIELD_ADDED" >
         <artifact
             location="/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
             type="SPLIT" />
