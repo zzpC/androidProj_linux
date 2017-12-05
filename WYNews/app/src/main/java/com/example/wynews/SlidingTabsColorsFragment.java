@@ -201,6 +201,10 @@ public class SlidingTabsColorsFragment extends Fragment {
                 return mTabs.get(position).getDividerColor();
             }
 
+            void f(){
+                return;
+            }
+
         });
         // END_INCLUDE (tab_colorizer)
         // END_INCLUDE (setup_slidingtablayout)
