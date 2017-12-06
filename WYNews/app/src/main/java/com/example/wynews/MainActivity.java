@@ -1,15 +1,16 @@
 package com.example.wynews;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.view.ViewPager;
+
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Surface;
 import android.view.View;
 
 
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     static {
         System.loadLibrary("native-lib");
     }
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -47,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         Bundle bundle = new Bundle();
         bundle.putString("url", info);
         newsContentFragment.setArguments(bundle);
-            FragmentManager manager = getSupportFragmentManager();
+        FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().replace(R.id.bottom_pager, newsContentFragment).addToBackStack(null).commit();
 
     }
@@ -58,11 +60,22 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        FloatingActionButton mFab=findViewById(R.id.fab);
+
+        BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         switchToFragment(0);
+
+
+        CoordinatorLayout mCoordinatorLayout = findViewById(R.id.main_coor_layout);
+        mFab = findViewById(R.id.fab);
+        mFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                ((BaseFragment) mCurrFragment).smoothScrollToTop();
+            }
+        });
 
     }
 
@@ -84,6 +97,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                 break;
         }
     }
+
 
 
     @Override

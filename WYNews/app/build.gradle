@@ -68,4 +68,7 @@ dependencies {
 
     compile 'tv.danmaku.ijk.media:ijkplayer-exo:0.8.4'
 
+    implementation 'com.android.support:design:26.1.0'
+
+
 }

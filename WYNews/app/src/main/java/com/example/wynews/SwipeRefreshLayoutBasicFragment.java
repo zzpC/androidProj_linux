@@ -18,10 +18,9 @@ package com.example.wynews;
 
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
@@ -34,6 +33,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.wynews.Data4Adapter.News;
 import com.example.wynews.bitmapUtils.MyBitmapUtils;
 
 import java.io.BufferedReader;
@@ -48,11 +48,6 @@ import static com.example.wynews.HttpUtil.isNetworkAvailable;
 
 public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
-    private static final String LOG_TAG = SwipeRefreshLayoutBasicFragment.class.getSimpleName();
-
-    private static final int LIST_ITEM_COUNT = 20;
-
-
     private SwipeRefreshLayout mSwipeRefreshLayout;
 
     private ListView mListView;
@@ -61,12 +56,12 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
     private int mStyle;
     private String mNewsUrl;
 
-    private MyAdapter mListAdapter;
+    private NewsPagerAdapter mListAdapter;
 
     private List<News> mNewsInfoList = new ArrayList<News>();
 
-    public static interface OnWebViewListener {
-        public abstract void onWebView(String info);
+    public interface OnWebViewListener {
+        void onWebView(String info);
     }
 
     private OnWebViewListener mListener;
@@ -100,6 +95,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //mStyle 标签的编号
         mStyle = getArguments().getInt("sliding_tab_no");
         mNewsUrl = getArguments().getString("news_info");
 
@@ -108,11 +104,11 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
     // BEGIN_INCLUDE (inflate_view)
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_swiperefreshlayoutbasic, container, false);
 
-        mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swiperefresh);
+        mSwipeRefreshLayout = view.findViewById(R.id.swiperefresh);
 
         mSwipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.cardview_dark_background),
                 getResources().getColor(R.color.cardview_light_background),
@@ -122,7 +118,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         // Retrieve the ListView
         mListView = view.findViewById(R.id.swiperefresh_list);
 
-        mListAdapter = new MyAdapter();
+        mListAdapter = new NewsPagerAdapter();
         // Set the adapter between the ListView and its backing data.
         mListView.setAdapter(mListAdapter);
         if (mListView.getCount() == 0) {
@@ -130,15 +126,11 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
             mListAdapter.notifyDataSetChanged();
         }
 
-        Log.e("123", "onCreateView: " + mNewsUrl);
-
         return view;
     }
-    // END_INCLUDE (inflate_view)
 
-    // BEGIN_INCLUDE (setup_views)
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
 
@@ -238,14 +230,13 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
     }
 
 
-    class MyAdapter extends BaseAdapter {
+    class NewsPagerAdapter extends BaseAdapter {
 
         private final int TYPE_COUNT = 2;
         private final int TYPE_1 = 0;
         private final int TYPE_2 = 1;
 
         private LayoutInflater inflater_ = LayoutInflater.from(getContext());
-
 
 
         @Override
@@ -282,8 +273,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                     case TYPE_1:
                         convertView = inflater_.inflate(R.layout.item_swiperefresh, null);
                         viewHolder = new ViewHolder();
-                        viewHolder.iv_pic = (ImageView) convertView.findViewById(R.id.item_pic);
-                        viewHolder.iv_pic1 = convertView.findViewById(R.id.item_pic1);
+                        viewHolder.iv_pic = convertView.findViewById(R.id.item_pic);
                         viewHolder.tv_title = convertView.findViewById(R.id.item_title);
                         convertView.setTag(viewHolder);
                         break;
@@ -291,7 +281,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                     case TYPE_2:
                         convertView = inflater_.inflate(R.layout.item_swiperefresh1, null);
                         viewHolder1 = new ViewHolder1();
-                        viewHolder1.tv_title = (TextView) convertView.findViewById(R.id.item_title);
+                        viewHolder1.tv_title = convertView.findViewById(R.id.item_title);
                         viewHolder1.iv_pic = convertView.findViewById(R.id.item_pic);
                         convertView.setTag(viewHolder1);
                         break;
@@ -306,12 +296,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                         break;
                 }
             }
-            Log.e("判断item", "getItemViewType: pic1" + currentType);
-
-            Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
             MyBitmapUtils myBitmapUtils = new MyBitmapUtils();
-
-
             switch (currentType) {
                 case TYPE_1:
                     viewHolder.tv_title.setText(news.getTitle());
@@ -363,7 +348,6 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
             private TextView tv_title;
             private ImageView iv_pic;
-            private ImageView iv_pic1;
         }
 
         class ViewHolder1 {
@@ -385,17 +369,14 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
         @Override
         public int getItemViewType(int position) {
-            Log.e("styleingetview", "getItemViewType: ??" + mStyle);
-
-
             switch (mStyle) {
                 case 0:
-                    if (position % 4 < 2) {
+                    if (position % 8 < 4) {
                         return TYPE_1;
                     }
                     return TYPE_2;
                 case 1:
-                    if (position % 4 < 2) {
+                    if (position % 8 < 4) {
                         return TYPE_1;
                     }
                     return TYPE_2;

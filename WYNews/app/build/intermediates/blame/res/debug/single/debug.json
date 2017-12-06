@@ -1780,6 +1780,10 @@
         "source": "/home/zzp/AndroidStudioProjects/WYNews/app/src/main/res/drawable-xhdpi/ic_play_arrow_white_24dp.png"
     },
     {
+        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/debug/drawable-xhdpi_up.png.flat",
+        "source": "/home/zzp/AndroidStudioProjects/WYNews/app/src/main/res/drawable-xhdpi/up.png"
+    },
+    {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_half_black_48dp.png.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-hdpi-v4/abc_ic_star_half_black_48dp.png"
     },
@@ -1886,6 +1890,10 @@
     {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/debug/color-v11_abc_background_cache_hint_selector_material_dark.xml.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/debug/menu_main.xml.flat",
+        "source": "/home/zzp/AndroidStudioProjects/WYNews/app/src/main/res/menu/main.xml"
     },
     {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/debug/drawable_abc_ic_menu_overflow_material.xml.flat",
@@ -2026,6 +2034,10 @@
     {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_black_16dp.png.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-hdpi-v4/abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/debug/layout_app_bar_main.xml.flat",
+        "source": "/home/zzp/AndroidStudioProjects/WYNews/app/src/main/res/layout/app_bar_main.xml"
     },
     {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/debug/color_switch_thumb_material_dark.xml.flat",

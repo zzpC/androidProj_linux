@@ -2,6 +2,9 @@ package com.example.wynews;
 
 import android.util.Log;
 
+import com.example.wynews.Data4Adapter.News;
+import com.example.wynews.Data4Adapter.NewsBuilder;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 

@@ -14,6 +14,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.wynews.Data4Adapter.VideoData;
+import com.example.wynews.Data4Adapter.VideoDataBuilder;
 import com.example.wynews.MediaPlayer.SimplePlayer;
 
 import java.util.ArrayList;
@@ -45,31 +46,31 @@ public class VideoFragment extends Fragment {
         View view;
 
         view = inflater.inflate(R.layout.fragment_video, container, false);
-        mSimplePlayer = (SimplePlayer) view.findViewById(R.id.videofragment_player);
+        mSimplePlayer = view.findViewById(R.id.videofragment_player);
         mListView = view.findViewById(R.id.videofragment_listview);
 
-        VideoData videoData = new VideoData();
-        videoData.setPlayurl(getResources().getString(R.string.video_playurl));
-        videoData.setTitle(getResources().getString(R.string.video_title));
-        VideoData videoData1 = new VideoData();
-        videoData1.setPlayurl(getResources().getString(R.string.video_playurl1));
-        videoData1.setTitle(getResources().getString(R.string.video_title1));
+        VideoDataBuilder videoDataBuilder = new VideoDataBuilder();
+        VideoData videoData = videoDataBuilder.setPlayurl(getResources().getString(R.string.video_playurl)).setTitle(getResources()
+                .getString(R.string.video_title)).createVideoData();
+
+        VideoDataBuilder videoDataBuilder1 = new VideoDataBuilder();
+        VideoData videoData1 = videoDataBuilder1.setPlayurl(getResources().getString(R.string.video_playurl1))
+                .setTitle(getResources().getString(R.string.video_title1)).createVideoData();
         mVideoDataList.add(videoData);
         mVideoDataList.add(videoData1);
 
         mVideoAdapter = new VideoAdapter();
         mListView.setAdapter(mVideoAdapter);
-        mVideoAdapter.notifyDataSetChanged();
-
 
         mSimplePlayer.setTitle("美食—教你做蛋糕");
         mSimplePlayer.play("http://ips.ifeng.com/video19.ifeng.com/video09/2016/07/25/34595-102-009-0533.mp4");
+//        mSimplePlayer.play("rtmp://182.254.231.136/live/streamName");
+//        mSimplePlayer.play("http://192.168.1.172:8080/hls/streamName.m3u8");
 
         mSimplePlayer.setTitle("cctv-6");
         mSimplePlayer.play("http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8");
-//        mSimplePlayer.play("http://live.bilibili.com/702245");
         mSimplePlayer.live(true);
-
+//
         mSimplePlayer.start();
 
 
@@ -142,12 +143,12 @@ public class VideoFragment extends Fragment {
                 videoHolder_.tv_title = convertView.findViewById(R.id.videofragment_title);
                 if (videoHolder_ == null) {
                     Log.e("111", "getView: " + videoData);
-                }else {
-                    Log.e("111", "getView: not nulld"+videoHolder_ );
+                } else {
+                    Log.e("111", "getView: not nulld" + videoHolder_);
                 }
                 convertView.setTag(videoHolder_);
             } else {
-                Log.e("111", "getView: "+"here" );
+                Log.e("111", "getView: " + "here");
                 videoHolder_ = (VideoHolder) convertView.getTag();
             }
 
@@ -157,7 +158,7 @@ public class VideoFragment extends Fragment {
 //            videoHolder_.tv_title.setText(m);
 //            videoHolder_.tv_playurl.setText("http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8");
 
-            if (convertView!=null){
+            if (convertView != null) {
                 convertView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
