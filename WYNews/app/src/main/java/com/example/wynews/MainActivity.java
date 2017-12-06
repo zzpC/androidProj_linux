@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+
         switchToFragment(0);
 
 
