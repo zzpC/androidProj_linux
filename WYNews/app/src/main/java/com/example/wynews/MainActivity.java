@@ -9,7 +9,6 @@ import android.support.v4.app.FragmentManager;
 
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -60,11 +59,13 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FloatingActionButton mFab=findViewById(R.id.fab);
+        FloatingActionButton mFab = findViewById(R.id.fab);
 
-        BottomNavigationView navigation = findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+        CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) bottomNavigationView.getLayoutParams();
+        layoutParams.setBehavior(new BottomNavigationViewBehavior());
 
         switchToFragment(0);
 
@@ -98,7 +99,6 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                 break;
         }
     }
-
 
 
     @Override

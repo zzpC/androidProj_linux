@@ -2,30 +2,34 @@
 <instant-run
     abi="arm64-v8a,armeabi-v7a,armeabi"
     api-level="24"
-    build-mode="HOT_WARM"
+    build-mode="COLD"
     density="xxhdpi"
     format="10"
+    ir-eligibility="CLASS_ADDED"
     plugin-version="3.0.1"
-    timestamp="1512574219482"
+    timestamp="1512578138005"
     token="8011784295001842282"
-    verifier="COMPATIBLE" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="78" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="21" />
     <task
         name="verifier"
-        duration="0" />
+        duration="1" />
 
     <artifact
-        location="/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
-        type="RESOURCES" />
+        location="/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/zzp/AndroidStudioProjects/WYNews/app/build/outputs/apk/debug/app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
@@ -70,27 +74,24 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1512573093243"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1512577195604"
         verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="CLASS_ADDED"
+        timestamp="1512578138005"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            type="SPLIT" />
         <artifact
             location="/home/zzp/AndroidStudioProjects/WYNews/app/build/outputs/apk/debug/app-debug.apk"
             type="SPLIT_MAIN" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1512573111310"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/builds/debug/1512573111310/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1512574219482"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
-            type="RESOURCES" />
     </build>
 
 </instant-run>

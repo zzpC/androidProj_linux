@@ -22,6 +22,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -117,6 +118,8 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
         // Retrieve the ListView
         mListView = view.findViewById(R.id.swiperefresh_list);
+        mListView.setNestedScrollingEnabled(true);
+        ViewCompat.setNestedScrollingEnabled(mListView,true);
 
         mListAdapter = new NewsPagerAdapter();
         // Set the adapter between the ListView and its backing data.
