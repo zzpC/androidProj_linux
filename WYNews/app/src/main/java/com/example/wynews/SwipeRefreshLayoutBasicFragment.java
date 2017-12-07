@@ -58,11 +58,12 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
     //Tab编号
     private int mTopTab;
-    private String mNewsUrl;
 
     private NewsPagerAdapter mListAdapter;
 
-    private List<News> mNewsInfoList = new ArrayList<News>();
+    private List<News> mNewsInfoList = new ArrayList<>();
+
+
 
     public interface OnWebViewListener {
         void onWebView(String info);
@@ -101,7 +102,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         super.onCreate(savedInstanceState);
         //mStyle 标签的编号
         mTopTab = getArguments().getInt("sliding_tab_no");
-        mNewsUrl = getArguments().getString("news_info");
+        String mNewsUrl = getArguments().getString("news_info");
 
         Log.e("123", "onCreate: " + mTopTab);
     }

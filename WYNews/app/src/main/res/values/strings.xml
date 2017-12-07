@@ -28,6 +28,8 @@
     <string name="video_title1">"视频标题1"</string>
     <string name="video_playurl1">"http://ivi.bupt.edu.cn/hls/cctv8hd.m3u8"</string>
 
+    <string name="action_search">搜索</string>
+
     <string name="nav_girls">Girls</string>
 
 

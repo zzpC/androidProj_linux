@@ -1,5 +1,7 @@
 package com.example.wynews;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -8,9 +10,12 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentManager;
 
 import android.support.v7.app.AppCompatActivity;
+
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.support.v7.widget.SearchView;
+import android.widget.Toolbar;
 
 
 public class MainActivity extends AppCompatActivity implements SwipeRefreshLayoutBasicFragment.OnWebViewListener {
@@ -59,7 +64,6 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FloatingActionButton mFab = findViewById(R.id.fab);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -71,13 +75,29 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
 
         CoordinatorLayout mCoordinatorLayout = findViewById(R.id.main_coor_layout);
-        mFab = findViewById(R.id.fab);
-        mFab.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton floatingActionButton = findViewById(R.id.fab);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 //                ((BaseFragment) mCurrFragment).smoothScrollToTop();
             }
         });
+
+        SearchView mSearchView = findViewById(R.id.searchview);
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        mSearchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        mSearchView.setIconifiedByDefault(false);
+
+//        Toolbar mToolbar = findViewById(R.id.toolbar);
+//        mToolbar.setTitle(R.string.nav_girls);
+//        setSupportActionBar(mToolbar);
+//        mToolbar.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                return mGestureDetector.onTouchEvent(event);
+//            }
+//        });
+
 
     }
 

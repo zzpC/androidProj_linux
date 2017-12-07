@@ -29,8 +29,6 @@ public class VideoFragment extends Fragment {
     private static final String TAG = "VideoFragment";
 
     private SimplePlayer mSimplePlayer;
-    private ListView mListView;
-    private VideoAdapter mVideoAdapter;
     private List<VideoData> mVideoDataList = new ArrayList<VideoData>();
 
 
@@ -47,7 +45,7 @@ public class VideoFragment extends Fragment {
 
         view = inflater.inflate(R.layout.fragment_video, container, false);
         mSimplePlayer = view.findViewById(R.id.videofragment_player);
-        mListView = view.findViewById(R.id.videofragment_listview);
+        ListView mListView = view.findViewById(R.id.videofragment_listview);
 
         VideoDataBuilder videoDataBuilder = new VideoDataBuilder();
         VideoData videoData = videoDataBuilder.setPlayurl(getResources().getString(R.string.video_playurl)).setTitle(getResources()
@@ -59,7 +57,7 @@ public class VideoFragment extends Fragment {
         mVideoDataList.add(videoData);
         mVideoDataList.add(videoData1);
 
-        mVideoAdapter = new VideoAdapter();
+        VideoAdapter mVideoAdapter = new VideoAdapter();
         mListView.setAdapter(mVideoAdapter);
 
         mSimplePlayer.setTitle("美食—教你做蛋糕");
