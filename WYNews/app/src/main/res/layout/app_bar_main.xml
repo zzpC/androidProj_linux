@@ -13,8 +13,7 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_scrollFlags="scroll|enterAlways">
+            android:layout_height="wrap_content">
 
 
             <android.support.v7.widget.SearchView
@@ -29,23 +28,22 @@
     <FrameLayout
         android:id="@+id/bottom_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        android:layout_height="match_parent" />
 
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/up"
-        app:layout_behavior=""
-
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="72dp"
+
         android:layout_marginEnd="20dp"
+        android:src="@drawable/up"
         app:borderWidth="0dp"
         app:elevation="6dp"
-        app:pressedTranslationZ="52dp"  />
+        app:layout_behavior=""
+        app:pressedTranslationZ="52dp" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
@@ -53,6 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="?android:attr/windowBackground"
+        app:layout_scrollFlags="scroll|enterAlways"
         app:menu="@menu/navigation" />
 
 

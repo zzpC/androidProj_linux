@@ -41,7 +41,7 @@ import java.util.List;
 //创建TabLayout+viewpager的视图作为acitvity一部分,getitem生成新的fragment,覆盖本fragment
 public class SlidingTabsColorsFragment extends Fragment {
     private static final String TAG = "SlidingTabsColorsFragme";
-    private boolean Isfirst=true;
+    private boolean Isfirst = true;
 
     /**
      * This class represents a tab to be displayed by {@link ViewPager} and it's associated
@@ -165,30 +165,16 @@ public class SlidingTabsColorsFragment extends Fragment {
      */
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        // BEGIN_INCLUDE (setup_viewpager)
-        // Get the ViewPager and set it's PagerAdapter so that it can display items
-        /*
-      A {@link ViewPager} which will be used in conjunction with the {@link SlidingTabLayout} above.
-     */
-        ViewPager mViewPager = (ViewPager) view.findViewById(R.id.viewpager);
-        mViewPager.setAdapter(new SampleFragmentPagerAdapter(getChildFragmentManager()));
-        // END_INCLUDE (setup_viewpager)
 
-        // BEGIN_INCLUDE (setup_slidingtablayout)
-        // Give the SlidingTabLayout the ViewPager, this must be done AFTER the ViewPager has had
-        // it's PagerAdapter set.
-        /*
-      A custom {@link ViewPager} title strip which looks much like Tabs present in Android v4.0 and
-      above, but is designed to give continuous feedback to the user when scrolling.
-     */
+        ViewPager mViewPager = (ViewPager) view.findViewById(R.id.viewpager);
+        mViewPager.setOffscreenPageLimit(4);
+        mViewPager.setAdapter(new SampleFragmentPagerAdapter(getChildFragmentManager()));
+
         SlidingTabLayout mSlidingTabLayout = (SlidingTabLayout) view.findViewById(R.id.sliding_tabs);
-//        mSlidingTabLayout.setDistributeEvenly(true);
 
         mSlidingTabLayout.setViewPager(mViewPager);
 
-        // BEGIN_INCLUDE (tab_colorizer)
-        // Set a TabColorizer to customize the indicator and divider colors. Here we just retrieve
-        // the tab at the position, and return it's set color
+
         mSlidingTabLayout.setCustomTabColorizer(new SlidingTabLayout.TabColorizer() {
 
             @Override
@@ -201,15 +187,9 @@ public class SlidingTabsColorsFragment extends Fragment {
                 return mTabs.get(position).getDividerColor();
             }
 
-            void f(){
-                return;
-            }
-
         });
-        // END_INCLUDE (tab_colorizer)
-        // END_INCLUDE (setup_slidingtablayout)
+
     }
-    // END_INCLUDE (fragment_onviewcreated)
 
     /**
      * The {@link FragmentPagerAdapter} used to display pages in this sample. The individual pages
@@ -260,18 +240,15 @@ public class SlidingTabsColorsFragment extends Fragment {
             spannableString.setSpan(imageSpan, 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             return spannableString;
 
-
-//            return mTabs.get(position).getTitle();
         }
-        // END_INCLUDE (pageradapter_getpagetitle)
 
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        if (Isfirst){
-            Isfirst=false;
+        if (Isfirst) {
+            Isfirst = false;
             return;
         }
         getActivity().finish();
