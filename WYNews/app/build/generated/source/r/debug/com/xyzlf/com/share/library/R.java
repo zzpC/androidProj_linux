@@ -599,12 +599,12 @@ public final class R {
         public static final int title = 0x7f0900d8;
         public static final int title_sep = 0x7f0900da;
         public static final int title_template = 0x7f0900db;
-        public static final int top = 0x7f0900dc;
-        public static final int topPanel = 0x7f0900dd;
-        public static final int up = 0x7f0900e7;
-        public static final int useLogo = 0x7f0900e8;
-        public static final int withText = 0x7f0900f2;
-        public static final int wrap_content = 0x7f0900f4;
+        public static final int top = 0x7f0900dd;
+        public static final int topPanel = 0x7f0900de;
+        public static final int up = 0x7f0900e8;
+        public static final int useLogo = 0x7f0900e9;
+        public static final int withText = 0x7f0900f3;
+        public static final int wrap_content = 0x7f0900f5;
     }
     public static final class integer {
         public static final int abc_config_activityDefaultDur = 0x7f0a0000;

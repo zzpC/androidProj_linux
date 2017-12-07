@@ -554,14 +554,14 @@ public final class R {
         public static final int preference_seekbar_padding_end = 0x7f07009e;
         public static final int preference_seekbar_padding_start = 0x7f07009f;
         public static final int preference_seekbar_value_width = 0x7f0700a0;
-        public static final int tooltip_corner_radius = 0x7f0700a1;
-        public static final int tooltip_horizontal_padding = 0x7f0700a2;
-        public static final int tooltip_margin = 0x7f0700a3;
-        public static final int tooltip_precise_anchor_extra_offset = 0x7f0700a4;
-        public static final int tooltip_precise_anchor_threshold = 0x7f0700a5;
-        public static final int tooltip_vertical_padding = 0x7f0700a6;
-        public static final int tooltip_y_offset_non_touch = 0x7f0700a7;
-        public static final int tooltip_y_offset_touch = 0x7f0700a8;
+        public static final int tooltip_corner_radius = 0x7f0700a2;
+        public static final int tooltip_horizontal_padding = 0x7f0700a3;
+        public static final int tooltip_margin = 0x7f0700a4;
+        public static final int tooltip_precise_anchor_extra_offset = 0x7f0700a5;
+        public static final int tooltip_precise_anchor_threshold = 0x7f0700a6;
+        public static final int tooltip_vertical_padding = 0x7f0700a7;
+        public static final int tooltip_y_offset_non_touch = 0x7f0700a8;
+        public static final int tooltip_y_offset_touch = 0x7f0700a9;
     }
     public static final class drawable {
         public static final int abc_ab_share_pack_mtrl_alpha = 0x7f080007;
@@ -767,10 +767,10 @@ public final class R {
         public static final int title = 0x7f0900d8;
         public static final int titleDividerNoCustom = 0x7f0900d9;
         public static final int title_template = 0x7f0900db;
-        public static final int topPanel = 0x7f0900dd;
-        public static final int uniform = 0x7f0900e6;
-        public static final int up = 0x7f0900e7;
-        public static final int wrap_content = 0x7f0900f4;
+        public static final int topPanel = 0x7f0900de;
+        public static final int uniform = 0x7f0900e7;
+        public static final int up = 0x7f0900e8;
+        public static final int wrap_content = 0x7f0900f5;
     }
     public static final class integer {
         public static final int abc_config_activityDefaultDur = 0x7f0a0000;
@@ -875,8 +875,8 @@ public final class R {
         public static final int abc_toolbar_collapse_description = 0x7f0e001c;
         public static final int search_menu_title = 0x7f0e002c;
         public static final int status_bar_notification_info_overflow = 0x7f0e0041;
-        public static final int v7_preference_off = 0x7f0e004d;
-        public static final int v7_preference_on = 0x7f0e004e;
+        public static final int v7_preference_off = 0x7f0e004e;
+        public static final int v7_preference_on = 0x7f0e004f;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat = 0x7f0f0000;

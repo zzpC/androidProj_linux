@@ -1,5 +1,6 @@
 package com.example.wynews;
 
+
 import android.app.SearchManager;
 import android.content.Context;
 import android.os.Bundle;
@@ -9,13 +10,15 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentManager;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.support.v7.widget.SearchView;
-import android.widget.Toolbar;
+
 
 
 public class MainActivity extends AppCompatActivity implements SwipeRefreshLayoutBasicFragment.OnWebViewListener {
@@ -71,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) bottomNavigationView.getLayoutParams();
         layoutParams.setBehavior(new BottomNavigationViewBehavior());
 
-        switchToFragment(0);
+
 
 
         CoordinatorLayout mCoordinatorLayout = findViewById(R.id.main_coor_layout);
@@ -88,9 +91,9 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         mSearchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         mSearchView.setIconifiedByDefault(false);
 
-//        Toolbar mToolbar = findViewById(R.id.toolbar);
-//        mToolbar.setTitle(R.string.nav_girls);
-//        setSupportActionBar(mToolbar);
+        Toolbar mToolbar = findViewById(R.id.toolbar);
+        mToolbar.setTitle(R.string.nav_girls);
+        setSupportActionBar(mToolbar);
 //        mToolbar.setOnTouchListener(new View.OnTouchListener() {
 //            @Override
 //            public boolean onTouch(View v, MotionEvent event) {
@@ -98,21 +101,26 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 //            }
 //        });
 
-
+        switchToFragment(0);
     }
 
 
     public void switchToFragment(int ftNo) {
+        ActionBar actionBar=getSupportActionBar();
         FragmentManager manager = getSupportFragmentManager();
 
         switch (ftNo) {
             case 0:
+                if (actionBar!=null) actionBar.setTitle(R.string.title_home);
                 manager.beginTransaction().replace(R.id.bottom_pager, new SlidingTabsColorsFragment()).commit();
                 break;
             case 1:
+                if (actionBar!=null) actionBar.setTitle(R.string.title_video);
                 manager.beginTransaction().replace(R.id.bottom_pager, new VideoFragment()).addToBackStack(null).commit();
                 break;
             case 2:
+                if (actionBar!=null) actionBar.setTitle(R.string.title_settings);
+
                 manager.beginTransaction().replace(R.id.bottom_pager, new SettingsFragment()).addToBackStack(null).commit();
                 break;
             default:

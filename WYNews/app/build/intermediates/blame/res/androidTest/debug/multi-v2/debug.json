@@ -814,22 +814,6 @@
             ]
         },
         {
-            "outputFile": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/values-v22_values-v22.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/values-v22/values-v22.xml",
-                    "from": {
-                        "startLines": "2,3,4,9",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,130,217,553",
-                        "endLines": "2,3,8,13",
-                        "endColumns": "74,86,12,12",
-                        "endOffsets": "125,212,548,896"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/values-pt_values-pt.arsc.flat",
             "map": [
                 {
@@ -857,6 +841,22 @@
                         "startOffsets": "105,225,331,438,527,628,746,829,909,996,1103,1215,1317,1425,1532,1642,1804,1904",
                         "endColumns": "119,105,106,88,100,117,82,79,86,106,111,101,107,106,109,161,99,84",
                         "endOffsets": "220,326,433,522,623,741,824,904,991,1098,1210,1312,1420,1527,1637,1799,1899,1984"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/androidTest/debug/values-v22_values-v22.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/values-v22/values-v22.xml",
+                    "from": {
+                        "startLines": "2,3,4,9",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,130,217,553",
+                        "endLines": "2,3,8,13",
+                        "endColumns": "74,86,12,12",
+                        "endOffsets": "125,212,548,896"
                     }
                 }
             ]

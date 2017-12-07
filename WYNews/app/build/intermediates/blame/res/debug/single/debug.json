@@ -680,12 +680,12 @@
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/aa12c40593f51c1ccc3ffae4e0a865bd/res/color/design_error.xml"
     },
     {
-        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/debug/drawable_abc_list_selector_holo_light.xml.flat",
-        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable/abc_list_selector_holo_light.xml"
-    },
-    {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_channel_edit.png.flat",
         "source": "/home/zzp/AndroidStudioProjects/WYNews/app/src/main/res/mipmap-xxhdpi/ic_channel_edit.png"
+    },
+    {
+        "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/debug/drawable_abc_list_selector_holo_light.xml.flat",
+        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable/abc_list_selector_holo_light.xml"
     },
     {
         "merged": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/res/merged/debug/layout_design_navigation_item_header.xml.flat",
