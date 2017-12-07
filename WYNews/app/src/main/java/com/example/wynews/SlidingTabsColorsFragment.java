@@ -166,11 +166,11 @@ public class SlidingTabsColorsFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
 
-        ViewPager mViewPager = (ViewPager) view.findViewById(R.id.viewpager);
+        ViewPager mViewPager = view.findViewById(R.id.viewpager);
         mViewPager.setOffscreenPageLimit(4);
         mViewPager.setAdapter(new SampleFragmentPagerAdapter(getChildFragmentManager()));
 
-        SlidingTabLayout mSlidingTabLayout = (SlidingTabLayout) view.findViewById(R.id.sliding_tabs);
+        SlidingTabLayout mSlidingTabLayout = view.findViewById(R.id.sliding_tabs);
 
         mSlidingTabLayout.setViewPager(mViewPager);
 

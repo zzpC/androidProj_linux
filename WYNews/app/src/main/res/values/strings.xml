@@ -30,6 +30,19 @@
     <string name="video_title1">"视频标题1"</string>
     <string name="video_playurl1">"http://ivi.bupt.edu.cn/hls/cctv8hd.m3u8"</string>
 
+    <string name="video_title2">"直播_rtmp"</string>
+    <string name="video_playurl2">"rtmp://192.168.1.172:1935/rtmp_hls"</string>
+
+
+    <string name="video_title3">"点播_rtmp"</string>
+    <string name="video_playurl3">"rtmp://182.254.231.136:1935/vod/make_cake.mp4"</string>
+
+    <string name="video_title4">"点播_rtmp"</string>
+    <string name="video_playurl4">"rtmp://192.168.1.172:1935/vod/make_cake.mp4"</string>
+
+
+
+
     <string name="action_search">搜索</string>
 
     <string name="nav_girls">Girls</string>

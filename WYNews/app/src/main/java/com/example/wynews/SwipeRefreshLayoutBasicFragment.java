@@ -119,7 +119,6 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                 getResources().getColor(R.color.cardview_shadow_start_color));
         // END_INCLUDE (change_colors)
 
-        // Retrieve the ListView
         mRecyclerView = view.findViewById(R.id.swiperefresh_list);
         mRecyclerView.setNestedScrollingEnabled(true);
         ViewCompat.setNestedScrollingEnabled(mRecyclerView, true);
@@ -133,7 +132,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
             public int getSpanSize(int position) {
                 int viewType = mListAdapter.getItemViewType(position);
 
-                return viewType == NewsPagerAdapter.SOCIAL_NEWS || viewType == NewsPagerAdapter.CHINA_NEWS ? 1 : 2;
+                return viewType == NewsPagerAdapter.SOCIAL_NEWS || viewType == NewsPagerAdapter.CHINA_NEWS ? 2 : 1;
             }
         });
 
@@ -259,7 +258,6 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         class ViewHolder extends RecyclerView.ViewHolder {
             private TextView tv_title;
             private ImageView iv_pic;
-//            private TextView tv_
             private View itemView;
 
             ViewHolder(View itemView) {

@@ -51,23 +51,39 @@ public class VideoFragment extends Fragment {
         VideoData videoData = videoDataBuilder.setPlayurl(getResources().getString(R.string.video_playurl)).setTitle(getResources()
                 .getString(R.string.video_title)).createVideoData();
 
-        VideoDataBuilder videoDataBuilder1 = new VideoDataBuilder();
-        VideoData videoData1 = videoDataBuilder1.setPlayurl(getResources().getString(R.string.video_playurl1))
+        VideoData videoData1 = videoDataBuilder.setPlayurl(getResources().getString(R.string.video_playurl1))
                 .setTitle(getResources().getString(R.string.video_title1)).createVideoData();
+
+        VideoData videoData2 = videoDataBuilder.setPlayurl(getResources().getString(R.string.video_playurl2))
+                .setTitle(getResources().getString(R.string.video_title2)).createVideoData();
+
+        VideoData videoData3 = videoDataBuilder.setPlayurl(getResources().getString(R.string.video_playurl3))
+                .setTitle(getResources().getString(R.string.video_title3)).createVideoData();
+
+        VideoData videoData4 = videoDataBuilder.setPlayurl(getResources().getString(R.string.video_playurl4))
+                .setTitle(getResources().getString(R.string.video_title4)).createVideoData();
+
         mVideoDataList.add(videoData);
         mVideoDataList.add(videoData1);
+        mVideoDataList.add(videoData2);
+        mVideoDataList.add(videoData3);
+        mVideoDataList.add(videoData4);
 
         VideoAdapter mVideoAdapter = new VideoAdapter();
         mListView.setAdapter(mVideoAdapter);
 
-        mSimplePlayer.setTitle("美食—教你做蛋糕");
-        mSimplePlayer.play("http://ips.ifeng.com/video19.ifeng.com/video09/2016/07/25/34595-102-009-0533.mp4");
-//        mSimplePlayer.play("rtmp://182.254.231.136/live/streamName");
-//        mSimplePlayer.play("http://192.168.1.172:8080/hls/streamName.m3u8");
+//        mSimplePlayer.setTitle("美食—教你做蛋糕");
+//        mSimplePlayer.play("http://ips.ifeng.com/video19.ifeng.com/video09/2016/07/25/34595-102-009-0533.mp4");
+////        mSimplePlayer.play("rtmp://182.254.231.136/live/streamName");
+//        mSimplePlayer.play("rtmp://192.168.1.172:1935/rtmp_hls");
 
-        mSimplePlayer.setTitle("cctv-6");
-        mSimplePlayer.play("http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8");
-        mSimplePlayer.live(true);
+//        mSimplePlayer.setTitle("cctv-6");
+//        mSimplePlayer.play("http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8");
+//        mSimplePlayer.live(true);
+
+        mSimplePlayer.setTitle(getResources().getString(R.string.video_title4));
+        mSimplePlayer.play(getResources().getString(R.string.video_playurl4));
+
 //
         mSimplePlayer.start();
 
