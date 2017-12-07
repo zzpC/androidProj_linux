@@ -64,7 +64,6 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
     private List<News> mNewsInfoList = new ArrayList<>();
 
 
-
     public interface OnWebViewListener {
         void onWebView(String info);
     }
@@ -222,7 +221,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                         }
                         in.close();//????????????
                         List<News> list = ParseDatas.parseJSON(response.toString());
-                        Log.e("list size test", "doInBackground: "+list.size());
+                        Log.e("list size test", "doInBackground: " + list.size());
                         mNewsInfoList.addAll(0, list);
 
 
@@ -251,163 +250,6 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
     }
 
 
-//    class NewsPagerAdapter extends BaseAdapter {
-//
-//        private final int TYPE_COUNT = 2;
-//        private final int TYPE_1 = 0;
-//        private final int TYPE_2 = 1;
-//
-//        private LayoutInflater inflater_ = LayoutInflater.from(getContext());
-//
-//
-//        @Override
-//        public int getCount() {
-//            Log.e("123", "getCount: size" + mNewsInfoList.size());
-//            return mNewsInfoList.size();
-//        }
-//
-//        @Override
-//        public Object getItem(int position) {
-//            return mNewsInfoList.get(position);
-//        }
-//
-//        @Override
-//        public long getItemId(int position) {
-//            return position;
-//        }
-//
-//        @Override
-//        public View getView(int position, View convertView, ViewGroup parent) {
-//
-//            Log.e("123", "getView: ");
-//            ViewHolder viewHolder = null;
-//            ViewHolder1 viewHolder1 = null;
-//
-//            int currentType = getItemViewType(position);
-//            final News news = (News) getItem(position);
-//            if (news == null) {
-//                return null;
-//            }
-//
-//            if (convertView == null) {
-//                switch (currentType) {
-//                    case TYPE_1:
-//                        convertView = inflater_.inflate(R.layout.item_swiperefresh, null);
-//                        viewHolder = new ViewHolder();
-//                        viewHolder.iv_pic = convertView.findViewById(R.id.item_pic);
-//                        viewHolder.tv_title = convertView.findViewById(R.id.item_title);
-//                        convertView.setTag(viewHolder);
-//                        break;
-//
-//                    case TYPE_2:
-//                        convertView = inflater_.inflate(R.layout.item_swiperefresh1, null);
-//                        viewHolder1 = new ViewHolder1();
-//                        viewHolder1.tv_title = convertView.findViewById(R.id.item_title);
-//                        viewHolder1.iv_pic = convertView.findViewById(R.id.item_pic);
-//                        convertView.setTag(viewHolder1);
-//                        break;
-//                }
-//            } else {
-//                switch (currentType) {
-//                    case TYPE_1:
-//                        viewHolder = (ViewHolder) convertView.getTag();
-//                        break;
-//                    case TYPE_2:
-//                        viewHolder1 = (ViewHolder1) convertView.getTag();
-//                        break;
-//                }
-//            }
-//            MyBitmapUtils myBitmapUtils = new MyBitmapUtils();
-//            switch (currentType) {
-//                case TYPE_1:
-//                    viewHolder.tv_title.setText(news.getTitle());
-//                    if (viewHolder.iv_pic != null) {
-//                        if (!NewsApp.pic_only_WIFI || HttpUtil.isConnectedViaWifi()) {
-//                            myBitmapUtils.disPlay(viewHolder.iv_pic, news.getPicUrl());
-////                            myBitmapUtils.disPlay(viewHolder.iv_pic, news.getPicUrl());
-//                        }
-//
-//                    }
-//
-//                    break;
-//                case TYPE_2:
-//                    if (viewHolder1.iv_pic != null) {
-//                        if (!NewsApp.pic_only_WIFI || HttpUtil.isConnectedViaWifi()) {
-//                            myBitmapUtils.disPlay(viewHolder1.iv_pic, news.getPicUrl());
-//                        }
-//                    }
-//                    viewHolder1.tv_title.setText(news.getTitle());
-//                    break;
-//            }
-//
-//            if (convertView != null) {
-//                convertView.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        final String url = news.getUrl();
-//                        Log.e("converview ", "onClick: ");
-//                        mListener.onWebView(url);
-//
-//
-//                    }
-//                });
-//            }
-//
-//            Log.e("123", "getView: convertview" + convertView);
-//            return convertView;
-//        }
-//
-//        public void addAll(List<News> collection) {
-//            Log.e("123", "addAll: collectiton" + collection.size());
-//            mNewsInfoList.addAll(0, collection);
-//            Log.e("123", "addAll: list_" + mNewsInfoList.size());
-//            notifyDataSetChanged();
-//        }
-//
-//
-//        class ViewHolder {
-//
-//            private TextView tv_title;
-//            private ImageView iv_pic;
-//        }
-//
-//        class ViewHolder1 {
-//
-//            private TextView tv_title;
-//            private ImageView iv_pic;
-//        }
-//
-//        /**
-//         * 返回 有几种item布局
-//         *
-//         * @return
-//         */
-//        @Override
-//        public int getViewTypeCount() {
-//            return TYPE_COUNT;
-//        }
-//
-//
-//        @Override
-//        public int getItemViewType(int position) {
-//            switch (mStyle) {
-//                case 0:
-//                    if (position % 8 < 4) {
-//                        return TYPE_1;
-//                    }
-//                    return TYPE_2;
-//                case 1:
-//                    if (position % 8 < 4) {
-//                        return TYPE_1;
-//                    }
-//                    return TYPE_2;
-//                default:
-//                    return TYPE_2;
-//            }
-//        }
-//
-//    }
-
     class NewsPagerAdapter extends RecyclerView.Adapter<NewsPagerAdapter.ViewHolder> {
         private static final int SOCIAL_NEWS = 0;
         private static final int CHINA_NEWS = 1;
@@ -417,6 +259,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         class ViewHolder extends RecyclerView.ViewHolder {
             private TextView tv_title;
             private ImageView iv_pic;
+//            private TextView tv_
             private View itemView;
 
             ViewHolder(View itemView) {

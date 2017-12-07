@@ -123,7 +123,7 @@ MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/zzp/.gradle/caches/tran
 	android:allowBackup
 		ADDED from /home/zzp/AndroidStudioProjects/WYNews/app/src/main/AndroidManifest.xml:23:9-35
 	android:theme
-		ADDED from /home/zzp/AndroidStudioProjects/WYNews/app/src/main/AndroidManifest.xml:28:9-68
+		ADDED from /home/zzp/AndroidStudioProjects/WYNews/app/src/main/AndroidManifest.xml:28:9-62
 	android:name
 		ADDED from /home/zzp/AndroidStudioProjects/WYNews/app/src/main/AndroidManifest.xml:22:9-50
 activity#com.example.wynews.MainActivity

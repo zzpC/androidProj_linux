@@ -17,6 +17,6 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:layout_below="@id/sliding_tabs"
-        android:background="#e1d2d0" />
+        android:background="@color/viewpager_color" />
 
 </RelativeLayout>

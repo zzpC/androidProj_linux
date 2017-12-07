@@ -3702,6 +3702,7 @@ public final class R {
     public static final int tooltip_background_dark=0x7f060073;
     public static final int tooltip_background_light=0x7f060074;
     public static final int viewBackground=0x7f060075;
+    public static final int viewpager_color=0x7f060076;
   }
   public static final class dimen {
     public static final int abc_action_bar_content_inset_material=0x7f070000;
