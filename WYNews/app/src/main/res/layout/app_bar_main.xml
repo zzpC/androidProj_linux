@@ -55,7 +55,9 @@
         android:layout_gravity="bottom"
         android:background="?android:attr/windowBackground"
         app:layout_scrollFlags="scroll|enterAlways"
-        app:menu="@menu/navigation" />
+        app:menu="@menu/navigation"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector" />
 
 
 </android.support.design.widget.CoordinatorLayout>
