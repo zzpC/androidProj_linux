@@ -22,6 +22,8 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -66,6 +68,10 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
     public interface OnWebViewListener {
         void onWebView(String info);
+    }
+
+    public interface OnItemLongClickListener {
+        void OnItemLongClick(View view, int pos);
     }
 
     private OnWebViewListener mListener;
@@ -255,12 +261,15 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         private static final int FOREIGN_NEWS = 2;
         private static final int SPORT_NEWS = 3;
 
+
         class ViewHolder extends RecyclerView.ViewHolder {
             private TextView tv_title;
             private ImageView iv_pic;
             private View itemView;
 
-            ViewHolder(View itemView) {
+            OnItemLongClickListener mOnItemLongClickListener;
+
+            private ViewHolder(View itemView) {
                 super(itemView);
                 this.itemView = itemView;
                 iv_pic = itemView.findViewById(R.id.item_pic);
@@ -270,16 +279,18 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
+
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_swiperefresh1, parent, false);
             final ViewHolder viewHolder = new ViewHolder(view);
-
 
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    int position = viewHolder.getAdapterPosition();
 
-                    final News news = mNewsInfoList.get(position);
+                    final News news = mNewsInfoList.get(viewHolder.getAdapterPosition());
+
+
                 }
             });
 
@@ -292,6 +303,16 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                     mListener.onWebView(url);
                 }
             });
+
+            viewHolder.tv_title.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+//                    mOnItemLongClickListener.OnItemLongClick(v, viewHolder.getLayoutPosition());
+                    return true;
+                }
+            });
+
+
             return viewHolder;
         }
 

@@ -14,14 +14,18 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
 import android.support.v7.widget.Toolbar;
+import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.support.v7.widget.SearchView;
-
+import android.webkit.WebView;
+import android.webkit.WebViewFragment;
 
 
 public class MainActivity extends AppCompatActivity implements SwipeRefreshLayoutBasicFragment.OnWebViewListener {
+
+    private static final String TAG = "MainActivity";
 
     static {
         System.loadLibrary("native-lib");
@@ -59,6 +63,8 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().replace(R.id.bottom_pager, newsContentFragment).addToBackStack(null).commit();
 
+        BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
+        bottomNavigationView.setVisibility(View.GONE);
     }
 
 
@@ -67,14 +73,13 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Log.e("ZZZZZZ", "onCreate: ");
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) bottomNavigationView.getLayoutParams();
         layoutParams.setBehavior(new BottomNavigationViewBehavior());
-
-
 
 
         CoordinatorLayout mCoordinatorLayout = findViewById(R.id.main_coor_layout);
@@ -105,21 +110,22 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     }
 
 
+
     public void switchToFragment(int ftNo) {
-        ActionBar actionBar=getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         FragmentManager manager = getSupportFragmentManager();
 
         switch (ftNo) {
             case 0:
-                if (actionBar!=null) actionBar.setTitle(R.string.title_home);
-                manager.beginTransaction().replace(R.id.bottom_pager, new SlidingTabsColorsFragment()).commit();
+                if (actionBar != null) actionBar.setTitle(R.string.title_home);
+                manager.beginTransaction().replace(R.id.bottom_pager, new SlidingTabsColorsFragment()).addToBackStack(null).commit();
                 break;
             case 1:
-                if (actionBar!=null) actionBar.setTitle(R.string.title_video);
+                if (actionBar != null) actionBar.setTitle(R.string.title_video);
                 manager.beginTransaction().replace(R.id.bottom_pager, new VideoFragment()).addToBackStack(null).commit();
                 break;
             case 2:
-                if (actionBar!=null) actionBar.setTitle(R.string.title_settings);
+                if (actionBar != null) actionBar.setTitle(R.string.title_settings);
 
                 manager.beginTransaction().replace(R.id.bottom_pager, new SettingsFragment()).addToBackStack(null).commit();
                 break;
@@ -128,6 +134,43 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         }
     }
 
+
+    @Override
+    public void onBackPressed() {
+
+        WebView webView = findViewById(R.id.webview);
+
+        if (webView.getVisibility() == View.VISIBLE) {
+            webView.setVisibility(View.GONE);
+
+            findViewById(R.id.navigation).setVisibility(View.VISIBLE);
+            return;
+        }
+        super.onBackPressed();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.e("ZZZZZZ", " onStart: "+TAG);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e("ZZZZZZ", "onResume: "+TAG);
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.e("ZZZZZZ", "onPause: "+TAG);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.e("ZZZZZZ", "onStop: "+TAG);
+    }
 
     @Override
     protected void onDestroy() {

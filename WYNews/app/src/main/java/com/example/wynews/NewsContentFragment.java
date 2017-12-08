@@ -1,6 +1,8 @@
 package com.example.wynews;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,19 +25,22 @@ public class NewsContentFragment extends Fragment {
         Log.e(TAG, "NewsContentFragment: ");
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         if (mWebView != null) {
             mWebView.destroy();
         }
 
         View v = inflater.inflate(R.layout.newscontentfragment, container, false);
-        mWebView = (WebView) v.findViewById(R.id.webview);
+        mWebView = v.findViewById(R.id.webview);
+
         mWebView.loadUrl(getArguments().getString("url"));
 
         // Enable Javascript
         WebSettings webSettings = mWebView.getSettings();
+        webSettings.setUserAgentString("Android");
         webSettings.setJavaScriptEnabled(true);
         mWebView.getSettings().setUseWideViewPort(true);
         mWebView.getSettings().setLoadWithOverviewMode(true);

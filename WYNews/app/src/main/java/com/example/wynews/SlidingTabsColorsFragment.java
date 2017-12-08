@@ -19,6 +19,8 @@ package com.example.wynews;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -27,6 +29,7 @@ import android.support.v4.view.ViewPager;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ImageSpan;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,10 +46,6 @@ public class SlidingTabsColorsFragment extends Fragment {
     private static final String TAG = "SlidingTabsColorsFragme";
     private boolean Isfirst = true;
 
-    /**
-     * This class represents a tab to be displayed by {@link ViewPager} and it's associated
-     * {@link SlidingTabLayout}.
-     */
     static class SamplePagerItem {
         private final CharSequence mTitle;
         private final int mTitleImage;
@@ -62,32 +61,21 @@ public class SlidingTabsColorsFragment extends Fragment {
 
         }
 
-        /**
-         * @return A new {@link Fragment} to be displayed by a {@link ViewPager}
-         */
         Fragment createFragment(int i) {
             return SwipeRefreshLayoutBasicFragment.newInstance(i);
 
         }
 
-        /**
-         * @return the title which represents this tab. In this sample this is used directly by
-         * {@link android.support.v4.view.PagerAdapter#getPageTitle(int)}
-         */
+
         CharSequence getTitle() {
             return mTitle;
         }
 
-        /**
-         * @return the color to be used for indicator on the {@link SlidingTabLayout}
-         */
+
         int getIndicatorColor() {
             return mIndicatorColor;
         }
 
-        /**
-         * @return the color to be used for right divider on the {@link SlidingTabLayout}
-         */
         int getDividerColor() {
             return mDividerColor;
         }
@@ -95,20 +83,12 @@ public class SlidingTabsColorsFragment extends Fragment {
 
     static final String LOG_TAG = "SlidingTabsColorsFragment";
 
-    /**
-     * List of {@link SamplePagerItem} which represent this sample's tabs.
-     */
     private List<SamplePagerItem> mTabs = new ArrayList<SamplePagerItem>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // BEGIN_INCLUDE (populate_tabs)
-        /**
-         * Populate our tab list with tabs. Each item contains a title, indicator color and divider
-         * color, which are used by {@link SlidingTabLayout}.
-         */
         mTabs.add(new SamplePagerItem(
                 getString(R.string.top_tab_social), // Title
                 R.mipmap.topline,
@@ -140,31 +120,16 @@ public class SlidingTabsColorsFragment extends Fragment {
         // END_INCLUDE (populate_tabs)
     }
 
-    /**
-     * Inflates the {@link View} which will be displayed by this {@link Fragment}, from the app's
-     * resources.
-     */
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         return inflater.inflate(R.layout.slidingtabscolorsfragment, container, false);
     }
 
-    // BEGIN_INCLUDE (fragment_onviewcreated)
 
-    /**
-     * This is called after the {@link #onCreateView(LayoutInflater, ViewGroup, Bundle)} has finished.
-     * Here we can pick out the {@link View}s we need to configure from the content view.
-     * <p>
-     * We set the {@link ViewPager}'s adapter to be an instance of
-     * {@link SampleFragmentPagerAdapter}. The {@link SlidingTabLayout} is then given the
-     * {@link ViewPager} so that it can populate itself.
-     *
-     * @param view View created in {@link #onCreateView(LayoutInflater, ViewGroup, Bundle)}
-     */
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
 
         ViewPager mViewPager = view.findViewById(R.id.viewpager);
         mViewPager.setOffscreenPageLimit(4);
@@ -191,14 +156,6 @@ public class SlidingTabsColorsFragment extends Fragment {
 
     }
 
-    /**
-     * The {@link FragmentPagerAdapter} used to display pages in this sample. The individual pages
-     * are instances of {@link } which just display three lines of text. Each page is
-     * created by the relevant {@link SamplePagerItem} for the requested position.
-     * <p>
-     * The important section of this class is the {@link #getPageTitle(int)} method which controls
-     * what is displayed in the {@link SlidingTabLayout}.
-     */
     //与viewpager关联,同时可改变Tab的外观和行为
     class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
 
@@ -244,13 +201,44 @@ public class SlidingTabsColorsFragment extends Fragment {
 
     }
 
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+    }
+
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.e("ZZZZZZ", "onPause: "+TAG);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        Log.e("ZZZZZZ", "onStop: "+TAG);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        Log.e("ZZZZZZ", "onStart: "+TAG);
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        Log.e("ZZZZZZ", "onDestroyView: "+TAG);
+    }
+
     @Override
     public void onResume() {
         super.onResume();
         if (Isfirst) {
             Isfirst = false;
-            return;
         }
-        getActivity().finish();
+//        getActivity().finish();
+        Log.e("ZZZZZZ", "onResume: "+TAG);
     }
 }
