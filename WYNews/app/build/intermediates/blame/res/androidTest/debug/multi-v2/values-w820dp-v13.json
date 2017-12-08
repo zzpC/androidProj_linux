@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
+            "outputFile": "/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
             "map": [
                 {
                     "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/sharesdk-0.0.9.aar/0b0c14b497ccb074e5b5666eab019280/res/values-w820dp-v13/values-w820dp-v13.xml",

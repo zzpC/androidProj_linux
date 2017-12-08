@@ -26,7 +26,6 @@ android {
     }
     externalNativeBuild {
         cmake {
-            path "CMakeLists.txt"
         }
     }
     sourceSets {

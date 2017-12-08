@@ -19,6 +19,7 @@ package com.example.wynews;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -43,9 +44,13 @@ import java.util.List;
 
 //创建TabLayout+viewpager的视图作为acitvity一部分,getitem生成新的fragment,覆盖本fragment
 public class SlidingTabsColorsFragment extends Fragment {
+
     private static final String TAG = "SlidingTabsColorsFragme";
     private boolean Isfirst = true;
 
+    private Parcelable mSlidingTabStatus;
+    private static String SAVED_SLIDINGTAB_VIEW_STATUS_ID = "slidintab_status";
+    private Fragment mFragmentStatus;
     static class SamplePagerItem {
         private final CharSequence mTitle;
         private final int mTitleImage;
@@ -85,9 +90,25 @@ public class SlidingTabsColorsFragment extends Fragment {
 
     private List<SamplePagerItem> mTabs = new ArrayList<SamplePagerItem>();
 
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        getFragmentManager().putFragment(outState, TAG, mFragmentStatus);
+    }
+
+
+
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (savedInstanceState!=null){
+            mFragmentStatus=getFragmentManager().getFragment(savedInstanceState,TAG);
+        }
 
         mTabs.add(new SamplePagerItem(
                 getString(R.string.top_tab_social), // Title
@@ -199,12 +220,6 @@ public class SlidingTabsColorsFragment extends Fragment {
 
         }
 
-    }
-
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
     }
 
 

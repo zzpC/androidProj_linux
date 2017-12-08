@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/zzp/AndroidStudioProjects/WYNews/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-v24/values-v24.xml",
+            "outputFile": "/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
                     "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.0.aar/5b12258e92dacb7736f524ebf581bd20/res/values-v24/values-v24.xml",

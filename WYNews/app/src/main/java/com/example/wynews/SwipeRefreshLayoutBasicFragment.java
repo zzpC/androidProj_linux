@@ -21,9 +21,10 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.TabLayout;
+import android.support.annotation.Nullable;
+
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -53,6 +54,7 @@ import java.util.List;
 import static com.example.wynews.HttpUtil.isNetworkAvailable;
 
 public class SwipeRefreshLayoutBasicFragment extends Fragment {
+    private static final String TAG = "SwipeRefreshLayoutBasic";
 
     private SwipeRefreshLayout mSwipeRefreshLayout;
 
@@ -76,8 +78,15 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
     private OnWebViewListener mListener;
 
+    private final static String SAVED_RECYCLER_VIEW_STATUS_ID = "recylerview_status";
+
+    private Parcelable mRecyclerlistStatus;
+
+    private Fragment mFragmentStatus;
+
 
     public static SwipeRefreshLayoutBasicFragment newInstance(int... argument) {
+
 
         //保证fragment只有无参版本的构造函数,避免恢复fragment时失效
         SwipeRefreshLayoutBasicFragment swipeRefreshLayoutBasicFragment = new SwipeRefreshLayoutBasicFragment();
@@ -103,11 +112,28 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
 
     @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        mRecyclerlistStatus = mRecyclerView.getLayoutManager().onSaveInstanceState();
+        outState.putParcelable(SAVED_RECYCLER_VIEW_STATUS_ID, mRecyclerlistStatus);
+        getFragmentManager().putFragment(outState, TAG, mFragmentStatus);
+    }
+
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (savedInstanceState != null) {
+            mRecyclerlistStatus = savedInstanceState.getParcelable(SAVED_RECYCLER_VIEW_STATUS_ID);
+            if (mFragmentStatus != null) {
+                mFragmentStatus = getFragmentManager().getFragment(savedInstanceState, TAG);
+            }
+            return;
+        }
+
         //mStyle 标签的编号
         mTopTab = getArguments().getInt("sliding_tab_no");
-        String mNewsUrl = getArguments().getString("news_info");
 
         Log.e("123", "onCreate: " + mTopTab);
     }

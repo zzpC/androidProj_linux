@@ -3,6 +3,7 @@ package com.example.wynews;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,6 +21,9 @@ public class NewsContentFragment extends Fragment {
     private static final String TAG = "NewsContentFragment";
     private WebView mWebView;
     private boolean mIsWebViewAvailable;
+
+    private Fragment mFragmentStatus;
+
 
     public NewsContentFragment() {
         Log.e(TAG, "NewsContentFragment: ");
@@ -80,4 +84,19 @@ public class NewsContentFragment extends Fragment {
     public WebView getWebView() {
         return mIsWebViewAvailable ? mWebView : null;
     }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (mFragmentStatus!=null){
+            mFragmentStatus=getFragmentManager().getFragment(savedInstanceState,TAG);
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        getFragmentManager().putFragment(outState,TAG,mFragmentStatus);
+    }
+
 }

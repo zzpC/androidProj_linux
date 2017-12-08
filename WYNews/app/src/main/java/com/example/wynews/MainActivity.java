@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     private static final String TAG = "MainActivity";
 
     static {
-        System.loadLibrary("native-lib");
+//        System.loadLibrary("native-lib");
     }
 
 

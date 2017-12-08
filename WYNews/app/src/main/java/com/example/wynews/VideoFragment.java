@@ -30,10 +30,18 @@ public class VideoFragment extends Fragment {
 
     private SimplePlayer mSimplePlayer;
     private List<VideoData> mVideoDataList = new ArrayList<VideoData>();
+    private Fragment mFragmentStatus;
 
 
     public VideoFragment() {
         super();
+    }
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (mFragmentStatus != null) {
+            mFragmentStatus = getFragmentManager().getFragment(savedInstanceState, TAG);
+        }
     }
 
 
@@ -186,17 +194,17 @@ public class VideoFragment extends Fragment {
         }
     }
 
-    public class VideoHolder {
+    private class VideoHolder {
         private TextView tv_title;
         private TextView tv_playurl;
     }
 
-//    @Override
-//    public void onBackPressed() {
-//        if (mSimplePlayer != null && mSimplePlayer.onBackPressed()) {
-//            return;
-//        }
-//        super.onBackPressed();
-//    }
 
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        getFragmentManager().putFragment(outState, TAG, mFragmentStatus);
+
+    }
 }
