@@ -107,7 +107,7 @@ public class SlidingTabsColorsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (savedInstanceState != null) {
+        if (savedInstanceState != null && mFragmentManager!=null) {
             mFragmentStatus = mFragmentManager.getFragment(savedInstanceState, TAG);
             return;
         }

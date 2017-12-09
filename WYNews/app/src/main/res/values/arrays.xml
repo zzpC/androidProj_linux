@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="pager_item_info">
-        <item>"http://api.tianapi.com/social/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=3&#38;rand=1"</item>
-        <item>"http://api.tianapi.com/guonei/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=3&#38;rand=1" </item>
-        <item>"http://api.tianapi.com/world/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=3&#38;rand=1"</item>
-        <item>"http://api.tianapi.com/tiyu/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=3&#38;rand=1"</item>
+        <item>"http://api.tianapi.com/mobile/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;word=社会&#38;num=3&#38;rand=1"</item>
+        <item>"http://api.tianapi.com/mobile/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;word=国内&#38;num=3&#38;rand=1"</item>
+        <item>"http://api.tianapi.com/mobile/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;word=国际&#38;num=3&#38;rand=1"</item>
+        <item>"http://api.tianapi.com/mobile/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;word=体育&#38;num=3&#38;rand=1"</item>
+
 
     </string-array>
 

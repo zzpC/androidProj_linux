@@ -52,9 +52,11 @@ public class NewsContentFragment extends Fragment {
 //        mWebView.setWebViewClient(new WebViewClient());
 
         if (AdvancedWebView.Browsers.hasAlternative(getContext())) {
-            AdvancedWebView.Browsers.openUrl(getActivity(), "http://www.example.org/");
+//            AdvancedWebView.Browsers.openUrl(getActivity(),getArguments().getString("url") );
         }
         mWebView.setDesktopMode(false);
+        mWebView.getSettings().setUseWideViewPort(true);
+//        mWebView.getSettings().setLoadWithOverviewMode(true);
         // disable third-party cookies only
         mWebView.setThirdPartyCookiesEnabled(false);
         // or disable cookies in general
