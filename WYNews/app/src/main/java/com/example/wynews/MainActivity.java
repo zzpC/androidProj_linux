@@ -19,8 +19,10 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.support.v7.widget.SearchView;
-import android.webkit.WebView;
+
 import android.webkit.WebViewFragment;
+
+import im.delight.android.webview.AdvancedWebView;
 
 
 public class MainActivity extends AppCompatActivity implements SwipeRefreshLayoutBasicFragment.OnWebViewListener {
@@ -61,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         bundle.putString("url", info);
         newsContentFragment.setArguments(bundle);
         FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.bottom_pager, newsContentFragment).addToBackStack(null).commit();
+        manager.beginTransaction().replace(R.id.full, newsContentFragment).addToBackStack(null).commit();
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
         bottomNavigationView.setVisibility(View.GONE);
@@ -138,7 +140,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     @Override
     public void onBackPressed() {
 
-        WebView webView = findViewById(R.id.webview);
+        AdvancedWebView webView = findViewById(R.id.webview);
 
         if (webView.getVisibility() == View.VISIBLE) {
             webView.setVisibility(View.GONE);

@@ -48,9 +48,11 @@ public class SlidingTabsColorsFragment extends Fragment {
     private static final String TAG = "SlidingTabsColorsFragme";
     private boolean Isfirst = true;
 
+    private FragmentManager mFragmentManager;
     private Parcelable mSlidingTabStatus;
     private static String SAVED_SLIDINGTAB_VIEW_STATUS_ID = "slidintab_status";
     private Fragment mFragmentStatus;
+
     static class SamplePagerItem {
         private final CharSequence mTitle;
         private final int mTitleImage;
@@ -94,20 +96,20 @@ public class SlidingTabsColorsFragment extends Fragment {
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-
-        getFragmentManager().putFragment(outState, TAG, mFragmentStatus);
+        mFragmentManager = getFragmentManager();
+        if (outState != null &&mFragmentManager!=null && mFragmentStatus!=null) {
+            mFragmentManager.putFragment(outState, TAG, mFragmentStatus);
+        }
     }
-
-
-
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (savedInstanceState!=null){
-            mFragmentStatus=getFragmentManager().getFragment(savedInstanceState,TAG);
+        if (savedInstanceState != null) {
+            mFragmentStatus = mFragmentManager.getFragment(savedInstanceState, TAG);
+            return;
         }
 
         mTabs.add(new SamplePagerItem(
@@ -192,6 +194,7 @@ public class SlidingTabsColorsFragment extends Fragment {
          */
         @Override
         public Fragment getItem(int i) {
+            Log.e("testt", "getItem: " );
             return mTabs.get(i).createFragment(i);
         }
 
@@ -226,25 +229,25 @@ public class SlidingTabsColorsFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-        Log.e("ZZZZZZ", "onPause: "+TAG);
+        Log.e("ZZZZZZ", "onPause: " + TAG);
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        Log.e("ZZZZZZ", "onStop: "+TAG);
+        Log.e("ZZZZZZ", "onStop: " + TAG);
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        Log.e("ZZZZZZ", "onStart: "+TAG);
+        Log.e("ZZZZZZ", "onStart: " + TAG);
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        Log.e("ZZZZZZ", "onDestroyView: "+TAG);
+        Log.e("ZZZZZZ", "onDestroyView: " + TAG);
     }
 
     @Override
@@ -254,6 +257,6 @@ public class SlidingTabsColorsFragment extends Fragment {
             Isfirst = false;
         }
 //        getActivity().finish();
-        Log.e("ZZZZZZ", "onResume: "+TAG);
+        Log.e("ZZZZZZ", "onResume: " + TAG);
     }
 }

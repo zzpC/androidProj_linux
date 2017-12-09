@@ -116,7 +116,9 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         super.onSaveInstanceState(outState);
         mRecyclerlistStatus = mRecyclerView.getLayoutManager().onSaveInstanceState();
         outState.putParcelable(SAVED_RECYCLER_VIEW_STATUS_ID, mRecyclerlistStatus);
-        getFragmentManager().putFragment(outState, TAG, mFragmentStatus);
+        if (mFragmentStatus != null) {
+            getFragmentManager().putFragment(outState, TAG, mFragmentStatus);
+        }
     }
 
 
