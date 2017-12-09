@@ -307,7 +307,6 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_swiperefresh, parent, false);
             final ViewHolder viewHolder = new ViewHolder(view);
 
@@ -346,6 +345,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
             News news = mNewsInfoList.get(position);
+
             holder.tv_title.setText(news.getTitle());
             if (holder.iv_pic != null) {
                 if (!NewsApp.pic_only_WIFI || HttpUtil.isConnectedViaWifi()) {

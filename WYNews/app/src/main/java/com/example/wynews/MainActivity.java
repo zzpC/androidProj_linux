@@ -14,13 +14,13 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
 import android.support.v7.widget.Toolbar;
-import android.util.AttributeSet;
+
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.support.v7.widget.SearchView;
 
-import android.webkit.WebViewFragment;
+
 
 import im.delight.android.webview.AdvancedWebView;
 
@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         , SettingsFragment.OnClickNightModeListener {
 
     private static final String TAG = "MainActivity";
-//    private boolean isChangingTheme = false;
 
     static {
 //        System.loadLibrary("native-lib");
@@ -65,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         bundle.putString("url", info);
         newsContentFragment.setArguments(bundle);
         FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.full, newsContentFragment).addToBackStack(null).commit();
+        manager.beginTransaction().replace(R.id.full, newsContentFragment).commit();
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
         bottomNavigationView.setVisibility(View.GONE);
@@ -138,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         switch (ftNo) {
             case 0:
                 if (actionBar != null) actionBar.setTitle(R.string.title_home);
-                manager.beginTransaction().replace(R.id.bottom_pager, new SlidingTabsColorsFragment()).addToBackStack(null).commit();
+                manager.beginTransaction().replace(R.id.bottom_pager, new SlidingTabsColorsFragment()).commit();
                 break;
             case 1:
                 if (actionBar != null) actionBar.setTitle(R.string.title_video);

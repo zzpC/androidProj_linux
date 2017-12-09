@@ -1,5 +1,6 @@
 package com.example.wynews;
 
+import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
 
@@ -8,6 +9,7 @@ import android.content.Context;
  */
 
 public class NewsApp extends Application {
+    @SuppressLint("StaticFieldLeak")
     private static Context context;
     public static String share_default_item="3";
 
@@ -25,4 +27,6 @@ public class NewsApp extends Application {
         super.onCreate();
         context=getApplicationContext();
     }
+
+
 }

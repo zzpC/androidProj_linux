@@ -6,19 +6,23 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
+
 import android.widget.TextView;
 
 import com.example.wynews.Data4Adapter.VideoData;
 import com.example.wynews.Data4Adapter.VideoDataBuilder;
 import com.example.wynews.MediaPlayer.SimplePlayer;
+import com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView;
+import com.yanzhenjie.recyclerview.swipe.touch.OnItemMoveListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -30,10 +34,18 @@ public class VideoFragment extends Fragment {
     private static final String TAG = "VideoFragment";
 
     private SimplePlayer mSimplePlayer;
-    private List<VideoData> mVideoDataList = new ArrayList<VideoData>();
+    private List<VideoData> mVideoDataList = new ArrayList<>();
+    private VideoAdapter mVideoAdapter;
     private Fragment mFragmentStatus;
     private FragmentManager mFragmentManager = getFragmentManager();
 
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        if (mFragmentStatus != null && outState != null && mFragmentManager != null)
+            mFragmentManager.putFragment(outState, TAG, mFragmentStatus);
+
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -51,7 +63,33 @@ public class VideoFragment extends Fragment {
 
         view = inflater.inflate(R.layout.fragment_video, container, false);
         mSimplePlayer = view.findViewById(R.id.videofragment_player);
-        ListView mListView = view.findViewById(R.id.videofragment_listview);
+        SwipeMenuRecyclerView recyclerView = view.findViewById(R.id.videofragment_listview);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(linearLayoutManager);
+        mVideoAdapter = new VideoAdapter();
+        recyclerView.setAdapter(mVideoAdapter);
+        recyclerView.setLongPressDragEnabled(true); // 拖拽排序，默认关闭。
+        recyclerView.setItemViewSwipeEnabled(true);
+        recyclerView.setOnItemMoveListener(new OnItemMoveListener() {
+            @Override
+            public boolean onItemMove(RecyclerView.ViewHolder srcHolder, RecyclerView.ViewHolder targetHolder) {
+                int fromPosition = srcHolder.getAdapterPosition();
+                int toPosition = targetHolder.getAdapterPosition();
+
+                // Item被拖拽时，交换数据，并更新adapter。
+                Collections.swap(mVideoDataList, fromPosition, toPosition);
+                mVideoAdapter.notifyItemMoved(fromPosition, toPosition);
+                return true;
+            }
+
+            @Override
+            public void onItemDismiss(RecyclerView.ViewHolder srcHolder) {
+                int position = srcHolder.getAdapterPosition();
+                // Item被侧滑删除时，删除数据，并更新adapter。
+                mVideoDataList.remove(position);
+                mVideoAdapter.notifyItemRemoved(position);
+            }
+        });// 监听拖拽，更新UI。
 
         VideoDataBuilder videoDataBuilder = new VideoDataBuilder();
         VideoData videoData = videoDataBuilder.setPlayurl(getResources().getString(R.string.video_playurl)).setTitle(getResources()
@@ -69,34 +107,21 @@ public class VideoFragment extends Fragment {
         VideoData videoData4 = videoDataBuilder.setPlayurl(getResources().getString(R.string.video_playurl4))
                 .setTitle(getResources().getString(R.string.video_title4)).createVideoData();
 
+
+
         mVideoDataList.add(videoData);
         mVideoDataList.add(videoData1);
         mVideoDataList.add(videoData2);
         mVideoDataList.add(videoData3);
         mVideoDataList.add(videoData4);
+        mVideoAdapter.notifyDataSetChanged();
 
-        VideoAdapter mVideoAdapter = new VideoAdapter();
-        mListView.setAdapter(mVideoAdapter);
 
-//        mSimplePlayer.setTitle("美食—教你做蛋糕");
-//        mSimplePlayer.play("http://ips.ifeng.com/video19.ifeng.com/video09/2016/07/25/34595-102-009-0533.mp4");
-////        mSimplePlayer.play("rtmp://182.254.231.136/live/streamName");
-//        mSimplePlayer.play("rtmp://192.168.1.172:1935/rtmp_hls");
-
-//        mSimplePlayer.setTitle("cctv-6");
-//        mSimplePlayer.play("http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8");
 //        mSimplePlayer.live(true);
-
         mSimplePlayer.setTitle(getResources().getString(R.string.video_title4));
-//        mSimplePlayer.play(getResources().getString(R.string.video_playurl4));
-
-//
-
-        mSimplePlayer.play("rtmp://182.254.231.136/live/streamName");
-
         mSimplePlayer.play("http://ips.ifeng.com/video19.ifeng.com/video09/2016/07/25/34595-102-009-0533.mp4");
         mSimplePlayer.start();
-        Log.e("111", "onCreateView:???? ");
+
 
         return view;
 
@@ -136,77 +161,52 @@ public class VideoFragment extends Fragment {
     }
 
 
-    public class VideoAdapter extends BaseAdapter {
-        private LayoutInflater layoutInflater_ = LayoutInflater.from(getContext());
-        VideoHolder videoHolder_ = null;
+    public class VideoAdapter extends RecyclerView.Adapter {
+        VideoAdapter() {
+            super();
+        }
+
+        private class VideoHolder extends RecyclerView.ViewHolder {
+            private VideoHolder(View itemView) {
+                super(itemView);
+                this.itemView = itemView;
+                this.tv_playurl = itemView.findViewById(R.id.videofragment_playerurl);
+                this.tv_title = itemView.findViewById(R.id.videofragment_title);
+            }
+
+            View itemView;
+            TextView tv_title;
+            TextView tv_playurl;
+        }
 
 
         @Override
-        public int getCount() {
+        public VideoHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_video_listitem, parent, false);
+            Log.e(TAG, "onCreateViewHolder: createViewholder");
+
+
+
+            return new VideoHolder(view);
+        }
+
+        @Override
+        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+            VideoData videoData = mVideoDataList.get(position);
+            VideoHolder videoHolder = (VideoHolder) holder;
+            Log.e(TAG, "onBindViewHolder: data " + videoData);
+            videoHolder.tv_playurl.setText(videoData.getPlayurl());
+            videoHolder.tv_title.setText(videoData.getTitle());
+
+        }
+
+        @Override
+        public int getItemCount() {
+            Log.e(TAG, "getItemCount: size" + mVideoDataList.size());
             return mVideoDataList.size();
         }
-
-        @Override
-        public Object getItem(int position) {
-            return mVideoDataList.get(position);
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            final VideoData videoData = mVideoDataList.get(position);
-
-            if (convertView == null) {
-                videoHolder_ = new VideoHolder();
-                convertView = layoutInflater_.inflate(R.layout.fragment_video_listitem, parent, false);
-                videoHolder_.tv_playurl = convertView.findViewById(R.id.videofragment_playerurl);
-                videoHolder_.tv_title = convertView.findViewById(R.id.videofragment_title);
-                if (videoHolder_ == null) {
-                    Log.e("111", "getView: " + videoData);
-                } else {
-                    Log.e("111", "getView: not nulld" + videoHolder_);
-                }
-                convertView.setTag(videoHolder_);
-            } else {
-                Log.e("111", "getView: " + "here");
-                videoHolder_ = (VideoHolder) convertView.getTag();
-            }
-
-            videoHolder_.tv_title.setText(videoData.getTitle());
-            videoHolder_.tv_playurl.setText(videoData.getPlayurl());
-
-//            videoHolder_.tv_title.setText(m);
-//            videoHolder_.tv_playurl.setText("http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8");
-
-            if (convertView != null) {
-                convertView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        mSimplePlayer.setTitle(videoData.getTitle());
-                        mSimplePlayer.play(videoData.getPlayurl());
-                    }
-                });
-            }
-
-            return convertView;
-        }
-    }
-
-    private class VideoHolder {
-        private TextView tv_title;
-        private TextView tv_playurl;
     }
 
 
-    @Override
-    public void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-        if (mFragmentStatus != null && outState != null && mFragmentManager != null)
-            mFragmentManager.putFragment(outState, TAG, mFragmentStatus);
-
-    }
 }
