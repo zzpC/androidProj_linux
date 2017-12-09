@@ -1,5 +1,6 @@
 package com.example.wynews.MediaPlayer;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
@@ -151,6 +152,7 @@ public class SimplePlayer extends FrameLayout {
         init(context);
     }
 
+    @SuppressLint("InflateParams")
     private void init(Context context) {
         if (!(context instanceof Activity)){
             return;

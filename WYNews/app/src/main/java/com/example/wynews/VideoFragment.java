@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,19 +32,16 @@ public class VideoFragment extends Fragment {
     private SimplePlayer mSimplePlayer;
     private List<VideoData> mVideoDataList = new ArrayList<VideoData>();
     private Fragment mFragmentStatus;
+    private FragmentManager mFragmentManager = getFragmentManager();
 
 
-    public VideoFragment() {
-        super();
-    }
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (mFragmentStatus != null) {
-            mFragmentStatus = getFragmentManager().getFragment(savedInstanceState, TAG);
+        if (savedInstanceState != null && mFragmentManager != null) {
+            mFragmentStatus = mFragmentManager.getFragment(savedInstanceState, TAG);
         }
     }
-
 
     @Nullable
     @Override
@@ -90,11 +88,15 @@ public class VideoFragment extends Fragment {
 //        mSimplePlayer.live(true);
 
         mSimplePlayer.setTitle(getResources().getString(R.string.video_title4));
-        mSimplePlayer.play(getResources().getString(R.string.video_playurl4));
+//        mSimplePlayer.play(getResources().getString(R.string.video_playurl4));
 
 //
-        mSimplePlayer.start();
 
+        mSimplePlayer.play("rtmp://182.254.231.136/live/streamName");
+
+        mSimplePlayer.play("http://ips.ifeng.com/video19.ifeng.com/video09/2016/07/25/34595-102-009-0533.mp4");
+        mSimplePlayer.start();
+        Log.e("111", "onCreateView:???? ");
 
         return view;
 
@@ -200,11 +202,11 @@ public class VideoFragment extends Fragment {
     }
 
 
-
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        getFragmentManager().putFragment(outState, TAG, mFragmentStatus);
+        if (mFragmentStatus != null && outState != null && mFragmentManager != null)
+            mFragmentManager.putFragment(outState, TAG, mFragmentStatus);
 
     }
 }

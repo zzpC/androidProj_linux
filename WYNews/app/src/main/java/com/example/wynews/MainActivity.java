@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
         AdvancedWebView webView = findViewById(R.id.webview);
 
-        if (webView.getVisibility() == View.VISIBLE) {
+        if (webView!=null&& webView.getVisibility() == View.VISIBLE) {
             webView.setVisibility(View.GONE);
 
             findViewById(R.id.navigation).setVisibility(View.VISIBLE);
