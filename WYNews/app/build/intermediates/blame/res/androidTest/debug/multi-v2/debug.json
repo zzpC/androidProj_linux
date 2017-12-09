@@ -159,38 +159,6 @@
             ]
         },
         {
-            "outputFile": "/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/res/merged/androidTest/debug/values-pl_values-pl.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/values-pl/values-pl.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,221,323,431,517,626,745,823,900,982,1091,1200,1299,1408,1519,1627,1790,1886",
-                        "endColumns": "115,101,107,85,108,118,77,76,81,108,108,98,108,110,107,162,95,81",
-                        "endOffsets": "216,318,426,512,621,740,818,895,977,1086,1195,1294,1403,1514,1622,1785,1881,1963"
-                    }
-                },
-                {
-                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.0.aar/33530cc54e80624cc556001da2a4dbf1/res/values-pl/values-pl.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "1968",
-                        "endColumns": "100",
-                        "endOffsets": "2064"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/res/merged/androidTest/debug/values-zh-rTW_values-zh-rTW.arsc.flat",
             "map": [
                 {
@@ -218,6 +186,38 @@
                         "startOffsets": "1811",
                         "endColumns": "100",
                         "endOffsets": "1907"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/res/merged/androidTest/debug/values-pl_values-pl.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/values-pl/values-pl.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,221,323,431,517,626,745,823,900,982,1091,1200,1299,1408,1519,1627,1790,1886",
+                        "endColumns": "115,101,107,85,108,118,77,76,81,108,108,98,108,110,107,162,95,81",
+                        "endOffsets": "216,318,426,512,621,740,818,895,977,1086,1195,1294,1403,1514,1622,1785,1881,1963"
+                    }
+                },
+                {
+                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.0.aar/33530cc54e80624cc556001da2a4dbf1/res/values-pl/values-pl.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "1968",
+                        "endColumns": "100",
+                        "endOffsets": "2064"
                     }
                 }
             ]
@@ -447,38 +447,6 @@
             ]
         },
         {
-            "outputFile": "/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/res/merged/androidTest/debug/values-ur_values-ur.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.0.aar/33530cc54e80624cc556001da2a4dbf1/res/values-ur/values-ur.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "102",
-                        "endOffsets": "153"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "1958",
-                        "endColumns": "102",
-                        "endOffsets": "2056"
-                    }
-                },
-                {
-                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/values-ur/values-ur.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,215,321,430,516,620,740,816,892,977,1085,1194,1296,1407,1507,1615,1780,1878",
-                        "endColumns": "109,105,108,85,103,119,75,75,84,107,108,101,110,99,107,164,97,79",
-                        "endOffsets": "210,316,425,511,615,735,811,887,972,1080,1189,1291,1402,1502,1610,1775,1873,1953"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/res/merged/androidTest/debug/values-sv_values-sv.arsc.flat",
             "map": [
                 {
@@ -506,6 +474,38 @@
                         "startOffsets": "1903",
                         "endColumns": "100",
                         "endOffsets": "1999"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/res/merged/androidTest/debug/values-ur_values-ur.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.0.aar/33530cc54e80624cc556001da2a4dbf1/res/values-ur/values-ur.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "102",
+                        "endOffsets": "153"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "1958",
+                        "endColumns": "102",
+                        "endOffsets": "2056"
+                    }
+                },
+                {
+                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/values-ur/values-ur.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,215,321,430,516,620,740,816,892,977,1085,1194,1296,1407,1507,1615,1780,1878",
+                        "endColumns": "109,105,108,85,103,119,75,75,84,107,108,101,110,99,107,164,97,79",
+                        "endOffsets": "210,316,425,511,615,735,811,887,972,1080,1189,1291,1402,1502,1610,1775,1873,1953"
                     }
                 }
             ]
@@ -559,38 +559,6 @@
             ]
         },
         {
-            "outputFile": "/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/res/merged/androidTest/debug/values-kk_values-kk.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/values-kk/values-kk.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,217,320,430,515,621,740,821,901,982,1085,1190,1288,1395,1504,1604,1770,1869",
-                        "endColumns": "111,102,109,84,105,118,80,79,80,102,104,97,106,108,99,165,98,80",
-                        "endOffsets": "212,315,425,510,616,735,816,896,977,1080,1185,1283,1390,1499,1599,1765,1864,1945"
-                    }
-                },
-                {
-                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.0.aar/33530cc54e80624cc556001da2a4dbf1/res/values-kk/values-kk.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "1950",
-                        "endColumns": "100",
-                        "endOffsets": "2046"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/res/merged/androidTest/debug/values-v23_values-v23.arsc.flat",
             "map": [
                 {
@@ -621,6 +589,38 @@
                         "endLines": "2,3,4,5,18,31,32,33,34,35,36",
                         "endColumns": "134,134,74,86,12,12,126,104,114,106,112",
                         "endOffsets": "185,320,395,482,1272,2074,2201,2306,2421,2528,2641"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/res/merged/androidTest/debug/values-kk_values-kk.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/values-kk/values-kk.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,217,320,430,515,621,740,821,901,982,1085,1190,1288,1395,1504,1604,1770,1869",
+                        "endColumns": "111,102,109,84,105,118,80,79,80,102,104,97,106,108,99,165,98,80",
+                        "endOffsets": "212,315,425,510,616,735,816,896,977,1080,1185,1283,1390,1499,1599,1765,1864,1945"
+                    }
+                },
+                {
+                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.0.aar/33530cc54e80624cc556001da2a4dbf1/res/values-kk/values-kk.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "1950",
+                        "endColumns": "100",
+                        "endOffsets": "2046"
                     }
                 }
             ]
@@ -658,6 +658,21 @@
             ]
         },
         {
+            "outputFile": "/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/res/merged/androidTest/debug/values-en-rXC_values-en-rXC.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/values-en-rXC/values-en-rXC.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,310,510,719,904,1106,1321,1494,1671,1855,2059,2264,2465,2672,2874,3079,3351,3551",
+                        "endColumns": "204,199,208,184,201,214,172,176,183,203,204,200,206,201,204,271,199,178",
+                        "endOffsets": "305,505,714,899,1101,1316,1489,1666,1850,2054,2259,2460,2667,2869,3074,3346,3546,3725"
+                    }
+                }
+            ]
+        },
+        {
             "outputFile": "/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/res/merged/androidTest/debug/values-fr_values-fr.arsc.flat",
             "map": [
                 {
@@ -685,21 +700,6 @@
                         "startOffsets": "105,216,331,442,524,630,760,843,923,1009,1119,1231,1334,1445,1552,1659,1818,1917",
                         "endColumns": "110,114,110,81,105,129,82,79,85,109,111,102,110,106,106,158,98,85",
                         "endOffsets": "211,326,437,519,625,755,838,918,1004,1114,1226,1329,1440,1547,1654,1813,1912,1998"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/res/merged/androidTest/debug/values-en-rXC_values-en-rXC.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/values-en-rXC/values-en-rXC.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,310,510,719,904,1106,1321,1494,1671,1855,2059,2264,2465,2672,2874,3079,3351,3551",
-                        "endColumns": "204,199,208,184,201,214,172,176,183,203,204,200,206,201,204,271,199,178",
-                        "endOffsets": "305,505,714,899,1101,1316,1489,1666,1850,2054,2259,2460,2667,2869,3074,3346,3546,3725"
                     }
                 }
             ]
@@ -891,38 +891,6 @@
             ]
         },
         {
-            "outputFile": "/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/res/merged/androidTest/debug/values-nl_values-nl.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/values-nl/values-nl.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,223,328,435,521,629,749,826,903,985,1096,1200,1299,1414,1527,1630,1785,1888",
-                        "endColumns": "117,104,106,85,107,119,76,76,81,110,103,98,114,112,102,154,102,81",
-                        "endOffsets": "218,323,430,516,624,744,821,898,980,1091,1195,1294,1409,1522,1625,1780,1883,1965"
-                    }
-                },
-                {
-                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.0.aar/33530cc54e80624cc556001da2a4dbf1/res/values-nl/values-nl.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "1970",
-                        "endColumns": "100",
-                        "endOffsets": "2066"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/res/merged/androidTest/debug/values-fa_values-fa.arsc.flat",
             "map": [
                 {
@@ -950,6 +918,38 @@
                         "startOffsets": "1948",
                         "endColumns": "100",
                         "endOffsets": "2044"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/res/merged/androidTest/debug/values-nl_values-nl.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/values-nl/values-nl.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,223,328,435,521,629,749,826,903,985,1096,1200,1299,1414,1527,1630,1785,1888",
+                        "endColumns": "117,104,106,85,107,119,76,76,81,110,103,98,114,112,102,154,102,81",
+                        "endOffsets": "218,323,430,516,624,744,821,898,980,1091,1195,1294,1409,1522,1625,1780,1883,1965"
+                    }
+                },
+                {
+                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.0.aar/33530cc54e80624cc556001da2a4dbf1/res/values-nl/values-nl.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "1970",
+                        "endColumns": "100",
+                        "endOffsets": "2066"
                     }
                 }
             ]

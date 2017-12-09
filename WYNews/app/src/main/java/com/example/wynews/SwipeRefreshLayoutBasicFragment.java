@@ -309,7 +309,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
 
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_swiperefresh1, parent, false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_swiperefresh, parent, false);
             final ViewHolder viewHolder = new ViewHolder(view);
 
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
