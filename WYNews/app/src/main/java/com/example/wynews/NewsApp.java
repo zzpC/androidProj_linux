@@ -16,6 +16,8 @@ public class NewsApp extends Application {
     }
 
     public static boolean pic_only_WIFI=true;
+    public static boolean night_mode=false;
+    public static boolean changing_Theme=false;
 
 
     @Override

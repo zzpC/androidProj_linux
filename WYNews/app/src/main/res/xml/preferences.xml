@@ -4,13 +4,13 @@
     <PreferenceCategory android:title="App">
         <SwitchPreference
             android:defaultValue="false"
-            android:key="switch_pref"
+            android:key="switch_pic_wifi"
             android:summary="WIFI下加载图片以省流"
             android:title="图片仅WIFI" />
         <SwitchPreference
-            android:defaultValue="true"
-            android:key="sound"
-            android:title="Sound" />
+            android:defaultValue="false"
+            android:key="switch_night"
+            android:title="夜间模式" />
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Results">

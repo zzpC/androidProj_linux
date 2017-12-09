@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceFragmentCompat;
 import android.support.v7.preference.PreferenceScreen;
@@ -17,15 +18,25 @@ import com.xyzlf.share.library.bean.ShareEntity;
 import com.xyzlf.share.library.interfaces.ShareConstant;
 import com.xyzlf.share.library.util.ShareUtil;
 
-/**
- * Created by WingHinChan on 2016/01/24.
- */
+import java.util.Set;
+
+
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class SettingsFragment extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 
 
     private static final String TAG = "SettingsFragment";
+
     private PreferenceFragmentCompat mFragmentStatus;
+    private FragmentManager mFragmentManager;
+
+
+    public interface OnClickNightModeListener {
+        public void OnClickNightMode();
+    }
+
+    ;
+
 
     @Override
     public void onAttach(Context context) {
@@ -38,18 +49,11 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
         super.onCreate(savedInstanceState);
 
         if (savedInstanceState != null) {
-            mFragmentStatus = (PreferenceFragmentCompat) getFragmentManager().getFragment(savedInstanceState, TAG);
+            mFragmentManager = getFragmentManager();
+            mFragmentStatus = (PreferenceFragmentCompat) mFragmentManager.getFragment(savedInstanceState, TAG);
         }
 
         addPreferencesFromResource(R.xml.preferences);
-
-        Preference thePreference = findPreference("chosen_theme");
-
-        if (thePreference != null) {
-
-        } else {
-            Log.e(TAG, "Preference is empty");
-        }
 
         PreferenceScreen preference = (PreferenceScreen) this.findPreference("shareApp");
         if (preference == null) {
@@ -89,14 +93,14 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
 
         Log.e(TAG, String.format("%s %s", sharedPreferences, key));
-        NewsApp.pic_only_WIFI = sharedPreferences.getBoolean("switch_pref", true);
-        NewsApp.share_default_item = sharedPreferences.getString("list_preference", "3");
+        NewsApp.pic_only_WIFI = sharedPreferences.getBoolean("switch_pic_wifi", true);
+        NewsApp.night_mode = sharedPreferences.getBoolean("switch_night", false);
         Log.e(TAG, "onSharedPreferenceChanged: " + NewsApp.share_default_item + " " + NewsApp.pic_only_WIFI);
 
-        if (key.equals(NewsApp.pic_only_WIFI)) {
+        if (key.equals("switch_night")) {
+            OnClickNightModeListener onClickNightModeListener=(SettingsFragment.OnClickNightModeListener)getActivity();
+            onClickNightModeListener.OnClickNightMode();
 
-        } else if (key.equals(NewsApp.share_default_item)) {
-            ;
         } else {
             ;
         }
@@ -114,7 +118,9 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        getFragmentManager().putFragment(outState, TAG, mFragmentStatus);
+        if (outState != null && mFragmentStatus != null) {
+            mFragmentManager.putFragment(outState, TAG, mFragmentStatus);
+        }
     }
 
 }

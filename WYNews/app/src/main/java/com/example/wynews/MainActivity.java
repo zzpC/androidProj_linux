@@ -25,9 +25,11 @@ import android.webkit.WebViewFragment;
 import im.delight.android.webview.AdvancedWebView;
 
 
-public class MainActivity extends AppCompatActivity implements SwipeRefreshLayoutBasicFragment.OnWebViewListener {
+public class MainActivity extends AppCompatActivity implements SwipeRefreshLayoutBasicFragment.OnWebViewListener
+        , SettingsFragment.OnClickNightModeListener {
 
     private static final String TAG = "MainActivity";
+//    private boolean isChangingTheme = false;
 
     static {
 //        System.loadLibrary("native-lib");
@@ -69,10 +71,21 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         bottomNavigationView.setVisibility(View.GONE);
     }
 
+    @Override
+    public void OnClickNightMode() {
+        this.recreate();
+        NewsApp.changing_Theme = true;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (NewsApp.night_mode) {
+            setTheme(R.style.PreferenceFixTheme_NoActionBar);
+        } else {
+            setTheme(R.style.PreferenceFixTheme_Light_NoActionBar);
+        }
         setContentView(R.layout.activity_main);
 
         Log.e("ZZZZZZ", "onCreate: ");
@@ -108,12 +121,17 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 //            }
 //        });
 
+        if (NewsApp.changing_Theme){
+            NewsApp.changing_Theme=false;
+            switchToFragment(2);
+            return;
+        }
         switchToFragment(0);
     }
 
 
-
     public void switchToFragment(int ftNo) {
+        Log.e("换肤", "switchToFragment: " + ftNo);
         ActionBar actionBar = getSupportActionBar();
         FragmentManager manager = getSupportFragmentManager();
 
@@ -142,7 +160,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
         AdvancedWebView webView = findViewById(R.id.webview);
 
-        if (webView!=null&& webView.getVisibility() == View.VISIBLE) {
+        if (webView != null && webView.getVisibility() == View.VISIBLE) {
             webView.setVisibility(View.GONE);
 
             findViewById(R.id.navigation).setVisibility(View.VISIBLE);
@@ -154,24 +172,24 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     @Override
     protected void onStart() {
         super.onStart();
-        Log.e("ZZZZZZ", " onStart: "+TAG);
+        Log.e("ZZZZZZ", " onStart: " + TAG);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.e("ZZZZZZ", "onResume: "+TAG);
     }
+
     @Override
     protected void onPause() {
         super.onPause();
-        Log.e("ZZZZZZ", "onPause: "+TAG);
+        Log.e("ZZZZZZ", "onPause: " + TAG);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.e("ZZZZZZ", "onStop: "+TAG);
+        Log.e("ZZZZZZ", "onStop: " + TAG);
     }
 
     @Override

@@ -295,7 +295,6 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
             private ImageView iv_pic;
             private View itemView;
 
-            OnItemLongClickListener mOnItemLongClickListener;
 
             private ViewHolder(View itemView) {
                 super(itemView);

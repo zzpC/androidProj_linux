@@ -1,9 +1,17 @@
 package com.example.wynews.bitmapUtils;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Environment;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
+
+import com.example.wynews.MainActivity;
+import com.example.wynews.NewsApp;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -60,6 +68,11 @@ public class LocalCacheUtils {
             }
 
             //把图片保存至本地
+            if (ContextCompat.checkSelfPermission(NewsApp.getContext(), Manifest.permission.
+                    WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions((Activity) NewsApp.getContext(), new String[]{
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+            }
             bitmap.compress(Bitmap.CompressFormat.JPEG,100,new FileOutputStream(file));
         } catch (Exception e) {
             e.printStackTrace();
