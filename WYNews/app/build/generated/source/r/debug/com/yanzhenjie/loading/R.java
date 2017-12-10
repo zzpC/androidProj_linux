@@ -8,8 +8,8 @@ package com.yanzhenjie.loading;
 
 public final class R {
     public static final class id {
-        public static final int loading_tv_message = 0x7f09007f;
-        public static final int loading_view = 0x7f090080;
+        public static final int loading_tv_message = 0x7f090080;
+        public static final int loading_view = 0x7f090081;
     }
     public static final class layout {
         public static final int loading_wait_dialog = 0x7f0b0030;

@@ -8,15 +8,15 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+
 import com.example.wynews.Data4Adapter.VideoData;
-import com.example.wynews.Data4Adapter.VideoDataBuilder;
+import com.example.wynews.Data4Adapter.VideoDataUtil;
 import com.example.wynews.MediaPlayer.SimplePlayer;
 import com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView;
 import com.yanzhenjie.recyclerview.swipe.touch.OnItemMoveListener;
@@ -38,6 +38,7 @@ public class VideoFragment extends Fragment {
     private VideoAdapter mVideoAdapter;
     private Fragment mFragmentStatus;
     private FragmentManager mFragmentManager = getFragmentManager();
+    private int oldOptions;
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
@@ -93,7 +94,7 @@ public class VideoFragment extends Fragment {
 
         VideoDataUtil.addVideo(mVideoAdapter, mVideoDataList);
 
-        mSimplePlayer.live(true);
+        mSimplePlayer.live(false);
         mSimplePlayer.setTitle(getResources().getString(R.string.video_title4));
         mSimplePlayer.play("http://ips.ifeng.com/video19.ifeng.com/video09/2016/07/25/34595-102-009-0533.mp4");
         mSimplePlayer.start();
@@ -133,6 +134,25 @@ public class VideoFragment extends Fragment {
         super.onConfigurationChanged(newConfig);
         if (mSimplePlayer != null) {
             mSimplePlayer.onConfigurationChanged(newConfig);
+        }
+
+
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE)
+        {
+            oldOptions = getActivity().getWindow().getDecorView().getSystemUiVisibility();
+            int newOptions = oldOptions;
+            newOptions &= ~View.SYSTEM_UI_FLAG_LOW_PROFILE;
+            newOptions |= View.SYSTEM_UI_FLAG_FULLSCREEN;
+            newOptions |= View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
+            newOptions |= View.SYSTEM_UI_FLAG_IMMERSIVE;
+            newOptions &= ~View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+            getActivity().getWindow().getDecorView().setSystemUiVisibility(newOptions);
+            getActivity().getActionBar().hide();
+        }
+        else
+        {
+            getActivity().getWindow().getDecorView().setSystemUiVisibility(oldOptions);
+            getActivity().getActionBar().show();
         }
     }
 
@@ -191,6 +211,7 @@ public class VideoFragment extends Fragment {
             return mVideoDataList.size();
         }
     }
+
 
 
 }

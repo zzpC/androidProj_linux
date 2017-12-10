@@ -4,6 +4,8 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -18,6 +20,7 @@ import com.xyzlf.share.library.bean.ShareEntity;
 import com.xyzlf.share.library.interfaces.ShareConstant;
 import com.xyzlf.share.library.util.ShareUtil;
 
+import java.net.URL;
 import java.util.Set;
 
 
@@ -107,7 +110,10 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
     public void showShareDialog() {
         ShareEntity testBean = new ShareEntity("我是标题", "我是内容，描述内容。");
         testBean.setUrl("https://www.baidu.com"); //分享链接
-        testBean.setImgUrl("https://www.baidu.com/img/bd_logo1.png");
+//        testBean.setImgUrl("https://www.baidu.com/img/bd_logo1.png");
+
+        Uri uri = Uri.parse("android.resource://"+getContext().getPackageName()+"/drawable/share_wechat");
+        testBean.setImgUrl(uri.toString());
         ShareUtil.showShareDialog(getActivity(), testBean, ShareConstant.REQUEST_CODE);
     }
 

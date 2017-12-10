@@ -28,13 +28,13 @@ public final class R {
         public static final int item_touch_helper_swipe_escape_velocity = 0x7f070089;
     }
     public static final class id {
-        public static final int item_touch_helper_previous_elevation = 0x7f090075;
-        public static final int loading_tv_message = 0x7f09007f;
-        public static final int loading_view = 0x7f090080;
-        public static final int swipe_content = 0x7f0900cf;
-        public static final int swipe_left = 0x7f0900d0;
-        public static final int swipe_right = 0x7f0900d1;
-        public static final int tv_load_more_message = 0x7f0900ee;
+        public static final int item_touch_helper_previous_elevation = 0x7f090076;
+        public static final int loading_tv_message = 0x7f090080;
+        public static final int loading_view = 0x7f090081;
+        public static final int swipe_content = 0x7f0900d0;
+        public static final int swipe_left = 0x7f0900d1;
+        public static final int swipe_right = 0x7f0900d2;
+        public static final int tv_load_more_message = 0x7f0900ef;
     }
     public static final class layout {
         public static final int loading_wait_dialog = 0x7f0b0030;

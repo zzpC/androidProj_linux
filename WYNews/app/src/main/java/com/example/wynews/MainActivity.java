@@ -3,11 +3,15 @@ package com.example.wynews;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
@@ -23,6 +27,8 @@ import android.view.View;
 import android.support.v7.widget.SearchView;
 
 
+import com.example.wynews.Data4Adapter.News;
+
 import im.delight.android.webview.AdvancedWebView;
 
 
@@ -30,11 +36,18 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         , SettingsFragment.OnClickNightModeListener {
 
     private static final String TAG = "MainActivity";
+    private BottomNavigationView mBottomNavigationView;
+    private Toolbar mToolbar;
+
 
     static {
 //        System.loadLibrary("native-lib");
     }
 
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+    }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -67,8 +80,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().replace(R.id.full, newsContentFragment).commit();
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
-        bottomNavigationView.setVisibility(View.GONE);
+        mBottomNavigationView.setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -87,13 +99,18 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
             setTheme(R.style.PreferenceFixTheme_Light_NoActionBar);
         }
         setContentView(R.layout.activity_main);
+        mBottomNavigationView = findViewById(R.id.navigation);
+        mToolbar = findViewById(R.id.toolbar);
+
 
         Log.e("ZZZZZZ", "onCreate: ");
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        mBottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) bottomNavigationView.getLayoutParams();
+        AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.appbar);
+        appBarLayout.setExpanded(true, true);
+
+        CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) mBottomNavigationView.getLayoutParams();
         layoutParams.setBehavior(new BottomNavigationViewBehavior());
 
 
@@ -121,6 +138,23 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 //            }
 //        });
 
+        if (NewsApp.video_Full) {
+            Log.e("XXXX", "onCreate: 全屏");
+
+            mBottomNavigationView.setVisibility(View.INVISIBLE);
+            mToolbar.setVisibility(View.INVISIBLE);
+
+//            bottomNavigationView.setVisibility(View.GONE);
+//            mToolbar.
+//            mToolbar.setVisibility(View.GONE);
+//            getActionBar().hide();
+            return;
+        } else {
+            mBottomNavigationView.setVisibility(View.VISIBLE);
+            mToolbar.setVisibility(View.VISIBLE);
+        }
+
+
         if (NewsApp.changing_Theme) {
             NewsApp.changing_Theme = false;
             switchToFragment(2);
@@ -136,6 +170,8 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         FragmentManager manager = getSupportFragmentManager();
         switch (ftNo) {
             case 0:
+                mBottomNavigationView.setVisibility(View.VISIBLE);
+                NewsApp.video_Full = false;
                 if (actionBar != null) actionBar.setTitle(R.string.title_home);
                 Fragment fragment = manager.findFragmentByTag("uniqueTag");
                 if (fragment == null) {
@@ -145,8 +181,9 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                 }
                 break;
             case 1:
+                NewsApp.video_Full = true;
                 if (actionBar != null) actionBar.setTitle(R.string.title_video);
-                manager.beginTransaction().replace(R.id.bottom_pager, new VideoFragment()).commit();
+                manager.beginTransaction().replace(R.id.bottom_pager, new VideoFragment()).addToBackStack("video").commit();
                 break;
             case 2:
                 if (actionBar != null) actionBar.setTitle(R.string.title_settings);
@@ -161,16 +198,16 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
     @Override
     public void onBackPressed() {
-
+        super.onBackPressed();
         AdvancedWebView webView = findViewById(R.id.webview);
-
+        mBottomNavigationView.setVisibility(View.VISIBLE);
+        mToolbar.setVisibility(View.VISIBLE);
+        MainActivity.this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         if (webView != null && webView.getVisibility() == View.VISIBLE) {
             webView.setVisibility(View.GONE);
-
             findViewById(R.id.navigation).setVisibility(View.VISIBLE);
-            return;
         }
-        super.onBackPressed();
+
     }
 
     @Override
