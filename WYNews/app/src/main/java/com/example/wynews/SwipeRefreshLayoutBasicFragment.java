@@ -23,7 +23,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewCompat;
@@ -36,12 +35,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.wynews.Data4Adapter.News;
 import com.example.wynews.bitmapUtils.MyBitmapUtils;
+import com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView;
+import com.yanzhenjie.recyclerview.swipe.touch.OnItemMoveListener;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -49,7 +51,9 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 import static com.example.wynews.HttpUtil.isNetworkAvailable;
 
@@ -58,7 +62,9 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
     private SwipeRefreshLayout mSwipeRefreshLayout;
 
-    private RecyclerView mRecyclerView;
+    private SwipeMenuRecyclerView mRecyclerView;
+
+    static final Random RAMDOM = new Random(System.currentTimeMillis());
 
     //Tab编号
     private int mTopTab;
@@ -70,10 +76,6 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
     public interface OnWebViewListener {
         void onWebView(String info);
-    }
-
-    public interface OnItemLongClickListener {
-        void OnItemLongClick(View view, int pos);
     }
 
     private OnWebViewListener mListener;
@@ -155,6 +157,32 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
         mRecyclerView = view.findViewById(R.id.swiperefresh_list);
         mRecyclerView.setNestedScrollingEnabled(true);
+        mRecyclerView.setLongPressDragEnabled(true); // 拖拽排序，默认关闭。
+        mRecyclerView.setItemViewSwipeEnabled(true); // 策划删除，默认关闭。
+        mRecyclerView.setOnItemMoveListener(new OnItemMoveListener() {
+            @Override
+            public boolean onItemMove(RecyclerView.ViewHolder srcHolder, RecyclerView.ViewHolder targetHolder) {
+                int fromPosition = srcHolder.getAdapterPosition();
+                int toPosition = targetHolder.getAdapterPosition();
+                if (fromPosition < toPosition)
+                    for (int i = fromPosition; i < toPosition; i++)
+                        Collections.swap(mNewsInfoList, i, i + 1);
+                else
+                    for (int i = fromPosition; i > toPosition; i--)
+                        Collections.swap(mNewsInfoList, i, i - 1);
+
+                mListAdapter.notifyItemMoved(fromPosition, toPosition);
+                return true;
+            }
+
+            @Override
+            public void onItemDismiss(RecyclerView.ViewHolder srcHolder) {
+                int position = srcHolder.getAdapterPosition();
+                // Item被侧滑删除时，删除数据，并更新adapter。
+                mNewsInfoList.remove(position);
+                mListAdapter.notifyItemRemoved(position);
+            }
+        });
         ViewCompat.setNestedScrollingEnabled(mRecyclerView, true);
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
@@ -234,7 +262,12 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                 if (isNetworkAvailable()) {
                     HttpURLConnection connection = null;
                     try {
-                        URL url = new URL(getArguments().getString("news_info"));
+                        String url_string=getArguments().getString("news_info");
+
+//                        url_string=url_string+ String.valueOf(RAMDOM.nextInt(80));
+                        Log.e("urltest", "doInBackground: "+url_string );
+                        URL url = new URL(url_string);
+
                         connection = (HttpURLConnection) url.openConnection();
                         connection.setRequestMethod("GET");
                         connection.setConnectTimeout(8000);
@@ -251,6 +284,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                         while ((line = reader.readLine()) != null) {
                             response.append(line);
                             Log.e("run", "run: " + response);
+                            Log.e("解析结果", "doInBackground: " + response);
                         }
                         in.close();//????????????
                         List<News> list = ParseDatas.parseJSON(response.toString());
@@ -326,6 +360,8 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                     int position = viewHolder.getAdapterPosition();
                     final News news = mNewsInfoList.get(position);
                     final String url = news.getUrl();
+
+
                     mListener.onWebView(url);
                 }
             });

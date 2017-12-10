@@ -4509,10 +4509,10 @@ public final class R {
     public static final int title_settings=0x7f0e004d;
     public static final int title_video=0x7f0e004e;
     public static final int toolbar_height=0x7f0e004f;
-    public static final int top_tab_PE=0x7f0e0050;
-    public static final int top_tab_chinese=0x7f0e0051;
-    public static final int top_tab_internation=0x7f0e0052;
-    public static final int top_tab_social=0x7f0e0053;
+    public static final int top_tab=0x7f0e0050;
+    public static final int top_tab_1=0x7f0e0051;
+    public static final int top_tab_2=0x7f0e0052;
+    public static final int top_tab_3=0x7f0e0053;
     public static final int v7_preference_off=0x7f0e0054;
     public static final int v7_preference_on=0x7f0e0055;
     public static final int video_playurl=0x7f0e0056;
@@ -4521,13 +4521,21 @@ public final class R {
     public static final int video_playurl3=0x7f0e0059;
     public static final int video_playurl4=0x7f0e005a;
     public static final int video_playurl5=0x7f0e005b;
-    public static final int video_text=0x7f0e005c;
-    public static final int video_title=0x7f0e005d;
-    public static final int video_title1=0x7f0e005e;
-    public static final int video_title2=0x7f0e005f;
-    public static final int video_title3=0x7f0e0060;
-    public static final int video_title4=0x7f0e0061;
-    public static final int video_title5=0x7f0e0062;
+    public static final int video_playurl6=0x7f0e005c;
+    public static final int video_playurl7=0x7f0e005d;
+    public static final int video_playurl8=0x7f0e005e;
+    public static final int video_playurl9=0x7f0e005f;
+    public static final int video_text=0x7f0e0060;
+    public static final int video_title=0x7f0e0061;
+    public static final int video_title1=0x7f0e0062;
+    public static final int video_title2=0x7f0e0063;
+    public static final int video_title3=0x7f0e0064;
+    public static final int video_title4=0x7f0e0065;
+    public static final int video_title5=0x7f0e0066;
+    public static final int video_title6=0x7f0e0067;
+    public static final int video_title7=0x7f0e0068;
+    public static final int video_title8=0x7f0e0069;
+    public static final int video_title9=0x7f0e006a;
   }
   public static final class style {
     public static final int AlertDialog_AppCompat=0x7f0f0000;

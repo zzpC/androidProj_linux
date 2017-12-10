@@ -91,33 +91,9 @@ public class VideoFragment extends Fragment {
             }
         });// 监听拖拽，更新UI。
 
-        VideoDataBuilder videoDataBuilder = new VideoDataBuilder();
-        VideoData videoData = videoDataBuilder.setPlayurl(getResources().getString(R.string.video_playurl)).setTitle(getResources()
-                .getString(R.string.video_title)).createVideoData();
+        VideoDataUtil.addVideo(mVideoAdapter,mVideoDataList);
 
-        VideoData videoData1 = videoDataBuilder.setPlayurl(getResources().getString(R.string.video_playurl1))
-                .setTitle(getResources().getString(R.string.video_title1)).createVideoData();
-
-        VideoData videoData2 = videoDataBuilder.setPlayurl(getResources().getString(R.string.video_playurl2))
-                .setTitle(getResources().getString(R.string.video_title2)).createVideoData();
-
-        VideoData videoData3 = videoDataBuilder.setPlayurl(getResources().getString(R.string.video_playurl3))
-                .setTitle(getResources().getString(R.string.video_title3)).createVideoData();
-
-        VideoData videoData4 = videoDataBuilder.setPlayurl(getResources().getString(R.string.video_playurl4))
-                .setTitle(getResources().getString(R.string.video_title4)).createVideoData();
-
-
-
-        mVideoDataList.add(videoData);
-        mVideoDataList.add(videoData1);
-        mVideoDataList.add(videoData2);
-        mVideoDataList.add(videoData3);
-        mVideoDataList.add(videoData4);
-        mVideoAdapter.notifyDataSetChanged();
-
-
-//        mSimplePlayer.live(true);
+        mSimplePlayer.live(true);
         mSimplePlayer.setTitle(getResources().getString(R.string.video_title4));
         mSimplePlayer.play("http://ips.ifeng.com/video19.ifeng.com/video09/2016/07/25/34595-102-009-0533.mp4");
         mSimplePlayer.start();
@@ -140,6 +116,9 @@ public class VideoFragment extends Fragment {
     public void onPause() {
         super.onPause();
         if (mSimplePlayer != null) {
+            Log.e(TAG, "onPause: ttttt" );
+            mSimplePlayer.hide(true);
+            mSimplePlayer.stop();
             mSimplePlayer.onPause();
         }
     }
@@ -184,18 +163,27 @@ public class VideoFragment extends Fragment {
         public VideoHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_video_listitem, parent, false);
-            Log.e(TAG, "onCreateViewHolder: createViewholder");
+            final VideoHolder videoHolder=new VideoHolder(view);
+
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int position=videoHolder.getAdapterPosition();
+                    VideoData videoData= mVideoDataList.get(position);
+                    mSimplePlayer.setTitle(videoData.getTitle());
+                    mSimplePlayer.play(videoData.getPlayurl());
+                    mSimplePlayer.start();
+                }
+            });
 
 
-
-            return new VideoHolder(view);
+            return videoHolder;
         }
 
         @Override
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             VideoData videoData = mVideoDataList.get(position);
             VideoHolder videoHolder = (VideoHolder) holder;
-            Log.e(TAG, "onBindViewHolder: data " + videoData);
             videoHolder.tv_playurl.setText(videoData.getPlayurl());
             videoHolder.tv_title.setText(videoData.getTitle());
 
@@ -203,7 +191,6 @@ public class VideoFragment extends Fragment {
 
         @Override
         public int getItemCount() {
-            Log.e(TAG, "getItemCount: size" + mVideoDataList.size());
             return mVideoDataList.size();
         }
     }

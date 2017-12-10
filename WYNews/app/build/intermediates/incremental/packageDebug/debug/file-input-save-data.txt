@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Dec 09 12:56:58 CST 2017
+#Sun Dec 10 08:42:44 CST 2017
 17.baseType=DIRECTORY
 4.path=lib/armeabi-v7a/libijksdl.so
 25.base=/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/transforms/stripDebugSymbol/debug/0

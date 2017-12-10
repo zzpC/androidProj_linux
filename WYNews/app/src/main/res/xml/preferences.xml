@@ -8,7 +8,7 @@
             android:summary="WIFI下加载图片以省流"
             android:title="图片仅WIFI" />
         <SwitchPreference
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:key="switch_night"
             android:title="夜间模式" />
     </PreferenceCategory>

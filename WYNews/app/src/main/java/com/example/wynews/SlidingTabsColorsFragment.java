@@ -113,7 +113,7 @@ public class SlidingTabsColorsFragment extends Fragment {
         }
 
         mTabs.add(new SamplePagerItem(
-                getString(R.string.top_tab_social), // Title
+                getString(R.string.top_tab), // Title
                 R.mipmap.topline,
                 Color.BLUE, // Indicator color
                 Color.GRAY // Divider color
@@ -121,22 +121,22 @@ public class SlidingTabsColorsFragment extends Fragment {
         ));
 
         mTabs.add(new SamplePagerItem(
-                getString(R.string.top_tab_chinese), // Title
-                R.mipmap.news,
+                getString(R.string.top_tab_1), // Title
+                R.mipmap.sports,
                 Color.RED, // Indicator color
                 Color.GRAY // Divider color
         ));
 
         mTabs.add(new SamplePagerItem(
-                getString(R.string.top_tab_internation), // Title
-                R.mipmap.entertainment,
+                getString(R.string.top_tab_2), // Title
+                R.mipmap.news,
                 Color.YELLOW, // Indicator color
                 Color.GRAY // Divider color
         ));
 
         mTabs.add(new SamplePagerItem(
-                getString(R.string.top_tab_PE), // Title
-                R.mipmap.sports,
+                getString(R.string.top_tab_3), // Title
+                R.mipmap.entertainment,
                 Color.GREEN, // Indicator color
                 Color.GRAY // Divider color
         ));

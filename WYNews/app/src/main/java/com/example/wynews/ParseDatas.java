@@ -16,14 +16,14 @@ import java.util.ArrayList;
 
 public class ParseDatas {
     private static final String TAG = "ParserDatas";
-    private static ArrayList<News> result=new ArrayList<News>();
+    private static ArrayList<News> result = new ArrayList<News>();
 
     public static ArrayList<News> parseJSON(String jsonData) {
         try {
             result.clear();
             JSONObject object = new JSONObject(jsonData);
             JSONArray newslist = object.getJSONArray("newslist");
-            Log.e(TAG, "parseJSON1: "+newslist.length() );
+            Log.e(TAG, "parseJSON1: " + newslist.length());
             for (int i = 0; i < newslist.length(); i++) {
                 JSONObject jsonObject = newslist.getJSONObject(i);
                 String ctime = jsonObject.getString("ctime");
@@ -32,17 +32,14 @@ public class ParseDatas {
                 String url = jsonObject.getString("url");
                 String desc = jsonObject.getString("description");
 
-
-
                 result.add(new NewsBuilder().setCtime(ctime).setDescription(desc).setPicUrl(picUrl).setTitle(title).setUrl(url).createNews());
-                Log.e(TAG, "parseJSON: "+result );
+//                Log.e("解析结果", "parseJSON: " + result);
             }
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            Log.e(TAG, "parseJSON2: "+result.size() );
-            return result;
         }
+//        Log.e("解析结果", "parseJSON: " + result);
+        return result;
     }
 
 

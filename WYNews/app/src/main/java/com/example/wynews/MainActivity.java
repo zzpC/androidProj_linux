@@ -8,8 +8,10 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
@@ -19,7 +21,6 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.support.v7.widget.SearchView;
-
 
 
 import im.delight.android.webview.AdvancedWebView;
@@ -120,8 +121,8 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 //            }
 //        });
 
-        if (NewsApp.changing_Theme){
-            NewsApp.changing_Theme=false;
+        if (NewsApp.changing_Theme) {
+            NewsApp.changing_Theme = false;
             switchToFragment(2);
             return;
         }
@@ -133,20 +134,24 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         Log.e("换肤", "switchToFragment: " + ftNo);
         ActionBar actionBar = getSupportActionBar();
         FragmentManager manager = getSupportFragmentManager();
-
         switch (ftNo) {
             case 0:
                 if (actionBar != null) actionBar.setTitle(R.string.title_home);
-                manager.beginTransaction().replace(R.id.bottom_pager, new SlidingTabsColorsFragment()).commit();
+                Fragment fragment = manager.findFragmentByTag("uniqueTag");
+                if (fragment == null) {
+                    manager.beginTransaction().add(R.id.bottom_pager, new SlidingTabsColorsFragment(), "uniqueTag").commit();
+                } else {
+                    manager.beginTransaction().replace(R.id.bottom_pager, fragment).commit();
+                }
                 break;
             case 1:
                 if (actionBar != null) actionBar.setTitle(R.string.title_video);
-                manager.beginTransaction().replace(R.id.bottom_pager, new VideoFragment()).addToBackStack(null).commit();
+                manager.beginTransaction().replace(R.id.bottom_pager, new VideoFragment()).commit();
                 break;
             case 2:
                 if (actionBar != null) actionBar.setTitle(R.string.title_settings);
 
-                manager.beginTransaction().replace(R.id.bottom_pager, new SettingsFragment()).addToBackStack(null).commit();
+                manager.beginTransaction().replace(R.id.bottom_pager, new SettingsFragment()).commit();
                 break;
             default:
                 break;

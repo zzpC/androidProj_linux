@@ -94,15 +94,12 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 
         Log.e(TAG, String.format("%s %s", sharedPreferences, key));
         NewsApp.pic_only_WIFI = sharedPreferences.getBoolean("switch_pic_wifi", true);
-        NewsApp.night_mode = sharedPreferences.getBoolean("switch_night", false);
+        NewsApp.night_mode = sharedPreferences.getBoolean("switch_night", true);
         Log.e(TAG, "onSharedPreferenceChanged: " + NewsApp.share_default_item + " " + NewsApp.pic_only_WIFI);
 
         if (key.equals("switch_night")) {
             OnClickNightModeListener onClickNightModeListener=(SettingsFragment.OnClickNightModeListener)getActivity();
             onClickNightModeListener.OnClickNightMode();
-
-        } else {
-            ;
         }
 
     }

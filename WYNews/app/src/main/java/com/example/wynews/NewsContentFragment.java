@@ -39,18 +39,6 @@ public class NewsContentFragment extends Fragment {
         View v = inflater.inflate(R.layout.newscontentfragment, container, false);
         mWebView = v.findViewById(R.id.webview);
 
-
-//        // Enable Javascript
-//        WebSettings webSettings = mWebView.getSettings();
-//        String ua = webSettings.getUserAgentString();
-//        webSettings.setUserAgentString(ua);
-//        Log.e("ttesst", "onCreateView: " + ua);
-//        webSettings.setJavaScriptEnabled(true);
-//        mWebView.getSettings().setUseWideViewPort(true);
-//        mWebView.getSettings().setLoadWithOverviewMode(true);
-////        // Force links and redirects to open in the WebView instead of in a browser
-//        mWebView.setWebViewClient(new WebViewClient());
-
         if (AdvancedWebView.Browsers.hasAlternative(getContext())) {
 //            AdvancedWebView.Browsers.openUrl(getActivity(),getArguments().getString("url") );
         }
@@ -62,8 +50,8 @@ public class NewsContentFragment extends Fragment {
         // or disable cookies in general
         mWebView.setCookiesEnabled(false);
 
-
         mWebView.loadUrl(getArguments().getString("url"),true);
+
 
         return v;
     }
