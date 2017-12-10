@@ -91,7 +91,7 @@ public class VideoFragment extends Fragment {
             }
         });// 监听拖拽，更新UI。
 
-        VideoDataUtil.addVideo(mVideoAdapter,mVideoDataList);
+        VideoDataUtil.addVideo(mVideoAdapter, mVideoDataList);
 
         mSimplePlayer.live(true);
         mSimplePlayer.setTitle(getResources().getString(R.string.video_title4));
@@ -116,9 +116,6 @@ public class VideoFragment extends Fragment {
     public void onPause() {
         super.onPause();
         if (mSimplePlayer != null) {
-            Log.e(TAG, "onPause: ttttt" );
-            mSimplePlayer.hide(true);
-            mSimplePlayer.stop();
             mSimplePlayer.onPause();
         }
     }
@@ -163,13 +160,13 @@ public class VideoFragment extends Fragment {
         public VideoHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_video_listitem, parent, false);
-            final VideoHolder videoHolder=new VideoHolder(view);
+            final VideoHolder videoHolder = new VideoHolder(view);
 
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    int position=videoHolder.getAdapterPosition();
-                    VideoData videoData= mVideoDataList.get(position);
+                    int position = videoHolder.getAdapterPosition();
+                    VideoData videoData = mVideoDataList.get(position);
                     mSimplePlayer.setTitle(videoData.getTitle());
                     mSimplePlayer.play(videoData.getPlayurl());
                     mSimplePlayer.start();
