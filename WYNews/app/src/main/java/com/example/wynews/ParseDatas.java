@@ -34,6 +34,7 @@ public class ParseDatas {
 
                 result.add(new NewsBuilder().setCtime(ctime).setDescription(desc).setPicUrl(picUrl).setTitle(title).setUrl(url).createNews());
 //                Log.e("解析结果", "parseJSON: " + result);
+                Log.e(TAG, "parseJSON: " + url);
             }
         } catch (Exception e) {
             e.printStackTrace();
