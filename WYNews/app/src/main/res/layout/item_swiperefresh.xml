@@ -28,7 +28,6 @@ app:cardElevation="1dp">
 
 
         <TextView
-            android:id="@+id/tv_extra"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -43,7 +42,6 @@ app:cardElevation="1dp">
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/iv_dots"
                 android:layout_width="22dp"
                 android:layout_height="22dp"
                 android:layout_alignParentEnd="true"
@@ -58,7 +56,6 @@ app:cardElevation="1dp">
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/header"
@@ -82,7 +79,6 @@ app:cardElevation="1dp">
                 tools:text="菲总统称中国将向菲提供武器 已指示军方前往接收"/>
 
             <TextView
-                android:id="@+id/tv_abstract"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"

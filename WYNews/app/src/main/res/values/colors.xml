@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#EB413D</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-
-    <color name="swipe_color_1">#B6DB49</color>
-    <color name="swipe_color_2">#99CC00</color>
-    <color name="swipe_color_3">#8ABD00</color>
-    <color name="swipe_color_4">#7CAF00</color>
 
 
     <color name="cardview_dark_background">#FF424242</color>
@@ -18,17 +11,7 @@
     <color name="viewBackground">@android:color/white</color>
 
 
-
-    <color name="Grey50">#FAFAFA</color>
-    <color name="Grey100">#F5F5F5</color>
-    <color name="Grey200">#EEEEEE</color>
-    <color name="Grey300">#E0E0E0</color>
-    <color name="Grey400">#bdbdbd</color>
     <color name="Grey500">#9e9e9e</color>
-    <color name="Grey600">#757575</color>
-    <color name="Grey700">#616161</color>
-    <color name="Grey800">#424242</color>
-    <color name="Grey900">#212121</color>
 
     <color name="viewpager_color">#3d3937</color>
     <color name="bottom_selecting">#d37147</color>

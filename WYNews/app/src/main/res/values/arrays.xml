@@ -11,17 +11,5 @@
 
     </string-array>
 
-    <string-array name="sample_array">
-        <item>微信</item>
-        <item>朋友圈</item>
-        <item>取消</item>
-    </string-array>
-
-    <string-array name="array_values">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-    </string-array>
-
 
 </resources>

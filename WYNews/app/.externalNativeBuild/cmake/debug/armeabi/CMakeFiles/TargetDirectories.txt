@@ -1,3 +1,0 @@
-/home/zzp/AndroidStudioProjects/WYNews/app/.externalNativeBuild/cmake/debug/armeabi/CMakeFiles/rebuild_cache.dir
-/home/zzp/AndroidStudioProjects/WYNews/app/.externalNativeBuild/cmake/debug/armeabi/CMakeFiles/edit_cache.dir
-/home/zzp/AndroidStudioProjects/WYNews/app/.externalNativeBuild/cmake/debug/armeabi/CMakeFiles/native-lib.dir

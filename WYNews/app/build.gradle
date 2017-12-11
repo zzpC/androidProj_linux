@@ -14,9 +14,7 @@ android {
                 cppFlags "-frtti -fexceptions -std=c++11"
             }
         }
-        ndk {
-            abiFilters 'armeabi'
-        }
+
     }
     buildTypes {
         release {
@@ -26,6 +24,7 @@ android {
     }
     externalNativeBuild {
         cmake {
+            path "CMakeLists.txt"
         }
     }
     sourceSets {

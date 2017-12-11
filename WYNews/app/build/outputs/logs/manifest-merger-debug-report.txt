@@ -21,7 +21,7 @@ MERGED from [tv.danmaku.ijk.media:ijkplayer-x86:0.8.4] /home/zzp/.gradle/caches/
 MERGED from [tv.danmaku.ijk.media:ijkplayer-x86_64:0.8.4] /home/zzp/.gradle/caches/transforms-1/files-1.1/ijkplayer-x86_64-0.8.4.aar/c0450f3efa7baf0d2f24a6a0c90f0383/AndroidManifest.xml:2:1-9:12
 MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/Android-AdvancedWebView-v3.0.0.aar/f3513cb18e1165eb9bf1731cbc32d653/AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:appcompat-v7:27.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/zzp/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/4e6a4b56fec092c55d8139f1a3de2e0a/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/zzp/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/76833537c8236bb552b6800a1e809693/AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:transition:26.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/0e2ef87e5aa6145ec03800c28701adba/AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-v4:27.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.0.aar/c6c96034704ef88e1d7487996bda743b/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:27.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.0.aar/36ea7221171a75cdea1c3fb217f2d5ae/AndroidManifest.xml:17:1-22:12
@@ -111,8 +111,8 @@ MERGED from [tv.danmaku.ijk.media:ijkplayer-exo:0.8.4] /home/zzp/.gradle/caches/
 MERGED from [tv.danmaku.ijk.media:ijkplayer-exo:0.8.4] /home/zzp/.gradle/caches/transforms-1/files-1.1/ijkplayer-exo-0.8.4.aar/2d8f3eed58806997ea58411e490ed05c/AndroidManifest.xml:9:5-13:19
 MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/Android-AdvancedWebView-v3.0.0.aar/f3513cb18e1165eb9bf1731cbc32d653/AndroidManifest.xml:9:5-20
 MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/Android-AdvancedWebView-v3.0.0.aar/f3513cb18e1165eb9bf1731cbc32d653/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/zzp/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/4e6a4b56fec092c55d8139f1a3de2e0a/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/zzp/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/4e6a4b56fec092c55d8139f1a3de2e0a/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/zzp/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/76833537c8236bb552b6800a1e809693/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/zzp/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/76833537c8236bb552b6800a1e809693/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:transition:26.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/0e2ef87e5aa6145ec03800c28701adba/AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:transition:26.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/0e2ef87e5aa6145ec03800c28701adba/AndroidManifest.xml:22:5-26:19
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/fb85aee5c945658ec38042da02cf1fa4/AndroidManifest.xml:24:5-28:19
@@ -187,8 +187,8 @@ MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] /home/zzp/.gr
 MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/Android-AdvancedWebView-v3.0.0.aar/f3513cb18e1165eb9bf1731cbc32d653/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:appcompat-v7:27.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:27.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/zzp/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/4e6a4b56fec092c55d8139f1a3de2e0a/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/zzp/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/4e6a4b56fec092c55d8139f1a3de2e0a/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/zzp/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/76833537c8236bb552b6800a1e809693/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/zzp/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/76833537c8236bb552b6800a1e809693/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:transition:26.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/0e2ef87e5aa6145ec03800c28701adba/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:transition:26.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/0e2ef87e5aa6145ec03800c28701adba/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:27.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.0.aar/c6c96034704ef88e1d7487996bda743b/AndroidManifest.xml:20:5-44

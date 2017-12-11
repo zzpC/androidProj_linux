@@ -8,17 +8,17 @@ package com.yanzhenjie.loading;
 
 public final class R {
     public static final class id {
-        public static final int loading_tv_message = 0x7f090080;
-        public static final int loading_view = 0x7f090081;
+        public static final int loading_tv_message = 0x7f09007b;
+        public static final int loading_view = 0x7f09007c;
     }
     public static final class layout {
-        public static final int loading_wait_dialog = 0x7f0b0030;
+        public static final int loading_wait_dialog = 0x7f0b002f;
     }
     public static final class string {
-        public static final int loading_default_messsage = 0x7f0e0025;
+        public static final int loading_default_messsage = 0x7f0e0022;
     }
     public static final class style {
-        public static final int loadingDialog = 0x7f0f01ba;
-        public static final int loadingDialog_Loading = 0x7f0f01bb;
+        public static final int loadingDialog = 0x7f0f01b5;
+        public static final int loadingDialog_Loading = 0x7f0f01b6;
     }
 }

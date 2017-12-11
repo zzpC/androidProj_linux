@@ -5,23 +5,13 @@
     <string name="title_settings">设置</string>
 
 
-    <string name="tab_stream">Stream</string>
-    <string name="tab_messages">Messages</string>
-    <string name="tab_notifications">Notifications</string>
-    <string name="tab_photos">Photos</string>
-
-
     <string name="top_tab">健康</string>
     <string name="top_tab_1">足球</string>
     <string name="top_tab_2">科技</string>
     <string name="top_tab_3">产品</string>
-    <string name="video_text">播放视频!</string>
 
 
-
-    <string name="giraffe_player_url_empty">请指定播放视频的地址</string>
     <string name="small_problem">发送了点小问题,稍后重试</string>
-    <string name="can_not_play">不能播放此视频</string>
     <string name="not_support">播放器不支持此设备</string>
 
     <string name="video_title">"网站抓取的视频"</string>
@@ -53,15 +43,8 @@
     <string name="video_title8">"本人搭建的服务器:点播_rtmp"</string>
     <string name="video_playurl8">"rtmp://182.254.231.136:1935/vod/3.mp4"</string>
 
-    <string name="video_title9">"本人搭建的服务器:点播_rtmp"</string>
-    <string name="video_playurl9">"rtmp://182.254.231.136:1935/vod/4.mp4"</string>
-
-
-    <string name="action_search">搜索</string>
 
     <string name="nav_girls">Girls</string>
-
-    <string name="toolbar_height">40dp</string>
 
 
 </resources>

@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
 
     static {
-//        System.loadLibrary("native-lib");
+        System.loadLibrary("native-lib");
     }
 
     @Override
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         bundle.putString("url", info);
         newsContentFragment.setArguments(bundle);
         FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.full, newsContentFragment).commit();
+        manager.beginTransaction().replace(R.id.full, newsContentFragment).addToBackStack("webview").commit();
 
         mBottomNavigationView.setVisibility(View.INVISIBLE);
     }
