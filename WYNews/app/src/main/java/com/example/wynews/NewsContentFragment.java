@@ -2,6 +2,7 @@ package com.example.wynews;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.provider.DocumentsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -51,6 +52,13 @@ public class NewsContentFragment extends Fragment {
         mWebView.setCookiesEnabled(false);
 
         mWebView.loadUrl(getArguments().getString("url"),true);
+
+        String site=getArguments().getString("url")
+        String content = readContent(site);
+
+        mWebView.loadDataWithBaseURL(null,"a", "text/html", "UTF-8", null);
+
+
 
 
         return v;
