@@ -10,3 +10,5 @@ tree = html.fromstring(page.content)
 news = tree.xpath('//*[@id="endText"]/p/text()')
 
 print ('News',news)
+
+#zzpC
