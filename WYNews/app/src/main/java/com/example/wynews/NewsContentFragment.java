@@ -50,16 +50,8 @@ public class NewsContentFragment extends Fragment {
         mWebView.setThirdPartyCookiesEnabled(false);
         // or disable cookies in general
         mWebView.setCookiesEnabled(false);
-
         mWebView.loadUrl(getArguments().getString("url"),true);
-
-        String site=getArguments().getString("url")
-        String content = readContent(site);
-
-        mWebView.loadDataWithBaseURL(null,"a", "text/html", "UTF-8", null);
-
-
-
+        String site=getArguments().getString("url");
 
         return v;
     }
@@ -88,7 +80,7 @@ public class NewsContentFragment extends Fragment {
             mWebView = null;
         }
         super.onDestroy();
-    }
+    }+++++++++++++++++
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
