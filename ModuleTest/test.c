@@ -28,23 +28,12 @@ int main(int argc, char *argv[])
 
       PyObject* objectsRepresentation = PyObject_Repr(result);
 //      可以优化爬虫内容,爬虫的长度等...有空补上
-       char s[MAX_NEWS_CONTENT];  
-       strcpy(s, PyUnicode_AsUTF8(objectsRepresentation));
-	//      PyBytes_AsString(objectsRepresentation);
+       char utfstream[MAX_NEWS_CONTENT];  
+       strcpy(utfstream, PyUnicode_AsUTF8(objectsRepresentation));
 
-//      cout <<  PyBytes_AsString(result) << endl;
-//	string temp =result;
-//	char * x=(char*)malloc(1000000);
-//	strcpy(x,PyObject_CallFunction(myFunction, "s", (char *)result));
+       string newscontent(utfstream);
 
-
-//    PyObject* myModuleString = PyString_FromString(url);
-//    PyObject* myModule = PyImport_Import(myModuleString);
-
-
-//    PyRun_SimpleString("scrapNews.newsdata(url)");
-//     PyObject* myFunction = PyObject_GetAttrString(myModule,(char*)"newsdata");
-//     PyObject* args = PyTuple_Pack(1,PyObject(url));
+       cout << newscontent << endl;
   
     Py_Finalize();
     return 0;

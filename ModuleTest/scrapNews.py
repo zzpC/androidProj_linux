@@ -12,7 +12,5 @@ def newsdata(url):
     news = tree.xpath('//*[@id="endText"]/p/text()')
     return news
 
-url="http://tech.163.com/16/1224/08/C91N0GNG00097U7R.html"
-print ('News',newsdata(url))
 
 #zzpC
