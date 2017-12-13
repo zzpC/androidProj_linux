@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     printf("%s\n", Py_GetVersion());
  
     Py_Initialize();
-    PyRun_SimpleString ("import sys; sys.path.insert(0, '/home/zzp/Program/androidProj_linux/ModuleTest')");
+    PyRun_SimpleString ("import sys; sys.path.insert(0, './')");
     PyObject * module = NULL;
     PyObject * myFunction  = NULL;
 
@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 
       module = PyImport_ImportModule("scrapNews");
       myFunction = PyObject_GetAttrString(module,"newsdata");
- //     PyObject_CallFunction(myFunction, "s", url);
+     PyObject_CallFunction(myFunction, "s", url.c_str());
 
 //      PyObject* objectsRepresentation = PyObject_Repr(result);
 //      const char* s = PyBytes_AsString(objectsRepresentation);
