@@ -1,0 +1,33 @@
+#include <Python.h>
+#include <string.h>
+#include <iostream>
+
+using namespace std;
+
+extern "C"
+const char * hello_from_python(char* url); 
+
+int main(int argc, char *argv[]) {
+    Py_Initialize();
+    printf("%d",great_function_from_python(2));
+    Py_Finalize();
+    return 0;
+}
+
+
+extern "C"
+const char * hello_from_python(char* url) {
+    cout<<strlen(url)<<endl;
+    cout<<url<<endl;
+    static string s = "hello ";
+    s += name;
+    return s.c_str();
+}
+
+int main(int argc, char *argv[]) {
+  string url("Tom");
+  string s(return_string(const_cast<char *>(name.c_str())));
+  cout << s << "\n";
+  cout << url << "\n";
+  return 0;
+}

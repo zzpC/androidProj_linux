@@ -1917,10 +1917,8 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="y" value="-1" />
-    <option name="width" value="1922" />
-    <option name="height" value="1061" />
+    <option name="width" value="1920" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -1938,6 +1936,33 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WYNews" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gradle Scripts" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidBuildScriptsGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WYNews" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -2076,38 +2101,11 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="AndroidView">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WYNews" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gradle Scripts" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidBuildScriptsGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WYNews" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="show.do.not.copy.http.proxy.settings.to.gradle" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ModuleTest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="device.picker.selection" value="192.168.1.243:5555" />
     <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
     <property name="DEBUGGABLE_DEVICE" value="huawei-knt_ul10-192.168.1.243:5555" />
@@ -2193,7 +2191,10 @@
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="com.example.wynews.MainActivity" />
-      <method />
+      <method>
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1513132261965" />
+      </method>
     </configuration>
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -2264,7 +2265,8 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1513114007578" />
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1513132261965" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2311,7 +2313,8 @@
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
       </Profilers>
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1513114007578" />
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1513132261966" />
       </method>
     </configuration>
     <configuration default="true" type="AppEngineRunConfiguration" factoryName="App Engine DevAppServer">
@@ -2357,27 +2360,6 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
@@ -2507,7 +2489,8 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1513114007580" />
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1513132261969" />
       </method>
     </configuration>
     <list size="2">
@@ -2552,10 +2535,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-1" width="1922" height="1061" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1920" height="1056" extended-state="7" />
     <layout>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3426423" sideWeight="0.4978701" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -2566,7 +2548,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32867885" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31256714" sideWeight="0.49358287" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32330826" sideWeight="0.6208556" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32330826" sideWeight="0.6208556" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964602" sideWeight="0.37646434" order="11" side_tool="true" content_ui="tabs" />
@@ -2922,74 +2904,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18780">
           <caret line="1022" column="16" lean-forward="false" selection-start-line="1022" selection-start-column="16" selection-end-line="1022" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#114660#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#16537#16538#0" expanded="false" />
-            <element signature="e#16579#16580#0" expanded="false" />
-            <element signature="e#16752#16753#0" expanded="false" />
-            <element signature="e#16791#16792#0" expanded="false" />
-            <element signature="e#20935#20936#0" expanded="false" />
-            <element signature="e#20979#20980#0" expanded="false" />
-            <element signature="e#21128#21129#0" expanded="false" />
-            <element signature="e#21164#21165#0" expanded="false" />
-            <element signature="e#21318#21319#0" expanded="false" />
-            <element signature="e#21356#21357#0" expanded="false" />
-            <element signature="e#21584#21585#0" expanded="false" />
-            <element signature="e#21620#21621#0" expanded="false" />
-            <element signature="e#21978#21979#0" expanded="false" />
-            <element signature="e#22015#22016#0" expanded="false" />
-            <element signature="e#22211#22212#0" expanded="false" />
-            <element signature="e#22246#22247#0" expanded="false" />
-            <element signature="e#33502#33503#0" expanded="false" />
-            <element signature="e#33564#33565#0" expanded="false" />
-            <element signature="e#59846#59847#0" expanded="false" />
-            <element signature="e#59896#59897#0" expanded="false" />
-            <element signature="e#60626#60627#0" expanded="false" />
-            <element signature="e#60676#60677#0" expanded="false" />
-            <element signature="e#62016#62017#0" expanded="false" />
-            <element signature="e#62059#62060#0" expanded="false" />
-            <element signature="e#79153#79154#0" expanded="false" />
-            <element signature="e#79192#79193#0" expanded="false" />
-            <element signature="e#79367#79368#0" expanded="false" />
-            <element signature="e#79396#79397#0" expanded="false" />
-            <element signature="e#79734#79735#0" expanded="false" />
-            <element signature="e#79763#79764#0" expanded="false" />
-            <element signature="e#83951#83952#0" expanded="false" />
-            <element signature="e#83980#83981#0" expanded="false" />
-            <element signature="e#87506#87507#0" expanded="false" />
-            <element signature="e#87569#87570#0" expanded="false" />
-            <element signature="e#88434#88435#0" expanded="false" />
-            <element signature="e#88486#88487#0" expanded="false" />
-            <element signature="e#89007#89008#0" expanded="false" />
-            <element signature="e#89039#89040#0" expanded="false" />
-            <element signature="e#89426#89427#0" expanded="false" />
-            <element signature="e#89490#89491#0" expanded="false" />
-            <element signature="e#89663#89664#0" expanded="false" />
-            <element signature="e#89716#89717#0" expanded="false" />
-            <element signature="e#90082#90083#0" expanded="false" />
-            <element signature="e#90145#90146#0" expanded="false" />
-            <element signature="e#91594#91595#0" expanded="false" />
-            <element signature="e#91657#91658#0" expanded="false" />
-            <element signature="e#91856#91857#0" expanded="false" />
-            <element signature="e#91925#91926#0" expanded="false" />
-            <element signature="e#92911#92912#0" expanded="false" />
-            <element signature="e#92966#92967#0" expanded="false" />
-            <element signature="e#93113#93114#0" expanded="false" />
-            <element signature="e#93168#93169#0" expanded="false" />
-            <element signature="e#95732#95733#0" expanded="false" />
-            <element signature="e#95783#95784#0" expanded="false" />
-            <element signature="e#99146#99147#0" expanded="false" />
-            <element signature="e#99207#99208#0" expanded="false" />
-            <element signature="e#101412#101413#0" expanded="false" />
-            <element signature="e#101458#101459#0" expanded="false" />
-            <element signature="e#107609#107610#0" expanded="false" />
-            <element signature="e#107667#107668#0" expanded="false" />
-            <element signature="e#107722#107723#0" expanded="false" />
-            <element signature="e#107791#107792#0" expanded="false" />
-            <element signature="e#111944#111945#0" expanded="false" />
-            <element signature="e#112023#112024#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
