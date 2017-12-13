@@ -1,23 +1,45 @@
 #include <Python.h>
+#include <iostream>
 #include <stdio.h>
 #include <assert.h>
+#include <string>
+
+using  namespace std;
 
 int main(int argc, char *argv[]) 
 {
     printf("%s\n", Py_GetVersion());
  
     Py_Initialize();
-    
-    const char * url="http://tech.163.com/16/1224/08/C91N0GNG00097U7R.html";
+    PyRun_SimpleString ("import sys; sys.path.insert(0, '/home/zzp/Program/androidProj_linux/ModuleTest')");
+    PyObject * module = NULL;
+    PyObject * myFunction  = NULL;
 
-    PyRun_SimpleString("import scrapNews");
-    PyRun_SimpleString("scrapNews.test(url)");
 
-    PyObject *num = PyDict_GetItemString(dictionary, "num");   
-    assert(num);     
-                
-    printf("%d\n", PyLong_ASLong(num));
- 
+    string url="http://tech.163.com/16/1224/08/C91N0GNG00097U7R.html";
+
+//    PyRun_SimpleString("import scrapNews");
+
+      module = PyImport_ImportModule("scrapNews");
+      myFunction = PyObject_GetAttrString(module,"newsdata");
+ //     PyObject_CallFunction(myFunction, "s", url);
+
+//      PyObject* objectsRepresentation = PyObject_Repr(result);
+//      const char* s = PyBytes_AsString(objectsRepresentation);
+
+//      cout <<  PyBytes_AsString(result) << endl;
+//	string temp =result;
+//	char * x=(char*)malloc(1000000);
+//	strcpy(x,PyObject_CallFunction(myFunction, "s", (char *)result));
+
+
+//    PyObject* myModuleString = PyString_FromString(url);
+//    PyObject* myModule = PyImport_Import(myModuleString);
+
+
+//    PyRun_SimpleString("scrapNews.newsdata(url)");
+//     PyObject* myFunction = PyObject_GetAttrString(myModule,(char*)"newsdata");
+//     PyObject* args = PyTuple_Pack(1,PyObject(url));
   
     Py_Finalize();
     return 0;
