@@ -4,6 +4,8 @@
 #include <assert.h>
 #include <string>
 
+#define MAX_NEWS_CONTENT 40000
+
 using  namespace std;
 
 int main(int argc, char *argv[]) 
@@ -22,10 +24,13 @@ int main(int argc, char *argv[])
 
       module = PyImport_ImportModule("scrapNews");
       myFunction = PyObject_GetAttrString(module,"newsdata");
-     PyObject_CallFunction(myFunction, "s", url.c_str());
+      PyObject* result =  PyObject_CallFunction(myFunction, "s", url.c_str());
 
-//      PyObject* objectsRepresentation = PyObject_Repr(result);
-//      const char* s = PyBytes_AsString(objectsRepresentation);
+      PyObject* objectsRepresentation = PyObject_Repr(result);
+//      可以优化爬虫内容,爬虫的长度等...有空补上
+       char s[MAX_NEWS_CONTENT];  
+       strcpy(s, PyUnicode_AsUTF8(objectsRepresentation));
+	//      PyBytes_AsString(objectsRepresentation);
 
 //      cout <<  PyBytes_AsString(result) << endl;
 //	string temp =result;
