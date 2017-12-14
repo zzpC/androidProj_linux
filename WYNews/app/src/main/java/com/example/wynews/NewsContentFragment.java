@@ -80,8 +80,7 @@ public class NewsContentFragment extends Fragment {
             mWebView = null;
         }
         super.onDestroy();
-    }+++++++++++++++++
-
+    }
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

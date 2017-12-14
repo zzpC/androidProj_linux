@@ -114,6 +114,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 
         Uri uri = Uri.parse("android.resource://"+getContext().getPackageName()+"/drawable/share_wechat");
         testBean.setImgUrl(uri.toString());
+        Log.e(TAG, "showShareDialog: "+"" );
         ShareUtil.showShareDialog(getActivity(), testBean, ShareConstant.REQUEST_CODE);
     }
 
