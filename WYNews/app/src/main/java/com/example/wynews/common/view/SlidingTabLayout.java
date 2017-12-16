@@ -37,7 +37,6 @@ import android.widget.HorizontalScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.wynews.MainActivity;
 
 /**
  * To be used with ViewPager to provide a tab indicator component which give constant feedback as to
@@ -59,8 +58,8 @@ public class SlidingTabLayout extends HorizontalScrollView {
     private static final String TAG = "SlidingTabLayout";
     long mLastTime = 0;
     long mCurTime = 0;
-    View mDoubleClick;
-
+    View mDoubleClickView;
+    SetOnDoubleClickListener mSetOnDoubleClickListener;
     /**
      * Allows complete controover the colors drawn in the tab layout. Set with
      * {@link #setCustomTabColorizer(TabColorizer)}.
@@ -93,6 +92,10 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
     private final SlidingTabStrip mTabStrip;
 
+    public interface SetOnDoubleClickListener{
+        public void setOnDoubleClick(int position);
+    }
+
     public SlidingTabLayout(Context context) {
         this(context, null);
     }
@@ -112,6 +115,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
         mTitleOffset = (int) (TITLE_OFFSET_DIPS * getResources().getDisplayMetrics().density);
 
         mTabStrip = new SlidingTabStrip(context);
+
         addView(mTabStrip, LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
     }
 
@@ -123,16 +127,21 @@ public class SlidingTabLayout extends HorizontalScrollView {
             switch (msg.what) {
                 case 1:
                     for (int i = 0; i < mTabStrip.getChildCount(); i++) {
-                        if (mDoubleClick == mTabStrip.getChildAt(i)) {
+                        if (mDoubleClickView == mTabStrip.getChildAt(i)) {
                             mViewPager.setCurrentItem(i);
-
-
                             return;
                         }
                     }
                     break;
                 case 2:
                     Toast.makeText(getContext(), "这是双击事件", Toast.LENGTH_LONG).show();
+                    for (int i = 0; i < mTabStrip.getChildCount(); i++) {
+                        if (mDoubleClickView == mTabStrip.getChildAt(i)) {
+                            mSetOnDoubleClickListener.setOnDoubleClick(i);
+                            break;
+                        }
+                    }
+
                     break;
             }
         }
@@ -146,7 +155,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
      * {@link #setSelectedIndicatorColors(int...)} and {@link #setDividerColors(int...)} to achieve
      * similar effects.
      */
-    public void setCustomTabColorizer(TabColorizer tabColorizer) {
+    public void setCustomTabCo1lorizer(TabColorizer tabColorizer) {
         mTabStrip.setCustomTabColorizer(tabColorizer);
     }
 
@@ -353,7 +362,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
         @Override
         public void onClick(View v) {
 
-            mDoubleClick = v;
+            mDoubleClickView = v;
 
             mLastTime = mCurTime;
             mCurTime = System.currentTimeMillis();

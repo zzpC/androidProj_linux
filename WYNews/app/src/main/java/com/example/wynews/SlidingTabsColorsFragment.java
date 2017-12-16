@@ -42,7 +42,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //创建TabLayout+viewpager的视图作为acitvity一部分,getitem生成新的fragment,覆盖本fragment
-public class SlidingTabsColorsFragment extends Fragment {
+public class SlidingTabsColorsFragment extends Fragment implements SlidingTabLayout.SetOnDoubleClickListener {
 
     private static final String TAG = "SlidingTabsColorsFragme";
     private boolean Isfirst = true;
@@ -51,6 +51,11 @@ public class SlidingTabsColorsFragment extends Fragment {
     private Parcelable mSlidingTabStatus;
     private static String SAVED_SLIDINGTAB_VIEW_STATUS_ID = "slidintab_status";
     private Fragment mFragmentStatus;
+
+    @Override
+    public void setOnDoubleClick(int position) {
+        mTabs.remove(position);
+    }
 
     static class SamplePagerItem {
         private final CharSequence mTitle;
@@ -160,6 +165,7 @@ public class SlidingTabsColorsFragment extends Fragment {
         SlidingTabLayout mSlidingTabLayout = view.findViewById(R.id.sliding_tabs);
 
         mSlidingTabLayout.setViewPager(mViewPager);
+
 
 
         mSlidingTabLayout.setCustomTabColorizer(new SlidingTabLayout.TabColorizer() {
