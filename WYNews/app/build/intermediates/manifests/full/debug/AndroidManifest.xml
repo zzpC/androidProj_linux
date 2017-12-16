@@ -43,6 +43,11 @@
                     android:launchMode="singleTask" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="android.support.VERSION"
+            android:value="26.1.0" />
+
         <activity
             android:name="com.xyzlf.share.library.ShareDialogActivity"
             android:configChanges="orientation|keyboardHidden"
@@ -62,9 +67,6 @@
             </intent-filter>
         </activity>
 
-        <meta-data
-            android:name="android.support.VERSION"
-            android:value="26.1.0" />
         <meta-data
             android:name="android.arch.lifecycle.VERSION"
             android:value="27.0.0-SNAPSHOT" />

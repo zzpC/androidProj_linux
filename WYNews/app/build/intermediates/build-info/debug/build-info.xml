@@ -2,13 +2,13 @@
 <instant-run
     abi="arm64-v8a,armeabi-v7a,armeabi"
     api-level="24"
-    build-mode="HOT_WARM"
+    build-mode="COLD"
     density="xxhdpi"
     format="10"
     plugin-version="3.0.1"
-    timestamp="1513219201572"
-    token="2204600212265541232"
-    verifier="COMPATIBLE" >
+    timestamp="1513423226026"
+    token="-1359998010821348120"
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
@@ -24,66 +24,57 @@
         duration="0" />
 
     <artifact
-        location="/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
-        type="RESOURCES" />
+        location="/home/zzp/program/androidProj_linux/WYNews/app/build/outputs/apk/debug/app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1513215289256"
-        verifier="FULL_BUILD_REQUESTED" >
+        timestamp="1513422495146"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            location="/home/zzp/program/androidProj_linux/WYNews/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
             type="SPLIT" />
         <artifact
-            location="/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            location="/home/zzp/program/androidProj_linux/WYNews/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            location="/home/zzp/program/androidProj_linux/WYNews/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
             type="SPLIT" />
         <artifact
-            location="/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            location="/home/zzp/program/androidProj_linux/WYNews/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            location="/home/zzp/program/androidProj_linux/WYNews/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            location="/home/zzp/program/androidProj_linux/WYNews/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+            location="/home/zzp/program/androidProj_linux/WYNews/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
             type="SPLIT" />
         <artifact
-            location="/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            location="/home/zzp/program/androidProj_linux/WYNews/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            location="/home/zzp/program/androidProj_linux/WYNews/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
             type="SPLIT" />
         <artifact
-            location="/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            location="/home/zzp/program/androidProj_linux/WYNews/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            location="/home/zzp/program/androidProj_linux/WYNews/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="/home/zzp/Program/androidProj_linux/WYNews/app/build/outputs/apk/debug/app-debug.apk"
+            location="/home/zzp/program/androidProj_linux/WYNews/app/build/outputs/apk/debug/app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1513215421673"
+        timestamp="1513423226026"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1513219201572"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
-            type="RESOURCES" />
+            location="/home/zzp/program/androidProj_linux/WYNews/app/build/outputs/apk/debug/app-debug.apk"
+            type="SPLIT_MAIN" />
     </build>
 
 </instant-run>

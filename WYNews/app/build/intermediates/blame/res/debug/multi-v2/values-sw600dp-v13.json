@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "outputFile": "/home/zzp/program/androidProj_linux/WYNews/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
                     "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/aa12c40593f51c1ccc3ffae4e0a865bd/res/values-sw600dp-v13/values-sw600dp-v13.xml",

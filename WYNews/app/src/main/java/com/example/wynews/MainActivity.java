@@ -11,11 +11,11 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.NavigationView;
+
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
-import android.support.v4.app.FragmentTransaction;
+
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
@@ -27,7 +27,6 @@ import android.view.View;
 import android.support.v7.widget.SearchView;
 
 
-import com.example.wynews.Data4Adapter.News;
 
 import im.delight.android.webview.AdvancedWebView;
 
@@ -41,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
 
     static {
-        System.loadLibrary("native-lib");
+//        System.loadLibrary("native-lib");
     }
 
     @Override

@@ -2,6 +2,14 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory android:title="App">
+
+        <Preference
+            android:selectable="false"
+            android:enabled="true"
+            android:key="example_key"
+            android:title="已阅读数目:"
+            android:summary="Reading Record" />
+
         <SwitchPreference
             android:defaultValue="false"
             android:key="switch_pic_wifi"
@@ -11,6 +19,7 @@
             android:defaultValue="true"
             android:key="switch_night"
             android:title="夜间模式" />
+
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Results">

@@ -49,6 +49,9 @@ import android.widget.TextView;
  * providing the layout ID of your custom layout.
  */
 public class SlidingTabLayout extends HorizontalScrollView {
+    private static final String TAG = "SlidingTabLayout";
+    long mLastTime=0;
+    long mCurTime=0;
 
     /**
      * Allows complete controover the colors drawn in the tab layout. Set with
@@ -321,10 +324,23 @@ public class SlidingTabLayout extends HorizontalScrollView {
             for (int i = 0; i < mTabStrip.getChildCount(); i++) {
                 if (v == mTabStrip.getChildAt(i)) {
                     mViewPager.setCurrentItem(i);
+
+
                     return;
                 }
             }
         }
     }
+
+
+
+
+
+
+
+
+
+
+
 
 }

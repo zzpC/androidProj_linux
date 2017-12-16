@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/zzp/Program/androidProj_linux/WYNews/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh/values-zh.xml",
+            "outputFile": "/home/zzp/program/androidProj_linux/WYNews/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh/values-zh.xml",
             "map": [
                 {
                     "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/loading-1.0.2.aar/3e76004f57fe6f3fb5a8c36bd90340d9/res/values-zh/values-zh.xml",

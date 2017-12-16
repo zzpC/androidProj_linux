@@ -2,14 +2,12 @@ package com.example.wynews;
 
 import android.annotation.TargetApi;
 import android.content.Context;
-import android.content.IntentFilter;
+
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceFragmentCompat;
@@ -20,8 +18,6 @@ import com.xyzlf.share.library.bean.ShareEntity;
 import com.xyzlf.share.library.interfaces.ShareConstant;
 import com.xyzlf.share.library.util.ShareUtil;
 
-import java.net.URL;
-import java.util.Set;
 
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
