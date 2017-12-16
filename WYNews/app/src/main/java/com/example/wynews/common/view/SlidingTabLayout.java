@@ -16,10 +16,14 @@
 
 package com.example.wynews.common.view;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Point;
 import android.graphics.Typeface;
 import android.os.Build;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
@@ -31,6 +35,9 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.HorizontalScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.wynews.MainActivity;
 
 /**
  * To be used with ViewPager to provide a tab indicator component which give constant feedback as to
@@ -50,8 +57,9 @@ import android.widget.TextView;
  */
 public class SlidingTabLayout extends HorizontalScrollView {
     private static final String TAG = "SlidingTabLayout";
-    long mLastTime=0;
-    long mCurTime=0;
+    long mLastTime = 0;
+    long mCurTime = 0;
+    View mDoubleClick;
 
     /**
      * Allows complete controover the colors drawn in the tab layout. Set with
@@ -107,9 +115,33 @@ public class SlidingTabLayout extends HorizontalScrollView {
         addView(mTabStrip, LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
     }
 
+
+    @SuppressLint("HandlerLeak")
+    private Handler handler = new Handler() {
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 1:
+                    for (int i = 0; i < mTabStrip.getChildCount(); i++) {
+                        if (mDoubleClick == mTabStrip.getChildAt(i)) {
+                            mViewPager.setCurrentItem(i);
+
+
+                            return;
+                        }
+                    }
+                    break;
+                case 2:
+                    Toast.makeText(getContext(), "这是双击事件", Toast.LENGTH_LONG).show();
+                    break;
+            }
+        }
+    };
+
+
     /**
      * Set the custom {@link TabColorizer} to be used.
-     *
+     * <p>
      * If you only require simple custmisation then you can use
      * {@link #setSelectedIndicatorColors(int...)} and {@link #setDividerColors(int...)} to achieve
      * similar effects.
@@ -149,7 +181,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
      * Set the custom layout to be inflated for the tab views.
      *
      * @param layoutResId Layout id to be inflated
-     * @param textViewId id of the {@link TextView} in the inflated view
+     * @param textViewId  id of the {@link TextView} in the inflated view
      */
     public void setCustomTabView(int layoutResId, int textViewId) {
         mTabViewLayoutId = layoutResId;
@@ -237,7 +269,6 @@ public class SlidingTabLayout extends HorizontalScrollView {
             tabView.setOnClickListener(tabClickListener);
 
 
-
             mTabStrip.addView(tabView);
 
         }
@@ -321,26 +352,22 @@ public class SlidingTabLayout extends HorizontalScrollView {
     private class TabClickListener implements OnClickListener {
         @Override
         public void onClick(View v) {
-            for (int i = 0; i < mTabStrip.getChildCount(); i++) {
-                if (v == mTabStrip.getChildAt(i)) {
-                    mViewPager.setCurrentItem(i);
 
+            mDoubleClick = v;
 
-                    return;
-                }
+            mLastTime = mCurTime;
+            mCurTime = System.currentTimeMillis();
+            if (mCurTime - mLastTime < 300) {//双击事件
+                mCurTime = 0;
+                mLastTime = 0;
+                handler.removeMessages(1);
+                handler.sendEmptyMessage(2);
+            } else {//单击事件
+                handler.sendEmptyMessageDelayed(1, 310);
             }
+
         }
     }
-
-
-
-
-
-
-
-
-
-
 
 
 }
