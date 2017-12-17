@@ -42,12 +42,12 @@ public final class R {
         public static final int recycler_swipe_view_load_more = 0x7f0b0052;
     }
     public static final class string {
-        public static final int loading_default_messsage = 0x7f0e0022;
-        public static final int recycler_swipe_click_load_more = 0x7f0e002a;
-        public static final int recycler_swipe_data_empty = 0x7f0e002b;
-        public static final int recycler_swipe_load_error = 0x7f0e002c;
-        public static final int recycler_swipe_load_more_message = 0x7f0e002d;
-        public static final int recycler_swipe_more_not = 0x7f0e002e;
+        public static final int loading_default_messsage = 0x7f0e0024;
+        public static final int recycler_swipe_click_load_more = 0x7f0e002d;
+        public static final int recycler_swipe_data_empty = 0x7f0e002e;
+        public static final int recycler_swipe_load_error = 0x7f0e002f;
+        public static final int recycler_swipe_load_more_message = 0x7f0e0030;
+        public static final int recycler_swipe_more_not = 0x7f0e0031;
     }
     public static final class style {
         public static final int loadingDialog = 0x7f0f01b5;

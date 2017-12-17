@@ -121,6 +121,8 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
         mTabStrip = new SlidingTabStrip(context);
 
+
+
         addView(mTabStrip, LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
     }
 
@@ -350,13 +352,13 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
             mLastTime = mCurTime;
             mCurTime = System.currentTimeMillis();
-            if (mCurTime - mLastTime < 300) {//双击事件
+            if (mCurTime - mLastTime < 100) {//双击事件
                 mCurTime = 0;
                 mLastTime = 0;
                 handler.removeMessages(1);
                 handler.sendEmptyMessage(2);
             } else {//单击事件
-                handler.sendEmptyMessageDelayed(1, 310);
+                handler.sendEmptyMessageDelayed(1, 110);
             }
 
         }

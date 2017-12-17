@@ -4,6 +4,9 @@ import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by zzp on 17-11-25.
  */
@@ -23,11 +26,22 @@ public class NewsApp extends Application {
     public static boolean video_Full=false;
 
 
+
     @Override
     public void onCreate() {
         super.onCreate();
         context=getApplicationContext();
+        newsUrlMap();
     }
 
+    public static HashMap<String, String> hashMap = new HashMap<String, String>();
 
+
+    public  void newsUrlMap() {
+        hashMap.put("one", "two");
+        hashMap.put(getString(R.string.top_tab),getString(R.string.health_url));
+        hashMap.put(getString(R.string.top_tab_1),getString(R.string.football_url));
+        hashMap.put(getString(R.string.top_tab_2),getString(R.string.tech_url));
+        hashMap.put(getString(R.string.top_tab_3),getString(R.string.mobile_url));
+    }
 }

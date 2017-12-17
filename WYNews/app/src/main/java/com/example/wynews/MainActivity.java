@@ -27,7 +27,6 @@ import android.view.View;
 import android.support.v7.widget.SearchView;
 
 
-import com.example.wynews.common.view.SlidingTabLayout;
 
 import im.delight.android.webview.AdvancedWebView;
 

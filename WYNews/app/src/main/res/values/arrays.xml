@@ -8,6 +8,13 @@
 
 
 
+        <item>"http://api.tianapi.com/vr/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=3&#38;rand=1"</item>
+        <item>"http://api.tianapi.com/qiwen/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=3&#38;rand=1"</item>
+        <item>"http://api.tianapi.com/travel/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=3&#38;rand=1"</item>
+        <item>"http://api.tianapi.com/military/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=3&#38;rand=1"</item>
+
+
+
 
     </string-array>
 

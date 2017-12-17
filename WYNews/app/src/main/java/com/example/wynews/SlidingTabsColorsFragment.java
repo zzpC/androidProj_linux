@@ -80,8 +80,8 @@ public class SlidingTabsColorsFragment extends Fragment {
 
         }
 
-        Fragment createFragment(int i) {
-            return SwipeRefreshLayoutBasicFragment.newInstance(i);
+        Fragment createFragment(String title,int i) {
+            return SwipeRefreshLayoutBasicFragment.newInstance(title ,i);
 
         }
 
@@ -225,7 +225,7 @@ public class SlidingTabsColorsFragment extends Fragment {
         @Override
         public Fragment getItem(int i) {
             Log.e("testt", "getItem: ");
-            return mTabs.get(i).createFragment(i);
+            return mTabs.get(i).createFragment((String) mTabs.get(i).mTitle, i);
         }
 
         @Override

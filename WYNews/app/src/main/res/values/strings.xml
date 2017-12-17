@@ -11,6 +11,13 @@
     <string name="top_tab_3">产品</string>
 
 
+    <string name="health_url">"http://api.tianapi.com/health/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=3&#38;rand=1"</string>
+    <string name="football_url">"http://api.tianapi.com/football/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=3&#38;rand=1"</string>
+    <string name="tech_url">"http://api.tianapi.com/it/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=3&#38;rand=1"</string>
+    <string name="mobile_url">"http://api.tianapi.com/mobile/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=3&#38;rand=1"</string>
+
+
+
     <string name="small_problem">发送了点小问题,稍后重试</string>
     <string name="not_support">播放器不支持此设备</string>
 

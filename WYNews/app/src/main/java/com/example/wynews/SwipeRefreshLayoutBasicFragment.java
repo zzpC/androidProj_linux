@@ -87,15 +87,17 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
     private Fragment mFragmentStatus;
 
 
-    public static SwipeRefreshLayoutBasicFragment newInstance(int... argument) {
+    public static SwipeRefreshLayoutBasicFragment newInstance(String title, int... argument) {
 
 
         //保证fragment只有无参版本的构造函数,避免恢复fragment时失效
         SwipeRefreshLayoutBasicFragment swipeRefreshLayoutBasicFragment = new SwipeRefreshLayoutBasicFragment();
         Bundle bundle = new Bundle();
         bundle.putInt("sliding_tab_no", argument[0]);
-        bundle.putString("news_info", NewsApp.getContext().getResources()
-                .getStringArray(R.array.pager_item_info)[argument[0]]);
+//        bundle.putString("news_info", NewsApp.getContext().getResources()
+//                .getStringArray(R.array.pager_item_info)[argument[0]]);
+
+        bundle.putString("news_info", NewsApp.hashMap.get(title));
 
         swipeRefreshLayoutBasicFragment.setArguments(bundle);
 
