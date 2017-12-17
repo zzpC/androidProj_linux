@@ -12,6 +12,8 @@ public class News {
     private String picUrl;
     private String url;
 
+    private static int ReadNum=0;
+
 
     public News(String ctime, String title, String description, String picUrl, String url) {
         this.ctime = ctime;

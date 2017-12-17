@@ -8,11 +8,13 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceFragmentCompat;
 import android.support.v7.preference.PreferenceScreen;
 import android.util.Log;
+import android.view.View;
 
 import com.xyzlf.share.library.bean.ShareEntity;
 import com.xyzlf.share.library.interfaces.ShareConstant;
@@ -31,7 +33,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 
 
     public interface OnClickNightModeListener {
-        public void OnClickNightMode();
+         void OnClickNightMode();
     }
 
     ;
@@ -67,6 +69,14 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
                 return false;
             }
         });
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        Preference preference= findPreference("example_key");
+        preference.setTitle("已阅读数目： "+NewsApp.read_amount);
     }
 
     @Override

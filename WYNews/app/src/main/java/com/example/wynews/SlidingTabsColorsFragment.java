@@ -189,6 +189,7 @@ public class SlidingTabsColorsFragment extends Fragment {
         mSlidingTabLayout.setViewPager(mViewPager);
 
 
+
 //        mSlidingTabLayout.setCustomTabColorizer(new TabColorizer() {
 //
 //            @Override

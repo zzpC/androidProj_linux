@@ -363,6 +363,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
         }
     }
+
     @SuppressLint("HandlerLeak")
     private Handler handler = new Handler() {
         public void handleMessage(Message msg) {
@@ -380,10 +381,15 @@ public class SlidingTabLayout extends HorizontalScrollView {
                     Toast.makeText(getContext(), "这是双击事件", Toast.LENGTH_LONG).show();
                     for (int i = 0; i < mTabStrip.getChildCount(); i++) {
                         if (mDoubleClickView == mTabStrip.getChildAt(i)) {
+
+                            mViewPager.setCurrentItem(i);
+
                             mSlidingTabsColorsFragment.deleteTab(i);
 
                             break;
                         }
+
+
                     }
                     break;
             }

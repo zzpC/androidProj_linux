@@ -7,7 +7,7 @@
             android:selectable="false"
             android:enabled="true"
             android:key="example_key"
-            android:title="已阅读数目:"
+            android:title="已阅读数目: "
             android:summary="Reading Record" />
 
         <SwitchPreference

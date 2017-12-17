@@ -380,7 +380,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                     final News news = mNewsInfoList.get(position);
                     final String url = news.getUrl();
 
-
+                    ++NewsApp.read_amount;
                     mListener.onWebView(url);
                 }
             });
