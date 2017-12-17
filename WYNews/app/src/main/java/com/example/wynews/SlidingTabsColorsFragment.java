@@ -52,6 +52,7 @@ public class SlidingTabsColorsFragment extends Fragment {
     private static String SAVED_SLIDINGTAB_VIEW_STATUS_ID = "slidintab_status";
     private Fragment mFragmentStatus;
 
+    private ViewGroup mViewgroup;
 
 
     SlidingTabLayout mSlidingTabLayout;
@@ -80,8 +81,15 @@ public class SlidingTabsColorsFragment extends Fragment {
 
         }
 
-        Fragment createFragment(String title,int i) {
-            return SwipeRefreshLayoutBasicFragment.newInstance(title ,i);
+        Fragment createFragment(String title, int i) {
+            Log.e("createfrag", "createFragment: " + i + " " + title);
+            Fragment fragment = SwipeRefreshLayoutBasicFragment.newInstance(title, i);
+            return fragment;
+
+        }
+
+        void destroyFragment(String title, int i) {
+
 
         }
 
@@ -158,7 +166,7 @@ public class SlidingTabsColorsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        mViewgroup = container;
         return inflater.inflate(R.layout.slidingtabscolorsfragment, container, false);
     }
 
@@ -166,14 +174,14 @@ public class SlidingTabsColorsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
 
-         mViewPager = view.findViewById(R.id.viewpager);
+        mViewPager = view.findViewById(R.id.viewpager);
         mViewPager.setOffscreenPageLimit(4);
 
 
         mSampleFragmentPagerAdapter = new SampleFragmentPagerAdapter(getChildFragmentManager());
         mViewPager.setAdapter(mSampleFragmentPagerAdapter);
 
-         mSlidingTabLayout = view.findViewById(R.id.sliding_tabs);
+        mSlidingTabLayout = view.findViewById(R.id.sliding_tabs);
 
         mSlidingTabLayout.addFragmentAttached(this);
 
@@ -230,7 +238,7 @@ public class SlidingTabsColorsFragment extends Fragment {
 
         @Override
         public int getCount() {
-            Log.e("slidingtab", "getCount: tabs "+mTabs.size() );
+            Log.e("slidingtab", "getCount: tabs " + mTabs.size());
             return mTabs.size();
         }
 
@@ -252,6 +260,21 @@ public class SlidingTabsColorsFragment extends Fragment {
             spannableString.setSpan(imageSpan, 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             return spannableString;
 
+        }
+
+        public void removeTabPage(int position) {
+            if (getCount() > 0 && position < getCount()) {
+
+                try {
+                    getItem(position).onDestroy();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+
+//                Log.e("remove", "removeTabPage: "+getItem(position) );
+                notifyDataSetChanged();
+            }
         }
 
     }
@@ -293,9 +316,10 @@ public class SlidingTabsColorsFragment extends Fragment {
 
 
     public void deleteTab(int position) {
+        mTabs.get(position).destroyFragment("", position);
         mTabs.remove(position);
-        mSlidingTabLayout.setViewPager(mViewPager);
+        mSampleFragmentPagerAdapter.removeTabPage(position);
         mSampleFragmentPagerAdapter.notifyDataSetChanged();
-
+        mSlidingTabLayout.setViewPager(mViewPager);
     }
 }

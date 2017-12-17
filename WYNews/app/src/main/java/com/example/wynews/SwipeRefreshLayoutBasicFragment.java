@@ -19,6 +19,7 @@ package com.example.wynews;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -42,6 +43,9 @@ import android.widget.Toast;
 
 import com.example.wynews.Data4Adapter.News;
 import com.example.wynews.bitmapUtils.MyBitmapUtils;
+import com.xyzlf.share.library.bean.ShareEntity;
+import com.xyzlf.share.library.interfaces.ShareConstant;
+import com.xyzlf.share.library.util.ShareUtil;
 import com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView;
 import com.yanzhenjie.recyclerview.swipe.touch.OnItemMoveListener;
 
@@ -64,8 +68,6 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
     private SwipeMenuRecyclerView mRecyclerView;
 
-    static final Random RAMDOM = new Random(System.currentTimeMillis());
-
     //Tab编号
     private int mTopTab;
 
@@ -86,6 +88,8 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
     private Fragment mFragmentStatus;
 
+    private String mTitle;
+
 
     public static SwipeRefreshLayoutBasicFragment newInstance(String title, int... argument) {
 
@@ -97,11 +101,17 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 //        bundle.putString("news_info", NewsApp.getContext().getResources()
 //                .getStringArray(R.array.pager_item_info)[argument[0]]);
 
+
         bundle.putString("news_info", NewsApp.hashMap.get(title));
+//        Log.e("newsinfo", "newInstance: "+title+" "+NewsApp.hashMap.get(title) );
 
         swipeRefreshLayoutBasicFragment.setArguments(bundle);
 
         return swipeRefreshLayoutBasicFragment;
+    }
+
+    public static void DestroyFragment() {
+
     }
 
     @Override
@@ -264,10 +274,10 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                 if (isNetworkAvailable()) {
                     HttpURLConnection connection = null;
                     try {
-                        String url_string=getArguments().getString("news_info");
+                        String url_string = getArguments().getString("news_info");
 
 //                        url_string=url_string+ String.valueOf(RAMDOM.nextInt(80));
-                        Log.e("urltest", "doInBackground: "+url_string );
+                        Log.e("urltest", "doInBackground: " + url_string);
                         URL url = new URL(url_string);
 
                         connection = (HttpURLConnection) url.openConnection();
@@ -346,13 +356,20 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_swiperefresh, parent, false);
             final ViewHolder viewHolder = new ViewHolder(view);
 
-            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            viewHolder.iv_pic.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
-                    final News news = mNewsInfoList.get(viewHolder.getAdapterPosition());
+                    int position = viewHolder.getAdapterPosition();
+                    final News news = mNewsInfoList.get(position);
+                    final String url = news.getUrl();
 
+                    ShareEntity testBean = new ShareEntity(news.getTitle(), news.getDescription() + " " + news.getCtime());
+                    testBean.setUrl(news.getUrl()); //分享链接
+                    testBean.setImgUrl(news.getPicUrl());
 
+                    Log.e(TAG, "showShareDialog: " + " ");
+                    ShareUtil.showShareDialog(getActivity(), testBean, ShareConstant.REQUEST_CODE);
                 }
             });
 
@@ -371,7 +388,6 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
             viewHolder.tv_title.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-//                    mOnItemLongClickListener.OnItemLongClick(v, viewHolder.getLayoutPosition());
                     return true;
                 }
             });

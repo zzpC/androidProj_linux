@@ -352,13 +352,13 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
             mLastTime = mCurTime;
             mCurTime = System.currentTimeMillis();
-            if (mCurTime - mLastTime < 100) {//双击事件
+            if (mCurTime - mLastTime < 300) {//双击事件
                 mCurTime = 0;
                 mLastTime = 0;
                 handler.removeMessages(1);
                 handler.sendEmptyMessage(2);
             } else {//单击事件
-                handler.sendEmptyMessageDelayed(1, 110);
+                handler.sendEmptyMessageDelayed(1, 310);
             }
 
         }
@@ -380,7 +380,6 @@ public class SlidingTabLayout extends HorizontalScrollView {
                     Toast.makeText(getContext(), "这是双击事件", Toast.LENGTH_LONG).show();
                     for (int i = 0; i < mTabStrip.getChildCount(); i++) {
                         if (mDoubleClickView == mTabStrip.getChildAt(i)) {
-//                            mSetOnDoubleClickListener.setOnDoubleClick(i);
                             mSlidingTabsColorsFragment.deleteTab(i);
 
                             break;
