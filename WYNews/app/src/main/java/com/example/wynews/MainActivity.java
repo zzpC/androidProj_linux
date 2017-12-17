@@ -33,7 +33,7 @@ import im.delight.android.webview.AdvancedWebView;
 
 
 public class MainActivity extends AppCompatActivity implements SwipeRefreshLayoutBasicFragment.OnWebViewListener
-        , SettingsFragment.OnClickNightModeListener ,SlidingTabLayout.SetOnDoubleClickListener{
+        , SettingsFragment.OnClickNightModeListener {
 
     private static final String TAG = "MainActivity";
     private BottomNavigationView mBottomNavigationView;
@@ -89,10 +89,6 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         NewsApp.changing_Theme = true;
     }
 
-    @Override
-    public void setOnDoubleClick(int position) {
-
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

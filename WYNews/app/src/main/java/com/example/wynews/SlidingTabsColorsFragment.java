@@ -42,7 +42,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //创建TabLayout+viewpager的视图作为acitvity一部分,getitem生成新的fragment,覆盖本fragment
-public class SlidingTabsColorsFragment extends Fragment  {
+public class SlidingTabsColorsFragment extends Fragment {
 
     private static final String TAG = "SlidingTabsColorsFragme";
     private boolean Isfirst = true;
@@ -52,14 +52,16 @@ public class SlidingTabsColorsFragment extends Fragment  {
     private static String SAVED_SLIDINGTAB_VIEW_STATUS_ID = "slidintab_status";
     private Fragment mFragmentStatus;
 
-    private SlidingTabLayout.SetOnDoubleClickListener mSetOnDoubleClickListener;
 
+
+    SlidingTabLayout mSlidingTabLayout;
+    SampleFragmentPagerAdapter mSampleFragmentPagerAdapter;
+    ViewPager mViewPager;
 
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        mSetOnDoubleClickListener=(SlidingTabLayout.SetOnDoubleClickListener) context;
 
     }
 
@@ -164,15 +166,16 @@ public class SlidingTabsColorsFragment extends Fragment  {
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
 
-        ViewPager mViewPager = view.findViewById(R.id.viewpager);
+         mViewPager = view.findViewById(R.id.viewpager);
         mViewPager.setOffscreenPageLimit(4);
-        mViewPager.setAdapter(new SampleFragmentPagerAdapter(getChildFragmentManager()));
 
-        SlidingTabLayout mSlidingTabLayout = view.findViewById(R.id.sliding_tabs);
+
+        mSampleFragmentPagerAdapter = new SampleFragmentPagerAdapter(getChildFragmentManager());
+        mViewPager.setAdapter(mSampleFragmentPagerAdapter);
+
+         mSlidingTabLayout = view.findViewById(R.id.sliding_tabs);
 
         mSlidingTabLayout.addFragmentAttached(this);
-
-
 
 
         mSlidingTabLayout.setViewPager(mViewPager);
@@ -227,6 +230,7 @@ public class SlidingTabsColorsFragment extends Fragment  {
 
         @Override
         public int getCount() {
+            Log.e("slidingtab", "getCount: tabs "+mTabs.size() );
             return mTabs.size();
         }
 
@@ -288,7 +292,10 @@ public class SlidingTabsColorsFragment extends Fragment  {
     }
 
 
-    public void deleteTab(int position){
+    public void deleteTab(int position) {
         mTabs.remove(position);
+        mSlidingTabLayout.setViewPager(mViewPager);
+        mSampleFragmentPagerAdapter.notifyDataSetChanged();
+
     }
 }

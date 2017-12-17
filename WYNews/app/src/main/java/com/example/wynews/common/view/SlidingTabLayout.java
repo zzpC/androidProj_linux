@@ -61,7 +61,6 @@ public class SlidingTabLayout extends HorizontalScrollView {
     long mLastTime = 0;
     long mCurTime = 0;
     View mDoubleClickView;
-    SetOnDoubleClickListener mSetOnDoubleClickListener;
     /**
      * Allows complete controover the colors drawn in the tab layout. Set with
      * {@link #setCustomTabColorizer(TabColorizer)}.
@@ -95,10 +94,6 @@ public class SlidingTabLayout extends HorizontalScrollView {
     private final SlidingTabStrip mTabStrip;
     private SlidingTabsColorsFragment mSlidingTabsColorsFragment;
 
-
-    public interface SetOnDoubleClickListener{
-        public void setOnDoubleClick(int position);
-    }
 
 
 
@@ -383,14 +378,12 @@ public class SlidingTabLayout extends HorizontalScrollView {
                     Toast.makeText(getContext(), "这是双击事件", Toast.LENGTH_LONG).show();
                     for (int i = 0; i < mTabStrip.getChildCount(); i++) {
                         if (mDoubleClickView == mTabStrip.getChildAt(i)) {
-                            mSetOnDoubleClickListener.setOnDoubleClick(i);
+//                            mSetOnDoubleClickListener.setOnDoubleClick(i);
                             mSlidingTabsColorsFragment.deleteTab(i);
-
 
                             break;
                         }
                     }
-
                     break;
             }
         }
