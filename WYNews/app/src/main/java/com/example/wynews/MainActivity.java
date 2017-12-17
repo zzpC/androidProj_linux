@@ -27,12 +27,13 @@ import android.view.View;
 import android.support.v7.widget.SearchView;
 
 
+import com.example.wynews.common.view.SlidingTabLayout;
 
 import im.delight.android.webview.AdvancedWebView;
 
 
 public class MainActivity extends AppCompatActivity implements SwipeRefreshLayoutBasicFragment.OnWebViewListener
-        , SettingsFragment.OnClickNightModeListener {
+        , SettingsFragment.OnClickNightModeListener ,SlidingTabLayout.SetOnDoubleClickListener{
 
     private static final String TAG = "MainActivity";
     private BottomNavigationView mBottomNavigationView;
@@ -86,6 +87,11 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     public void OnClickNightMode() {
         this.recreate();
         NewsApp.changing_Theme = true;
+    }
+
+    @Override
+    public void setOnDoubleClick(int position) {
+
     }
 
     @Override

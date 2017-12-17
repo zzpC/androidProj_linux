@@ -21,7 +21,7 @@ import android.content.Context;
 import android.graphics.Point;
 import android.graphics.Typeface;
 import android.os.Build;
-import android.os.Bundle;
+
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.PagerAdapter;
@@ -36,6 +36,8 @@ import android.view.WindowManager;
 import android.widget.HorizontalScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.wynews.SlidingTabsColorsFragment;
 
 
 /**
@@ -91,13 +93,21 @@ public class SlidingTabLayout extends HorizontalScrollView {
     private ViewPager.OnPageChangeListener mViewPagerPageChangeListener;
 
     private final SlidingTabStrip mTabStrip;
+    private SlidingTabsColorsFragment mSlidingTabsColorsFragment;
+
 
     public interface SetOnDoubleClickListener{
         public void setOnDoubleClick(int position);
     }
 
+
+
+
+
     public SlidingTabLayout(Context context) {
         this(context, null);
+
+
     }
 
     public SlidingTabLayout(Context context, AttributeSet attrs) {
@@ -120,32 +130,10 @@ public class SlidingTabLayout extends HorizontalScrollView {
     }
 
 
-    @SuppressLint("HandlerLeak")
-    private Handler handler = new Handler() {
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            switch (msg.what) {
-                case 1:
-                    for (int i = 0; i < mTabStrip.getChildCount(); i++) {
-                        if (mDoubleClickView == mTabStrip.getChildAt(i)) {
-                            mViewPager.setCurrentItem(i);
-                            return;
-                        }
-                    }
-                    break;
-                case 2:
-                    Toast.makeText(getContext(), "这是双击事件", Toast.LENGTH_LONG).show();
-                    for (int i = 0; i < mTabStrip.getChildCount(); i++) {
-                        if (mDoubleClickView == mTabStrip.getChildAt(i)) {
-                            mSetOnDoubleClickListener.setOnDoubleClick(i);
-                            break;
-                        }
-                    }
 
-                    break;
-            }
-        }
-    };
+    public void addFragmentAttached(SlidingTabsColorsFragment slidingTabsColorsFragment){
+        mSlidingTabsColorsFragment=slidingTabsColorsFragment;
+    }
 
 
     /**
@@ -247,6 +235,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
         textView.setWidth(size.x / 4);
 
         textView.setAllCaps(false);
+
 
         return textView;
     }
@@ -377,6 +366,35 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
         }
     }
+    @SuppressLint("HandlerLeak")
+    private Handler handler = new Handler() {
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 1:
+                    for (int i = 0; i < mTabStrip.getChildCount(); i++) {
+                        if (mDoubleClickView == mTabStrip.getChildAt(i)) {
+                            mViewPager.setCurrentItem(i);
+                            return;
+                        }
+                    }
+                    break;
+                case 2:
+                    Toast.makeText(getContext(), "这是双击事件", Toast.LENGTH_LONG).show();
+                    for (int i = 0; i < mTabStrip.getChildCount(); i++) {
+                        if (mDoubleClickView == mTabStrip.getChildAt(i)) {
+                            mSetOnDoubleClickListener.setOnDoubleClick(i);
+                            mSlidingTabsColorsFragment.deleteTab(i);
+
+
+                            break;
+                        }
+                    }
+
+                    break;
+            }
+        }
+    };
 
 
 }

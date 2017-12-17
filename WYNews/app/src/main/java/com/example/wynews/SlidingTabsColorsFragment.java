@@ -16,6 +16,7 @@
 
 package com.example.wynews;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -34,7 +35,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 import com.example.wynews.common.view.SlidingTabLayout;
 
 
@@ -42,7 +42,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //创建TabLayout+viewpager的视图作为acitvity一部分,getitem生成新的fragment,覆盖本fragment
-public class SlidingTabsColorsFragment extends Fragment implements SlidingTabLayout.SetOnDoubleClickListener {
+public class SlidingTabsColorsFragment extends Fragment  {
 
     private static final String TAG = "SlidingTabsColorsFragme";
     private boolean Isfirst = true;
@@ -52,9 +52,15 @@ public class SlidingTabsColorsFragment extends Fragment implements SlidingTabLay
     private static String SAVED_SLIDINGTAB_VIEW_STATUS_ID = "slidintab_status";
     private Fragment mFragmentStatus;
 
+    private SlidingTabLayout.SetOnDoubleClickListener mSetOnDoubleClickListener;
+
+
+
     @Override
-    public void setOnDoubleClick(int position) {
-        mTabs.remove(position);
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mSetOnDoubleClickListener=(SlidingTabLayout.SetOnDoubleClickListener) context;
+
     }
 
     static class SamplePagerItem {
@@ -101,7 +107,7 @@ public class SlidingTabsColorsFragment extends Fragment implements SlidingTabLay
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         mFragmentManager = getFragmentManager();
-        if (outState != null &&mFragmentManager!=null && mFragmentStatus!=null) {
+        if (outState != null && mFragmentManager != null && mFragmentStatus != null) {
             mFragmentManager.putFragment(outState, TAG, mFragmentStatus);
         }
     }
@@ -111,7 +117,7 @@ public class SlidingTabsColorsFragment extends Fragment implements SlidingTabLay
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (savedInstanceState != null && mFragmentManager!=null) {
+        if (savedInstanceState != null && mFragmentManager != null) {
             mFragmentStatus = mFragmentManager.getFragment(savedInstanceState, TAG);
             return;
         }
@@ -164,12 +170,29 @@ public class SlidingTabsColorsFragment extends Fragment implements SlidingTabLay
 
         SlidingTabLayout mSlidingTabLayout = view.findViewById(R.id.sliding_tabs);
 
+        mSlidingTabLayout.addFragmentAttached(this);
+
+
+
+
         mSlidingTabLayout.setViewPager(mViewPager);
 
 
+//        mSlidingTabLayout.setCustomTabColorizer(new TabColorizer() {
+//
+//            @Override
+//            public int getIndicatorColor(int position) {
+//                return mTabs.get(position).getIndicatorColor();
+//            }
+//
+//            @Override
+//            public int getDividerColor(int position) {
+//                return mTabs.get(position).getDividerColor();
+//            }
+//
+//        });
 
-        mSlidingTabLayout.setCustomTabColorizer(new SlidingTabLayout.TabColorizer() {
-
+        mSlidingTabLayout.setCustomTabCo1lorizer(new SlidingTabLayout.TabColorizer() {
             @Override
             public int getIndicatorColor(int position) {
                 return mTabs.get(position).getIndicatorColor();
@@ -179,7 +202,6 @@ public class SlidingTabsColorsFragment extends Fragment implements SlidingTabLay
             public int getDividerColor(int position) {
                 return mTabs.get(position).getDividerColor();
             }
-
         });
 
     }
@@ -199,7 +221,7 @@ public class SlidingTabsColorsFragment extends Fragment implements SlidingTabLay
          */
         @Override
         public Fragment getItem(int i) {
-            Log.e("testt", "getItem: " );
+            Log.e("testt", "getItem: ");
             return mTabs.get(i).createFragment(i);
         }
 
@@ -263,5 +285,10 @@ public class SlidingTabsColorsFragment extends Fragment implements SlidingTabLay
         }
 //        getActivity().finish();
         Log.e("ZZZZZZ", "onResume: " + TAG);
+    }
+
+
+    public void deleteTab(int position){
+        mTabs.remove(position);
     }
 }
