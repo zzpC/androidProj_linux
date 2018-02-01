@@ -49,7 +49,7 @@ public class NewsContentTextFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        String site=getArguments().getString("newscontextstr");
+        String site=getArguments().getString("url");
         Log.e(TAG, "onViewCreated: "+site);
     }
 
@@ -64,8 +64,7 @@ public class NewsContentTextFragment extends Fragment {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 ViewGroup.LayoutParams layoutParams=tv_content.getLayoutParams();
-//                layoutParams.width=;
-//                sb_width.setLayoutParams(layoutParams);
+                layoutParams.width=DisplayUtil.dp2px(getContext(),defaultWidth+progress);
                 tv_content.setLayoutParams(layoutParams);
             }
 
@@ -84,7 +83,7 @@ public class NewsContentTextFragment extends Fragment {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 ViewGroup.LayoutParams layoutParams=tv_content.getLayoutParams();
-//                layoutParams.height=;
+                layoutParams.height = DisplayUtil.dp2px(getContext(),defaultHeight + progress);
                 tv_content.setLayoutParams(layoutParams);
             }
 

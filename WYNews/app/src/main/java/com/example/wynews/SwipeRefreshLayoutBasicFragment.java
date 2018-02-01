@@ -88,7 +88,12 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         void onWebView(String info);
     }
 
-    private OnWebViewListener mListener;
+    public interface OnLoadWebSiteNewsListner{
+        void onLoadWebSiteNews(String info);
+    }
+
+
+    private OnLoadWebSiteNewsListner mListener;
 
     private final static String SAVED_RECYCLER_VIEW_STATUS_ID = "recylerview_status";
 
@@ -122,11 +127,12 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
     }
 
+    //检测是否实现了接口
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         try {
-            mListener = (OnWebViewListener) context;
+            mListener = (OnLoadWebSiteNewsListner) context;
         } catch (final ClassCastException e) {
             throw new ClassCastException(context.toString() + " must implement OnWebViewListener");
         }
@@ -389,7 +395,8 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                     final String url = news.getUrl();
 
                     ++NewsApp.read_amount;
-                    mListener.onWebView(url);
+//                    mListener.onWebView(url);
+                    mListener.onLoadWebSiteNews(url);
                     Log.e(TAG, "onClick: " +url);
 
 

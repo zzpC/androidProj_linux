@@ -33,8 +33,7 @@ import android.support.v7.widget.SearchView;
 import im.delight.android.webview.AdvancedWebView;
 
 
-public class MainActivity extends AppCompatActivity implements SwipeRefreshLayoutBasicFragment.OnWebViewListener
-        , SettingsFragment.OnClickNightModeListener {
+public class MainActivity extends AppCompatActivity implements SettingsFragment.OnClickNightModeListener ,SwipeRefreshLayoutBasicFragment.OnLoadWebSiteNewsListner{
 
     private static final String TAG = "MainActivity";
     private BottomNavigationView mBottomNavigationView;
@@ -71,10 +70,8 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     };
 
     @Override
-    public void onWebView(final String info) {
-        Log.e("main", "onWebView:  " + info);
-
-        NewsContentFragment newsContentFragment = new NewsContentFragment();
+    public void onLoadWebSiteNews(String info) {
+//        NewsContentTextFragment newsContentTextFragment = new NewsContentFragment();
         NewsContentTextFragment newsContentTextFragment=new NewsContentTextFragment();
 
         Bundle bundle = new Bundle();
@@ -88,6 +85,28 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
         mBottomNavigationView.setVisibility(View.INVISIBLE);
     }
+
+//    @Override
+//    public void onWebView(final String info) {
+//        Log.e("main", "onWebView:  " + info);
+//
+//        NewsContentFragment newsContentFragment = new NewsContentFragment();
+//        NewsContentTextFragment newsContentTextFragment=new NewsContentTextFragment();
+//
+//        Bundle bundle = new Bundle();
+//        bundle.putString("url", info);
+////        newsContentFragment.setArguments(bundle);
+//        newsContentTextFragment.setArguments(bundle);
+//
+//        FragmentManager manager = getSupportFragmentManager();
+////        manager.beginTransaction().replace(R.id.full, newsContentFragment).addToBackStack("webview").commit();
+//        manager.beginTransaction().replace(R.id.full, newsContentTextFragment).addToBackStack("newscontextstr").commit();
+//
+//        mBottomNavigationView.setVisibility(View.INVISIBLE);
+//    }
+
+
+
 
     @Override
     public void OnClickNightMode() {
