@@ -400,10 +400,15 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                                 //解析Url获取Document对象
                                 Document document = Jsoup.connect(url).get();
                                 //获取指定class的内容指定tag的元素
-                                Elements liElements=document.getElementById("endText").getElementsByTag("p");
-                                for (int i = 0; i < liElements.size(); i++) {
-                                    Log.e(TAG, "onClick: "+i + ". " + liElements.get(i).text() );
+                                Elements pElements=document.getElementById("endText").getElementsByTag("p");
+                                String newsTitleStr=document.getElementById("epContentLeft").getElementsByTag("h1").text();
+                                StringBuilder stringBuilder=new StringBuilder();
+                                for (int i = 1; i < pElements.size(); i++) {
+//                                    Log.e(TAG, "onClick: "+i + ". " + pElements.get(i).text() );
+                                    stringBuilder.append(pElements.get(i).text()).append("\n");
                                 }
+                                String newsContent=stringBuilder.toString();
+                                Log.e(TAG, "run: "+newsTitleStr+"  **  "+newsContent );
                             } catch (IOException e) {
                                 Log.e(TAG, "run: "+ "解析出错！");
                                 e.printStackTrace();

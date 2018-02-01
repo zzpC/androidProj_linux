@@ -6,22 +6,22 @@
     density="xxhdpi"
     format="10"
     plugin-version="3.0.1"
-    timestamp="1517475560579"
+    timestamp="1517476739478"
     token="6368884198045034902"
     verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="613" />
+        duration="2778" />
     <task
         name="instant-run-dex"
-        duration="120" />
+        duration="15" />
     <task
         name="instant-run-transform"
-        duration="74" />
+        duration="623" />
     <task
         name="verifier"
-        duration="478" />
+        duration="30" />
 
     <artifact
         location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/reload-dex/debug/classes.dex"
@@ -71,7 +71,7 @@
     <build
         build-mode="COLD"
         ir-eligibility="COMPATIBLE"
-        timestamp="1517475400665"
+        timestamp="1517476153692"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
@@ -79,7 +79,47 @@
     </build>
     <build
         build-mode="HOT_WARM"
-        timestamp="1517475560579"
+        timestamp="1517476331198"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/builds/debug/1517476331198/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        build-mode="HOT_WARM"
+        timestamp="1517476358159"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/builds/debug/1517476358159/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        build-mode="HOT_WARM"
+        timestamp="1517476406379"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/builds/debug/1517476406379/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        build-mode="HOT_WARM"
+        timestamp="1517476430366"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/builds/debug/1517476430366/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        build-mode="HOT_WARM"
+        timestamp="1517476527788"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/builds/debug/1517476527788/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        build-mode="HOT_WARM"
+        timestamp="1517476739478"
         verifier="COMPATIBLE" >
         <artifact
             location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/reload-dex/debug/classes.dex"
