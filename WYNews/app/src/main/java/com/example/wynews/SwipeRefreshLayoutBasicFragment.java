@@ -19,7 +19,7 @@ package com.example.wynews;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.net.Uri;
+
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -399,29 +399,6 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                     mListener.onLoadWebSiteNews(url);
                     Log.e(TAG, "onClick: " +url);
 
-
-                    new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                //解析Url获取Document对象
-                                Document document = Jsoup.connect(url).get();
-                                //获取指定class的内容指定tag的元素
-                                Elements pElements=document.getElementById("endText").getElementsByTag("p");
-                                String newsTitleStr=document.getElementById("epContentLeft").getElementsByTag("h1").text();
-                                StringBuilder stringBuilder=new StringBuilder();
-                                for (int i = 1; i < pElements.size(); i++) {
-//                                    Log.e(TAG, "onClick: "+i + ". " + pElements.get(i).text() );
-                                    stringBuilder.append(pElements.get(i).text()).append("\n");
-                                }
-                                String newsContent=stringBuilder.toString();
-                                Log.e(TAG, "run: "+newsTitleStr+"  **  "+newsContent );
-                            } catch (IOException e) {
-                                Log.e(TAG, "run: "+ "解析出错！");
-                                e.printStackTrace();
-                            }
-                        }
-                    }).start();
 
 
 
