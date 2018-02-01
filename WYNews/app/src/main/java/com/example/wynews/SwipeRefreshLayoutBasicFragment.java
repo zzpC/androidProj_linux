@@ -57,7 +57,15 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
+
+//jsoup
+import java.io.IOException;
+import java.text.ParseException;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
+
+
 
 import static com.example.wynews.HttpUtil.isNetworkAvailable;
 
@@ -382,6 +390,30 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
                     ++NewsApp.read_amount;
                     mListener.onWebView(url);
+                    Log.e(TAG, "onClick: " +url);
+
+
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                //解析Url获取Document对象
+                                Document document = Jsoup.connect(url).get();
+                                //获取指定class的内容指定tag的元素
+                                Elements liElements=document.getElementById("endText").getElementsByTag("p");
+                                for (int i = 0; i < liElements.size(); i++) {
+                                    Log.e(TAG, "onClick: "+i + ". " + liElements.get(i).text() );
+                                }
+                            } catch (IOException e) {
+                                Log.e(TAG, "run: "+ "解析出错！");
+                                e.printStackTrace();
+                            }
+                        }
+                    }).start();
+
+
+
+
                 }
             });
 

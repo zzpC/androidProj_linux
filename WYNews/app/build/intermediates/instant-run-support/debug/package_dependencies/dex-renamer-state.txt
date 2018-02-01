@@ -1,4 +1,4 @@
-#Sun Dec 17 12:16:07 CST 2017
-base.0=/home/zzp/program/androidProj_linux/WYNews/app/build/intermediates/transforms/dexMerger/debug/29
+#Thu Feb 01 16:10:32 CST 2018
+base.0=/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/transforms/dexMerger/debug/11
 path.0=classes.dex
 renamed.0=classes.dex

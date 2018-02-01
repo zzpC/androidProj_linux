@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/zzp/program/androidProj_linux/WYNews/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml",
+            "outputFile": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml",
             "map": [
                 {
                     "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/aa12c40593f51c1ccc3ffae4e0a865bd/res/values-land/values-land.xml",
