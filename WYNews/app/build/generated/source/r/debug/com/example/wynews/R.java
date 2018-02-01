@@ -32,7 +32,8 @@ public final class R {
     public static final int design_appbar_state_list_animator=0x7f020000;
   }
   public static final class array {
-    public static final int pager_item_info=0x7f030000;
+    public static final int autosize_text_sizes=0x7f030000;
+    public static final int pager_item_info=0x7f030001;
   }
   public static final class attr {
     /**
