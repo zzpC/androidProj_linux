@@ -12,7 +12,7 @@ public final class R {
         public static final int loading_view = 0x7f09007c;
     }
     public static final class layout {
-        public static final int loading_wait_dialog = 0x7f0b0030;
+        public static final int loading_wait_dialog = 0x7f0b0031;
     }
     public static final class string {
         public static final int loading_default_messsage = 0x7f0e0026;

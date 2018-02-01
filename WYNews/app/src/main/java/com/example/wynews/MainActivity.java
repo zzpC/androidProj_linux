@@ -75,11 +75,16 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         Log.e("main", "onWebView:  " + info);
 
         NewsContentFragment newsContentFragment = new NewsContentFragment();
+        NewsContentTextFragment newsContentTextFragment=new NewsContentTextFragment();
+
         Bundle bundle = new Bundle();
         bundle.putString("url", info);
-        newsContentFragment.setArguments(bundle);
+//        newsContentFragment.setArguments(bundle);
+        newsContentTextFragment.setArguments(bundle);
+
         FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.full, newsContentFragment).addToBackStack("webview").commit();
+//        manager.beginTransaction().replace(R.id.full, newsContentFragment).addToBackStack("webview").commit();
+        manager.beginTransaction().replace(R.id.full, newsContentTextFragment).addToBackStack("newscontextstr").commit();
 
         mBottomNavigationView.setVisibility(View.INVISIBLE);
     }
