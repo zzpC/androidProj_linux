@@ -27,6 +27,7 @@ import android.os.Message;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Display;
 import android.view.Gravity;
@@ -373,6 +374,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
                     for (int i = 0; i < mTabStrip.getChildCount(); i++) {
                         if (mDoubleClickView == mTabStrip.getChildAt(i)) {
                             mViewPager.setCurrentItem(i);
+                            Log.e(TAG, "handleMessage: 1-> "+i );
                             return;
                         }
                     }
@@ -381,11 +383,10 @@ public class SlidingTabLayout extends HorizontalScrollView {
                     Toast.makeText(getContext(), "这是双击事件", Toast.LENGTH_LONG).show();
                     for (int i = 0; i < mTabStrip.getChildCount(); i++) {
                         if (mDoubleClickView == mTabStrip.getChildAt(i)) {
+                            Log.e(TAG, "handleMessage: 2-> "+i );
 
-                            mViewPager.setCurrentItem(i);
 
                             mSlidingTabsColorsFragment.deleteTab(i);
-
                             break;
                         }
 

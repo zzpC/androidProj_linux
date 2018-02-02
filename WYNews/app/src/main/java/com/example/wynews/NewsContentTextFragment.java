@@ -197,7 +197,6 @@ public class NewsContentTextFragment extends Fragment {
             //执行完毕
             int separate=result.indexOf("#");
 
-
             tv_tiltle.setText(result.substring(0,separate-1));
             tv_content.setText(result.substring(separate+1));
 

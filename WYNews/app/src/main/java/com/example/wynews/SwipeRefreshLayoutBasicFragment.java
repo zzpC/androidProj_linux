@@ -103,6 +103,8 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
     private String mTitle;
 
+    private static List<SwipeRefreshLayoutBasicFragment> mSwipeRefreshLayoutBasicFragments=new ArrayList<>();
+
 
     public static SwipeRefreshLayoutBasicFragment newInstance(String title, int... argument) {
 
@@ -119,12 +121,13 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 //        Log.e("newsinfo", "newInstance: "+title+" "+NewsApp.hashMap.get(title) );
 
         swipeRefreshLayoutBasicFragment.setArguments(bundle);
+        mSwipeRefreshLayoutBasicFragments.add(swipeRefreshLayoutBasicFragment);
 
         return swipeRefreshLayoutBasicFragment;
     }
 
-    public static void DestroyFragment() {
-
+    public static void DestroyFragment(int i) {
+        mSwipeRefreshLayoutBasicFragments.get(i).onDestroy();
     }
 
     //检测是否实现了接口
