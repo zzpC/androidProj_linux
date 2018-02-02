@@ -34,13 +34,6 @@
 
 
 
-        <TextView
-            android:id="@+id/tv_scale"
-            android:layout_width="100dp"
-            android:layout_height="20dp"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -53,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="16dp"
-            android:text="width:" />
+            android:text="@string/width" />
 
         <SeekBar
             android:id="@+id/sb_width"
@@ -67,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="16dp"
-            android:text="height:" />
+            android:text="@string/height" />
 
         <SeekBar
             android:id="@+id/sb_height"

@@ -29,8 +29,11 @@ import android.view.View;
 import android.support.v7.widget.SearchView;
 
 
-
-import im.delight.android.webview.AdvancedWebView;
+import com.example.wynews.MediaPlayer.VideoFragment;
+import com.example.wynews.NewsReading.NewsContentTextFragment;
+import com.example.wynews.NewsReading.SlidingTabsColorsFragment;
+import com.example.wynews.NewsReading.SwipeRefreshLayoutBasicFragment;
+import com.example.wynews.Settings.SettingsFragment;
 
 
 public class MainActivity extends AppCompatActivity implements SettingsFragment.OnClickNightModeListener ,SwipeRefreshLayoutBasicFragment.OnLoadWebSiteNewsListner{
@@ -225,14 +228,11 @@ public class MainActivity extends AppCompatActivity implements SettingsFragment.
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        AdvancedWebView webView = findViewById(R.id.webview);
+
         mBottomNavigationView.setVisibility(View.VISIBLE);
         mToolbar.setVisibility(View.VISIBLE);
         MainActivity.this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        if (webView != null && webView.getVisibility() == View.VISIBLE) {
-            webView.setVisibility(View.GONE);
-            findViewById(R.id.navigation).setVisibility(View.VISIBLE);
-        }
+
 
     }
 

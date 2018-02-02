@@ -88,16 +88,16 @@
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.0.aar/33530cc54e80624cc556001da2a4dbf1/res/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png"
     },
     {
-        "merged": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
-        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-hdpi-v4/abc_scrubber_track_mtrl_alpha.9.png"
+        "merged": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/res/merged/debug/color_design_tint_password_toggle.xml.flat",
+        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/aa12c40593f51c1ccc3ffae4e0a865bd/res/color/design_tint_password_toggle.xml"
     },
     {
         "merged": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_sports.png.flat",
         "source": "/home/zzp/Programs/androidProj_linux/WYNews/app/src/main/res/mipmap-xxhdpi/sports.png"
     },
     {
-        "merged": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/res/merged/debug/color_design_tint_password_toggle.xml.flat",
-        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/aa12c40593f51c1ccc3ffae4e0a865bd/res/color/design_tint_password_toggle.xml"
+        "merged": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
+        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-hdpi-v4/abc_scrubber_track_mtrl_alpha.9.png"
     },
     {
         "merged": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/res/merged/debug/layout-v21_preference_material.xml.flat",
@@ -288,12 +288,12 @@
         "source": "/home/zzp/Programs/androidProj_linux/WYNews/app/src/main/res/drawable-xhdpi/up.png"
     },
     {
-        "merged": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/res/merged/debug/layout_tooltip.xml.flat",
-        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/layout/tooltip.xml"
-    },
-    {
         "merged": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/res/merged/debug/layout_design_layout_snackbar_include.xml.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/aa12c40593f51c1ccc3ffae4e0a865bd/res/layout/design_layout_snackbar_include.xml"
+    },
+    {
+        "merged": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/res/merged/debug/layout_tooltip.xml.flat",
+        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/layout/tooltip.xml"
     },
     {
         "merged": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
@@ -334,10 +334,6 @@
     {
         "merged": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-xxxhdpi-v4/abc_switch_track_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/res/merged/debug/layout_newscontentfragment.xml.flat",
-        "source": "/home/zzp/Programs/androidProj_linux/WYNews/app/src/main/res/layout/newscontentfragment.xml"
     },
     {
         "merged": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/res/merged/debug/layout_notification_media_action.xml.flat",

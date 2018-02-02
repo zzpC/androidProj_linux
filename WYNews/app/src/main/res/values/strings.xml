@@ -56,6 +56,8 @@
 
 
     <string name="nav_girls">Girls</string>
+    <string name="height">height:</string>
+    <string name="width">width:</string>
 
 
 </resources>

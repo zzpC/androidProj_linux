@@ -601,10 +601,10 @@ public final class R {
         public static final int title_template = 0x7f0900de;
         public static final int top = 0x7f0900e0;
         public static final int topPanel = 0x7f0900e1;
-        public static final int up = 0x7f0900ed;
-        public static final int useLogo = 0x7f0900ee;
-        public static final int withText = 0x7f0900f8;
-        public static final int wrap_content = 0x7f0900fa;
+        public static final int up = 0x7f0900ec;
+        public static final int useLogo = 0x7f0900ed;
+        public static final int withText = 0x7f0900f6;
+        public static final int wrap_content = 0x7f0900f8;
     }
     public static final class integer {
         public static final int abc_config_activityDefaultDur = 0x7f0a0000;
@@ -638,19 +638,19 @@ public final class R {
         public static final int abc_search_dropdown_item_icons_2line = 0x7f0b0017;
         public static final int abc_search_view = 0x7f0b0018;
         public static final int abc_select_dialog_material = 0x7f0b0019;
-        public static final int notification_media_action = 0x7f0b0035;
-        public static final int notification_media_cancel_action = 0x7f0b0036;
-        public static final int notification_template_big_media = 0x7f0b0037;
-        public static final int notification_template_big_media_narrow = 0x7f0b0039;
-        public static final int notification_template_media = 0x7f0b003e;
-        public static final int notification_template_part_chronometer = 0x7f0b0040;
-        public static final int notification_template_part_time = 0x7f0b0041;
-        public static final int select_dialog_item_material = 0x7f0b0054;
-        public static final int select_dialog_multichoice_material = 0x7f0b0055;
-        public static final int select_dialog_singlechoice_material = 0x7f0b0056;
-        public static final int share_activity_dialog = 0x7f0b0057;
-        public static final int share_gridview_item = 0x7f0b0058;
-        public static final int support_simple_spinner_dropdown_item = 0x7f0b005b;
+        public static final int notification_media_action = 0x7f0b0034;
+        public static final int notification_media_cancel_action = 0x7f0b0035;
+        public static final int notification_template_big_media = 0x7f0b0036;
+        public static final int notification_template_big_media_narrow = 0x7f0b0038;
+        public static final int notification_template_media = 0x7f0b003d;
+        public static final int notification_template_part_chronometer = 0x7f0b003f;
+        public static final int notification_template_part_time = 0x7f0b0040;
+        public static final int select_dialog_item_material = 0x7f0b0053;
+        public static final int select_dialog_multichoice_material = 0x7f0b0054;
+        public static final int select_dialog_singlechoice_material = 0x7f0b0055;
+        public static final int share_activity_dialog = 0x7f0b0056;
+        public static final int share_gridview_item = 0x7f0b0057;
+        public static final int support_simple_spinner_dropdown_item = 0x7f0b005a;
     }
     public static final class string {
         public static final int abc_action_bar_home_description = 0x7f0e0000;
@@ -683,26 +683,26 @@ public final class R {
         public static final int abc_shareactionprovider_share_with_application = 0x7f0e001b;
         public static final int abc_toolbar_collapse_description = 0x7f0e001c;
         public static final int app_name = 0x7f0e001d;
-        public static final int share_cancel = 0x7f0e0036;
-        public static final int share_channel_more = 0x7f0e0037;
-        public static final int share_channel_none = 0x7f0e0038;
-        public static final int share_channel_qq = 0x7f0e0039;
-        public static final int share_channel_qzone = 0x7f0e003a;
-        public static final int share_channel_weibo = 0x7f0e003b;
-        public static final int share_channel_weixin_circle = 0x7f0e003c;
-        public static final int share_channel_weixin_friend = 0x7f0e003d;
-        public static final int share_empty_tip = 0x7f0e003e;
-        public static final int share_failed = 0x7f0e003f;
-        public static final int share_no_weibo_client = 0x7f0e0040;
-        public static final int share_no_weixin_client = 0x7f0e0041;
-        public static final int share_save_bitmap_failed = 0x7f0e0042;
-        public static final int share_save_bitmap_no_sdcard = 0x7f0e0043;
-        public static final int share_success = 0x7f0e0044;
-        public static final int share_to = 0x7f0e0045;
-        public static final int share_weibosdk_auth_canceled = 0x7f0e0046;
-        public static final int share_weibosdk_auth_failed = 0x7f0e0047;
-        public static final int share_weibosdk_auth_success = 0x7f0e0048;
-        public static final int status_bar_notification_info_overflow = 0x7f0e004a;
+        public static final int share_cancel = 0x7f0e0037;
+        public static final int share_channel_more = 0x7f0e0038;
+        public static final int share_channel_none = 0x7f0e0039;
+        public static final int share_channel_qq = 0x7f0e003a;
+        public static final int share_channel_qzone = 0x7f0e003b;
+        public static final int share_channel_weibo = 0x7f0e003c;
+        public static final int share_channel_weixin_circle = 0x7f0e003d;
+        public static final int share_channel_weixin_friend = 0x7f0e003e;
+        public static final int share_empty_tip = 0x7f0e003f;
+        public static final int share_failed = 0x7f0e0040;
+        public static final int share_no_weibo_client = 0x7f0e0041;
+        public static final int share_no_weixin_client = 0x7f0e0042;
+        public static final int share_save_bitmap_failed = 0x7f0e0043;
+        public static final int share_save_bitmap_no_sdcard = 0x7f0e0044;
+        public static final int share_success = 0x7f0e0045;
+        public static final int share_to = 0x7f0e0046;
+        public static final int share_weibosdk_auth_canceled = 0x7f0e0047;
+        public static final int share_weibosdk_auth_failed = 0x7f0e0048;
+        public static final int share_weibosdk_auth_success = 0x7f0e0049;
+        public static final int status_bar_notification_info_overflow = 0x7f0e004b;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat = 0x7f0f0000;

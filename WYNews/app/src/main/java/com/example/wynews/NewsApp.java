@@ -5,13 +5,13 @@ import android.app.Application;
 import android.content.Context;
 
 import java.util.HashMap;
-import java.util.Map;
+
 
 /**
  * Created by zzp on 17-11-25.
  */
 
-public class NewsApp extends Application {
+public class gNewsApp extends Application {
     @SuppressLint("StaticFieldLeak")
     private static Context context;
     public static String share_default_item = "3";

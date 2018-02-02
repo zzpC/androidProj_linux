@@ -18,6 +18,8 @@ package com.example.wynews.MediaPlayer;
 
 import android.view.View;
 
+import com.example.wynews.MediaPlayer.View.IRenderView;
+
 import java.lang.ref.WeakReference;
 
 

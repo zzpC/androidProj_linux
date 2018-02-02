@@ -32,6 +32,8 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.example.wynews.MediaPlayer.View.IRenderView;
+import com.example.wynews.MediaPlayer.View.IjkVideoView;
 import com.example.wynews.R;
 
 import tv.danmaku.ijk.media.player.IMediaPlayer;
