@@ -1,4 +1,5 @@
 package com.zzpc.wynews.Settings;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -24,7 +25,20 @@ public class AccountManagerFragment extends Fragment {
 
     private AccountManageAdapter mAccountManageAdapter;
     private RecyclerView mRecyclerView;
+    private OpenSpecificFragmentListener mListener;
+
+
     List<AccountData> items=new ArrayList<>();
+
+    public interface  OpenSpecificFragmentListener{
+        void OpenSpecificFragment(int pos);
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mListener=(OpenSpecificFragmentListener)context;
+    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -34,12 +48,12 @@ public class AccountManagerFragment extends Fragment {
         mRecyclerView =view.findViewById(R.id.recyclerview_account);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(linearLayoutManager);
-//        if (items.size()<=0){
+        if (items.size()<=0){
             items=new AccountDataBuilder().generateAccountList();
-//        }
+        }
 
 
-        mAccountManageAdapter=new AccountManageAdapter(items,getContext());
+        mAccountManageAdapter=new AccountManageAdapter(items,getContext(),mListener);
         mRecyclerView.setAdapter(mAccountManageAdapter);
         return view;
     }
@@ -48,4 +62,6 @@ public class AccountManagerFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
     }
+
+
 }

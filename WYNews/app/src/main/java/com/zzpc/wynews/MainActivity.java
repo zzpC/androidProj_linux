@@ -37,7 +37,7 @@ import com.zzpc.wynews.Settings.AccountManagerFragment;
 import com.zzpc.wynews.Settings.SettingsFragment;
 
 
-public class MainActivity extends AppCompatActivity implements SettingsFragment.OnClickNightModeListener ,SwipeRefreshLayoutBasicFragment.OnLoadWebSiteNewsListner{
+public class MainActivity extends AppCompatActivity implements AccountManagerFragment.OpenSpecificFragmentListener,SettingsFragment.OnClickNightModeListener ,SwipeRefreshLayoutBasicFragment.OnLoadWebSiteNewsListner{
 
     private static final String TAG = "MainActivity";
     private BottomNavigationView mBottomNavigationView;
@@ -72,6 +72,15 @@ public class MainActivity extends AppCompatActivity implements SettingsFragment.
             return false;
         }
     };
+
+
+    @Override
+    public void OpenSpecificFragment(int pos) {
+        SettingsFragment settingsFragment=new SettingsFragment();
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.full,settingsFragment).commit();
+        mBottomNavigationView.setVisibility(View.INVISIBLE);
+    }
 
     @Override
     public void onLoadWebSiteNews(String info) {
@@ -219,7 +228,7 @@ public class MainActivity extends AppCompatActivity implements SettingsFragment.
                 if (actionBar != null) actionBar.setTitle(R.string.title_settings);
 
 //                manager.beginTransaction().replace(R.id.bottom_pager, new SettingsFragment()).commit();
-                manager.beginTransaction().replace(R.id.bottom_pager,new AccountManagerFragment()).commit();
+                manager.beginTransaction().replace(R.id.bottom_pager,new AccountManagerFragment()).addToBackStack("account_manage").commit();
                 break;
             default:
                 break;

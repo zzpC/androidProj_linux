@@ -1,5 +1,6 @@
 package com.zzpc.wynews.MediaPlayer;
 
+import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -44,6 +45,12 @@ public class VideoFragment extends Fragment {
         super.onSaveInstanceState(outState);
         if (mFragmentStatus != null && outState != null && mFragmentManager != null)
             mFragmentManager.putFragment(outState, TAG, mFragmentStatus);
+
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
 
     }
 
