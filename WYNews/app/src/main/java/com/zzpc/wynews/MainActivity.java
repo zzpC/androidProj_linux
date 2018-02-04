@@ -78,9 +78,16 @@ public class MainActivity extends AppCompatActivity implements AccountManagerFra
     public void OpenSpecificFragment(int pos) {
         SettingsFragment settingsFragment=new SettingsFragment();
         FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.full,settingsFragment).commit();
+        switch (pos) {
+            case 6:
+            manager.beginTransaction().replace(R.id.full, settingsFragment).addToBackStack("").commit();
+            default:
+                Log.e(TAG, "OpenSpecificFragment: "+pos );
+        }
         mBottomNavigationView.setVisibility(View.INVISIBLE);
     }
+
+
 
     @Override
     public void onLoadWebSiteNews(String info) {
