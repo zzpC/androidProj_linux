@@ -217,7 +217,8 @@ public class MainActivity extends AppCompatActivity implements SettingsFragment.
             case 2:
                 if (actionBar != null) actionBar.setTitle(R.string.title_settings);
 
-                manager.beginTransaction().replace(R.id.bottom_pager, new SettingsFragment()).commit();
+//                manager.beginTransaction().replace(R.id.bottom_pager, new SettingsFragment()).commit();
+//                manager.beginTransaction().replace(R.id.bottom_pager,new MyListFragment()).commit();
                 break;
             default:
                 break;

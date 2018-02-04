@@ -27,7 +27,8 @@ public class BottomNavigationViewBehavior extends CoordinatorLayout.Behavior<Bot
     }
 
     @Override
-    public void onNestedScroll(@NonNull CoordinatorLayout coordinatorLayout, @NonNull BottomNavigationView child, @NonNull View target, int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed) {
+    public void onNestedScroll(@NonNull CoordinatorLayout coordinatorLayout, @NonNull BottomNavigationView child, @NonNull View target, int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed, int type) {
+        super.onNestedScroll(coordinatorLayout, child, target, dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed, type);
         if (dyConsumed > 0) {
             slideDown(child);
         } else if (dyConsumed < 0) {
@@ -47,3 +48,8 @@ public class BottomNavigationViewBehavior extends CoordinatorLayout.Behavior<Bot
 
 
 }
+
+
+
+
+

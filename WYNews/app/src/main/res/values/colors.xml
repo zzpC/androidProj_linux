@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimaryDark">#303F9F</color>
-
-
     <color name="cardview_dark_background">#FF424242</color>
     <color name="cardview_light_background">#FFFFFFFF</color>
     <color name="cardview_shadow_end_color">#03000000</color>
@@ -18,6 +16,6 @@
     <color name="bottom_selected">#7cc2af</color>
     <color name="bottom_unuse">#085e46</color>
 
-
+    <color name="colorForeground">#085e46</color>
 
 </resources>

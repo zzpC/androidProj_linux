@@ -1,5 +1,6 @@
 package com.zzpc.wynews.NewsReading;
 
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -12,12 +13,12 @@ import java.net.URL;
 /**
  * Created by zzp on 17-11-23.
  */
-public class NetCacheUtils {
+class NetCacheUtils {
 
     private LocalCacheUtils mLocalCacheUtils;
     private MemoryCacheUtils mMemoryCacheUtils;
 
-    public NetCacheUtils(LocalCacheUtils localCacheUtils, MemoryCacheUtils memoryCacheUtils) {
+    NetCacheUtils(LocalCacheUtils localCacheUtils, MemoryCacheUtils memoryCacheUtils) {
         mLocalCacheUtils = localCacheUtils;
         mMemoryCacheUtils = memoryCacheUtils;
     }
@@ -28,7 +29,7 @@ public class NetCacheUtils {
      * @param ivPic 显示图片的imageview
      * @param url   下载图片的网络地址
      */
-    public void getBitmapFromNet(ImageView ivPic, String url) {
+    void getBitmapFromNet(ImageView ivPic, String url) {
         new BitmapTask().execute(ivPic, url);//启动AsyncTask
 
     }
@@ -39,6 +40,7 @@ public class NetCacheUtils {
      * 第二个泛型:更新进度的泛型
      * 第三个泛型:onPostExecute的返回结果
      */
+    @SuppressLint("StaticFieldLeak")
     class BitmapTask extends AsyncTask<Object, Void, Bitmap> {
 
         private ImageView ivPic;

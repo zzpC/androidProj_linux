@@ -22,7 +22,7 @@ import static android.content.ContentValues.TAG;
 /**
  * Created by zzp on 17-11-23.
  */
-public class LocalCacheUtils {
+class LocalCacheUtils {
 
     private static final String CACHE_PATH= Environment.getExternalStorageDirectory().getAbsolutePath()+"/WerbNews";
 
@@ -30,7 +30,7 @@ public class LocalCacheUtils {
      * 从本地读取图片
      * @param url
      */
-    public Bitmap getBitmapFromLocal(String url){
+    Bitmap getBitmapFromLocal(String url){
         String fileName = null;//把图片的url当做文件名,并进行MD5加密
         try {
 //            fileName = MD5Encoder.encode(url);
@@ -38,9 +38,7 @@ public class LocalCacheUtils {
 
             File file=new File(CACHE_PATH,fileName);
 
-            Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(file));
-
-            return bitmap;
+            return BitmapFactory.decodeStream(new FileInputStream(file));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -53,12 +51,11 @@ public class LocalCacheUtils {
      * @param url
      * @param bitmap
      */
-    public void setBitmapToLocal(String url,Bitmap bitmap){
+    void setBitmapToLocal(String url, Bitmap bitmap){
         try {
 //            String fileName = MD5Encoder.encode(url);//把图片的url当做文件名,并进行MD5加密
-            String fileName = url;
 
-            File file=new File(CACHE_PATH,fileName);
+            File file=new File(CACHE_PATH, url);
 
             //通过得到文件的父文件,判断父文件是否存在
             File parentFile = file.getParentFile();

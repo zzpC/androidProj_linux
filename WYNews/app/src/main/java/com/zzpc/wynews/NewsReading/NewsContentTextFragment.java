@@ -35,11 +35,9 @@ public class NewsContentTextFragment extends Fragment {
     private TextView tv_tiltle;
     private TextView tv_content;
 
-    private TextView tv_scale;
     private SeekBar sb_width;
     private SeekBar sb_height;
 
-    private String newsSite;
     private String newsContent;
     private String newsTitleStr;
 

@@ -10,19 +10,19 @@ import static android.content.ContentValues.TAG;
  * Created by zzp on 17-11-23.
  */
 
-public class MyBitmapUtils {
+class MyBitmapUtils {
 
     private NetCacheUtils mNetCacheUtils;
     private LocalCacheUtils mLocalCacheUtils;
     private MemoryCacheUtils mMemoryCacheUtils;
 
-    public MyBitmapUtils(){
+    MyBitmapUtils(){
         mMemoryCacheUtils=new MemoryCacheUtils();
         mLocalCacheUtils=new LocalCacheUtils();
         mNetCacheUtils=new NetCacheUtils(mLocalCacheUtils,mMemoryCacheUtils);
     }
 
-    public void disPlay(ImageView ivPic, String url) {
+    void disPlay(ImageView ivPic, String url) {
 
         Bitmap bitmap;
         //内存缓存
