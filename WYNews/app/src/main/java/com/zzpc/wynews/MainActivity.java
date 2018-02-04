@@ -33,6 +33,7 @@ import com.zzpc.wynews.MediaPlayer.VideoFragment;
 import com.zzpc.wynews.NewsReading.NewsContentTextFragment;
 import com.zzpc.wynews.NewsReading.SlidingTabsColorsFragment;
 import com.zzpc.wynews.NewsReading.SwipeRefreshLayoutBasicFragment;
+import com.zzpc.wynews.Settings.AccountManagerFragment;
 import com.zzpc.wynews.Settings.SettingsFragment;
 
 
@@ -218,7 +219,7 @@ public class MainActivity extends AppCompatActivity implements SettingsFragment.
                 if (actionBar != null) actionBar.setTitle(R.string.title_settings);
 
 //                manager.beginTransaction().replace(R.id.bottom_pager, new SettingsFragment()).commit();
-//                manager.beginTransaction().replace(R.id.bottom_pager,new MyListFragment()).commit();
+                manager.beginTransaction().replace(R.id.bottom_pager,new AccountManagerFragment()).commit();
                 break;
             default:
                 break;

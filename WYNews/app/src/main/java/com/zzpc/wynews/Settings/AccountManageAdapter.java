@@ -11,8 +11,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.zzpc.wynews.R;
+import com.zzpc.wynews.Settings.Model.AccountData;
 
 import java.util.List;
 
@@ -21,22 +23,24 @@ import java.util.List;
  */
 public class AccountManageAdapter extends RecyclerView.Adapter<AccountManageAdapter.AccountManageViewHolder> {
     private final Context context;
-    private List<ItemAccountManage> items;
+    private List<AccountData> items;
 
-    public AccountManageAdapter(List<ItemAccountManage> items, Context context) {
+    public AccountManageAdapter(List<AccountData> items, Context context) {
         this.items = items;
         this.context = context;
     }
 
     @Override
     public AccountManageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_account_listview, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_account_recyclerview, parent, false);
         return new AccountManageViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(AccountManageViewHolder holder, int position) {
-        ItemAccountManage item = items.get(position);
+        AccountData accountData = items.get(position);
+        holder.tv_title.setText(accountData.getmTitle());
+
         //TODO Fill in your logic for binding the view.
     }
 
@@ -51,13 +55,12 @@ public class AccountManageAdapter extends RecyclerView.Adapter<AccountManageAdap
     class AccountManageViewHolder extends RecyclerView.ViewHolder {
         AccountManageViewHolder(View itemView) {
             super(itemView);
+            this.itemView=itemView;
+            this.tv_title=itemView.findViewById(R.id.tv_account);
         }
-    }
 
-    class ItemAccountManage {
-        public ItemAccountManage() {
-            super();
-        }
+        View itemView;
+        TextView tv_title;
     }
 }
 
