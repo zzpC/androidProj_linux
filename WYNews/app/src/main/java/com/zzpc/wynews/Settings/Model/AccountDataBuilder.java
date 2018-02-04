@@ -13,6 +13,7 @@ public class AccountDataBuilder {
 
     public AccountDataBuilder() {
         mDatas=new ArrayList<>();
+        mDatas.add( AccountData.createAccountData("注册登录") );
         mDatas.add( AccountData.createAccountData("消息") );
         mDatas.add( AccountData.createAccountData("我的书评") );
         mDatas.add( AccountData.createAccountData("我的笔记") );
