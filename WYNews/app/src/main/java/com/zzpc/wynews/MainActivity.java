@@ -35,9 +35,14 @@ import com.zzpc.wynews.NewsReading.SlidingTabsColorsFragment;
 import com.zzpc.wynews.NewsReading.SwipeRefreshLayoutBasicFragment;
 import com.zzpc.wynews.Settings.AccountManagerFragment;
 import com.zzpc.wynews.Settings.SettingsFragment;
+import com.zzpc.wynews.Settings.login.LoginFragment;
+import com.zzpc.wynews.Settings.login.RegisterFragment;
 
 
-public class MainActivity extends AppCompatActivity implements AccountManagerFragment.OpenSpecificFragmentListener, SettingsFragment.OnClickNightModeListener, SwipeRefreshLayoutBasicFragment.OnLoadWebSiteNewsListner {
+public class MainActivity extends AppCompatActivity implements AccountManagerFragment.OpenSpecificFragmentListener,
+        SettingsFragment.OnClickNightModeListener,
+        SwipeRefreshLayoutBasicFragment.OnLoadWebSiteNewsListner,
+        LoginFragment.OnSwitchRegisterFragmentListen {
 
     private static final String TAG = "MainActivity";
     private BottomNavigationView mBottomNavigationView;
@@ -76,14 +81,28 @@ public class MainActivity extends AppCompatActivity implements AccountManagerFra
 
     @Override
     public void OpenSpecificFragment(int pos) {
-        SettingsFragment settingsFragment = new SettingsFragment();
+        LoginFragment loginFragment = new LoginFragment();
         FragmentManager manager = getSupportFragmentManager();
         switch (pos) {
+            case 0:
+                manager.beginTransaction().replace(R.id.bottom_pager, loginFragment).addToBackStack(SettingsFragment.class.getName()).commit();
+                break;
             case 6:
-                manager.beginTransaction().replace(R.id.full, settingsFragment).addToBackStack("").commit();
+                //使用了replace而没有hide(),注意问题
+                manager.beginTransaction().replace(R.id.bottom_pager, loginFragment).addToBackStack(SettingsFragment.class.getName()).commit();
             default:
                 Log.e(TAG, "OpenSpecificFragment: " + pos);
         }
+        mBottomNavigationView.setVisibility(View.INVISIBLE);
+    }
+
+
+    @Override
+    public void OnSwitchRegisterFragment() {
+        RegisterFragment registerFragment = new RegisterFragment();
+        FragmentManager manager = getSupportFragmentManager();
+        //使用了replace而没有hide(),注意问题
+        manager.beginTransaction().replace(R.id.bottom_pager, registerFragment).addToBackStack(SettingsFragment.class.getName()).commit();
         mBottomNavigationView.setVisibility(View.INVISIBLE);
     }
 
@@ -129,6 +148,7 @@ public class MainActivity extends AppCompatActivity implements AccountManagerFra
         this.recreate();
         NewsApp.changing_Theme = true;
     }
+
 
 
     @Override
@@ -235,13 +255,12 @@ public class MainActivity extends AppCompatActivity implements AccountManagerFra
                 mBottomNavigationView.setVisibility(View.VISIBLE);
                 NewsApp.video_Full = false;
                 if (actionBar != null) actionBar.setTitle(R.string.title_home);
-                specificFragment = manager.findFragmentByTag(SlidingTabsColorsFragment.class.getName());
-                if (specificFragment == null) {
+                if (currentFragment1 == null) {
                     manager.beginTransaction().add(R.id.bottom_pager, new SlidingTabsColorsFragment(), SlidingTabsColorsFragment.class.getName()).commit();
 
                 } else {
 //                    manager.beginTransaction().replace(R.id.bottom_pager, fragment).commit();
-                    manager.beginTransaction().show(specificFragment).commit();
+                    manager.beginTransaction().show(currentFragment1).commit();
                 }
                 break;
             case 1:
@@ -255,12 +274,10 @@ public class MainActivity extends AppCompatActivity implements AccountManagerFra
 
                 NewsApp.video_Full = true;
                 if (actionBar != null) actionBar.setTitle(R.string.title_video);
-//                manager.beginTransaction().replace(R.id.bottom_pager, new VideoFragment()).addToBackStack(VideoFragment.class.getName()).commit();
-                specificFragment = manager.findFragmentByTag(VideoFragment.class.getName());
-                if (specificFragment == null) {
+                if (currentFragment2 == null) {
                     manager.beginTransaction().add(R.id.bottom_pager, new VideoFragment(), VideoFragment.class.getName()).commit();
                 } else {
-                    manager.beginTransaction().show(specificFragment).commit();
+                    manager.beginTransaction().show(currentFragment2).commit();
                 }
                 break;
             case 2:
@@ -273,11 +290,10 @@ public class MainActivity extends AppCompatActivity implements AccountManagerFra
 
 
                 if (actionBar != null) actionBar.setTitle(R.string.title_settings);
-                specificFragment = manager.findFragmentByTag(AccountManagerFragment.class.getName());
-                if (specificFragment == null) {
+                if (currentFragment3 == null) {
                     manager.beginTransaction().add(R.id.bottom_pager, new AccountManagerFragment(), AccountManagerFragment.class.getName()).commit();
                 } else {
-                    manager.beginTransaction().show(specificFragment).commit();
+                    manager.beginTransaction().show(currentFragment3).commit();
                 }
 //                manager.beginTransaction().replace(R.id.bottom_pager,new AccountManagerFragment()).addToBackStack(AccountManagerFragment.class.getName()).commit();
                 break;
