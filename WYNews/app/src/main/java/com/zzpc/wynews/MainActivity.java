@@ -81,15 +81,17 @@ public class MainActivity extends AppCompatActivity implements AccountManagerFra
 
     @Override
     public void OpenSpecificFragment(int pos) {
-        LoginFragment loginFragment = new LoginFragment();
+
         FragmentManager manager = getSupportFragmentManager();
         switch (pos) {
             case 0:
-                manager.beginTransaction().replace(R.id.bottom_pager, loginFragment).addToBackStack(SettingsFragment.class.getName()).commit();
+                LoginFragment loginFragment = new LoginFragment();
+                manager.beginTransaction().replace(R.id.bottom_pager, loginFragment).addToBackStack(LoginFragment.class.getName()).commit();
                 break;
             case 6:
                 //使用了replace而没有hide(),注意问题
-                manager.beginTransaction().replace(R.id.bottom_pager, loginFragment).addToBackStack(SettingsFragment.class.getName()).commit();
+                SettingsFragment settingsFragment=new SettingsFragment();
+                manager.beginTransaction().replace(R.id.bottom_pager, settingsFragment).addToBackStack(SettingsFragment.class.getName()).commit();
             default:
                 Log.e(TAG, "OpenSpecificFragment: " + pos);
         }
@@ -109,16 +111,13 @@ public class MainActivity extends AppCompatActivity implements AccountManagerFra
 
     @Override
     public void onLoadWebSiteNews(String info) {
-//        NewsContentTextFragment newsContentTextFragment = new NewsContentFragment();
         NewsContentTextFragment newsContentTextFragment = new NewsContentTextFragment();
 
         Bundle bundle = new Bundle();
         bundle.putString("url", info);
-//        newsContentFragment.setArguments(bundle);
         newsContentTextFragment.setArguments(bundle);
 
         FragmentManager manager = getSupportFragmentManager();
-//        manager.beginTransaction().replace(R.id.full, newsContentFragment).addToBackStack("webview").commit();
         manager.beginTransaction().replace(R.id.full, newsContentTextFragment).addToBackStack("newscontextstr").commit();
         mBottomNavigationView.setVisibility(View.INVISIBLE);
     }

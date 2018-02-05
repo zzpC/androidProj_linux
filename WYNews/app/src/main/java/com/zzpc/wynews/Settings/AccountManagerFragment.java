@@ -51,7 +51,8 @@ public class AccountManagerFragment extends Fragment {
         if (items.size()<=0){
             items=new AccountDataBuilder().generateAccountList();
         }
-
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(50));
 
         mAccountManageAdapter=new AccountManageAdapter(items,getContext(),mListener);
         mRecyclerView.setAdapter(mAccountManageAdapter);
