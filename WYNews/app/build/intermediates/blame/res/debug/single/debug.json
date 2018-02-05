@@ -388,12 +388,12 @@
         "source": "/home/zzp/Programs/androidProj_linux/WYNews/app/src/main/res/drawable/shape_rect_gradient_video_title_reverse.xml"
     },
     {
-        "merged": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/res/merged/debug/color_abc_tint_btn_checkable.xml.flat",
-        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/color/abc_tint_btn_checkable.xml"
-    },
-    {
         "merged": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-xxhdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/res/merged/debug/color_abc_tint_btn_checkable.xml.flat",
+        "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/color/abc_tint_btn_checkable.xml"
     },
     {
         "merged": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/res/merged/debug/drawable-ldrtl-xhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -1438,6 +1438,10 @@
     {
         "merged": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/drawable-hdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/res/merged/debug/layout_fragment_login.xml.flat",
+        "source": "/home/zzp/Programs/androidProj_linux/WYNews/app/src/main/res/layout/fragment_login.xml"
     },
     {
         "merged": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_play_arrow_white_24dp.png.flat",

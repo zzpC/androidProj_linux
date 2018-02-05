@@ -37,7 +37,7 @@ import com.zzpc.wynews.Settings.AccountManagerFragment;
 import com.zzpc.wynews.Settings.SettingsFragment;
 
 
-public class MainActivity extends AppCompatActivity implements AccountManagerFragment.OpenSpecificFragmentListener,SettingsFragment.OnClickNightModeListener ,SwipeRefreshLayoutBasicFragment.OnLoadWebSiteNewsListner{
+public class MainActivity extends AppCompatActivity implements AccountManagerFragment.OpenSpecificFragmentListener, SettingsFragment.OnClickNightModeListener, SwipeRefreshLayoutBasicFragment.OnLoadWebSiteNewsListner {
 
     private static final String TAG = "MainActivity";
     private BottomNavigationView mBottomNavigationView;
@@ -76,23 +76,22 @@ public class MainActivity extends AppCompatActivity implements AccountManagerFra
 
     @Override
     public void OpenSpecificFragment(int pos) {
-        SettingsFragment settingsFragment=new SettingsFragment();
+        SettingsFragment settingsFragment = new SettingsFragment();
         FragmentManager manager = getSupportFragmentManager();
         switch (pos) {
             case 6:
-            manager.beginTransaction().replace(R.id.full, settingsFragment).addToBackStack("").commit();
+                manager.beginTransaction().replace(R.id.full, settingsFragment).addToBackStack("").commit();
             default:
-                Log.e(TAG, "OpenSpecificFragment: "+pos );
+                Log.e(TAG, "OpenSpecificFragment: " + pos);
         }
         mBottomNavigationView.setVisibility(View.INVISIBLE);
     }
 
 
-
     @Override
     public void onLoadWebSiteNews(String info) {
 //        NewsContentTextFragment newsContentTextFragment = new NewsContentFragment();
-        NewsContentTextFragment newsContentTextFragment=new NewsContentTextFragment();
+        NewsContentTextFragment newsContentTextFragment = new NewsContentTextFragment();
 
         Bundle bundle = new Bundle();
         bundle.putString("url", info);
@@ -102,7 +101,6 @@ public class MainActivity extends AppCompatActivity implements AccountManagerFra
         FragmentManager manager = getSupportFragmentManager();
 //        manager.beginTransaction().replace(R.id.full, newsContentFragment).addToBackStack("webview").commit();
         manager.beginTransaction().replace(R.id.full, newsContentTextFragment).addToBackStack("newscontextstr").commit();
-
         mBottomNavigationView.setVisibility(View.INVISIBLE);
     }
 
@@ -126,8 +124,6 @@ public class MainActivity extends AppCompatActivity implements AccountManagerFra
 //    }
 
 
-
-
     @Override
     public void OnClickNightMode() {
         this.recreate();
@@ -138,6 +134,7 @@ public class MainActivity extends AppCompatActivity implements AccountManagerFra
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
         if (NewsApp.night_mode) {
             setTheme(R.style.PreferenceFixTheme_NoActionBar);
@@ -211,31 +208,78 @@ public class MainActivity extends AppCompatActivity implements AccountManagerFra
 
 
     public void switchToFragment(int ftNo) {
-        Log.e("换肤", "switchToFragment: " + ftNo);
-        ActionBar actionBar = getSupportActionBar();
+
+
         FragmentManager manager = getSupportFragmentManager();
+        Fragment currentFragment1 =getSupportFragmentManager().findFragmentByTag(SlidingTabsColorsFragment.class.getName());
+        Fragment currentFragment2=getSupportFragmentManager().findFragmentByTag(VideoFragment.class.getName());
+        Fragment currentFragment3=getSupportFragmentManager().findFragmentByTag(AccountManagerFragment.class.getName());
+        Fragment specificFragment;
+
+        ActionBar actionBar = getSupportActionBar();
+        Log.e("换肤", "switchToFragment: " + ftNo);
+
+//        if (currentFragment != null) {
+//            getSupportFragmentManager().beginTransaction().hide(currentFragment).commit();
+//            Log.e(TAG, "switchToFragment: "+"隐藏当前" );
+//        }
         switch (ftNo) {
             case 0:
+                if (currentFragment1!=null)
+                  manager.beginTransaction().hide(currentFragment1).commit();
+                if (currentFragment2!=null)
+                    manager.beginTransaction().hide(currentFragment2).commit();
+                if (currentFragment3!=null)
+                    manager.beginTransaction().hide(currentFragment3).commit();
+
                 mBottomNavigationView.setVisibility(View.VISIBLE);
                 NewsApp.video_Full = false;
                 if (actionBar != null) actionBar.setTitle(R.string.title_home);
-                Fragment fragment = manager.findFragmentByTag("uniqueTag");
-                if (fragment == null) {
-                    manager.beginTransaction().add(R.id.bottom_pager, new SlidingTabsColorsFragment(), "uniqueTag").commit();
+                specificFragment = manager.findFragmentByTag(SlidingTabsColorsFragment.class.getName());
+                if (specificFragment == null) {
+                    manager.beginTransaction().add(R.id.bottom_pager, new SlidingTabsColorsFragment(), SlidingTabsColorsFragment.class.getName()).commit();
+
                 } else {
-                    manager.beginTransaction().replace(R.id.bottom_pager, fragment).commit();
+//                    manager.beginTransaction().replace(R.id.bottom_pager, fragment).commit();
+                    manager.beginTransaction().show(specificFragment).commit();
                 }
                 break;
             case 1:
+                if (currentFragment1!=null)
+                    manager.beginTransaction().hide(currentFragment1).commit();
+                if (currentFragment2!=null)
+                    manager.beginTransaction().hide(currentFragment2).commit();
+                if (currentFragment3!=null)
+                    manager.beginTransaction().hide(currentFragment3).commit();
+
+
                 NewsApp.video_Full = true;
                 if (actionBar != null) actionBar.setTitle(R.string.title_video);
-                manager.beginTransaction().replace(R.id.bottom_pager, new VideoFragment()).addToBackStack("video").commit();
+//                manager.beginTransaction().replace(R.id.bottom_pager, new VideoFragment()).addToBackStack(VideoFragment.class.getName()).commit();
+                specificFragment = manager.findFragmentByTag(VideoFragment.class.getName());
+                if (specificFragment == null) {
+                    manager.beginTransaction().add(R.id.bottom_pager, new VideoFragment(), VideoFragment.class.getName()).commit();
+                } else {
+                    manager.beginTransaction().show(specificFragment).commit();
+                }
                 break;
             case 2:
-                if (actionBar != null) actionBar.setTitle(R.string.title_settings);
+                if (currentFragment1!=null)
+                    manager.beginTransaction().hide(currentFragment1).commit();
+                if (currentFragment2!=null)
+                    manager.beginTransaction().hide(currentFragment2).commit();
+                if (currentFragment3!=null)
+                    manager.beginTransaction().hide(currentFragment3).commit();
 
-//                manager.beginTransaction().replace(R.id.bottom_pager, new SettingsFragment()).commit();
-                manager.beginTransaction().replace(R.id.bottom_pager,new AccountManagerFragment()).addToBackStack("account_manage").commit();
+
+                if (actionBar != null) actionBar.setTitle(R.string.title_settings);
+                specificFragment = manager.findFragmentByTag(AccountManagerFragment.class.getName());
+                if (specificFragment == null) {
+                    manager.beginTransaction().add(R.id.bottom_pager, new AccountManagerFragment(), AccountManagerFragment.class.getName()).commit();
+                } else {
+                    manager.beginTransaction().show(specificFragment).commit();
+                }
+//                manager.beginTransaction().replace(R.id.bottom_pager,new AccountManagerFragment()).addToBackStack(AccountManagerFragment.class.getName()).commit();
                 break;
             default:
                 break;

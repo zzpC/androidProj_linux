@@ -32,7 +32,7 @@ import java.util.List;
 //创建TabLayout+viewpager的视图作为acitvity一部分,getitem生成新的fragment,覆盖本fragment
 public class SlidingTabsColorsFragment extends Fragment {
 
-    private static final String TAG = "SlidingTabsColorsFragme";
+    private static final String TAG = "SlidingTabsColorsFragment";
     private boolean Isfirst = true;
 
     private FragmentManager mFragmentManager;

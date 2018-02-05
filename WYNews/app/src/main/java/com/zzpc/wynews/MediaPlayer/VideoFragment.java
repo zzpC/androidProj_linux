@@ -57,8 +57,11 @@ public class VideoFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (savedInstanceState != null && mFragmentManager != null) {
-            mFragmentStatus = mFragmentManager.getFragment(savedInstanceState, TAG);
+
+
+        mFragmentManager = getFragmentManager();
+        if (savedInstanceState != null && mFragmentManager != null && mFragmentStatus != null) {
+            mFragmentManager.putFragment(savedInstanceState, TAG, mFragmentStatus);
         }
     }
 
