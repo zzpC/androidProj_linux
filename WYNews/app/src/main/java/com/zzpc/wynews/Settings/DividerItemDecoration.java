@@ -43,7 +43,7 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
 
         // 第1个Item不绘制分割线
         if (itemPosition != 0) {
-            outRect.set(0+mSpace, 0+mSpace, 0+mSpace, 10+mSpace);
+            outRect.set(0+mSpace, 0+mSpace, 0+mSpace, 0+mSpace);
             // 设置间隔区域为10px,即onDraw()可绘制的区域为10px
         }
     }

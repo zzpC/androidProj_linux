@@ -817,25 +817,6 @@
     <string name="recycler_swipe_load_more_message">Loading, please wait later</string>
     <string name="recycler_swipe_more_not">No more data</string>
     <string name="search_menu_title">Search</string>
-    <string name="share_cancel">分享取消</string>
-    <string name="share_channel_more">更多</string>
-    <string name="share_channel_none">没有该分享渠道</string>
-    <string name="share_channel_qq">QQ</string>
-    <string name="share_channel_qzone">QQ空间</string>
-    <string name="share_channel_weibo">微博</string>
-    <string name="share_channel_weixin_circle">朋友圈</string>
-    <string name="share_channel_weixin_friend">微信</string>
-    <string name="share_empty_tip">分享內容不能为空</string>
-    <string name="share_failed">分享失败</string>
-    <string name="share_no_weibo_client">分享失败，请先安装微博客户端</string>
-    <string name="share_no_weixin_client">分享失败，请先安装微信</string>
-    <string name="share_save_bitmap_failed">图片保存失败</string>
-    <string name="share_save_bitmap_no_sdcard">SD卡未挂载</string>
-    <string name="share_success">分享成功</string>
-    <string name="share_to">分享到</string>
-    <string name="share_weibosdk_auth_canceled">取消授权</string>
-    <string name="share_weibosdk_auth_failed">授权失败</string>
-    <string name="share_weibosdk_auth_success">授权成功</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="v7_preference_off">OFF</string>
     <string name="v7_preference_on">ON</string>
@@ -847,12 +828,6 @@
     <style name="Animation.Design.BottomSheetDialog" parent="Animation.AppCompat.Dialog">
         <item name="android:windowEnterAnimation">@anim/design_bottom_sheet_slide_in</item>
         <item name="android:windowExitAnimation">@anim/design_bottom_sheet_slide_out</item>
-    </style>
-    <style name="AnimationActivity" parent="@android:style/Animation.Activity">
-        <item name="android:activityOpenEnterAnimation">@anim/activity_show</item>
-        <item name="android:activityOpenExitAnimation">@anim/activity_exit</item>
-        <item name="android:activityCloseEnterAnimation">@anim/activity_show</item>
-        <item name="android:activityCloseExitAnimation">@anim/activity_exit</item>
     </style>
     <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>
@@ -2318,12 +2293,6 @@
     <style name="RtlUnderlay.Widget.AppCompat.ActionButton.Overflow" parent="Base.Widget.AppCompat.ActionButton">
         <item name="android:paddingLeft">@dimen/abc_action_bar_overflow_padding_start_material</item>
         <item name="android:paddingRight">@dimen/abc_action_bar_overflow_padding_end_material</item>
-    </style>
-    <style name="ShareDialogTheme" parent="@android:style/Theme.Dialog">
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowCloseOnTouchOutside">true</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
     </style>
     <style name="TextAppearance.AppCompat" parent="Base.TextAppearance.AppCompat"/>
     <style name="TextAppearance.AppCompat.Body1" parent="Base.TextAppearance.AppCompat.Body1"/>

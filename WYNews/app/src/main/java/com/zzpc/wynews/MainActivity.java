@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements AccountManagerFra
     }
 
 //    @Override
-//    public void onWebView(final String info) {
+//    public void onWebView(final String inkeytool -v -list -keystore fo) {
 //        Log.e("main", "onWebView:  " + info);
 //
 //        NewsContentFragment newsContentFragment = new NewsContentFragment();

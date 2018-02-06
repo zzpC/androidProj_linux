@@ -21,7 +21,6 @@ MERGED from [tv.danmaku.ijk.media:ijkplayer-arm64:0.8.4] /home/zzp/.gradle/cache
 MERGED from [tv.danmaku.ijk.media:ijkplayer-x86:0.8.4] /home/zzp/.gradle/caches/transforms-1/files-1.1/ijkplayer-x86-0.8.4.aar/626d58b461dd9a918d1559cb7df4758d/AndroidManifest.xml:2:1-9:12
 MERGED from [tv.danmaku.ijk.media:ijkplayer-x86_64:0.8.4] /home/zzp/.gradle/caches/transforms-1/files-1.1/ijkplayer-x86_64-0.8.4.aar/c0450f3efa7baf0d2f24a6a0c90f0383/AndroidManifest.xml:2:1-9:12
 MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/Android-AdvancedWebView-v3.0.0.aar/f3513cb18e1165eb9bf1731cbc32d653/AndroidManifest.xml:2:1-11:12
-MERGED from [com.xyzlf.share:sharesdk:0.0.9] /home/zzp/.gradle/caches/transforms-1/files-1.1/sharesdk-0.0.9.aar/0b0c14b497ccb074e5b5666eab019280/AndroidManifest.xml:2:1-40:12
 MERGED from [com.android.support:transition:26.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/0e2ef87e5aa6145ec03800c28701adba/AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-v4:27.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.0.aar/c6c96034704ef88e1d7487996bda743b/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:27.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.0.aar/36ea7221171a75cdea1c3fb217f2d5ae/AndroidManifest.xml:17:1-22:12
@@ -111,8 +110,6 @@ MERGED from [tv.danmaku.ijk.media:ijkplayer-exo:0.8.4] /home/zzp/.gradle/caches/
 MERGED from [tv.danmaku.ijk.media:ijkplayer-exo:0.8.4] /home/zzp/.gradle/caches/transforms-1/files-1.1/ijkplayer-exo-0.8.4.aar/2d8f3eed58806997ea58411e490ed05c/AndroidManifest.xml:9:5-13:19
 MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/Android-AdvancedWebView-v3.0.0.aar/f3513cb18e1165eb9bf1731cbc32d653/AndroidManifest.xml:9:5-20
 MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/Android-AdvancedWebView-v3.0.0.aar/f3513cb18e1165eb9bf1731cbc32d653/AndroidManifest.xml:9:5-20
-MERGED from [com.xyzlf.share:sharesdk:0.0.9] /home/zzp/.gradle/caches/transforms-1/files-1.1/sharesdk-0.0.9.aar/0b0c14b497ccb074e5b5666eab019280/AndroidManifest.xml:11:5-38:19
-MERGED from [com.xyzlf.share:sharesdk:0.0.9] /home/zzp/.gradle/caches/transforms-1/files-1.1/sharesdk-0.0.9.aar/0b0c14b497ccb074e5b5666eab019280/AndroidManifest.xml:11:5-38:19
 MERGED from [com.android.support:transition:26.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/0e2ef87e5aa6145ec03800c28701adba/AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:transition:26.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/0e2ef87e5aa6145ec03800c28701adba/AndroidManifest.xml:22:5-26:19
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/fb85aee5c945658ec38042da02cf1fa4/AndroidManifest.xml:24:5-28:19
@@ -187,8 +184,6 @@ MERGED from [tv.danmaku.ijk.media:ijkplayer-x86_64:0.8.4] /home/zzp/.gradle/cach
 MERGED from [tv.danmaku.ijk.media:ijkplayer-x86_64:0.8.4] /home/zzp/.gradle/caches/transforms-1/files-1.1/ijkplayer-x86_64-0.8.4.aar/c0450f3efa7baf0d2f24a6a0c90f0383/AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/Android-AdvancedWebView-v3.0.0.aar/f3513cb18e1165eb9bf1731cbc32d653/AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/Android-AdvancedWebView-v3.0.0.aar/f3513cb18e1165eb9bf1731cbc32d653/AndroidManifest.xml:5:5-7:41
-MERGED from [com.xyzlf.share:sharesdk:0.0.9] /home/zzp/.gradle/caches/transforms-1/files-1.1/sharesdk-0.0.9.aar/0b0c14b497ccb074e5b5666eab019280/AndroidManifest.xml:7:5-9:41
-MERGED from [com.xyzlf.share:sharesdk:0.0.9] /home/zzp/.gradle/caches/transforms-1/files-1.1/sharesdk-0.0.9.aar/0b0c14b497ccb074e5b5666eab019280/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:transition:26.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/0e2ef87e5aa6145ec03800c28701adba/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:transition:26.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/0e2ef87e5aa6145ec03800c28701adba/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:27.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.0.aar/c6c96034704ef88e1d7487996bda743b/AndroidManifest.xml:20:5-44
@@ -237,40 +232,6 @@ MERGED from [com.android.support:transition:26.1.0] /home/zzp/.gradle/caches/tra
 		ADDED from [com.android.support:design:26.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/aa12c40593f51c1ccc3ffae4e0a865bd/AndroidManifest.xml:28:13-35
 	android:name
 		ADDED from [com.android.support:design:26.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/aa12c40593f51c1ccc3ffae4e0a865bd/AndroidManifest.xml:27:13-51
-activity#com.xyzlf.share.library.ShareDialogActivity
-ADDED from [com.xyzlf.share:sharesdk:0.0.9] /home/zzp/.gradle/caches/transforms-1/files-1.1/sharesdk-0.0.9.aar/0b0c14b497ccb074e5b5666eab019280/AndroidManifest.xml:12:9-17:55
-	android:screenOrientation
-		ADDED from [com.xyzlf.share:sharesdk:0.0.9] /home/zzp/.gradle/caches/transforms-1/files-1.1/sharesdk-0.0.9.aar/0b0c14b497ccb074e5b5666eab019280/AndroidManifest.xml:16:13-49
-	android:launchMode
-		ADDED from [com.xyzlf.share:sharesdk:0.0.9] /home/zzp/.gradle/caches/transforms-1/files-1.1/sharesdk-0.0.9.aar/0b0c14b497ccb074e5b5666eab019280/AndroidManifest.xml:15:13-44
-	android:configChanges
-		ADDED from [com.xyzlf.share:sharesdk:0.0.9] /home/zzp/.gradle/caches/transforms-1/files-1.1/sharesdk-0.0.9.aar/0b0c14b497ccb074e5b5666eab019280/AndroidManifest.xml:14:13-63
-	android:theme
-		ADDED from [com.xyzlf.share:sharesdk:0.0.9] /home/zzp/.gradle/caches/transforms-1/files-1.1/sharesdk-0.0.9.aar/0b0c14b497ccb074e5b5666eab019280/AndroidManifest.xml:17:13-52
-	android:name
-		ADDED from [com.xyzlf.share:sharesdk:0.0.9] /home/zzp/.gradle/caches/transforms-1/files-1.1/sharesdk-0.0.9.aar/0b0c14b497ccb074e5b5666eab019280/AndroidManifest.xml:13:13-71
-activity#com.xyzlf.share.library.ShareHandlerActivity
-ADDED from [com.xyzlf.share:sharesdk:0.0.9] /home/zzp/.gradle/caches/transforms-1/files-1.1/sharesdk-0.0.9.aar/0b0c14b497ccb074e5b5666eab019280/AndroidManifest.xml:18:9-29:20
-	android:screenOrientation
-		ADDED from [com.xyzlf.share:sharesdk:0.0.9] /home/zzp/.gradle/caches/transforms-1/files-1.1/sharesdk-0.0.9.aar/0b0c14b497ccb074e5b5666eab019280/AndroidManifest.xml:22:13-49
-	android:launchMode
-		ADDED from [com.xyzlf.share:sharesdk:0.0.9] /home/zzp/.gradle/caches/transforms-1/files-1.1/sharesdk-0.0.9.aar/0b0c14b497ccb074e5b5666eab019280/AndroidManifest.xml:21:13-43
-	android:configChanges
-		ADDED from [com.xyzlf.share:sharesdk:0.0.9] /home/zzp/.gradle/caches/transforms-1/files-1.1/sharesdk-0.0.9.aar/0b0c14b497ccb074e5b5666eab019280/AndroidManifest.xml:20:13-63
-	android:theme
-		ADDED from [com.xyzlf.share:sharesdk:0.0.9] /home/zzp/.gradle/caches/transforms-1/files-1.1/sharesdk-0.0.9.aar/0b0c14b497ccb074e5b5666eab019280/AndroidManifest.xml:23:13-61
-	android:name
-		ADDED from [com.xyzlf.share:sharesdk:0.0.9] /home/zzp/.gradle/caches/transforms-1/files-1.1/sharesdk-0.0.9.aar/0b0c14b497ccb074e5b5666eab019280/AndroidManifest.xml:19:13-72
-intent-filter#android.intent.category.DEFAULT+com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY
-ADDED from [com.xyzlf.share:sharesdk:0.0.9] /home/zzp/.gradle/caches/transforms-1/files-1.1/sharesdk-0.0.9.aar/0b0c14b497ccb074e5b5666eab019280/AndroidManifest.xml:24:13-28:29
-action#com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY
-ADDED from [com.xyzlf.share:sharesdk:0.0.9] /home/zzp/.gradle/caches/transforms-1/files-1.1/sharesdk-0.0.9.aar/0b0c14b497ccb074e5b5666eab019280/AndroidManifest.xml:25:17-92
-	android:name
-		ADDED from [com.xyzlf.share:sharesdk:0.0.9] /home/zzp/.gradle/caches/transforms-1/files-1.1/sharesdk-0.0.9.aar/0b0c14b497ccb074e5b5666eab019280/AndroidManifest.xml:25:25-89
-category#android.intent.category.DEFAULT
-ADDED from [com.xyzlf.share:sharesdk:0.0.9] /home/zzp/.gradle/caches/transforms-1/files-1.1/sharesdk-0.0.9.aar/0b0c14b497ccb074e5b5666eab019280/AndroidManifest.xml:27:17-76
-	android:name
-		ADDED from [com.xyzlf.share:sharesdk:0.0.9] /home/zzp/.gradle/caches/transforms-1/files-1.1/sharesdk-0.0.9.aar/0b0c14b497ccb074e5b5666eab019280/AndroidManifest.xml:27:27-73
 meta-data#android.arch.lifecycle.VERSION
 ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/fb85aee5c945658ec38042da02cf1fa4/AndroidManifest.xml:25:9-27:47
 	android:value

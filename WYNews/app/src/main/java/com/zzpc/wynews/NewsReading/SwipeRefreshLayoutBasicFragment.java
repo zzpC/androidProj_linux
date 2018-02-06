@@ -29,9 +29,9 @@ import com.zzpc.wynews.NewsApp;
 import com.zzpc.wynews.NewsReading.Model.News;
 import com.zzpc.wynews.NewsReading.controller.ParseDatas;
 import com.zzpc.wynews.R;
-import com.xyzlf.share.library.bean.ShareEntity;
-import com.xyzlf.share.library.interfaces.ShareConstant;
-import com.xyzlf.share.library.util.ShareUtil;
+//import com.xyzlf.share.library.bean.ShareEntity;
+//import com.xyzlf.share.library.interfaces.ShareConstant;
+//import com.xyzlf.share.library.util.ShareUtil;
 import com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView;
 import com.yanzhenjie.recyclerview.swipe.touch.OnItemMoveListener;
 
@@ -356,12 +356,12 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                     final News news = mNewsInfoList.get(position);
                     final String url = news.getUrl();
 
-                    ShareEntity testBean = new ShareEntity(news.getTitle(), news.getDescription() + " " + news.getCtime());
-                    testBean.setUrl(news.getUrl()); //分享链接
-                    testBean.setImgUrl(news.getPicUrl());
-
-                    Log.e(TAG, "showShareDialog: " + " ");
-                    ShareUtil.showShareDialog(getActivity(), testBean, ShareConstant.REQUEST_CODE);
+//                    ShareEntity testBean = new ShareEntity(news.getTitle(), news.getDescription() + " " + news.getCtime());
+//                    testBean.setUrl(news.getUrl()); //分享链接
+//                    testBean.setImgUrl(news.getPicUrl());
+//
+//                    Log.e(TAG, "showShareDialog: " + " ");
+//                    ShareUtil.showShareDialog(getActivity(), testBean, ShareConstant.REQUEST_CODE);
                 }
             });
 

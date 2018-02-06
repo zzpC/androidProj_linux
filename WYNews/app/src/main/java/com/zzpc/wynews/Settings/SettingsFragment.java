@@ -18,7 +18,7 @@ import android.view.View;
 
 import com.zzpc.wynews.NewsApp;
 import com.zzpc.wynews.R;
-import com.xyzlf.share.library.bean.ShareEntity;
+//import com.xyzlf.share.library.bean.ShareEntity;
 
 
 
@@ -114,14 +114,13 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
     }
 
     public void showShareDialog() {
-        ShareEntity testBean = new ShareEntity("我是标题", "我是内容，描述内容。");
-        testBean.setUrl("https://www.baidu.com"); //分享链接
-//        testBean.setImgUrl("https://www.baidu.com/img/bd_logo1.png");
-
-        Uri uri = Uri.parse("android.resource://"+getContext().getPackageName()+"/drawable/share_wechat");
-        testBean.setImgUrl(uri.toString());
-        Log.e(TAG, "showShareDialog: "+"" );
-//        ShareUtil.showShareDialog(getActivity(), testBean, ShareConstant.REQUEST_CODE);
+//        ShareEntity testBean = new ShareEntity("我是标题", "我是内容，描述内容。");
+//        testBean.setUrl("https://www.baidu.com"); //分享链接
+////        testBean.setImgUrl("https://www.baidu.com/img/bd_logo1.png");
+//
+//        Uri uri = Uri.parse("android.resource://"+getContext().getPackageName()+"/drawable/share_wechat");
+//        testBean.setImgUrl(uri.toString());
+//        Log.e(TAG, "showShareDialog: "+"" );
     }
 
 
