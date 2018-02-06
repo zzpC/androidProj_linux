@@ -2,8 +2,9 @@ package com.zzpc.wynews.Settings.login;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -17,7 +18,6 @@ import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.NestedScrollView;
-import android.support.v7.widget.AlertDialogLayout;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatTextView;
 import android.text.TextUtils;
@@ -30,7 +30,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.tencent.connect.UnionInfo;
 import com.tencent.connect.UserInfo;
 import com.tencent.connect.common.Constants;
 import com.tencent.tauth.IUiListener;
@@ -48,108 +50,109 @@ import org.json.JSONObject;
 public class LoginFragment extends Fragment {
     private static final String TAG = LoginFragment.class.getName();
 
-    private NestedScrollView nestedScrollView;
-
-    private TextInputLayout textInputLayoutEmail;
-    private TextInputLayout textInputLayoutPassword;
-
-    private TextInputEditText textInputEditTextEmail;
-    private TextInputEditText textInputEditTextPassword;
-
-    private AppCompatButton appCompatButtonLogin;
-
-    private AppCompatTextView textViewLinkRegister;
-
-    private InputValidation inputValidation;
-    private DatabaseHelper databaseHelper;
-
-
-    //QQSDK
-    private static String mAppid;
+    public static String mAppid;
     private Button mNewLoginButton;
+    //    private Button mServerSideLoginBtn;
     private TextView mUserInfo;
-    private UserInfo mInfo;
     private ImageView mUserLogo;
+    private UserInfo mInfo;
     private EditText mEtAppid = null;
     public static Tencent mTencent;
+    //    private static Intent mPrizeIntent = null;
     private static boolean isServerSideLogin = false;
 
     public interface OnSwitchRegisterFragmentListen {
         void OnSwitchRegisterFragment();
     }
 
-    public static String getAppid() {
-        if (TextUtils.isEmpty(mAppid)) {
-            mAppid = "1106726824";
-        }
 
-        return mAppid;
-    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
         View view;
-        view = inflater.inflate(R.layout.fragment_login, container, false);
-//        getActivity().getActionBar().hide();
-        initViews(view);
-        initObjects();
 
-        if (TextUtils.isEmpty(mAppid)){
-            mAppid="1106726824";
-            mEtAppid=new EditText(getContext());
+        // setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//
+        // 固定竖屏
+        view= inflater.inflate(R.layout.fragment_login,container,false);
+        initViews(view);
+        //setBarTitle("demo菜单");
+        if (TextUtils.isEmpty(mAppid)) {
+            mAppid = "1106726824";
+            mEtAppid = new EditText(getContext());
             mEtAppid.setText(mAppid);
             try {
                 new AlertDialog.Builder(getContext()).setTitle("请输入APP_ID")
                         .setCancelable(false)
+                        .setIcon(android.R.drawable.ic_dialog_info)
                         .setView(mEtAppid)
-                        .setPositiveButton("Commit",mAppidCommitListener)
-                        .setNegativeButton("Use Default",mAppidCommitListener)
+                        .setPositiveButton("Commit", mAppidCommitListener)
+                        .setNegativeButton("Use Default", mAppidCommitListener)
                         .show();
-            }catch (Exception e){
-
+            } catch (Exception e) {
             }
-        }else {
-            if (mTencent==null){
-                mTencent=Tencent.createInstance(mAppid,getContext());
+        } else {
+            if (mTencent == null) {
+                mTencent = Tencent.createInstance(mAppid, getContext());
             }
         }
-
         return view;
     }
 
+
+    /**
+     * 有奖分享处理，未接入有奖分享可以不考虑
+     */
+//    private void handlePrizeShare() {
+//        // -----------------------------------
+//        // 下面的注释请勿删除，编译lite版的时候需要删除, 注意//[不要有空格。
+//
+//    }
+
+    // -----------------------------------
+    // 下面的注释请勿删除，编译lite版的时候需要删除, 注意//[不要有空格。
+
+//
+//	@Override
+//	protected void onStart() {
+//		Log.d(TAG, "-->onStart");
+//		super.onStart();
+//	}
+//
+//	@Override
+//	protected void onResume() {
+//		Log.d(TAG, "-->onResume");
+//        // 有奖分享处理
+//        handlePrizeShare();
+//		super.onResume();
+//	}
+//
+//	@Override
+//	protected void onPause() {
+//		Log.d(TAG, "-->onPause");
+//		super.onPause();
+//	}
+//
+//	@Override
+//	protected void onStop() {
+//		Log.d(TAG, "-->onStop");
+//		super.onStop();
+//	}
+//
+//	@Override
+//	protected void onDestroy() {
+//		Log.d(TAG, "-->onDestroy");
+//		super.onDestroy();
+//
+//	}
+
     private void initViews(View view) {
-        nestedScrollView = (NestedScrollView) view.findViewById(R.id.nestedScrollView);
-
-        textInputLayoutEmail = (TextInputLayout) view.findViewById(R.id.textInputLayoutEmail);
-        textInputLayoutPassword = (TextInputLayout) view.findViewById(R.id.textInputLayoutPassword);
-
-        textInputEditTextEmail = (TextInputEditText) view.findViewById(R.id.textInputEditTextEmail);
-        textInputEditTextPassword = (TextInputEditText) view.findViewById(R.id.textInputEditTextPassword);
-
-        appCompatButtonLogin = (AppCompatButton) view.findViewById(R.id.appCompatButtonLogin);
-        appCompatButtonLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                verifyFromSQLite();
-            }
-        });
-
-        textViewLinkRegister = (AppCompatTextView) view.findViewById(R.id.textViewLinkRegister);
-        textViewLinkRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                OnSwitchRegisterFragmentListen onSwitchRegisterFragmentListen = (OnSwitchRegisterFragmentListen) getActivity();
-                onSwitchRegisterFragmentListen.OnSwitchRegisterFragment();
-            }
-        });
-
-
-        mNewLoginButton = (Button) view.findViewById(R.id.new_login_btn);
+        mNewLoginButton = (Button)view.findViewById(R.id.new_login_btn);
 //        mServerSideLoginBtn = (Button) findViewById(R.id.server_side_login_btn);
 
         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.main_container);
-        View.OnClickListener listener = new NewClickListener();
+        View.OnClickListener listener = new LoginFragment.NewClickListener();
         for (int i = 0; i < linearLayout.getChildCount(); i++) {
             View tempView = linearLayout.getChildAt(i);
             if (tempView instanceof Button) {
@@ -158,149 +161,30 @@ public class LoginFragment extends Fragment {
         }
         mUserInfo = (TextView) view.findViewById(R.id.user_nickname);
         mUserLogo = (ImageView) view.findViewById(R.id.user_logo);
+        updateLoginButton();
     }
 
-    class NewClickListener implements View.OnClickListener {
-        @Override
-        public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.new_login_btn:
-                    onClickLogin();
-                    return;
-                default:
-                    Log.e(TAG, "onClick: " + v.getTransitionName());
-            }
-        }
-    }
-
-
-
-    private void initObjects() {
-        databaseHelper = new DatabaseHelper(getContext());
-        inputValidation = new InputValidation(getContext());
-    }
-
-
-    private void verifyFromSQLite() {
-        if (!inputValidation.isInputEditTextFilled(textInputEditTextEmail, textInputLayoutEmail, getString(R.string.error_message_email))) {
-            return;
-        }
-        if (!inputValidation.isInputEditTextEmail(textInputEditTextEmail, textInputLayoutEmail, getString(R.string.error_message_email))) {
-            return;
-        }
-        if (!inputValidation.isInputEditTextFilled(textInputEditTextPassword, textInputLayoutPassword, getString(R.string.error_message_email))) {
-            return;
-        }
-
-        if (databaseHelper.checkUser(textInputEditTextEmail.getText().toString().trim()
-                , textInputEditTextPassword.getText().toString().trim())) {
-
-//            Intent accountsIntent = new Intent(activity, UsersActivity.class);
-//            accountsIntent.putExtra("EMAIL", textInputEditTextEmail.getText().toString().trim());
-//
-//
-//            startActivity(accountsIntent);
-
-            emptyInputEditText();
-
-        } else {
-            Snackbar.make(nestedScrollView, getString(R.string.error_valid_email_password), Snackbar.LENGTH_LONG).show();
-        }
-    }
-
-    private void emptyInputEditText() {
-        textInputEditTextEmail.setText(null);
-        textInputEditTextPassword.setText(null);
-    }
-
-
-    //登录Dialog监听者
-    private class BaseUiListener implements IUiListener{
-        @Override
-        public void onComplete(Object response) {
-            if (null == response) {
-                Util.showResultDialog(getContext(), "返回为空", "登录失败");
-                return;
-            }
-            JSONObject jsonResponse = (JSONObject) response;
-            if (null != jsonResponse && jsonResponse.length() == 0) {
-                Util.showResultDialog(getContext(), "返回为空", "登录失败");
-                return;
-            }
-            Util.showResultDialog(getContext(), response.toString(), "登录成功");
-            // 有奖分享处理
-//            handlePrizeShare();
-            doComplete((JSONObject)response);
-        }
-
-        protected void doComplete(JSONObject values) {
-
-        }
-
-        @Override
-        public void onError(UiError e) {
-            Util.toastMessage(getActivity(), "onError: " + e.errorDetail);
-            Util.dismissDialog();
-        }
-
-        @Override
-        public void onCancel() {
-            Util.toastMessage(getActivity(), "onCancel: ");
-            Util.dismissDialog();
+    private void updateLoginButton() {
+        if (mTencent != null && mTencent.isSessionValid()) {
             if (isServerSideLogin) {
-                isServerSideLogin = false;
+                mNewLoginButton.setTextColor(Color.BLUE);
+                mNewLoginButton.setText("登录");
+//                mServerSideLoginBtn.setTextColor(Color.RED);
+//                mServerSideLoginBtn.setText("退出Server-Side账号");
+            } else {
+                mNewLoginButton.setTextColor(Color.RED);
+                mNewLoginButton.setText("退出帐号");
+//                mServerSideLoginBtn.setTextColor(Color.BLUE);
+//                mServerSideLoginBtn.setText("Server-Side登陆");
             }
+        } else {
+            mNewLoginButton.setTextColor(Color.BLUE);
+            mNewLoginButton.setText("登录");
+//            mServerSideLoginBtn.setTextColor(Color.BLUE);
+//            mServerSideLoginBtn.setText("Server-Side登陆");
         }
     }
 
-    IUiListener loginListener = new BaseUiListener() {
-        @Override
-        protected void doComplete(JSONObject values) {
-            Log.d("SDKQQAgentPref", "AuthorSwitch_SDK:" + SystemClock.elapsedRealtime());
-            initOpenidAndToken(values);
-            updateUserInfo();
-            updateLoginButton();
-        }
-    };
-
-
-    public static void initOpenidAndToken(JSONObject jsonObject) {
-        try {
-            String token = jsonObject.getString(Constants.PARAM_ACCESS_TOKEN);
-            String expires = jsonObject.getString(Constants.PARAM_EXPIRES_IN);
-            String openId = jsonObject.getString(Constants.PARAM_OPEN_ID);
-            if (!TextUtils.isEmpty(token) && !TextUtils.isEmpty(expires)
-                    && !TextUtils.isEmpty(openId)) {
-                mTencent.setAccessToken(token, expires);
-                mTencent.setOpenId(openId);
-            }
-        } catch(Exception e) {
-        }
-    }
-
-    @SuppressLint("HandlerLeak")
-    Handler mHandler = new Handler() {
-
-        @Override
-        public void handleMessage(Message msg) {
-            if (msg.what == 0) {
-                JSONObject response = (JSONObject) msg.obj;
-                if (response.has("nickname")) {
-                    try {
-                        mUserInfo.setVisibility(android.view.View.VISIBLE);
-                        mUserInfo.setText(response.getString("nickname"));
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }else if(msg.what == 1){
-                Bitmap bitmap = (Bitmap)msg.obj;
-                mUserLogo.setImageBitmap(bitmap);
-                mUserLogo.setVisibility(android.view.View.VISIBLE);
-            }
-        }
-
-    };
     private void updateUserInfo() {
         if (mTencent != null && mTencent.isSessionValid()) {
             IUiListener listener = new IUiListener() {
@@ -353,24 +237,209 @@ public class LoginFragment extends Fragment {
         }
     }
 
-    private void updateLoginButton() {
+    private void getUnionId() {
         if (mTencent != null && mTencent.isSessionValid()) {
-            if (isServerSideLogin) {
-                mNewLoginButton.setTextColor(Color.BLUE);
-                mNewLoginButton.setText("登录");
-//                mServerSideLoginBtn.setTextColor(Color.RED);
-//                mServerSideLoginBtn.setText("退出Server-Side账号");
-            } else {
-                mNewLoginButton.setTextColor(Color.RED);
-                mNewLoginButton.setText("退出帐号");
-//                mServerSideLoginBtn.setTextColor(Color.BLUE);
-//                mServerSideLoginBtn.setText("Server-Side登陆");
-            }
+            IUiListener listener = new IUiListener() {
+                @Override
+                public void onError(UiError e) {
+                    Toast.makeText(getContext(),"onError",Toast.LENGTH_LONG).show();
+                }
+
+                @Override
+                public void onComplete(final Object response) {
+                    if(response != null){
+                        JSONObject jsonObject = (JSONObject)response;
+                        try {
+                            String unionid = jsonObject.getString("unionid");
+                            Util.showResultDialog(getContext(), "unionid:\n"+unionid, "onComplete");
+                            Util.dismissDialog();
+                        }catch (Exception e){
+                            Toast.makeText(getContext(),"no unionid",Toast.LENGTH_LONG).show();
+                        }
+                    }else {
+                        Toast.makeText(getContext(),"no unionid",Toast.LENGTH_LONG).show();
+                    }
+                }
+
+                @Override
+                public void onCancel() {
+                    Toast.makeText(getContext(),"onCancel",Toast.LENGTH_LONG).show();
+                }
+            };
+            UnionInfo unionInfo = new UnionInfo(getContext(), mTencent.getQQToken());
+            unionInfo.getUnionId(listener);
         } else {
-            mNewLoginButton.setTextColor(Color.BLUE);
-            mNewLoginButton.setText("登录");
-//            mServerSideLoginBtn.setTextColor(Color.BLUE);
-//            mServerSideLoginBtn.setText("Server-Side登陆");
+            Toast.makeText(getContext(),"please login frist!",Toast.LENGTH_LONG).show();
+        }
+    }
+
+    @SuppressLint("HandlerLeak")
+    Handler mHandler = new Handler() {
+
+        @Override
+        public void handleMessage(Message msg) {
+            if (msg.what == 0) {
+                JSONObject response = (JSONObject) msg.obj;
+                if (response.has("nickname")) {
+                    try {
+                        mUserInfo.setVisibility(android.view.View.VISIBLE);
+                        mUserInfo.setText(response.getString("nickname"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }else if(msg.what == 1){
+                Bitmap bitmap = (Bitmap)msg.obj;
+                mUserLogo.setImageBitmap(bitmap);
+                mUserLogo.setVisibility(android.view.View.VISIBLE);
+            }
+        }
+
+    };
+
+    private void onClickLogin() {
+        if (!mTencent.isSessionValid()) {
+            mTencent.login(this, "all", loginListener);
+            isServerSideLogin = false;
+            Log.d("SDKQQAgentPref", "FirstLaunch_SDK:" + SystemClock.elapsedRealtime());
+        } else {
+            if (isServerSideLogin) { // Server-Side 模式的登陆, 先退出，再进行SSO登陆
+                mTencent.logout(getContext());
+                mTencent.login(this, "all", loginListener);
+                isServerSideLogin = false;
+                Log.d("SDKQQAgentPref", "FirstLaunch_SDK:" + SystemClock.elapsedRealtime());
+                return;
+            }
+            mTencent.logout(getContext());
+            updateUserInfo();
+            updateLoginButton();
+        }
+    }
+
+    private void onClickServerSideLogin() {
+        if (!mTencent.isSessionValid()) {
+            mTencent.loginServerSide(this, "all", loginListener);
+            isServerSideLogin = true;
+            Log.d("SDKQQAgentPref", "FirstLaunch_SDK:" + SystemClock.elapsedRealtime());
+        } else {
+            if (!isServerSideLogin) { // SSO模式的登陆，先退出，再进行Server-Side模式登陆
+                mTencent.logout(getContext());
+                mTencent.loginServerSide(this, "all", loginListener);
+                isServerSideLogin = true;
+                Log.d("SDKQQAgentPref", "FirstLaunch_SDK:" + SystemClock.elapsedRealtime());
+                return;
+            }
+            mTencent.logout(getContext());
+            isServerSideLogin = false;
+            updateUserInfo();
+            updateLoginButton();
+        }
+    }
+
+    public static String getAppid() {
+        if (TextUtils.isEmpty(mAppid)) {
+            mAppid = "1106726824";
+        }
+
+        return mAppid;
+    }
+
+    public static boolean ready(Context context) {
+        if (mTencent == null) {
+            return false;
+        }
+        boolean ready = mTencent.isSessionValid()
+                && mTencent.getQQToken().getOpenId() != null;
+        if (!ready) {
+            Toast.makeText(context, "login and get openId first, please!",
+                    Toast.LENGTH_SHORT).show();
+        }
+        return ready;
+    }
+
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        Log.d(TAG, "-->onActivityResult " + requestCode  + " resultCode=" + resultCode);
+//        if (requestCode == Constants.REQUEST_LOGIN ||
+//                requestCode == Constants.REQUEST_APPBAR) {
+//            Tencent.onActivityResultData(requestCode,resultCode,data,loginListener);
+//        }
+//
+//        super.onActivityResult(requestCode, resultCode, data);
+//    }
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.d(TAG, "-->onActivityResult " + requestCode  + " resultCode=" + resultCode);
+        if (requestCode == Constants.REQUEST_LOGIN ||
+                requestCode == Constants.REQUEST_APPBAR) {
+            Tencent.onActivityResultData(requestCode,resultCode,data,loginListener);
+        }
+//        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public static void initOpenidAndToken(JSONObject jsonObject) {
+        try {
+            String token = jsonObject.getString(Constants.PARAM_ACCESS_TOKEN);
+            String expires = jsonObject.getString(Constants.PARAM_EXPIRES_IN);
+            String openId = jsonObject.getString(Constants.PARAM_OPEN_ID);
+            if (!TextUtils.isEmpty(token) && !TextUtils.isEmpty(expires)
+                    && !TextUtils.isEmpty(openId)) {
+                mTencent.setAccessToken(token, expires);
+                mTencent.setOpenId(openId);
+            }
+        } catch(Exception e) {
+        }
+    }
+
+    IUiListener loginListener = new LoginFragment.BaseUiListener() {
+        @Override
+        protected void doComplete(JSONObject values) {
+            Log.d("SDKQQAgentPref", "AuthorSwitch_SDK:" + SystemClock.elapsedRealtime());
+            initOpenidAndToken(values);
+            updateUserInfo();
+            updateLoginButton();
+        }
+    };
+
+    private class BaseUiListener implements IUiListener {
+
+        @Override
+        public void onComplete(Object response) {
+            if (null == response) {
+                Util.showResultDialog(getContext(), "返回为空", "登录失败");
+                return;
+            }
+            JSONObject jsonResponse = (JSONObject) response;
+            if (null != jsonResponse && jsonResponse.length() == 0) {
+                Util.showResultDialog(getContext(), "返回为空", "登录失败");
+                return;
+            }
+            Util.showResultDialog(getContext(), response.toString(), "登录成功");
+            // 有奖分享处理
+//            handlePrizeShare();
+            doComplete((JSONObject)response);
+        }
+
+        protected void doComplete(JSONObject values) {
+
+        }
+
+        @Override
+        public void onError(UiError e) {
+            Util.toastMessage(getActivity(), "onError: " + e.errorDetail);
+            Util.dismissDialog();
+        }
+
+        @Override
+        public void onCancel() {
+            Util.toastMessage(getActivity(), "onCancel: ");
+            Util.dismissDialog();
+            if (isServerSideLogin) {
+                isServerSideLogin = false;
+            }
         }
     }
 
@@ -397,29 +466,85 @@ public class LoginFragment extends Fragment {
         }
     };
 
-    private void onClickLogin() {
-        if (!mTencent.isSessionValid()) {
-            Log.e(TAG, "onClickLogin: 4" );
-            mTencent.login(this, "all", loginListener);
-            isServerSideLogin = false;
-            Log.d("SDKQQAgentPref", "FirstLaunch_SDK:" + SystemClock.elapsedRealtime());
-            Log.e(TAG, "onClickLogin:1 " );
+    private void onClickIsSupportSSOLogin() {
+        if (mTencent.isSupportSSOLogin(getActivity())) {
+            Toast.makeText(getContext(), "支持SSO登陆", Toast.LENGTH_SHORT).show();
         } else {
-
-
-            if (isServerSideLogin) { // Server-Side 模式的登陆, 先退出，再进行SSO登陆
-                mTencent.logout(getContext());
-                mTencent.login(this, "all", loginListener);
-                isServerSideLogin = false;
-                Log.e(TAG, "onClickLogin:2 " );
-                Log.d("SDKQQAgentPref", "FirstLaunch_SDK:" + SystemClock.elapsedRealtime());
-                return;
-            }
-
-            mTencent.logout(getContext());
-            updateUserInfo();
-            updateLoginButton();
+            Toast.makeText(getContext(), "不支持SSO登陆", Toast.LENGTH_SHORT).show();
         }
     }
 
+    class NewClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+//			Context context = v.getContext();
+//			Animation shake = AnimationUtils.loadAnimation(context,
+//					R.anim.shake);
+//			Class<?> cls = null;
+//			boolean isAppbar = false;
+            switch (v.getId()) {
+                case R.id.new_login_btn:
+                    onClickLogin();
+//				v.startAnimation(shake);
+//				return;
+//			case R.id.server_side_login_btn:
+//			    onClickServerSideLogin();
+//			    v.startAnimation(shake);
+//			    return;
+//			case R.id.main_sso_btn:
+//                    onClickIsSupportSSOLogin();
+//			    return;
+//			case R.id.main_getInfo_btn:
+//				cls = AccountInfoActivity.class;
+//				break;
+//			case R.id.app_get_unionid:
+//				getUnionId();
+//				break;
+//			case R.id.main_qqShare_btn:
+//				cls = QQShareActivity.class;
+//				break;
+//			case R.id.main_qzoneShare_btn:
+//				cls = QZoneShareActivity.class;
+//				break;
+//			/*case R.id.main_social_api_btn:
+//                cls = SocialApiActivity.class;
+//                break;*/
+//			case R.id.main_is_qq_installed_btn:
+//				Toast.makeText(MainActivity.this, mTencent.isQQInstalled(MainActivity.this) + "" , Toast.LENGTH_SHORT).show();
+//				break;
+//			case R.id.check_token_valid:
+//				JSONObject jsonObject = null;
+//				boolean isValid = mTencent.checkSessionValid(mAppid);
+//				if(!isValid) {
+//					Util.showResultDialog(MainActivity.this, "token过期，请调用登录接口拉起手Q授权登录", "登录失败");
+//					return;
+//				} else {
+//					jsonObject = mTencent.loadSession(mAppid);
+//					mTencent.initSessionCache(jsonObject);
+//				}
+//				Util.showResultDialog(MainActivity.this, jsonObject.toString(), "登录成功");
+//				updateUserInfo();
+//				updateLoginButton();
+//				break;
+//			case R.id.game_add_friend:
+//				cls = GameLogicActivity.class;
+//				break;
+//			case R.id.main_qqgroup_btn:
+//				cls = QQGroupActivity.class;
+//				break;
+                    //-----------------------------------
+                    // 下面的注释请勿删除，编译lite版的时候需要删除, 注意//[不要有空格。
+
+            }
+//			v.startAnimation(shake);
+//			if (cls != null) {
+//				Intent intent = new Intent(context, cls);
+//				if (isAppbar) { //APP内应用吧登录需接收登录结果
+//					startActivityForResult(intent, Constants.REQUEST_APPBAR);
+//				} else {
+//					context.startActivity(intent);
+//				}
+//			}
+        }
+    }
 }

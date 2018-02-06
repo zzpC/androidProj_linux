@@ -3,6 +3,7 @@ package com.zzpc.wynews;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -35,7 +36,9 @@ import com.zzpc.wynews.NewsReading.SlidingTabsColorsFragment;
 import com.zzpc.wynews.NewsReading.SwipeRefreshLayoutBasicFragment;
 import com.zzpc.wynews.Settings.AccountManagerFragment;
 import com.zzpc.wynews.Settings.SettingsFragment;
+import com.zzpc.wynews.Settings.login.LoginActivity;
 import com.zzpc.wynews.Settings.login.LoginFragment;
+//import com.zzpc.wynews.Settings.login.LoginFragment_temp;
 import com.zzpc.wynews.Settings.login.RegisterFragment;
 
 
@@ -87,6 +90,11 @@ public class MainActivity extends AppCompatActivity implements AccountManagerFra
             case 0:
                 LoginFragment loginFragment = new LoginFragment();
                 manager.beginTransaction().replace(R.id.bottom_pager, loginFragment).addToBackStack(LoginFragment.class.getName()).commit();
+
+//                Intent intent=new Intent(MainActivity.this, LoginActivity.class);
+//                startActivity(intent);
+
+
                 break;
             case 6:
                 //使用了replace而没有hide(),注意问题
@@ -122,24 +130,6 @@ public class MainActivity extends AppCompatActivity implements AccountManagerFra
         mBottomNavigationView.setVisibility(View.INVISIBLE);
     }
 
-//    @Override
-//    public void onWebView(final String inkeytool -v -list -keystore fo) {
-//        Log.e("main", "onWebView:  " + info);
-//
-//        NewsContentFragment newsContentFragment = new NewsContentFragment();
-//        NewsContentTextFragment newsContentTextFragment=new NewsContentTextFragment();
-//
-//        Bundle bundle = new Bundle();
-//        bundle.putString("url", info);
-////        newsContentFragment.setArguments(bundle);
-//        newsContentTextFragment.setArguments(bundle);
-//
-//        FragmentManager manager = getSupportFragmentManager();
-////        manager.beginTransaction().replace(R.id.full, newsContentFragment).addToBackStack("webview").commit();
-//        manager.beginTransaction().replace(R.id.full, newsContentTextFragment).addToBackStack("newscontextstr").commit();
-//
-//        mBottomNavigationView.setVisibility(View.INVISIBLE);
-//    }
 
 
     @Override
