@@ -22,6 +22,8 @@ import java.util.List;
  */
 
 public class AccountManagerFragment extends Fragment {
+    private static final String TAG = AccountManagerFragment.class.getName();
+
 
     private AccountManageAdapter mAccountManageAdapter;
     private RecyclerView mRecyclerView;
@@ -56,6 +58,8 @@ public class AccountManagerFragment extends Fragment {
 
         mAccountManageAdapter=new AccountManageAdapter(items,getContext(),mListener);
         mRecyclerView.setAdapter(mAccountManageAdapter);
+
+
         return view;
     }
 

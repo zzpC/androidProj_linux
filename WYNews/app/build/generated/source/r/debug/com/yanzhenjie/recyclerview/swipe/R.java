@@ -28,13 +28,13 @@ public final class R {
         public static final int item_touch_helper_swipe_escape_velocity = 0x7f070087;
     }
     public static final class id {
-        public static final int item_touch_helper_previous_elevation = 0x7f090075;
-        public static final int loading_tv_message = 0x7f09007e;
-        public static final int loading_view = 0x7f09007f;
-        public static final int swipe_content = 0x7f0900cf;
-        public static final int swipe_left = 0x7f0900d0;
-        public static final int swipe_right = 0x7f0900d1;
-        public static final int tv_load_more_message = 0x7f0900f6;
+        public static final int item_touch_helper_previous_elevation = 0x7f090076;
+        public static final int loading_tv_message = 0x7f09007f;
+        public static final int loading_view = 0x7f090080;
+        public static final int swipe_content = 0x7f0900d2;
+        public static final int swipe_left = 0x7f0900d3;
+        public static final int swipe_right = 0x7f0900d4;
+        public static final int tv_load_more_message = 0x7f0900f9;
     }
     public static final class layout {
         public static final int loading_wait_dialog = 0x7f0b0035;
@@ -42,12 +42,12 @@ public final class R {
         public static final int recycler_swipe_view_load_more = 0x7f0b0056;
     }
     public static final class string {
-        public static final int loading_default_messsage = 0x7f0e0032;
-        public static final int recycler_swipe_click_load_more = 0x7f0e003c;
-        public static final int recycler_swipe_data_empty = 0x7f0e003d;
-        public static final int recycler_swipe_load_error = 0x7f0e003e;
-        public static final int recycler_swipe_load_more_message = 0x7f0e003f;
-        public static final int recycler_swipe_more_not = 0x7f0e0040;
+        public static final int loading_default_messsage = 0x7f0e0033;
+        public static final int recycler_swipe_click_load_more = 0x7f0e003d;
+        public static final int recycler_swipe_data_empty = 0x7f0e003e;
+        public static final int recycler_swipe_load_error = 0x7f0e003f;
+        public static final int recycler_swipe_load_more_message = 0x7f0e0040;
+        public static final int recycler_swipe_more_not = 0x7f0e0041;
     }
     public static final class style {
         public static final int loadingDialog = 0x7f0f01b3;

@@ -21,6 +21,7 @@ import com.zzpc.wynews.R;
  */
 
 public class LoginFragment extends Fragment {
+    private static final String TAG = LoginFragment.class.getName();
 
     private NestedScrollView nestedScrollView;
 
@@ -37,6 +38,9 @@ public class LoginFragment extends Fragment {
     private InputValidation inputValidation;
     private DatabaseHelper databaseHelper;
 
+
+    //QQSDK
+    private static String mAppid;
 
     public interface OnSwitchRegisterFragmentListen{
         void OnSwitchRegisterFragment();
