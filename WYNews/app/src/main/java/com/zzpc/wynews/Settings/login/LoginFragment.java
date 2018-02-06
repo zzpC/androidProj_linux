@@ -10,10 +10,17 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatTextView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import com.tencent.tauth.Tencent;
 import com.zzpc.wynews.R;
 
 /**
@@ -41,8 +48,14 @@ public class LoginFragment extends Fragment {
 
     //QQSDK
     private static String mAppid;
+    private Button mNewLoginButton;
+    private TextView mUserInfo;
+    private ImageView mUserLogo;
+    private EditText mEtAppid = null;
+    public static Tencent mTencent;
+    private static boolean isServerSideLogin = false;
 
-    public interface OnSwitchRegisterFragmentListen{
+    public interface OnSwitchRegisterFragmentListen {
         void OnSwitchRegisterFragment();
     }
 
@@ -50,20 +63,20 @@ public class LoginFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view;
-        view=inflater.inflate(R.layout.fragment_login,container,false);
+        view = inflater.inflate(R.layout.fragment_login, container, false);
 //        getActivity().getActionBar().hide();
         initViews(view);
         initObjects();
         return view;
     }
 
-    private void initViews(View view){
+    private void initViews(View view) {
         nestedScrollView = (NestedScrollView) view.findViewById(R.id.nestedScrollView);
 
         textInputLayoutEmail = (TextInputLayout) view.findViewById(R.id.textInputLayoutEmail);
         textInputLayoutPassword = (TextInputLayout) view.findViewById(R.id.textInputLayoutPassword);
 
-        textInputEditTextEmail = (TextInputEditText)view.findViewById(R.id.textInputEditTextEmail);
+        textInputEditTextEmail = (TextInputEditText) view.findViewById(R.id.textInputEditTextEmail);
         textInputEditTextPassword = (TextInputEditText) view.findViewById(R.id.textInputEditTextPassword);
 
         appCompatButtonLogin = (AppCompatButton) view.findViewById(R.id.appCompatButtonLogin);
@@ -78,21 +91,47 @@ public class LoginFragment extends Fragment {
         textViewLinkRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                OnSwitchRegisterFragmentListen onSwitchRegisterFragmentListen=(OnSwitchRegisterFragmentListen) getActivity();
+                OnSwitchRegisterFragmentListen onSwitchRegisterFragmentListen = (OnSwitchRegisterFragmentListen) getActivity();
                 onSwitchRegisterFragmentListen.OnSwitchRegisterFragment();
             }
         });
+
+
+        mNewLoginButton = (Button) view.findViewById(R.id.new_login_btn);
+//        mServerSideLoginBtn = (Button) findViewById(R.id.server_side_login_btn);
+
+        LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.main_container);
+        View.OnClickListener listener = new NewClickListener();
+        for (int i = 0; i < linearLayout.getChildCount(); i++) {
+            View tempView = linearLayout.getChildAt(i);
+            if (tempView instanceof Button) {
+                tempView.setOnClickListener(listener);
+            }
+        }
+        mUserInfo = (TextView) view.findViewById(R.id.user_nickname);
+        mUserLogo = (ImageView) view.findViewById(R.id.user_logo);
+    }
+
+    class NewClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.new_login_btn:
+                    return;
+                default:
+                    Log.e(TAG, "onClick: " + v.getTransitionName());
+            }
+        }
     }
 
 
-    private void initObjects(){
+    private void initObjects() {
         databaseHelper = new DatabaseHelper(getContext());
         inputValidation = new InputValidation(getContext());
     }
 
 
-
-    private void verifyFromSQLite(){
+    private void verifyFromSQLite() {
         if (!inputValidation.isInputEditTextFilled(textInputEditTextEmail, textInputLayoutEmail, getString(R.string.error_message_email))) {
             return;
         }
@@ -119,7 +158,7 @@ public class LoginFragment extends Fragment {
         }
     }
 
-    private void emptyInputEditText(){
+    private void emptyInputEditText() {
         textInputEditTextEmail.setText(null);
         textInputEditTextPassword.setText(null);
     }
