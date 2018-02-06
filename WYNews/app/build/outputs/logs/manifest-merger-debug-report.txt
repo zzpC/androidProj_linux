@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:2:1-44:12
-INJECTED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:2:1-44:12
-INJECTED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:2:1-44:12
-INJECTED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:2:1-44:12
+ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:2:1-67:12
+INJECTED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:2:1-67:12
+INJECTED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:2:1-67:12
+INJECTED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:2:1-67:12
 MERGED from [com.android.support:design:26.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/aa12c40593f51c1ccc3ffae4e0a865bd/AndroidManifest.xml:17:1-31:12
 MERGED from [com.takisoft.fix:preference-v7:27.0.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/preference-v7-27.0.0.0.aar/9085757be3cf3611b610238fbeab98f2/AndroidManifest.xml:2:1-21:12
 MERGED from [com.android.support:preference-v14:27.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/preference-v14-27.0.0.aar/1c07ff6b9d5467e654d4654dad1243eb/AndroidManifest.xml:17:1-22:12
@@ -33,20 +33,20 @@ MERGED from [com.android.support:support-compat:27.0.0] /home/zzp/.gradle/caches
 MERGED from [com.google.android.exoplayer:exoplayer:r1.5.11] /home/zzp/.gradle/caches/transforms-1/files-1.1/exoplayer-r1.5.11.aar/8944c5560fcba4237fe780384bf0435e/AndroidManifest.xml:17:1-28:12
 MERGED from [com.yanzhenjie:loading:1.0.2] /home/zzp/.gradle/caches/transforms-1/files-1.1/loading-1.0.2.aar/3e76004f57fe6f3fb5a8c36bd90340d9/AndroidManifest.xml:17:1-25:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/fb85aee5c945658ec38042da02cf1fa4/AndroidManifest.xml:17:1-30:12
-INJECTED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:2:1-44:12
-INJECTED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:2:1-44:12
-INJECTED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:2:1-44:12
+INJECTED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:2:1-67:12
+INJECTED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:2:1-67:12
+INJECTED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:2:1-67:12
 	package
 		ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:3:5-30
 		INJECTED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml
 		INJECTED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml
-		ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:2:1-44:12
+		ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:2:1-67:12
 		INJECTED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml
-		ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:2:1-44:12
+		ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:2:1-67:12
 		INJECTED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:2:11-69
@@ -99,7 +99,7 @@ ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManif
 	android:name
 		ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:18:22-78
 application
-ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:21:5-42:19
+ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:21:5-65:19
 MERGED from [com.android.support:design:26.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/aa12c40593f51c1ccc3ffae4e0a865bd/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:design:26.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/aa12c40593f51c1ccc3ffae4e0a865bd/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/zzp/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/76833537c8236bb552b6800a1e809693/AndroidManifest.xml:9:5-20
@@ -146,6 +146,42 @@ ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManif
 		ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:39:21-52
 	android:name
 		ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:38:21-68
+activity#com.tencent.tauth.AuthActivity
+ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:46:9-57:20
+	android:launchMode
+		ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:48:13-44
+	android:noHistory
+		ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:49:13-37
+	android:name
+		ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:47:13-58
+intent-filter#android.intent.action.VIEW+android.intent.category.BROWSABLE+android.intent.category.DEFAULT
+ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:50:13-56:29
+action#android.intent.action.VIEW
+ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:51:17-69
+	android:name
+		ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:51:25-66
+category#android.intent.category.DEFAULT
+ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:52:17-76
+	android:name
+		ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:52:27-73
+category#android.intent.category.BROWSABLE
+ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:53:17-78
+	android:name
+		ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:53:27-75
+data
+ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:54:17-60
+	android:scheme
+		ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:54:23-57
+activity#com.tencent.connect.common.AssistActivity
+ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:59:9-63:75
+	android:screenOrientation
+		ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:62:13-47
+	android:configChanges
+		ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:61:13-63
+	android:theme
+		ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:63:13-72
+	android:name
+		ADDED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:60:13-69
 uses-sdk
 INJECTED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml
