@@ -1,5 +1,8 @@
 package com.zzpc.wynews.Settings.login;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -8,8 +11,10 @@ import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.NestedScrollView;
+import android.support.v7.widget.AlertDialogLayout;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatTextView;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,8 +25,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.Tencent;
+import com.tencent.tauth.UiError;
 import com.zzpc.wynews.R;
+
+import org.json.JSONObject;
 
 /**
  * Created by zzp on 18-2-4.
@@ -67,6 +76,27 @@ public class LoginFragment extends Fragment {
 //        getActivity().getActionBar().hide();
         initViews(view);
         initObjects();
+
+        if (TextUtils.isEmpty(mAppid)){
+            mAppid="1106726824";
+            mEtAppid=new EditText(getContext());
+            mEtAppid.setText(mAppid);
+            try {
+                new AlertDialog.Builder(getContext()).setTitle("请输入APP_ID")
+                        .setCancelable(false)
+                        .setView(mEtAppid)
+                        .setPositiveButton("Commit",mAppidCommitListener)
+                        .setNegativeButton("Use Default",mAppidCommitListener)
+                        .show();
+            }catch (Exception e){
+
+            }
+        }else {
+            if (mTencent==null){
+                mTencent=Tencent.createInstance(mAppid,getContext());
+            }
+        }
+
         return view;
     }
 
@@ -125,6 +155,7 @@ public class LoginFragment extends Fragment {
     }
 
 
+
     private void initObjects() {
         databaseHelper = new DatabaseHelper(getContext());
         inputValidation = new InputValidation(getContext());
@@ -162,4 +193,68 @@ public class LoginFragment extends Fragment {
         textInputEditTextEmail.setText(null);
         textInputEditTextPassword.setText(null);
     }
+
+
+    //Dialog监听者
+    private class BaseUiListener implements IUiListener{
+        @Override
+        public void onComplete(Object response) {
+            if (null == response) {
+                Util.showResultDialog(getContext(), "返回为空", "登录失败");
+                return;
+            }
+            JSONObject jsonResponse = (JSONObject) response;
+            if (null != jsonResponse && jsonResponse.length() == 0) {
+                Util.showResultDialog(getContext(), "返回为空", "登录失败");
+                return;
+            }
+            Util.showResultDialog(getContext(), response.toString(), "登录成功");
+            // 有奖分享处理
+//            handlePrizeShare();
+            doComplete((JSONObject)response);
+        }
+
+        protected void doComplete(JSONObject values) {
+
+        }
+
+        @Override
+        public void onError(UiError e) {
+            Util.toastMessage(getActivity(), "onError: " + e.errorDetail);
+            Util.dismissDialog();
+        }
+
+        @Override
+        public void onCancel() {
+            Util.toastMessage(getActivity(), "onCancel: ");
+            Util.dismissDialog();
+            if (isServerSideLogin) {
+                isServerSideLogin = false;
+            }
+        }
+    }
+
+
+    private DialogInterface.OnClickListener mAppidCommitListener = new DialogInterface.OnClickListener() {
+
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            mAppid = AppConstants.APP_ID;
+            switch (which) {
+                case DialogInterface.BUTTON_POSITIVE:
+                    // 用输入的appid
+                    String editTextContent = mEtAppid.getText().toString().trim();
+                    if (!TextUtils.isEmpty(editTextContent)) {
+                        mAppid = editTextContent;
+                    }
+                    break;
+                case DialogInterface.BUTTON_NEGATIVE:
+                    // 默认appid
+                    break;
+            }
+            mTencent = Tencent.createInstance(mAppid, getContext());
+            // 有奖分享处理
+//            handlePrizeShare();
+        }
+    };
 }
