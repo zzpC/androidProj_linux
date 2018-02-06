@@ -1,9 +1,15 @@
 package com.zzpc.wynews.Settings.login;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.os.SystemClock;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
@@ -25,11 +31,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.tencent.connect.UserInfo;
+import com.tencent.connect.common.Constants;
 import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.Tencent;
 import com.tencent.tauth.UiError;
 import com.zzpc.wynews.R;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -59,6 +68,7 @@ public class LoginFragment extends Fragment {
     private static String mAppid;
     private Button mNewLoginButton;
     private TextView mUserInfo;
+    private UserInfo mInfo;
     private ImageView mUserLogo;
     private EditText mEtAppid = null;
     public static Tencent mTencent;
@@ -66,6 +76,14 @@ public class LoginFragment extends Fragment {
 
     public interface OnSwitchRegisterFragmentListen {
         void OnSwitchRegisterFragment();
+    }
+
+    public static String getAppid() {
+        if (TextUtils.isEmpty(mAppid)) {
+            mAppid = "1106726824";
+        }
+
+        return mAppid;
     }
 
     @Nullable
@@ -147,6 +165,7 @@ public class LoginFragment extends Fragment {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.new_login_btn:
+                    onClickLogin();
                     return;
                 default:
                     Log.e(TAG, "onClick: " + v.getTransitionName());
@@ -195,7 +214,7 @@ public class LoginFragment extends Fragment {
     }
 
 
-    //Dialog监听者
+    //登录Dialog监听者
     private class BaseUiListener implements IUiListener{
         @Override
         public void onComplete(Object response) {
@@ -234,6 +253,126 @@ public class LoginFragment extends Fragment {
         }
     }
 
+    IUiListener loginListener = new BaseUiListener() {
+        @Override
+        protected void doComplete(JSONObject values) {
+            Log.d("SDKQQAgentPref", "AuthorSwitch_SDK:" + SystemClock.elapsedRealtime());
+            initOpenidAndToken(values);
+            updateUserInfo();
+            updateLoginButton();
+        }
+    };
+
+
+    public static void initOpenidAndToken(JSONObject jsonObject) {
+        try {
+            String token = jsonObject.getString(Constants.PARAM_ACCESS_TOKEN);
+            String expires = jsonObject.getString(Constants.PARAM_EXPIRES_IN);
+            String openId = jsonObject.getString(Constants.PARAM_OPEN_ID);
+            if (!TextUtils.isEmpty(token) && !TextUtils.isEmpty(expires)
+                    && !TextUtils.isEmpty(openId)) {
+                mTencent.setAccessToken(token, expires);
+                mTencent.setOpenId(openId);
+            }
+        } catch(Exception e) {
+        }
+    }
+
+    @SuppressLint("HandlerLeak")
+    Handler mHandler = new Handler() {
+
+        @Override
+        public void handleMessage(Message msg) {
+            if (msg.what == 0) {
+                JSONObject response = (JSONObject) msg.obj;
+                if (response.has("nickname")) {
+                    try {
+                        mUserInfo.setVisibility(android.view.View.VISIBLE);
+                        mUserInfo.setText(response.getString("nickname"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }else if(msg.what == 1){
+                Bitmap bitmap = (Bitmap)msg.obj;
+                mUserLogo.setImageBitmap(bitmap);
+                mUserLogo.setVisibility(android.view.View.VISIBLE);
+            }
+        }
+
+    };
+    private void updateUserInfo() {
+        if (mTencent != null && mTencent.isSessionValid()) {
+            IUiListener listener = new IUiListener() {
+
+                @Override
+                public void onError(UiError e) {
+
+                }
+
+                @Override
+                public void onComplete(final Object response) {
+                    Message msg = new Message();
+                    msg.obj = response;
+                    msg.what = 0;
+                    mHandler.sendMessage(msg);
+                    new Thread(){
+
+                        @Override
+                        public void run() {
+                            JSONObject json = (JSONObject)response;
+                            if(json.has("figureurl")){
+                                Bitmap bitmap = null;
+                                try {
+                                    bitmap = Util.getbitmap(json.getString("figureurl_qq_2"));
+                                } catch (JSONException e) {
+
+                                }
+                                Message msg = new Message();
+                                msg.obj = bitmap;
+                                msg.what = 1;
+                                mHandler.sendMessage(msg);
+                            }
+                        }
+
+                    }.start();
+                }
+
+                @Override
+                public void onCancel() {
+
+                }
+            };
+            mInfo = new UserInfo(getContext(), mTencent.getQQToken());
+            mInfo.getUserInfo(listener);
+
+        } else {
+            mUserInfo.setText("");
+            mUserInfo.setVisibility(android.view.View.GONE);
+            mUserLogo.setVisibility(android.view.View.GONE);
+        }
+    }
+
+    private void updateLoginButton() {
+        if (mTencent != null && mTencent.isSessionValid()) {
+            if (isServerSideLogin) {
+                mNewLoginButton.setTextColor(Color.BLUE);
+                mNewLoginButton.setText("登录");
+//                mServerSideLoginBtn.setTextColor(Color.RED);
+//                mServerSideLoginBtn.setText("退出Server-Side账号");
+            } else {
+                mNewLoginButton.setTextColor(Color.RED);
+                mNewLoginButton.setText("退出帐号");
+//                mServerSideLoginBtn.setTextColor(Color.BLUE);
+//                mServerSideLoginBtn.setText("Server-Side登陆");
+            }
+        } else {
+            mNewLoginButton.setTextColor(Color.BLUE);
+            mNewLoginButton.setText("登录");
+//            mServerSideLoginBtn.setTextColor(Color.BLUE);
+//            mServerSideLoginBtn.setText("Server-Side登陆");
+        }
+    }
 
     private DialogInterface.OnClickListener mAppidCommitListener = new DialogInterface.OnClickListener() {
 
@@ -257,4 +396,30 @@ public class LoginFragment extends Fragment {
 //            handlePrizeShare();
         }
     };
+
+    private void onClickLogin() {
+        if (!mTencent.isSessionValid()) {
+            Log.e(TAG, "onClickLogin: 4" );
+            mTencent.login(this, "all", loginListener);
+            isServerSideLogin = false;
+            Log.d("SDKQQAgentPref", "FirstLaunch_SDK:" + SystemClock.elapsedRealtime());
+            Log.e(TAG, "onClickLogin:1 " );
+        } else {
+
+
+            if (isServerSideLogin) { // Server-Side 模式的登陆, 先退出，再进行SSO登陆
+                mTencent.logout(getContext());
+                mTencent.login(this, "all", loginListener);
+                isServerSideLogin = false;
+                Log.e(TAG, "onClickLogin:2 " );
+                Log.d("SDKQQAgentPref", "FirstLaunch_SDK:" + SystemClock.elapsedRealtime());
+                return;
+            }
+
+            mTencent.logout(getContext());
+            updateUserInfo();
+            updateLoginButton();
+        }
+    }
+
 }

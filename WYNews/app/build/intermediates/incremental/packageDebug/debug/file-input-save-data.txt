@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Feb 06 22:56:50 CST 2018
+#Tue Feb 06 23:29:39 CST 2018
 17.baseType=DIRECTORY
 4.path=lib/armeabi-v7a/libijkplayer.so
 8.set=DEX

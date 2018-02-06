@@ -2,33 +2,30 @@
 <instant-run
     abi="arm64-v8a,armeabi-v7a,armeabi"
     api-level="24"
-    build-mode="COLD"
+    build-mode="HOT_WARM"
     density="xxhdpi"
     format="10"
     plugin-version="3.0.1"
-    timestamp="1517929003840"
+    timestamp="1517931006148"
     token="6368884198045034902"
-    verifier="MANIFEST_FILE_CHANGE" >
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="1970" />
+        duration="109" />
     <task
         name="instant-run-dex"
-        duration="0" />
+        duration="23" />
     <task
         name="instant-run-transform"
-        duration="75" />
+        duration="28" />
     <task
         name="verifier"
-        duration="14" />
+        duration="7" />
 
     <artifact
-        location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
-        type="SPLIT" />
-    <artifact
-        location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/outputs/apk/debug/app-debug.apk"
-        type="SPLIT_MAIN" />
+        location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/reload-dex/debug/classes.dex"
+        type="RELOAD_DEX" />
 
     <build
         build-mode="FULL"
@@ -113,7 +110,7 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1517929003840"
+        timestamp="1517930970001"
         verifier="MANIFEST_FILE_CHANGE" >
         <artifact
             location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
@@ -121,6 +118,14 @@
         <artifact
             location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/outputs/apk/debug/app-debug.apk"
             type="SPLIT_MAIN" />
+    </build>
+    <build
+        build-mode="HOT_WARM"
+        timestamp="1517931006148"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/reload-dex/debug/classes.dex"
+            type="RELOAD_DEX" />
     </build>
 
 </instant-run>
