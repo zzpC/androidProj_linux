@@ -36,7 +36,7 @@ import com.zzpc.wynews.NewsReading.SlidingTabsColorsFragment;
 import com.zzpc.wynews.NewsReading.SwipeRefreshLayoutBasicFragment;
 import com.zzpc.wynews.Settings.AccountManagerFragment;
 import com.zzpc.wynews.Settings.SettingsFragment;
-import com.zzpc.wynews.Settings.login.LoginActivity;
+
 import com.zzpc.wynews.Settings.login.LoginFragment;
 //import com.zzpc.wynews.Settings.login.LoginFragment_temp;
 import com.zzpc.wynews.Settings.login.RegisterFragment;
