@@ -1,4 +1,4 @@
-package com.zzpc.wynews.NewsReading.controller;
+package com.zzpc.wynews.data;
 
 import android.util.Log;
 

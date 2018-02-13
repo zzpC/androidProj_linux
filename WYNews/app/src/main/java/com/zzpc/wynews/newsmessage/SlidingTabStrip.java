@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.zzpc.wynews.NewsReading.View;
+package com.zzpc.wynews.newsmessage;
 
 import android.content.Context;
 import android.graphics.Canvas;

@@ -27,7 +27,7 @@ import android.widget.Toast;
 
 import com.zzpc.wynews.NewsApp;
 import com.zzpc.wynews.data.model.News;
-import com.zzpc.wynews.NewsReading.controller.ParseDatas;
+import com.zzpc.wynews.data.ParseDatas;
 import com.zzpc.wynews.R;
 //import com.xyzlf.share.library.bean.ShareEntity;
 //import com.xyzlf.share.library.interfaces.ShareConstant;

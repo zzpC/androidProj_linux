@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.zzpc.wynews.videoplay;
+package com.zzpc.wynews.helper;
 
 import android.view.View;
 

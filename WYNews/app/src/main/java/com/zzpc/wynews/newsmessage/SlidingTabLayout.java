@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.zzpc.wynews.NewsReading.View;
+package com.zzpc.wynews.newsmessage;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -37,8 +37,6 @@ import android.view.WindowManager;
 import android.widget.HorizontalScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.zzpc.wynews.newsmessage.SlidingTabsColorsFragment;
 
 
 /**
