@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/toolbar_height" />
 
-    <com.zzpc.wynews.MediaPlayer.SimplePlayer
+    <com.zzpc.wynews.videoplay.SimplePlayer
         android:id="@+id/videofragment_player"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

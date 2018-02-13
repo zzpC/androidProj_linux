@@ -7,6 +7,10 @@
     <dimen name="toolbar_height">40dp</dimen>
 
 
+    <dimen name="qqshare_radioBtn_lable_width">75dip</dimen>
+    <dimen name="qqshare_item_container_margin_top">10dip</dimen>
+    <dimen name="qqshare_item_container_margin_left">0dip</dimen>
+    <dimen name="qqshare_item_container_margin_right">0dip</dimen>
 
 
 

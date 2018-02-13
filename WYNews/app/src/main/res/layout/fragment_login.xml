@@ -117,6 +117,11 @@
                 android:layout_height="wrap_content"
                 android:text="使用token信息登录,不拉起手Q"/>
 
+            <Button
+                android:id="@+id/main_qqShare_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_main_qq_share" />
 
             <!-- 下面的注释请勿删除，编译lite版的时候需要删除-->
         </LinearLayout>

@@ -33,7 +33,7 @@
         android:testOnly="true"
         android:theme="@style/PreferenceFixTheme.NoActionBar" >
         <activity
-            android:name="com.zzpc.wynews.MainActivity"
+            android:name="com.zzpc.wynews.TaskActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,6 +43,15 @@
                     android:launchMode="singleTask" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.zzpc.wynews.personality.loginqq.QQShareActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="behind"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name="com.tencent.tauth.AuthActivity"
             android:launchMode="singleTask"
@@ -57,12 +66,6 @@
                 <!-- 100380359 100381104 222222 -->
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.tencent.connect.common.AssistActivity"
-            android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="behind"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity android:name="com.zzpc.wynews.Settings.login.LoginActivity" />
 
         <meta-data
             android:name="android.support.VERSION"

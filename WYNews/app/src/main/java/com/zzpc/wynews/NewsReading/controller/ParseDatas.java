@@ -2,8 +2,8 @@ package com.zzpc.wynews.NewsReading.controller;
 
 import android.util.Log;
 
-import com.zzpc.wynews.NewsReading.Model.News;
-import com.zzpc.wynews.NewsReading.Model.NewsBuilder;
+import com.zzpc.wynews.data.model.News;
+import com.zzpc.wynews.data.model.NewsBuilder;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

@@ -38,7 +38,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.zzpc.wynews.NewsReading.SlidingTabsColorsFragment;
+import com.zzpc.wynews.newsmessage.SlidingTabsColorsFragment;
 
 
 /**
