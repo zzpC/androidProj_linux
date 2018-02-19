@@ -9,6 +9,6 @@ package tv.danmaku.ijk.media.exo;
 public final class R {
     public static final class string {
         public static final int app_name = 0x7f0f0026;
-        public static final int ijkplayer_dummy = 0x7f0f0065;
+        public static final int ijkplayer_dummy = 0x7f0f0066;
     }
 }

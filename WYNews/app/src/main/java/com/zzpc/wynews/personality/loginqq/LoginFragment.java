@@ -13,6 +13,7 @@ import android.os.Message;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.util.Log;
@@ -55,6 +56,8 @@ public class LoginFragment extends Fragment {
     private static final String TAG = LoginFragment.class.getName();
 
     public static String mAppid;
+    private  Button mRequestMessageButton;
+    private Button mUseMessageToLogButton;
     private Button mNewLoginButton;
     private Button mWXLoginButton;
     //    private Button mServerSideLoginBtn;
@@ -65,6 +68,8 @@ public class LoginFragment extends Fragment {
     public static Tencent mTencent;
     //    private static Intent mPrizeIntent = null;
     private static boolean isServerSideLogin = false;
+    private TextInputEditText mTextInputEditTextCheckCode;
+    private TextInputEditText mMobileNumber;
 
     public interface OnSwitchRegisterFragmentListen {
         void OnSwitchRegisterFragment();
@@ -96,6 +101,7 @@ public class LoginFragment extends Fragment {
                         .setNegativeButton("Use Default", mAppidCommitListener)
                         .show();
             } catch (Exception e) {
+                e.printStackTrace();
             }
         } else {
             if (mTencent == null) {
@@ -145,37 +151,55 @@ public class LoginFragment extends Fragment {
 //		super.onStop();
 //	}
 //
-//	@Override
-//	protected void onDestroy() {
-//		Log.d(TAG, "-->onDestroy");
-//		super.onDestroy();
-//
-//	}
+	public void onDestroy() {
+		Log.d(TAG, "-->onDestroy");
+		super.onDestroy();
+        SMSSDK.unregisterAllEventHandler();
+
+	}
 
     private void initViews(View view) {
         mNewLoginButton = (Button)view.findViewById(R.id.btn_new_login);
         mWXLoginButton=view.findViewById(R.id.btn_wx_login);
+        mRequestMessageButton=view.findViewById(R.id.sendRequestMessage);
+        mUseMessageToLogButton=view.findViewById(R.id.useMessageToLogin);
+        mTextInputEditTextCheckCode=view.findViewById(R.id.textInputEditTextCheckCode);
+        mMobileNumber=view.findViewById(R.id.textInputEditTextPhone);
+        mRequestMessageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendCode("86",mMobileNumber.getText().toString());
+            }
+        });
+        mUseMessageToLogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                submitCode("86",mMobileNumber.getText().toString(),mTextInputEditTextCheckCode.getText().toString());
+            }
+        });
         mWXLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent=new Intent(getContext(), WXEntryActivity.class);
-//                startActivity(intent);
+                Intent intent=new Intent(getContext(), WXEntryActivity.class);
+                startActivity(intent);
 
-                RegisterPage page = new RegisterPage();
-                page.setRegisterCallback(new EventHandler() {
-                    public void afterEvent(int event, int result, Object data) {
-                        if (result == SMSSDK.RESULT_COMPLETE) {
-                            // 处理成功的结果
-                            HashMap<String,Object> phoneMap = (HashMap<String, Object>) data;
-                            String country = (String) phoneMap.get("country"); // 国家代码，如“86”
-                            String phone = (String) phoneMap.get("phone"); // 手机号码，如“13800138000”
-                            // TODO 利用国家代码和手机号码进行后续的操作
-                        } else{
-                            // TODO 处理错误的结果
-                        }
-                    }
-                });
-                page.show(getContext());
+//                sendCode("86","15626198192");
+
+//                RegisterPage page = new RegisterPage();
+//                page.setRegisterCallback(new EventHandler() {
+//                    public void afterEvent(int event, int result, Object data) {
+//                        if (result == SMSSDK.RESULT_COMPLETE) {
+//                            // 处理成功的结果
+//                            HashMap<String,Object> phoneMap = (HashMap<String, Object>) data;
+//                            String country = (String) phoneMap.get("country"); // 国家代码，如“86”
+//                            String phone = (String) phoneMap.get("phone"); // 手机号码，如“13800138000”
+//                            // TODO 利用国家代码和手机号码进行后续的操作
+//                        } else{
+//                            // TODO 处理错误的结果
+//                        }
+//                    }
+//                });
+//                page.show(getContext());
 
             }
         });
@@ -584,5 +608,48 @@ public class LoginFragment extends Fragment {
         }
     }
 
+
+
+    // 请求验证码，其中country表示国家代码，如“86”；phone表示手机号码，如“13800138000”
+    public void sendCode(String country, String phone) {
+        // 注册一个事件回调，用于处理发送验证码操作的结果
+        SMSSDK.registerEventHandler(new EventHandler() {
+            public void afterEvent(int event, int result, Object data) {
+                if (result == SMSSDK.RESULT_COMPLETE) {
+                    // TODO 处理成功得到验证码的结果
+                    // 请注意，此时只是完成了发送验证码的请求，验证码短信还需要几秒钟之后才送达
+                    Log.e(TAG, "afterEvent: sendCode succes" );
+                } else{
+                    // TODO 处理错误的结果
+                    Log.e(TAG, "afterEvent:sendCode failed" );
+                }
+
+            }
+        });
+        // 触发操作
+        SMSSDK.getVerificationCode(country, phone);
+    }
+
+
+    // 提交验证码，其中的code表示验证码，如“1357”
+    public void submitCode(String country, String phone, String code) {
+        // 注册一个事件回调，用于处理提交验证码操作的结果
+        SMSSDK.registerEventHandler(new EventHandler() {
+            public void afterEvent(int event, int result, Object data) {
+                if (result == SMSSDK.RESULT_COMPLETE) {
+                    // TODO 处理验证成功的结果
+                    Log.e(TAG, "afterEvent: submitCode succes" );
+
+                } else{
+                    // TODO 处理错误的结果
+                    Log.e(TAG, "afterEvent:submitCode failed" );
+
+                }
+
+            }
+        });
+        // 触发操作
+        SMSSDK.submitVerificationCode(country, phone, code);
+    }
 
 }

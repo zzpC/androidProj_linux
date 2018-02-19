@@ -129,6 +129,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
+         if (mRecyclerView==null) return;
         if (mRecyclerView.getLayoutManager()==null)
             return;
         mRecyclerlistStatus = mRecyclerView.getLayoutManager().onSaveInstanceState();
@@ -390,8 +391,6 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
 
 //                    mPresenter.onLoadWebSiteNews_mvp();
-
-
 
                 }
             });

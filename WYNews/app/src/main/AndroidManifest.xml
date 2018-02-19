@@ -30,7 +30,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/PreferenceFixTheme.NoActionBar"
-        tools:replace="android:name" >
+        tools:replace="android:name"
+        android:fullBackupContent="@xml/backup_descriptor">
 
         <activity
             android:name="com.zzpc.wynews.TaskActivity"
@@ -68,12 +69,14 @@
             </intent-filter>
         </activity>
 
-        //wx_sdk
+        <!--wx_sdk-->
         <activity android:name=".personality.loginwx.SendToWXActivity" />
         <activity android:name=".personality.loginwx.ShowFromWXActivity" />
         <activity android:name=".personality.loginwx.WXEntryActivity" />
         <activity android:name=".personality.loginwx.ScanQRCodeLoginActivity" />
         <activity android:name=".personality.loginwx.GetFromWXActivity" />
+        <meta-data android:name="Mob-AppKey" android:value="244498eb62d58"/>
+        <meta-data android:name="Mob-AppSecret" android:value="25c17a5bf483437f9555774bbb119be5"/>
 
 
     </application>
