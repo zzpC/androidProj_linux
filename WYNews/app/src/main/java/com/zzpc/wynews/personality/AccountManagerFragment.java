@@ -1,4 +1,5 @@
 package com.zzpc.wynews.personality;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -17,17 +18,22 @@ import com.zzpc.wynews.data.model.AccountDataBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
+//import static com.google.common.base.Preconditions.checkNotNull;
+
+
 /**
  * Created by zzp on 18-2-4.
  */
 
-public class AccountManagerFragment extends Fragment {
+public class AccountManagerFragment extends Fragment implements AccountManagerContract.View {
     private static final String TAG = AccountManagerFragment.class.getName();
 
 
     private AccountManageAdapter mAccountManageAdapter;
     private RecyclerView mRecyclerView;
     private OpenSpecificFragmentListener mListener;
+
+    private AccountManagerContract.Presenter mPresenter;
 
 
     List<AccountData> items=new ArrayList<>();
@@ -40,6 +46,12 @@ public class AccountManagerFragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         mListener=(OpenSpecificFragmentListener)context;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+//        mPresenter.start();
     }
 
     @Override
@@ -66,6 +78,13 @@ public class AccountManagerFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+    }
+
+
+    @SuppressLint("RestrictedApi")
+    @Override
+    public void setPresenter(@NonNull AccountManagerContract.Presenter presenter) {
+//        mPresenter = checkNotNull(presenter);
     }
 
 

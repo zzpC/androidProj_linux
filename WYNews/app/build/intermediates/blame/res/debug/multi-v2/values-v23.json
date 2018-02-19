@@ -4,7 +4,7 @@
             "outputFile": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/e92d534e7b0c91981a0f0bd882bbc716/res/values-v23/values-v23.xml",
+                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/748fe7c1d58b30099905528c17493f02/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/values-v23/values-v23.xml",
+                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/1b753380921e6873f1a999ca8c57ab4d/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

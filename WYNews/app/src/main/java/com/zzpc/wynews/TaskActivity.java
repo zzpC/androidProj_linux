@@ -3,6 +3,7 @@ package com.zzpc.wynews;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ import android.view.View;
 import android.support.v7.widget.SearchView;
 
 
+import com.zzpc.wynews.personality.loginwx.WXEntryActivity;
 import com.zzpc.wynews.videoplay.VideoFragment;
 import com.zzpc.wynews.newsmessage.NewsContentTextFragment;
 import com.zzpc.wynews.newsmessage.SlidingTabsColorsFragment;
@@ -94,6 +96,9 @@ public class TaskActivity extends AppCompatActivity implements AccountManagerFra
 //                startActivity(intent);
 
 
+
+
+
                 break;
             case 6:
                 //使用了replace而没有hide(),注意问题
@@ -113,6 +118,7 @@ public class TaskActivity extends AppCompatActivity implements AccountManagerFra
         //使用了replace而没有hide(),注意问题
         manager.beginTransaction().replace(R.id.bottom_pager, registerFragment).addToBackStack(SettingsFragment.class.getName()).commit();
         mBottomNavigationView.setVisibility(View.INVISIBLE);
+
     }
 
 
@@ -127,6 +133,10 @@ public class TaskActivity extends AppCompatActivity implements AccountManagerFra
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().replace(R.id.full, newsContentTextFragment).addToBackStack("newscontextstr").commit();
         mBottomNavigationView.setVisibility(View.INVISIBLE);
+
+
+
+
     }
 
 
@@ -212,6 +222,8 @@ public class TaskActivity extends AppCompatActivity implements AccountManagerFra
             return;
         }
         switchToFragment(0);
+
+
     }
 
 
@@ -227,10 +239,6 @@ public class TaskActivity extends AppCompatActivity implements AccountManagerFra
         ActionBar actionBar = getSupportActionBar();
         Log.e("换肤", "switchToFragment: " + ftNo);
 
-//        if (currentFragment != null) {
-//            getSupportFragmentManager().beginTransaction().hide(currentFragment).commit();
-//            Log.e(TAG, "switchToFragment: "+"隐藏当前" );
-//        }
         switch (ftNo) {
             case 0:
                 if (currentFragment1!=null)
@@ -311,6 +319,7 @@ public class TaskActivity extends AppCompatActivity implements AccountManagerFra
     @Override
     protected void onResume() {
         super.onResume();
+
     }
 
     @Override

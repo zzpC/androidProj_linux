@@ -4,7 +4,7 @@
             "outputFile": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-v18/values-v18.xml",
             "map": [
                 {
-                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/64d81417bf8344092e4b0ebd570d10ff/res/values-v18/values-v18.xml",
+                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/1b753380921e6873f1a999ca8c57ab4d/res/values-v18/values-v18.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

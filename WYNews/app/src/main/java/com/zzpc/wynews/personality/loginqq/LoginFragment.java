@@ -34,10 +34,18 @@ import com.tencent.tauth.Tencent;
 import com.tencent.tauth.UiError;
 import com.zzpc.wynews.Config;
 import com.zzpc.wynews.R;
+import com.zzpc.wynews.TaskActivity;
+import com.zzpc.wynews.personality.loginwx.WXEntryActivity;
 import com.zzpc.wynews.util.LoginUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.HashMap;
+
+import cn.smssdk.EventHandler;
+import cn.smssdk.SMSSDK;
+import cn.smssdk.gui.RegisterPage;
 
 /**
  * Created by zzp on 18-2-4.
@@ -48,6 +56,7 @@ public class LoginFragment extends Fragment {
 
     public static String mAppid;
     private Button mNewLoginButton;
+    private Button mWXLoginButton;
     //    private Button mServerSideLoginBtn;
     private TextView mUserInfo;
     private ImageView mUserLogo;
@@ -144,7 +153,32 @@ public class LoginFragment extends Fragment {
 //	}
 
     private void initViews(View view) {
-        mNewLoginButton = (Button)view.findViewById(R.id.new_login_btn);
+        mNewLoginButton = (Button)view.findViewById(R.id.btn_new_login);
+        mWXLoginButton=view.findViewById(R.id.btn_wx_login);
+        mWXLoginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intent=new Intent(getContext(), WXEntryActivity.class);
+//                startActivity(intent);
+
+                RegisterPage page = new RegisterPage();
+                page.setRegisterCallback(new EventHandler() {
+                    public void afterEvent(int event, int result, Object data) {
+                        if (result == SMSSDK.RESULT_COMPLETE) {
+                            // 处理成功的结果
+                            HashMap<String,Object> phoneMap = (HashMap<String, Object>) data;
+                            String country = (String) phoneMap.get("country"); // 国家代码，如“86”
+                            String phone = (String) phoneMap.get("phone"); // 手机号码，如“13800138000”
+                            // TODO 利用国家代码和手机号码进行后续的操作
+                        } else{
+                            // TODO 处理错误的结果
+                        }
+                    }
+                });
+                page.show(getContext());
+
+            }
+        });
 //        mServerSideLoginBtn = (Button) findViewById(R.id.server_side_login_btn);
 
         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.main_container);
@@ -179,6 +213,10 @@ public class LoginFragment extends Fragment {
 //            mServerSideLoginBtn.setTextColor(Color.BLUE);
 //            mServerSideLoginBtn.setText("Server-Side登陆");
         }
+    }
+
+    private void updateWxLoginButton(){
+
     }
 
     private void updateUserInfo() {
@@ -479,7 +517,7 @@ public class LoginFragment extends Fragment {
 			Class<?> cls = null;
 			boolean isAppbar = false;
             switch (v.getId()) {
-                case R.id.new_login_btn:
+                case R.id.btn_new_login:
                     onClickLogin();
 //				v.startAnimation(shake);
 				return;
@@ -498,7 +536,7 @@ public class LoginFragment extends Fragment {
 //				break;
 			case R.id.main_qqShare_btn:
 				cls = QQShareActivity.class;
-//				break;
+				break;
 //			case R.id.main_qzoneShare_btn:
 //				cls = QZoneShareActivity.class;
 //				break;

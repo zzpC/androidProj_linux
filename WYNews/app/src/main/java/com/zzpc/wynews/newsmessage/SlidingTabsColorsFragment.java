@@ -175,19 +175,7 @@ public class SlidingTabsColorsFragment extends Fragment {
         mSlidingTabLayout.setViewPager(mViewPager);
 
 
-//        mSlidingTabLayout.setCustomTabColorizer(new TabColorizer() {
-//
-//            @Override
-//            public int getIndicatorColor(int position) {
-//                return mTabs.get(position).getIndicatorColor();
-//            }
-//
-//            @Override
-//            public int getDividerColor(int position) {
-//                return mTabs.get(position).getDividerColor();
-//            }
-//
-//        });
+
 
         mSlidingTabLayout.setCustomTabCo1lorizer(new SlidingTabLayout.TabColorizer() {
             @Override
@@ -255,23 +243,6 @@ public class SlidingTabsColorsFragment extends Fragment {
             return spannableString;
 
         }
-
-
-        //        public void removeTabPage(int position) {
-//            if (getCount() > 0 && position < getCount()) {
-//
-//                try {
-//                    getItem(position);
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//
-//
-//                Log.e("remove", "removeTabPage: " + getItem(position));
-//                notifyDataSetChanged();
-//            }
-//        }
-
 
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {

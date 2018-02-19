@@ -6,6 +6,8 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
+import com.mob.MobSDK;
+
 import java.util.HashMap;
 
 /**
@@ -33,6 +35,7 @@ public class NewsApp extends Application {
         super.onCreate();
         context = getApplicationContext();
         newsUrlMap();
+        MobSDK.init(this);//
     }
 
     public static HashMap<String, String> hashMap = new HashMap<String, String>();

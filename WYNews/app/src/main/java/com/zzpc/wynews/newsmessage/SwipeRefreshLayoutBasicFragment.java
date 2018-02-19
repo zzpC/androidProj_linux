@@ -45,6 +45,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+//import static com.google.common.base.Preconditions.checkNotNull;
 import static com.zzpc.wynews.NewsApp.isNetworkAvailable;
 
 
@@ -80,6 +81,8 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
     private String mTitle;
 
     private static List<SwipeRefreshLayoutBasicFragment> mSwipeRefreshLayoutBasicFragments=new ArrayList<>();
+
+//    private NewsContentTextContract.Presenter mPresenter;
 
 
     public static SwipeRefreshLayoutBasicFragment newInstance(String title, int... argument) {
@@ -117,6 +120,11 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+//        mPresenter.start();
+    }
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
@@ -381,6 +389,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                     Log.e(TAG, "onClick: " +url);
 
 
+//                    mPresenter.onLoadWebSiteNews_mvp();
 
 
 
@@ -423,6 +432,10 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         }
     }
 
+//    @Override
+//    public void setPresenter(NewsContentTextContract.Presenter presenter) {
+//        mPresenter=checkNotNull(presenter);
+//    }
 }
 
 
