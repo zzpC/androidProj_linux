@@ -6,10 +6,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
+import android.os.Build;
 import android.os.Bundle;
 
 
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.CoordinatorLayout;
@@ -30,7 +32,9 @@ import android.view.View;
 import android.support.v7.widget.SearchView;
 
 
-import com.zzpc.wynews.personality.loginwx.WXEntryActivity;
+
+import com.zzpc.wynews.personality.readingstart.MyStartFragment;
+
 import com.zzpc.wynews.videoplay.VideoFragment;
 import com.zzpc.wynews.newsmessage.NewsContentTextFragment;
 import com.zzpc.wynews.newsmessage.SlidingTabsColorsFragment;
@@ -39,23 +43,26 @@ import com.zzpc.wynews.personality.AccountManagerFragment;
 import com.zzpc.wynews.personality.SettingsFragment;
 
 import com.zzpc.wynews.personality.loginqq.LoginFragment;
-//import com.zzpc.wynews.personality.loginqq.LoginFragment_temp;
+//
 import com.zzpc.wynews.personality.loginqq.RegisterFragment;
 
 
-public class TaskActivity extends AppCompatActivity implements AccountManagerFragment.OpenSpecificFragmentListener,
+public class TaskActivity extends AppCompatActivity implements
+        AccountManagerFragment.OpenSpecificFragmentListener,
         SettingsFragment.OnClickNightModeListener,
         SwipeRefreshLayoutBasicFragment.OnLoadWebSiteNewsListner,
-        LoginFragment.OnSwitchRegisterFragmentListen {
+        LoginFragment.OnSwitchRegisterFragmentListener         {
 
     private static final String TAG = "TaskActivity";
     private BottomNavigationView mBottomNavigationView;
     private Toolbar mToolbar;
-
+//    private MyStartFragment myStartFragment;
 
     static {
 //        System.loadLibrary("native-lib");
     }
+
+//    private TasksPresenter mTasksPresenter;
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
@@ -83,69 +90,6 @@ public class TaskActivity extends AppCompatActivity implements AccountManagerFra
     };
 
 
-    @Override
-    public void OpenSpecificFragment(int pos) {
-
-        FragmentManager manager = getSupportFragmentManager();
-        switch (pos) {
-            case 0:
-                LoginFragment loginFragment = new LoginFragment();
-                manager.beginTransaction().replace(R.id.bottom_pager, loginFragment).addToBackStack(LoginFragment.class.getName()).commit();
-
-//                Intent intent=new Intent(TaskActivity.this, LoginActivity.class);
-//                startActivity(intent);
-
-
-
-
-
-                break;
-            case 6:
-                //使用了replace而没有hide(),注意问题
-                SettingsFragment settingsFragment=new SettingsFragment();
-                manager.beginTransaction().replace(R.id.bottom_pager, settingsFragment).addToBackStack(SettingsFragment.class.getName()).commit();
-            default:
-                Log.e(TAG, "OpenSpecificFragment: " + pos);
-        }
-        mBottomNavigationView.setVisibility(View.INVISIBLE);
-    }
-
-
-    @Override
-    public void OnSwitchRegisterFragment() {
-        RegisterFragment registerFragment = new RegisterFragment();
-        FragmentManager manager = getSupportFragmentManager();
-        //使用了replace而没有hide(),注意问题
-        manager.beginTransaction().replace(R.id.bottom_pager, registerFragment).addToBackStack(SettingsFragment.class.getName()).commit();
-        mBottomNavigationView.setVisibility(View.INVISIBLE);
-
-    }
-
-
-    @Override
-    public void onLoadWebSiteNews(String info) {
-        NewsContentTextFragment newsContentTextFragment = new NewsContentTextFragment();
-
-        Bundle bundle = new Bundle();
-        bundle.putString("url", info);
-        newsContentTextFragment.setArguments(bundle);
-
-        FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.full, newsContentTextFragment).addToBackStack("newscontextstr").commit();
-        mBottomNavigationView.setVisibility(View.INVISIBLE);
-
-
-
-
-    }
-
-
-
-    @Override
-    public void OnClickNightMode() {
-        this.recreate();
-        NewsApp.changing_Theme = true;
-    }
 
 
 
@@ -222,6 +166,11 @@ public class TaskActivity extends AppCompatActivity implements AccountManagerFra
             return;
         }
         switchToFragment(0);
+
+
+//        myStartFragment=new MyStartFragment();
+//        new MyStartPresenter(
+//                Injection.provideTasksRepository(getApplicationContext()),myStartFragment );
 
 
     }
@@ -338,4 +287,77 @@ public class TaskActivity extends AppCompatActivity implements AccountManagerFra
     protected void onDestroy() {
         super.onDestroy();
     }
+
+
+    //interface
+
+
+    @Override
+    public void OpenSpecificFragment(int pos) {
+
+        FragmentManager manager = getSupportFragmentManager();
+
+        switch (pos) {
+            case 0:
+                LoginFragment loginFragment = new LoginFragment();
+                manager.beginTransaction().replace(R.id.bottom_pager, loginFragment).addToBackStack(LoginFragment.class.getName()).commit();
+                break;
+//                Intent intent=new Intent(TaskActivity.this, LoginActivity.class);
+//                startActivity(intent);
+            case 1:
+                MyStartFragment myStartFragment=new MyStartFragment();
+                manager.beginTransaction().replace(R.id.bottom_pager,myStartFragment).addToBackStack(MyStartFragment.class.getName()).commit();
+
+
+//                new MyStartPresenter(
+//                        Injection.provideTasksRepository(getApplicationContext()),myStartFragment );
+                break;
+            case 7:
+                //使用了replace而没有hide(),注意问题
+                SettingsFragment settingsFragment=new SettingsFragment();
+                manager.beginTransaction().replace(R.id.bottom_pager, settingsFragment).addToBackStack(SettingsFragment.class.getName()).commit();
+            default:
+                Log.e(TAG, "OpenSpecificFragment: " + pos);
+        }
+        mBottomNavigationView.setVisibility(View.INVISIBLE);
+    }
+
+
+    @Override
+    public void OnSwitchRegisterFragment() {
+        RegisterFragment registerFragment = new RegisterFragment();
+        FragmentManager manager = getSupportFragmentManager();
+        //使用了replace而没有hide(),注意问题
+        manager.beginTransaction().replace(R.id.bottom_pager, registerFragment).addToBackStack(SettingsFragment.class.getName()).commit();
+        mBottomNavigationView.setVisibility(View.INVISIBLE);
+
+    }
+
+
+    @Override
+    public void onLoadWebSiteNews(String info) {
+        NewsContentTextFragment newsContentTextFragment = new NewsContentTextFragment();
+
+        Bundle bundle = new Bundle();
+        bundle.putString("url", info);
+        newsContentTextFragment.setArguments(bundle);
+
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.full, newsContentTextFragment).addToBackStack("newscontextstr").commit();
+        mBottomNavigationView.setVisibility(View.INVISIBLE);
+
+
+
+
+    }
+
+
+
+    @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
+    @Override
+    public void OnClickNightMode() {
+        this.recreate();
+        NewsApp.changing_Theme = true;
+    }
+
 }

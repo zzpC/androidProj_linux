@@ -1,6 +1,8 @@
 package com.zzpc.wynews.newsmessage;
 
 
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -14,8 +16,11 @@ import android.view.ViewGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.util.TypedValue;
+import android.widget.Toast;
 
 import com.zzpc.wynews.R;
+
+import com.zzpc.wynews.data.database.DatabaseHelper;
 import com.zzpc.wynews.util.pitcure.DisplayUtil;
 
 import org.jsoup.Jsoup;
@@ -23,7 +28,9 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+
 import java.io.IOException;
+
 
 
 /**
@@ -47,6 +54,8 @@ public class NewsContentTextFragment extends Fragment {
     private static final int oWidth = 200;
     private int content_Height = oHeight;
     private int content_width = oWidth;
+
+    private static volatile int id=1;
 
     @Nullable
     @Override
@@ -199,11 +208,21 @@ public class NewsContentTextFragment extends Fragment {
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
+
+
+
             //执行完毕
             int separate=result.indexOf("#");
 
-            tv_tiltle.setText(result.substring(0,separate-1));
-            tv_content.setText(result.substring(separate+1));
+
+            String title=result.substring(0,separate-1);
+            String content=result.substring(separate+1);
+
+            tv_tiltle.setText(title);
+
+            tv_content.setText(content);
+
+           addContent(title,content);
 
         }
 
@@ -214,5 +233,22 @@ public class NewsContentTextFragment extends Fragment {
         }
     }
 
+
+    public void addContent(String title,String content){
+
+        try {
+            DatabaseHelper dbHelper=new DatabaseHelper(getContext());
+            SQLiteDatabase mydb = dbHelper.getWritableDatabase();
+            boolean isInserted = dbHelper.insertData(title);
+            if (isInserted = true){
+                Toast.makeText(getContext(), "Data Inserted", Toast.LENGTH_LONG).show();
+            }
+            else{
+                Toast.makeText(getContext(), "Data not Inserted", Toast.LENGTH_LONG).show();
+            }
+        }catch (Exception e){
+            Log.d("Exception occures",""+e);
+        }
+    }
 
 }

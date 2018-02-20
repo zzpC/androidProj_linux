@@ -71,7 +71,7 @@ public class LoginFragment extends Fragment {
     private TextInputEditText mTextInputEditTextCheckCode;
     private TextInputEditText mMobileNumber;
 
-    public interface OnSwitchRegisterFragmentListen {
+    public interface OnSwitchRegisterFragmentListener {
         void OnSwitchRegisterFragment();
     }
 

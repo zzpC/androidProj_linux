@@ -52,6 +52,37 @@ android {
     sourceSets {
         main {
             jniLibs.srcDirs = ['libs']
+            java.srcDirs = ['src/main/java', 'src/mock/main/java/com/zzpc/wynews']
+        }
+    }
+
+
+//    todo-mvp
+    flavorDimensions "default"
+
+    // If you need to add more flavors, consider using flavor dimensions.
+    productFlavors {
+        mock {
+            dimension "default"
+            applicationIdSuffix = ".mock"
+        }
+        prod {
+            dimension "default"
+        }
+    }
+
+    // Remove mockRelease as it's not needed.
+    android.variantFilter { variant ->
+        if (variant.buildType.name == 'release'
+                && variant.getFlavors().get(0).name == 'mock') {
+            variant.setIgnore(true)
+        }
+    }
+
+    // Always show the result of every unit test, even if it passes.
+    testOptions.unitTests.all {
+        testLogging {
+            events 'passed', 'skipped', 'failed', 'standardOut', 'standardError'
         }
     }
 }
@@ -111,6 +142,7 @@ dependencies {
     implementation "android.arch.persistence.room:runtime:1.0.0"
     implementation 'com.google.guava:guava:23.3-android'
 
+    androidTestCompile "org.mockito:mockito-core:1.10.19"
 
 }
 
