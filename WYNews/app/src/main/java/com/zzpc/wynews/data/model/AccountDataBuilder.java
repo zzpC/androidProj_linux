@@ -14,12 +14,14 @@ public class AccountDataBuilder {
     public AccountDataBuilder() {
         mDatas=new ArrayList<>();
         mDatas.add( AccountData.createAccountData("登录(含注册)") );
+        mDatas.add(AccountData.createAccountData("我的收藏夹"));
         mDatas.add( AccountData.createAccountData("消息") );
         mDatas.add( AccountData.createAccountData("我的书评") );
         mDatas.add( AccountData.createAccountData("我的笔记") );
         mDatas.add( AccountData.createAccountData("账户余额:") );
         mDatas.add( AccountData.createAccountData("邀请好友") );
         mDatas.add( AccountData.createAccountData("设置") );
+
 
     }
 
