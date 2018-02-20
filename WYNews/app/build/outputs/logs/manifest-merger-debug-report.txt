@@ -25,7 +25,11 @@ MERGED from [tv.danmaku.ijk.media:ijkplayer-x86:0.8.4] /home/zzp/.gradle/caches/
 MERGED from [tv.danmaku.ijk.media:ijkplayer-x86_64:0.8.4] /home/zzp/.gradle/caches/transforms-1/files-1.1/ijkplayer-x86_64-0.8.4.aar/7f5e869e46352b71fe0a0032c893f6f7/AndroidManifest.xml:2:1-9:12
 MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/Android-AdvancedWebView-v3.0.0.aar/1f8cb256d45d5c92195a92f133e50ec8/AndroidManifest.xml:2:1-11:12
 MERGED from [com.jakewharton:butterknife:8.8.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/b256af220611add7ce0f8e8928d7c09c/AndroidManifest.xml:2:1-7:12
+MERGED from [android.arch.persistence.room:runtime:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/409219f3e1d34ed44592fce2b610eb27/AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:transition:26.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/acc60f38b8f214c922e94ad97546231d/AndroidManifest.xml:17:1-28:12
+MERGED from [android.arch.persistence:db-framework:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/db-framework-1.0.0.aar/0fc9f98ae3becd6ca046246f8a58b578/AndroidManifest.xml:17:1-24:12
+MERGED from [android.arch.persistence:db:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/db-1.0.0.aar/6557d34da1ebb48ac3450010f205c5b9/AndroidManifest.xml:17:1-24:12
+MERGED from [android.arch.core:runtime:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/cba4b1fe7f42bf6edc3b06e692589f63/AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:support-v4:27.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.0.aar/1fc81b76eec914c61aed25c95377a610/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:27.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.0.aar/191ebea0ef0c7214a58e6c0110b93a5b/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:27.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.0.aar/11501b26080bf77ddb126c020a768b72/AndroidManifest.xml:17:1-22:12
@@ -34,9 +38,9 @@ MERGED from [com.android.support:support-media-compat:27.0.0] /home/zzp/.gradle/
 MERGED from [com.android.support:support-core-utils:27.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.0.aar/cf24dcaf2b08a0700b531e7f58c1ac92/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-vector-drawable:27.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.0.aar/efc3164c929e40d3f256c189dc351c02/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-compat:27.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.0.aar/73f57be26a322017fc0c4b437bc811cf/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/f3cceb1f011290f7ec4434e35e68a6e2/AndroidManifest.xml:17:1-30:12
 MERGED from [com.google.android.exoplayer:exoplayer:r1.5.11] /home/zzp/.gradle/caches/transforms-1/files-1.1/exoplayer-r1.5.11.aar/e2eaef66fbdf0bdd42a546876b8da00a/AndroidManifest.xml:17:1-28:12
 MERGED from [com.yanzhenjie:loading:1.0.2] /home/zzp/.gradle/caches/transforms-1/files-1.1/loading-1.0.2.aar/1cc4386ef68f1a82e2aa868aee0ab2f4/AndroidManifest.xml:17:1-25:12
-MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/f3cceb1f011290f7ec4434e35e68a6e2/AndroidManifest.xml:17:1-30:12
 INJECTED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:2:1-84:12
 INJECTED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:2:1-84:12
 INJECTED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml:2:1-84:12
@@ -293,8 +297,16 @@ MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] /home/zzp/.gr
 MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/Android-AdvancedWebView-v3.0.0.aar/1f8cb256d45d5c92195a92f133e50ec8/AndroidManifest.xml:5:5-7:41
 MERGED from [com.jakewharton:butterknife:8.8.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/b256af220611add7ce0f8e8928d7c09c/AndroidManifest.xml:5:5-43
 MERGED from [com.jakewharton:butterknife:8.8.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/b256af220611add7ce0f8e8928d7c09c/AndroidManifest.xml:5:5-43
+MERGED from [android.arch.persistence.room:runtime:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/409219f3e1d34ed44592fce2b610eb27/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.persistence.room:runtime:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/409219f3e1d34ed44592fce2b610eb27/AndroidManifest.xml:20:5-22:41
 MERGED from [com.android.support:transition:26.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/acc60f38b8f214c922e94ad97546231d/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:transition:26.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/acc60f38b8f214c922e94ad97546231d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db-framework:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/db-framework-1.0.0.aar/0fc9f98ae3becd6ca046246f8a58b578/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.persistence:db-framework:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/db-framework-1.0.0.aar/0fc9f98ae3becd6ca046246f8a58b578/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.persistence:db:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/db-1.0.0.aar/6557d34da1ebb48ac3450010f205c5b9/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.persistence:db:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/db-1.0.0.aar/6557d34da1ebb48ac3450010f205c5b9/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.core:runtime:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/cba4b1fe7f42bf6edc3b06e692589f63/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.core:runtime:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/cba4b1fe7f42bf6edc3b06e692589f63/AndroidManifest.xml:20:5-22:41
 MERGED from [com.android.support:support-v4:27.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.0.aar/1fc81b76eec914c61aed25c95377a610/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:27.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.0.aar/1fc81b76eec914c61aed25c95377a610/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:27.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.0.aar/191ebea0ef0c7214a58e6c0110b93a5b/AndroidManifest.xml:20:5-44
@@ -311,12 +323,12 @@ MERGED from [com.android.support:support-vector-drawable:27.0.0] /home/zzp/.grad
 MERGED from [com.android.support:support-vector-drawable:27.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.0.aar/efc3164c929e40d3f256c189dc351c02/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:27.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.0.aar/73f57be26a322017fc0c4b437bc811cf/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:27.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.0.aar/73f57be26a322017fc0c4b437bc811cf/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/f3cceb1f011290f7ec4434e35e68a6e2/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/f3cceb1f011290f7ec4434e35e68a6e2/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.exoplayer:exoplayer:r1.5.11] /home/zzp/.gradle/caches/transforms-1/files-1.1/exoplayer-r1.5.11.aar/e2eaef66fbdf0bdd42a546876b8da00a/AndroidManifest.xml:24:5-26:41
 MERGED from [com.google.android.exoplayer:exoplayer:r1.5.11] /home/zzp/.gradle/caches/transforms-1/files-1.1/exoplayer-r1.5.11.aar/e2eaef66fbdf0bdd42a546876b8da00a/AndroidManifest.xml:24:5-26:41
 MERGED from [com.yanzhenjie:loading:1.0.2] /home/zzp/.gradle/caches/transforms-1/files-1.1/loading-1.0.2.aar/1cc4386ef68f1a82e2aa868aee0ab2f4/AndroidManifest.xml:21:5-23:41
 MERGED from [com.yanzhenjie:loading:1.0.2] /home/zzp/.gradle/caches/transforms-1/files-1.1/loading-1.0.2.aar/1cc4386ef68f1a82e2aa868aee0ab2f4/AndroidManifest.xml:21:5-23:41
-MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/f3cceb1f011290f7ec4434e35e68a6e2/AndroidManifest.xml:20:5-22:41
-MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/f3cceb1f011290f7ec4434e35e68a6e2/AndroidManifest.xml:20:5-22:41
 INJECTED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml
 INJECTED from /home/zzp/Programs/androidProj_linux/WYNews/app/src/main/AndroidManifest.xml
 	tools:overrideLibrary
