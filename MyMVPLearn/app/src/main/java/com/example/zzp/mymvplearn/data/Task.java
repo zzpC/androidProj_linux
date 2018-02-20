@@ -53,8 +53,8 @@ public final class Task {
     /**
      * Use this constructor to create a new active Task.
      *
-     * @param title       title of the task
-     * @param description description of the task
+     * @param title       title of the main
+     * @param description description of the main
      */
     @Ignore
     public Task(@Nullable String title, @Nullable String description) {
@@ -65,9 +65,9 @@ public final class Task {
      * Use this constructor to create an active Task if the Task already has an id (copy of another
      * Task).
      *
-     * @param title       title of the task
-     * @param description description of the task
-     * @param id          id of the task
+     * @param title       title of the main
+     * @param description description of the main
+     * @param id          id of the main
      */
     @Ignore
     public Task(@Nullable String title, @Nullable String description, @NonNull String id) {
@@ -77,9 +77,9 @@ public final class Task {
     /**
      * Use this constructor to create a new completed Task.
      *
-     * @param title       title of the task
-     * @param description description of the task
-     * @param completed   true if the task is completed, false if it's active
+     * @param title       title of the main
+     * @param description description of the main
+     * @param completed   true if the main is completed, false if it's active
      */
     @Ignore
     public Task(@Nullable String title, @Nullable String description, boolean completed) {
@@ -90,10 +90,10 @@ public final class Task {
      * Use this constructor to specify a completed Task if the Task already has an id (copy of
      * another Task).
      *
-     * @param title       title of the task
-     * @param description description of the task
-     * @param id          id of the task
-     * @param completed   true if the task is completed, false if it's active
+     * @param title       title of the main
+     * @param description description of the main
+     * @param id          id of the main
+     * @param completed   true if the main is completed, false if it's active
      */
     public Task(@Nullable String title, @Nullable String description,
                 @NonNull String id, boolean completed) {

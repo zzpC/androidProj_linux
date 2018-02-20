@@ -18,6 +18,7 @@ package com.example.zzp.mymvplearn.data.source;
 
 import android.support.annotation.NonNull;
 
+
 import com.example.zzp.mymvplearn.data.Task;
 
 import java.util.List;
@@ -27,7 +28,7 @@ import java.util.List;
  * <p>
  * For simplicity, only getTasks() and getTask() have callbacks. Consider adding callbacks to other
  * methods to inform the user of network/database errors or successful operations.
- * For example, when a new task is created, it's synchronously stored in cache but usually every
+ * For example, when a new main is created, it's synchronously stored in cache but usually every
  * operation on database or network should be executed in a different thread.
  */
 public interface TasksDataSource {

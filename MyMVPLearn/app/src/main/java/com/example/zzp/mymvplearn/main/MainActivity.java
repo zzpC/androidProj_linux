@@ -1,4 +1,4 @@
-package com.example.zzp.mymvplearn;
+package com.example.zzp.mymvplearn.main;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
@@ -8,8 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import static android.widget.Toast.LENGTH_LONG;
-import static android.widget.Toast.LENGTH_SHORT;
+import com.example.zzp.mymvplearn.R;
 
 public class MainActivity extends AppCompatActivity {
 

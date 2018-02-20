@@ -37,9 +37,9 @@ public final class R {
         public static final int tv_load_more_message = 0x7f090152;
     }
     public static final class layout {
-        public static final int loading_wait_dialog = 0x7f0b003b;
-        public static final int recycler_swipe_view_item = 0x7f0b005c;
-        public static final int recycler_swipe_view_load_more = 0x7f0b005d;
+        public static final int loading_wait_dialog = 0x7f0b003c;
+        public static final int recycler_swipe_view_item = 0x7f0b005d;
+        public static final int recycler_swipe_view_load_more = 0x7f0b005e;
     }
     public static final class string {
         public static final int loading_default_messsage = 0x7f0f0069;
