@@ -7,6 +7,7 @@ import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
+import com.google.common.base.Objects;
 import com.google.common.base.Strings;
 
 import java.util.UUID;
@@ -123,5 +124,24 @@ public final class Task {
                 Strings.isNullOrEmpty(mDescription);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Task task = (Task) o;
+        return Objects.equal(mId, task.mId) &&
+                Objects.equal(mTitle, task.mTitle) &&
+                Objects.equal(mDescription, task.mDescription);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(mId, mTitle, mDescription);
+    }
+
+    @Override
+    public String toString() {
+        return "Task with title " + mTitle;
+    }
 
 }
