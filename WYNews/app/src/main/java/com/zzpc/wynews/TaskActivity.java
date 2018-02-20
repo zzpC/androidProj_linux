@@ -3,7 +3,7 @@ package com.zzpc.wynews;
 
 import android.app.SearchManager;
 import android.content.Context;
-import android.content.Intent;
+
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Build;
@@ -32,7 +32,7 @@ import android.view.View;
 import android.support.v7.widget.SearchView;
 
 
-
+import com.zzpc.wynews.personality.readinghistory.MyHistoryFragment;
 import com.zzpc.wynews.personality.readingstart.MyStartFragment;
 
 import com.zzpc.wynews.videoplay.VideoFragment;
@@ -51,7 +51,7 @@ public class TaskActivity extends AppCompatActivity implements
         AccountManagerFragment.OpenSpecificFragmentListener,
         SettingsFragment.OnClickNightModeListener,
         SwipeRefreshLayoutBasicFragment.OnLoadWebSiteNewsListner,
-        LoginFragment.OnSwitchRegisterFragmentListener         {
+        LoginFragment.OnSwitchRegisterFragmentListener  {
 
     private static final String TAG = "TaskActivity";
     private BottomNavigationView mBottomNavigationView;
@@ -307,12 +307,16 @@ public class TaskActivity extends AppCompatActivity implements
             case 1:
                 MyStartFragment myStartFragment=new MyStartFragment();
                 manager.beginTransaction().replace(R.id.bottom_pager,myStartFragment).addToBackStack(MyStartFragment.class.getName()).commit();
-
-
+                break;
 //                new MyStartPresenter(
 //                        Injection.provideTasksRepository(getApplicationContext()),myStartFragment );
+
+            case 2:
+                MyHistoryFragment myHistoryFragment=new MyHistoryFragment();
+                manager.beginTransaction().replace(R.id.bottom_pager,myHistoryFragment).addToBackStack(MyHistoryFragment.class.getName()).commit();
                 break;
-            case 7:
+
+            case 8:
                 //使用了replace而没有hide(),注意问题
                 SettingsFragment settingsFragment=new SettingsFragment();
                 manager.beginTransaction().replace(R.id.bottom_pager, settingsFragment).addToBackStack(SettingsFragment.class.getName()).commit();

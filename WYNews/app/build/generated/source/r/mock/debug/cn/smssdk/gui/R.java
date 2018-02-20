@@ -93,21 +93,21 @@ public final class R {
         public static final int llSearch = 0x7f09009d;
         public static final int llTitle = 0x7f09009e;
         public static final int ll_back = 0x7f09009f;
-        public static final int rl_country = 0x7f0900da;
-        public static final int rl_lv_item_bg = 0x7f0900db;
-        public static final int tv_contact = 0x7f090149;
-        public static final int tv_contact_name = 0x7f09014a;
-        public static final int tv_contact_phones = 0x7f09014b;
-        public static final int tv_country = 0x7f09014d;
-        public static final int tv_country_num = 0x7f09014e;
-        public static final int tv_dialog_hint = 0x7f09014f;
-        public static final int tv_dialog_title = 0x7f090150;
-        public static final int tv_identify_notify = 0x7f090151;
-        public static final int tv_invite_hint = 0x7f090152;
-        public static final int tv_name = 0x7f090155;
-        public static final int tv_phone = 0x7f090156;
-        public static final int tv_title = 0x7f090159;
-        public static final int tv_unreceive_identify = 0x7f09015a;
+        public static final int rl_country = 0x7f0900db;
+        public static final int rl_lv_item_bg = 0x7f0900dc;
+        public static final int tv_contact = 0x7f09014a;
+        public static final int tv_contact_name = 0x7f09014b;
+        public static final int tv_contact_phones = 0x7f09014c;
+        public static final int tv_country = 0x7f09014e;
+        public static final int tv_country_num = 0x7f09014f;
+        public static final int tv_dialog_hint = 0x7f090150;
+        public static final int tv_dialog_title = 0x7f090151;
+        public static final int tv_identify_notify = 0x7f090152;
+        public static final int tv_invite_hint = 0x7f090153;
+        public static final int tv_name = 0x7f090156;
+        public static final int tv_phone = 0x7f090157;
+        public static final int tv_title = 0x7f09015a;
+        public static final int tv_unreceive_identify = 0x7f09015b;
     }
     public static final class raw {
         public static final int smssdk_pydb = 0x7f0e0000;

@@ -2,6 +2,7 @@ package com.zzpc.wynews.newsmessage;
 
 
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -248,6 +249,14 @@ public class NewsContentTextFragment extends Fragment {
             }
         }catch (Exception e){
             Log.d("Exception occures",""+e);
+
+        }finally {
+            DatabaseHelper dbHelper=new DatabaseHelper(getContext());
+            Cursor cursor= dbHelper.getAllData();
+            while (cursor.moveToNext()) {
+                String strValue= cursor.getString(1);
+                Log.e("Exception", "addContent: "+strValue );
+            }
         }
     }
 

@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.zzpc.wynews.R;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+
 
 /**
  * Created by zzp on 18-2-20.

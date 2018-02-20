@@ -205,7 +205,7 @@ public class LoginFragment extends Fragment {
         });
 //        mServerSideLoginBtn = (Button) findViewById(R.id.server_side_login_btn);
 
-        LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.main_container);
+        LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.main_container_bottomg);
         View.OnClickListener listener = new LoginFragment.NewClickListener();
         for (int i = 0; i < linearLayout.getChildCount(); i++) {
             View tempView = linearLayout.getChildAt(i);
@@ -239,9 +239,7 @@ public class LoginFragment extends Fragment {
         }
     }
 
-    private void updateWxLoginButton(){
 
-    }
 
     private void updateUserInfo() {
         if (mTencent != null && mTencent.isSessionValid()) {
@@ -356,6 +354,7 @@ public class LoginFragment extends Fragment {
     };
 
     private void onClickLogin() {
+        Log.e("SDKQQAgentPref", "onClickLogin: ");
         if (!mTencent.isSessionValid()) {
             mTencent.login(this, "all", loginListener);
             isServerSideLogin = false;
@@ -414,7 +413,7 @@ public class LoginFragment extends Fragment {
         }
         return ready;
     }
-
+//
 //    @Override
 //    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 //        Log.d(TAG, "-->onActivityResult " + requestCode  + " resultCode=" + resultCode);
@@ -435,7 +434,7 @@ public class LoginFragment extends Fragment {
                 requestCode == Constants.REQUEST_APPBAR) {
             Tencent.onActivityResultData(requestCode,resultCode,data,loginListener);
         }
-//        super.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     public static void initOpenidAndToken(JSONObject jsonObject) {
@@ -535,7 +534,8 @@ public class LoginFragment extends Fragment {
     class NewClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-			Context context = v.getContext();
+            Log.e("SDKQQAgentPref", "onClick: 2323" );
+            Context context = v.getContext();
 //			Animation shake = AnimationUtils.loadAnimation(context,
 //					R.anim.shake);
 			Class<?> cls = null;
@@ -544,7 +544,7 @@ public class LoginFragment extends Fragment {
                 case R.id.btn_new_login:
                     onClickLogin();
 //				v.startAnimation(shake);
-				return;
+				break;
 //			case R.id.server_side_login_btn:
 //			    onClickServerSideLogin();
 //			    v.startAnimation(shake);
@@ -598,7 +598,7 @@ public class LoginFragment extends Fragment {
 			if (cls != null) {
 				Intent intent = new Intent(context, cls);
 				if (isAppbar) { //APP内应用吧登录需接收登录结果
-//					startActivityForResult(intent, Constants.REQUEST_APPBAR);
+					startActivityForResult(intent, Constants.REQUEST_APPBAR);
 //                    ?????
 				} else {
 					getContext().startActivity(intent);
