@@ -9,6 +9,11 @@ MobSDK {
     SMSSDK {}
 }
 android {
+    //it explicitly tells Gradle which version shall be compiled
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
+    }
+
     signingConfigs {
         config {
             keyAlias 'signed_WYNews'
@@ -101,7 +106,10 @@ dependencies {
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     compile 'com.android.support:multidex:1.0.2'
+
+    //mvp && room orm
     implementation "android.arch.persistence.room:runtime:1.0.0"
+    implementation 'com.google.guava:guava:23.3-android'
 
 
 }
