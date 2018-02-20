@@ -278,4 +278,15 @@
     <string name="btn_token_qq">使用token信息登录,不拉起手Q</string>
 
 
+    <!--mvp_learn-->
+    <string name="no_data">No data</string>
+    <string name="loading">LOADING</string>
+
+    <!--mystart-->
+    <string name="mystart_title">mystart</string>
+    <string name="mystart_no_tasks">You have no tasks.</string>
+    <string name="mystart_active_tasks">Active tasks:</string>
+    <string name="mystart_completed_tasks">Completed tasks:</string>
+    <string name="mystart_error">Error loading mystart.</string>
+
 </resources>

@@ -60,7 +60,10 @@ public class MyStartPresenter implements MyStartContract.Presenter {
 
             @Override
             public void onDataNotAvailable() {
-
+                if(!mMyStartView.isActive()){
+                    return;
+                }
+                mMyStartView.showLoadingMyStartError();
             }
         });
     }
