@@ -1,5 +1,7 @@
 package com.zzpc.wynews.data.model;
 
+import static com.mob.tools.utils.Data.MD5;
+
 /**
  * Created by zzp on 17-11-25.
  */
@@ -11,6 +13,7 @@ public class News {
     private String description;
     private String picUrl;
     private String url;
+    private String url_hash;
 
     private static int ReadNum=0;
 
@@ -21,6 +24,7 @@ public class News {
         this.description = description;
         this.picUrl = picUrl;
         this.url = url;
+        this.url_hash=MD5(url);
     }
 
     public String getCtime() {
@@ -61,5 +65,12 @@ public class News {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+    public String getUrl_hash() {
+        return url_hash;
+    }
+
+    public void setUrl_hash(String url) {
+        this.url_hash = url_hash;
     }
 }

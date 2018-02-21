@@ -210,7 +210,9 @@ public class NewsContentTextFragment extends Fragment {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
 
-
+            if (result==null){
+                return;
+            }
 
             //执行完毕
             int separate=result.indexOf("#");
@@ -240,6 +242,7 @@ public class NewsContentTextFragment extends Fragment {
         try {
             DatabaseHelper dbHelper=new DatabaseHelper(getContext());
             SQLiteDatabase mydb = dbHelper.getWritableDatabase();
+
             boolean isInserted = dbHelper.insertData(title);
             if (isInserted = true){
                 Toast.makeText(getContext(), "Data Inserted", Toast.LENGTH_LONG).show();
@@ -256,7 +259,9 @@ public class NewsContentTextFragment extends Fragment {
             while (cursor.moveToNext()) {
                 String strValue= cursor.getString(1);
                 Log.e("Exception", "addContent: "+strValue );
+
             }
+
         }
     }
 

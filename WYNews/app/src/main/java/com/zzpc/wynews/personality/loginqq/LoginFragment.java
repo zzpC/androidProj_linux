@@ -205,7 +205,7 @@ public class LoginFragment extends Fragment {
         });
 //        mServerSideLoginBtn = (Button) findViewById(R.id.server_side_login_btn);
 
-        LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.main_container_bottomg);
+        LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.main_container_bottom);
         View.OnClickListener listener = new LoginFragment.NewClickListener();
         for (int i = 0; i < linearLayout.getChildCount(); i++) {
             View tempView = linearLayout.getChildAt(i);

@@ -4,6 +4,7 @@ package com.zzpc.wynews.newsmessage;
 import android.annotation.SuppressLint;
 import android.content.Context;
 
+import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -45,6 +46,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static com.mob.tools.utils.Data.MD5;
 import static com.zzpc.wynews.NewsApp.isNetworkAvailable;
 
 
@@ -387,12 +389,25 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 //                    mListener.onWebView(url);
                     mListener.onLoadWebSiteNews(url);
                     Log.e(TAG, "onClick: " +url);
+                    MD5(url);
 
 
 //                    mPresenter.onLoadWebSiteNews_mvp();
 
                 }
             });
+
+//            viewHolder.iv_pic.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Toast.makeText(getContext(), "bitmap !!!", Toast.LENGTH_LONG).show();
+//                    int position = viewHolder.getAdapterPosition();
+//                    final News news = mNewsInfoList.get(position);
+//                    if (viewHolder.iv_pic != null) {
+//                        MyBitmapUtils myBitmapUtils = new MyBitmapUtils();
+//                        myBitmapUtils.disPlay(holder.iv_pic, news.getPicUrl());                    }
+//                }
+//            });
 
             viewHolder.tv_title.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
