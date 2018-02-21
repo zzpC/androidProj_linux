@@ -71,7 +71,6 @@ public class NewsContentTextFragment extends Fragment {
 //        sb_width = view.findViewById(R.id.sb_width);
 
         init();
-
         return view;
 
     }
@@ -85,9 +84,7 @@ public class NewsContentTextFragment extends Fragment {
 
         String text = "Hello Android!";
 
-
         new mTask("f").execute();
-
 
 //        tv_content.setText(text);
 
@@ -145,13 +142,16 @@ public class NewsContentTextFragment extends Fragment {
                 return;
             }
 
-            //执行完毕
             int separate = result.indexOf("#");
-
-
             String title = result.substring(0, separate - 1);
-            String content = result.substring(separate + 1);
-
+            //有空格则去掉空格后边的字符
+            String content;
+            int space_shorten=result.indexOf(" ");
+            if (space_shorten<result.length()){
+                content=result.substring(separate+1,space_shorten);
+            }else {
+                content = result.substring(separate + 1);
+            }
 //            tv_tiltle.setText(title);
             tv_content.setCenterTopString(title);
             tv_content.setCenterTopTextColor(R.color.blue);

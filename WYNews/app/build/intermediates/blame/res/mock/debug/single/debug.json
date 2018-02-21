@@ -872,6 +872,10 @@
         "source": "/home/zzp/Programs/androidProj_linux/WYNews/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
+        "merged": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/res/merged/mock/debug/layout_start_item.xml.flat",
+        "source": "/home/zzp/Programs/androidProj_linux/WYNews/app/src/main/res/layout/start_item.xml"
+    },
+    {
         "merged": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/res/merged/mock/debug/drawable-xxhdpi-v4_abc_ic_star_black_36dp.png.flat",
         "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/1b753380921e6873f1a999ca8c57ab4d/res/drawable-xxhdpi-v4/abc_ic_star_black_36dp.png"
     },

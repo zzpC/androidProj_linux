@@ -31,10 +31,10 @@ public final class R {
         public static final int item_touch_helper_previous_elevation = 0x7f0900a4;
         public static final int loading_tv_message = 0x7f0900b8;
         public static final int loading_view = 0x7f0900b9;
-        public static final int swipe_content = 0x7f090142;
-        public static final int swipe_left = 0x7f090143;
-        public static final int swipe_right = 0x7f090144;
-        public static final int tv_load_more_message = 0x7f090178;
+        public static final int swipe_content = 0x7f090143;
+        public static final int swipe_left = 0x7f090144;
+        public static final int swipe_right = 0x7f090145;
+        public static final int tv_load_more_message = 0x7f090179;
     }
     public static final class layout {
         public static final int loading_wait_dialog = 0x7f0b003c;

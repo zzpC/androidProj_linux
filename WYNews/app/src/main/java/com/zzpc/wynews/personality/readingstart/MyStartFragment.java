@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,7 +13,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.zzpc.wynews.R;
+import com.zzpc.wynews.data.database.DatabaseHelper;
 
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -24,6 +28,8 @@ public class MyStartFragment extends Fragment  {
     private static final String TAG = "MyStartFragment";
 
     private RecyclerView mRecyclerView;
+    private List<StartItem> mStartItemListList = new ArrayList<>();
+
 
     //mvp框架显示进度
     private TextView mMyStartTV;
@@ -39,8 +45,12 @@ public class MyStartFragment extends Fragment  {
          super.onCreateView(inflater, container, savedInstanceState);
          View view;
          view=inflater.inflate(R.layout.fragment_mystart,container,false);
-         mMyStartTV=view.findViewById(R.id.tv_mystart);
+         initStarts();
          mRecyclerView=view.findViewById(R.id.recyclerview_mystart);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        mRecyclerView.setLayoutManager(layoutManager);
+        MyStartAdapter myStartAdapter=new MyStartAdapter(mStartItemListList,getContext());
+        mRecyclerView.setAdapter(myStartAdapter);
          return view;
     }
 
@@ -49,5 +59,20 @@ public class MyStartFragment extends Fragment  {
         super.onResume();
 
     }
+
+    private void initStarts(){
+        StartItem defaultItem=new StartItem("defalut");
+        StartItem favouriteItem=new StartItem("favourite");
+
+        mStartItemListList.add(defaultItem);
+        mStartItemListList.add(favouriteItem);
+
+        DatabaseHelper databaseHelper=new DatabaseHelper(getContext());
+        databaseHelper.createDBbyName("defalut");
+        databaseHelper.createDBbyName("favourite");
+
+    }
+
+
 
 }

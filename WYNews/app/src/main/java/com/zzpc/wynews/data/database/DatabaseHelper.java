@@ -60,4 +60,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return res;
     }
 
+
+    //start details
+    public void createDBbyName(String startTheme){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String CREATE_StartTheme_TABLE = "CREATE TABLE IF NOT EXISTS " + startTheme
+                + "(" + "id" + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME + " TEXT NOT NULL UNIQUE,"+"content"+" TEXT NOT NULL"+ " )";
+
+
+        // create books table
+        db.execSQL(CREATE_StartTheme_TABLE);
+    }
+
 }

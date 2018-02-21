@@ -295,9 +295,9 @@ public final class R {
         public static final int sRightImgId = 0x7f0900fe;
         public static final int sRightSwitchId = 0x7f0900ff;
         public static final int sRightViewId = 0x7f090100;
-        public static final int sweep = 0x7f090141;
-        public static final int switchBtn = 0x7f090147;
-        public static final int top = 0x7f090165;
+        public static final int sweep = 0x7f090142;
+        public static final int switchBtn = 0x7f090148;
+        public static final int top = 0x7f090166;
     }
     public static final class string {
         public static final int app_name = 0x7f0f0026;
