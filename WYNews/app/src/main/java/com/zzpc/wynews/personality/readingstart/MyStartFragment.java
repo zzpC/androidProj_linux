@@ -1,5 +1,6 @@
 package com.zzpc.wynews.personality.readingstart;//package com.zzpc.wynews.personality.readingstart;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.allen.library.SuperTextView;
 import com.zzpc.wynews.R;
 import com.zzpc.wynews.data.database.DatabaseHelper;
 
@@ -29,10 +31,18 @@ public class MyStartFragment extends Fragment  {
 
     private RecyclerView mRecyclerView;
     private List<StartItem> mStartItemListList = new ArrayList<>();
+    private OnSwitchStartDetailsFragment mOnSwitchStartDetailsFragment;
 
+    public interface OnSwitchStartDetailsFragment{
+        void switchStartDetailsFragment(String startTheme);
+    }
 
-    //mvp框架显示进度
-    private TextView mMyStartTV;
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mOnSwitchStartDetailsFragment=(OnSwitchStartDetailsFragment)context;
+    }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +82,74 @@ public class MyStartFragment extends Fragment  {
         databaseHelper.createDBbyName("favourite");
 
     }
+
+
+    //Adapter
+
+    public class MyStartAdapter extends RecyclerView.Adapter<MyStartAdapter.StartViewHolder> {
+        private final Context context;
+        private List<StartItem> items;
+        private SuperTextView mSuperTextView;
+
+        public MyStartAdapter(List<StartItem> items, Context context) {
+            this.items = items;
+            this.context = context;
+        }
+
+
+
+        @Override
+        public StartViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.start_item, parent, false);
+            mSuperTextView=v.findViewById(R.id.start_theme_stv);
+
+            final StartViewHolder startViewHolder=new StartViewHolder(v);
+            startViewHolder.startView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position=startViewHolder.getAdapterPosition();
+                    StartItem startItem=items.get(position);
+                    createSpecificDetailsFragment(startItem.mTheme);
+
+                }
+            });
+            return startViewHolder;
+        }
+
+        @Override
+        public void onBindViewHolder(StartViewHolder holder, int position) {
+            StartItem item = items.get(position);
+            //TODO Fill in your logic for binding the view.
+            mSuperTextView.setCenterString(item.mTheme);
+
+
+        }
+
+        @Override
+        public int getItemCount() {
+            if (items == null) {
+                return 0;
+            }
+            return items.size();
+        }
+
+        class StartViewHolder extends RecyclerView.ViewHolder {
+            View startView;
+            SuperTextView mSuperTextView;
+
+            StartViewHolder(View itemView) {
+                super(itemView);
+                startView=itemView;
+                mSuperTextView=itemView.findViewById(R.id.start_theme_stv);
+            }
+        }
+
+        private void createSpecificDetailsFragment(String theme){
+            mOnSwitchStartDetailsFragment.switchStartDetailsFragment(theme);
+        }
+
+    }
+
 
 
 

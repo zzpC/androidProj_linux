@@ -27,14 +27,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import android.util.Log;
+
 import android.view.MenuItem;
 import android.view.View;
 import android.support.v7.widget.SearchView;
 
 
 import com.zzpc.wynews.personality.readinghistory.MyHistoryFragment;
+
 import com.zzpc.wynews.personality.readingstart.MyStartFragment;
 
+import com.zzpc.wynews.personality.readingstart.StartDetailsFragment;
 import com.zzpc.wynews.videoplay.VideoFragment;
 import com.zzpc.wynews.newsmessage.NewsContentTextFragment;
 import com.zzpc.wynews.newsmessage.SlidingTabsColorsFragment;
@@ -47,15 +50,26 @@ import com.zzpc.wynews.personality.loginqq.LoginFragment;
 import com.zzpc.wynews.personality.loginqq.RegisterFragment;
 
 
+import java.util.HashMap;
+
+
+
 public class TaskActivity extends AppCompatActivity implements
         AccountManagerFragment.OpenSpecificFragmentListener,
         SettingsFragment.OnClickNightModeListener,
         SwipeRefreshLayoutBasicFragment.OnLoadWebSiteNewsListner,
-        LoginFragment.OnSwitchRegisterFragmentListener  {
+        LoginFragment.OnSwitchRegisterFragmentListener,
+        MyStartFragment.OnSwitchStartDetailsFragment{
+
 
     private static final String TAG = "TaskActivity";
     private BottomNavigationView mBottomNavigationView;
     private Toolbar mToolbar;
+
+//    private List<Fragment> startDetailsFragments=new ArrayList<Fragment>();
+    private HashMap<String,StartDetailsFragment> startDetailsFragments=new HashMap<String,StartDetailsFragment>();
+
+
 //    private MyStartFragment myStartFragment;
 
     static {
@@ -332,7 +346,7 @@ public class TaskActivity extends AppCompatActivity implements
         RegisterFragment registerFragment = new RegisterFragment();
         FragmentManager manager = getSupportFragmentManager();
         //使用了replace而没有hide(),注意问题
-        manager.beginTransaction().replace(R.id.bottom_pager, registerFragment).addToBackStack(SettingsFragment.class.getName()).commit();
+        manager.beginTransaction().replace(R.id.bottom_pager, registerFragment).addToBackStack(RegisterFragment.class.getName()).commit();
         mBottomNavigationView.setVisibility(View.INVISIBLE);
 
     }
@@ -350,9 +364,6 @@ public class TaskActivity extends AppCompatActivity implements
         manager.beginTransaction().replace(R.id.full, newsContentTextFragment).addToBackStack("newscontextstr").commit();
         mBottomNavigationView.setVisibility(View.INVISIBLE);
 
-
-
-
     }
 
 
@@ -363,5 +374,30 @@ public class TaskActivity extends AppCompatActivity implements
         this.recreate();
         NewsApp.changing_Theme = true;
     }
+
+
+
+    @Override
+    public void switchStartDetailsFragment(String startTheme) {
+
+        StartDetailsFragment fragment;
+        if (startDetailsFragments.containsKey(startTheme)){
+            fragment =(StartDetailsFragment)startDetailsFragments.get(startTheme);
+            if (fragment==null){
+                fragment=new StartDetailsFragment();
+            }
+
+        }else {
+            fragment=(StartDetailsFragment)new StartDetailsFragment();
+            startDetailsFragments.put(startTheme,fragment);
+        }
+
+        StartDetailsFragment startDetailsFragment = new StartDetailsFragment();
+        FragmentManager manager = getSupportFragmentManager();
+        //使用了replace而没有hide(),注意问题
+        manager.beginTransaction().replace(R.id.bottom_pager, startDetailsFragment).addToBackStack(StartDetailsFragment.class.getName()).commit();
+//        mBottomNavigationView.setVisibility(View.INVISIBLE);
+    }
+
 
 }

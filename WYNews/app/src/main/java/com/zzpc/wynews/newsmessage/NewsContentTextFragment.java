@@ -23,7 +23,6 @@ import com.allen.library.SuperTextView;
 import com.zzpc.wynews.R;
 
 import com.zzpc.wynews.data.database.DatabaseHelper;
-import com.zzpc.wynews.util.pitcure.DisplayUtil;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
