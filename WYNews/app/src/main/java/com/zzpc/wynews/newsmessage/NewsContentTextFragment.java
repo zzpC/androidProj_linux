@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.util.TypedValue;
 import android.widget.Toast;
 
+import com.allen.library.SuperTextView;
 import com.zzpc.wynews.R;
 
 import com.zzpc.wynews.data.database.DatabaseHelper;
@@ -33,7 +34,6 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 
 
-
 /**
  * Created by zzp on 18-2-1.
  */
@@ -42,7 +42,7 @@ public class NewsContentTextFragment extends Fragment {
     private static final String TAG = "NewsContentTextFragment";
 
     private TextView tv_tiltle;
-    private TextView tv_content;
+    private SuperTextView tv_content;
 
     private SeekBar sb_width;
     private SeekBar sb_height;
@@ -56,7 +56,7 @@ public class NewsContentTextFragment extends Fragment {
     private int content_Height = oHeight;
     private int content_width = oWidth;
 
-    private static volatile int id=1;
+    private static volatile int id = 1;
 
     @Nullable
     @Override
@@ -65,10 +65,10 @@ public class NewsContentTextFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_newscontenttext, container, false);
 
 
-        tv_tiltle = view.findViewById(R.id.tv_title);
+////        tv_tiltle = view.findViewById(R.id.tv_title);
         tv_content = view.findViewById(R.id.tv_content);
-        sb_height = view.findViewById(R.id.sb_height);
-        sb_width = view.findViewById(R.id.sb_width);
+//        sb_height = view.findViewById(R.id.sb_height);
+//        sb_width = view.findViewById(R.id.sb_width);
 
         init();
 
@@ -82,7 +82,7 @@ public class NewsContentTextFragment extends Fragment {
     }
 
     private void init() {
-        initScaleConfig();
+
         String text = "Hello Android!";
 
 
@@ -90,79 +90,10 @@ public class NewsContentTextFragment extends Fragment {
 
 
 //        tv_content.setText(text);
-        final int defaultWidth = 100;
-        final int defaultHeight = 400;
-
-        ViewGroup.LayoutParams layoutParams = tv_content.getLayoutParams();
-        layoutParams.width = DisplayUtil.dp2px(getContext(), defaultWidth);
-        layoutParams.height = DisplayUtil.dp2px(getContext(), defaultHeight);
-        tv_content.setLayoutParams(layoutParams);
-
-        sb_width.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-
-                if (content_width - progress != oWidth) {
-                    content_width = progress + oWidth;
-                    ViewGroup.LayoutParams layoutParams = tv_content.getLayoutParams();
-                    layoutParams.width = DisplayUtil.dp2px(getContext(), content_width);
-                    tv_content.setLayoutParams(layoutParams);
-                }
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
-
-        sb_height.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                if (content_Height - progress != oHeight) {
-                    content_Height = oHeight + progress;
-                    ViewGroup.LayoutParams layoutParams = tv_content.getLayoutParams();
-                    layoutParams.height = DisplayUtil.dp2px(getContext(), content_Height);
-                    tv_content.setLayoutParams(layoutParams);
-                }
-
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
-
 
     }
 
-    private void initScaleConfig() {
-        //uniform: 垂直方向与水平方向缩放  none: 关闭缩放功能,
-        TextViewCompat.setAutoSizeTextTypeWithDefaults(tv_content, TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM);
-        //参数一： 被设置的TextView
-        //参数二： 自动缩放的最小字号
-        //参数三： 自动缩放的最大字号
-        //参数四： 粒度
-        //参数五： 参数二与参数三所用的单位，这里因为字体大小，所以我指定为SP
 
-
-        TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(tv_content, 12, 48, 2, TypedValue.COMPLEX_UNIT_SP);
-
-        //参数二： 设置多个预制字体大小，这样在缩放时字体会根据预制的字体大小而缩放
-        int[] autoTextSize = getResources().getIntArray(R.array.autosize_text_sizes);
-        TextViewCompat.setAutoSizeTextTypeUniformWithPresetSizes(tv_content, autoTextSize, TypedValue.COMPLEX_UNIT_SP);
-    }
 
 
     public class mTask extends AsyncTask<String, Integer, String> {
@@ -188,9 +119,9 @@ public class NewsContentTextFragment extends Fragment {
                 Document document = Jsoup.connect(getArguments().get("url").toString()).get();
                 //获取指定class的内容指定tag的元素
                 Element pElements1 = document.getElementById("endText");
-                if (pElements1==null)
+                if (pElements1 == null)
                     return null;
-                Elements pElements=  pElements1.getElementsByTag("p");
+                Elements pElements = pElements1.getElementsByTag("p");
                 newsTitleStr = document.getElementById("epContentLeft").getElementsByTag("h1").text();
                 StringBuilder stringBuilder = new StringBuilder();
                 for (int i = 1; i < pElements.size(); i++) {
@@ -203,29 +134,29 @@ public class NewsContentTextFragment extends Fragment {
                 Log.e(TAG, "run: " + "解析出错！");
                 e.printStackTrace();
             }
-            return newsTitleStr+"#"+newsContent;
+            return newsTitleStr + "#" + newsContent;
         }
 
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
 
-            if (result==null){
+            if (result == null) {
                 return;
             }
 
             //执行完毕
-            int separate=result.indexOf("#");
+            int separate = result.indexOf("#");
 
 
-            String title=result.substring(0,separate-1);
-            String content=result.substring(separate+1);
+            String title = result.substring(0, separate - 1);
+            String content = result.substring(separate + 1);
 
-            tv_tiltle.setText(title);
-
-            tv_content.setText(content);
-
-           addContent(title,content);
+//            tv_tiltle.setText(title);
+            tv_content.setCenterTopString(title);
+            tv_content.setCenterTopTextColor(R.color.blue);
+            tv_content.setCenterString(content);
+            addContent(title, content);
 
         }
 
@@ -237,30 +168,34 @@ public class NewsContentTextFragment extends Fragment {
     }
 
 
-    public void addContent(String title,String content){
+    public void addContent(String title, String content) {
 
         try {
-            DatabaseHelper dbHelper=new DatabaseHelper(getContext());
+            DatabaseHelper dbHelper = new DatabaseHelper(getContext());
             SQLiteDatabase mydb = dbHelper.getWritableDatabase();
 
             boolean isInserted = dbHelper.insertData(title);
-            if (isInserted = true){
+            if (isInserted = true) {
                 Toast.makeText(getContext(), "Data Inserted", Toast.LENGTH_LONG).show();
-            }
-            else{
+            } else {
                 Toast.makeText(getContext(), "Data not Inserted", Toast.LENGTH_LONG).show();
             }
-        }catch (Exception e){
-            Log.d("Exception occures",""+e);
+        } catch (Exception e) {
+            Log.d("Exception occures", "" + e);
 
-        }finally {
-            DatabaseHelper dbHelper=new DatabaseHelper(getContext());
-            Cursor cursor= dbHelper.getAllData();
-            while (cursor.moveToNext()) {
-                String strValue= cursor.getString(1);
-                Log.e("Exception", "addContent: "+strValue );
+        } finally {
+            DatabaseHelper dbHelper = new DatabaseHelper(getContext());
+            try {
+                Cursor cursor = dbHelper.getAllData();
+                while (cursor.moveToNext()) {
+                    String strValue = cursor.getString(1);
+                    Log.e("Exception", "addContent: " + strValue);
 
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
+
 
         }
     }

@@ -26,6 +26,7 @@ MERGED from [tv.danmaku.ijk.media:ijkplayer-x86_64:0.8.4] /home/zzp/.gradle/cach
 MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/Android-AdvancedWebView-v3.0.0.aar/1f8cb256d45d5c92195a92f133e50ec8/AndroidManifest.xml:2:1-11:12
 MERGED from [com.jakewharton:butterknife:8.8.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/b256af220611add7ce0f8e8928d7c09c/AndroidManifest.xml:2:1-7:12
 MERGED from [android.arch.persistence.room:runtime:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/409219f3e1d34ed44592fce2b610eb27/AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.lygttpod:SuperTextView:2.1.6] /home/zzp/.gradle/caches/transforms-1/files-1.1/SuperTextView-2.1.6.aar/3520d3f385d36b58fb8fa6f8081e249b/AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:transition:26.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/acc60f38b8f214c922e94ad97546231d/AndroidManifest.xml:17:1-28:12
 MERGED from [android.arch.persistence:db-framework:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/db-framework-1.0.0.aar/0fc9f98ae3becd6ca046246f8a58b578/AndroidManifest.xml:17:1-24:12
 MERGED from [android.arch.persistence:db:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/db-1.0.0.aar/6557d34da1ebb48ac3450010f205c5b9/AndroidManifest.xml:17:1-24:12
@@ -299,6 +300,8 @@ MERGED from [com.jakewharton:butterknife:8.8.1] /home/zzp/.gradle/caches/transfo
 MERGED from [com.jakewharton:butterknife:8.8.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/b256af220611add7ce0f8e8928d7c09c/AndroidManifest.xml:5:5-43
 MERGED from [android.arch.persistence.room:runtime:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/409219f3e1d34ed44592fce2b610eb27/AndroidManifest.xml:20:5-22:41
 MERGED from [android.arch.persistence.room:runtime:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/409219f3e1d34ed44592fce2b610eb27/AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.lygttpod:SuperTextView:2.1.6] /home/zzp/.gradle/caches/transforms-1/files-1.1/SuperTextView-2.1.6.aar/3520d3f385d36b58fb8fa6f8081e249b/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.lygttpod:SuperTextView:2.1.6] /home/zzp/.gradle/caches/transforms-1/files-1.1/SuperTextView-2.1.6.aar/3520d3f385d36b58fb8fa6f8081e249b/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:transition:26.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/acc60f38b8f214c922e94ad97546231d/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:transition:26.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/acc60f38b8f214c922e94ad97546231d/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.persistence:db-framework:1.0.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/db-framework-1.0.0.aar/0fc9f98ae3becd6ca046246f8a58b578/AndroidManifest.xml:20:5-22:41
