@@ -47,6 +47,7 @@ public class MyStartFragment extends Fragment  {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.e(TAG, "onCreate: fdfsdfsfsdfsdfsddfs" );
+        initStarts();
     }
 
     @Nullable
@@ -55,7 +56,7 @@ public class MyStartFragment extends Fragment  {
          super.onCreateView(inflater, container, savedInstanceState);
          View view;
          view=inflater.inflate(R.layout.fragment_mystart,container,false);
-         initStarts();
+
          mRecyclerView=view.findViewById(R.id.recyclerview_mystart);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(layoutManager);
@@ -104,9 +105,10 @@ public class MyStartFragment extends Fragment  {
             mSuperTextView=v.findViewById(R.id.start_theme_stv);
 
             final StartViewHolder startViewHolder=new StartViewHolder(v);
-            startViewHolder.startView.setOnClickListener(new View.OnClickListener() {
+            startViewHolder.mSuperTextView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    Log.e(TAG, "onClick: " );
                     int position=startViewHolder.getAdapterPosition();
                     StartItem startItem=items.get(position);
                     createSpecificDetailsFragment(startItem.mTheme);

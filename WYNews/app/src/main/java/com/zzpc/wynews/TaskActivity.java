@@ -322,9 +322,6 @@ public class TaskActivity extends AppCompatActivity implements
                 MyStartFragment myStartFragment=new MyStartFragment();
                 manager.beginTransaction().replace(R.id.bottom_pager,myStartFragment).addToBackStack(MyStartFragment.class.getName()).commit();
                 break;
-//                new MyStartPresenter(
-//                        Injection.provideTasksRepository(getApplicationContext()),myStartFragment );
-
             case 2:
                 MyHistoryFragment myHistoryFragment=new MyHistoryFragment();
                 manager.beginTransaction().replace(R.id.bottom_pager,myHistoryFragment).addToBackStack(MyHistoryFragment.class.getName()).commit();
@@ -379,24 +376,27 @@ public class TaskActivity extends AppCompatActivity implements
 
     @Override
     public void switchStartDetailsFragment(String startTheme) {
-
-        StartDetailsFragment fragment;
+        Log.e(TAG, "switchStartDetailsFragment: " );
+        StartDetailsFragment startDetailsFragment;
         if (startDetailsFragments.containsKey(startTheme)){
-            fragment =(StartDetailsFragment)startDetailsFragments.get(startTheme);
-            if (fragment==null){
-                fragment=new StartDetailsFragment();
+            startDetailsFragment =(StartDetailsFragment)startDetailsFragments.get(startTheme);
+            if (startDetailsFragment==null){
+                startDetailsFragment=new StartDetailsFragment();
             }
 
         }else {
-            fragment=(StartDetailsFragment)new StartDetailsFragment();
-            startDetailsFragments.put(startTheme,fragment);
+            startDetailsFragment=(StartDetailsFragment)new StartDetailsFragment();
+            startDetailsFragments.put(startTheme,startDetailsFragment);
+
         }
 
-        StartDetailsFragment startDetailsFragment = new StartDetailsFragment();
+        Bundle bundle=new Bundle();
+        bundle.putString("Theme",startTheme);
+        startDetailsFragment.setArguments(bundle);
         FragmentManager manager = getSupportFragmentManager();
         //使用了replace而没有hide(),注意问题
         manager.beginTransaction().replace(R.id.bottom_pager, startDetailsFragment).addToBackStack(StartDetailsFragment.class.getName()).commit();
-//        mBottomNavigationView.setVisibility(View.INVISIBLE);
+        mBottomNavigationView.setVisibility(View.INVISIBLE);
     }
 
 

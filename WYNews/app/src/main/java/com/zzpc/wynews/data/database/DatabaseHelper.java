@@ -29,21 +29,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-//        db.openOrCreateDatabase("pharmabarcode.db", null);
-        String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME + " TEXT NOT NULL UNIQUE" +")";
+//
+        String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME + " TEXT NOT NULL UNIQUE" +")";
 
         db.execSQL(CREATE_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE "+ TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS "+ TABLE_NAME);
         onCreate(db);
     }
 
     public boolean insertData(String result){
 
         SQLiteDatabase db = this.getWritableDatabase();
+
+        String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME + " TEXT NOT NULL UNIQUE" +")";
+        db.execSQL(CREATE_TABLE);
+
         ContentValues contentValues = new ContentValues();
         contentValues.put(KEY_NAME, result);
         long rslt = db.insert(TABLE_NAME,null,contentValues);
@@ -60,6 +64,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return res;
     }
 
+    public Cursor getDefault(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+ TABLE_NAME,null );
+        return res;
+    }
+
 
     //start details
     public void createDBbyName(String startTheme){
@@ -71,6 +81,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // create books table
         db.execSQL(CREATE_StartTheme_TABLE);
+    }
+
+    public void dropDataBase(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
     }
 
 }

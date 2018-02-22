@@ -1,4 +1,4 @@
-#Wed Feb 21 19:34:22 CST 2018
+#Thu Feb 22 08:53:35 CST 2018
 base.0=/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/transforms/dexMerger/mock/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

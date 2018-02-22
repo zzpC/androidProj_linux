@@ -84,6 +84,8 @@ public class NewsContentTextFragment extends Fragment {
         String text = "Hello Android!";
 
         new mTask("f").execute();
+        DatabaseHelper databaseHelper=new DatabaseHelper(getContext());
+//        databaseHelper.
 
 //        tv_content.setText(text);
 
@@ -145,12 +147,11 @@ public class NewsContentTextFragment extends Fragment {
             String title = result.substring(0, separate - 1);
             //有空格则去掉空格后边的字符
             String content;
-            int space_shorten=result.indexOf(" ");
-            if (space_shorten<result.length()){
-                content=result.substring(separate+1,space_shorten);
-            }else {
-                content = result.substring(separate + 1);
+            int space_shorten=title.indexOf(" ");
+            if (space_shorten<title.length() && space_shorten>0){
+                title=title.substring(0,space_shorten);
             }
+            content = result.substring(separate + 1);
 //            tv_tiltle.setText(title);
             tv_content.setCenterTopString(title);
             tv_content.setCenterTopTextColor(R.color.blue);
@@ -188,7 +189,9 @@ public class NewsContentTextFragment extends Fragment {
                 Cursor cursor = dbHelper.getAllData();
                 while (cursor.moveToNext()) {
                     String strValue = cursor.getString(1);
-                    Log.e("Exception", "addContent: " + strValue);
+                    String strContent = cursor.getString(2);
+                    Log.e("Exception", "addContent:V " + strValue);
+                    Log.e("Exception", "addContent:C " + content.substring(0,16));
 
                 }
             } catch (Exception e) {
