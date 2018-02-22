@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 
 import com.allen.library.SuperTextView;
 import com.zzpc.wynews.R;
+import com.zzpc.wynews.TaskActivity;
 import com.zzpc.wynews.data.database.NewsDBHelper;
 
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ import java.util.List;
  * Created by zzp on 18-2-20.
  */
 
-public class MyStartFragment extends Fragment  {
+public class MyStartFragment extends Fragment   {
 
     private static final String TAG = "MyStartFragment";
 
@@ -41,6 +42,8 @@ public class MyStartFragment extends Fragment  {
         super.onAttach(context);
         mOnSwitchStartDetailsFragment=(OnSwitchStartDetailsFragment)context;
     }
+
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

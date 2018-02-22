@@ -108,7 +108,7 @@ public class VideoFragment extends Fragment {
         mSimplePlayer.setTitle(getResources().getString(R.string.video_title4));
         mSimplePlayer.play("http://ips.ifeng.com/video19.ifeng.com/video09/2016/07/25/34595-102-009-0533.mp4");
         mSimplePlayer.start();
-
+        mSimplePlayer.pause();
 
         return view;
 

@@ -1,5 +1,6 @@
 package com.zzpc.wynews.personality.readingstart;
 
+import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.allen.library.SuperTextView;
 import com.zzpc.wynews.R;
 import com.zzpc.wynews.data.database.NewsDBHelper;
 
@@ -22,11 +24,13 @@ import java.util.List;
  * Created by zzp on 18-2-21.
  */
 
-public class StartDetailsFragment extends Fragment {
+public class StartDetailsFragment extends Fragment  {
 
     private static final String TAG = "StartDetailsFragment";
     private RecyclerView mRecyclerView;
     private List<DetailsItem> mDetailsItemList=new ArrayList<DetailsItem>();
+    private String mTitle;
+    private String mContent;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -67,15 +71,13 @@ public class StartDetailsFragment extends Fragment {
 
         NewsDBHelper newsDBHelper =new NewsDBHelper(getContext());
 
-        Cursor cursor= newsDBHelper.getAllData();
+        Cursor cursor= newsDBHelper.getAllData_start();
 
         try {
             while (cursor.moveToNext()) {
                 String strValue = cursor.getString(1);
                 Log.e("Exception", "addContent: " + strValue);
-//                String strContent=cursor.getString(2);
-//                String strValue="ttemmpp";
-                String strContent="temp";
+                String strContent=cursor.getString(2);;
                 mDetailsItemList.add(new DetailsItem(strValue,strContent));
             }
         }catch (Exception e){
@@ -83,5 +85,49 @@ public class StartDetailsFragment extends Fragment {
         }
     }
 
+
+//Adapter
+    public class StartDetailsAdapter extends RecyclerView.Adapter<StartDetailsAdapter.DetailsHolder> {
+        private static final String TAG = "StartDetailsAdapter";
+
+        private final Context context;
+        private List<DetailsItem> items;
+
+        public StartDetailsAdapter( Context context,List<DetailsItem> list) {
+            this.context = context;
+            this.items=list;
+        }
+
+        @Override
+        public DetailsHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.start_details_item, parent, false);
+            v.findViewById(R.id.details_stv);
+            return new DetailsHolder(v);
+        }
+
+        @Override
+        public void onBindViewHolder(DetailsHolder holder, int position) {
+            DetailsItem item = items.get(position);
+            //TODO Fill in your logic for binding the view.
+            Log.e(TAG, "onBindViewHolder: "+item.mTitle );
+            holder.mSuperTextView.setCenterString(item.mTitle);
+        }
+
+        @Override
+        public int getItemCount() {
+            if (items == null) {
+                return 0;
+            }
+            return items.size();
+        }
+
+        class DetailsHolder extends RecyclerView.ViewHolder {
+            SuperTextView mSuperTextView;
+            DetailsHolder(View itemView) {
+                super(itemView);
+                mSuperTextView=itemView.findViewById(R.id.details_stv);
+            }
+        }
+    }
 
 }

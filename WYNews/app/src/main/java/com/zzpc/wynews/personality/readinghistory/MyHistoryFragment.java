@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 
 import com.allen.library.SuperTextView;
 import com.zzpc.wynews.R;
+import com.zzpc.wynews.TaskActivity;
 import com.zzpc.wynews.data.database.NewsDBHelper;
 
 
@@ -28,7 +29,7 @@ import java.util.List;
  * Created by zzp on 18-2-20.
  */
 
-public class MyHistoryFragment extends Fragment {
+public class MyHistoryFragment extends Fragment{
 
     private static final String TAG = "MyHistoryFragment";
 
@@ -69,7 +70,6 @@ public class MyHistoryFragment extends Fragment {
 
         mRecyclerView.setAdapter(myHistoryAdapter);
 
-//        if (getActivity().set  )
 
         return view;
     }
@@ -84,7 +84,6 @@ public class MyHistoryFragment extends Fragment {
                 String strValue = cursor.getString(1);
                 Log.e(TAG, "addContent: " + strValue);
                 String strContent=cursor.getString(2);
-//                String strValue="ttemmpp";
                 mHistoryItemList.add(new MyHistoryItem(strValue,strContent));
             }
         }catch (Exception e){
@@ -140,12 +139,9 @@ public class MyHistoryFragment extends Fragment {
                 mSuperTextView=itemView.findViewById(R.id.myhistory_stv);
             }
         }
-
-
     }
 
 
 
-
-
+//
 }

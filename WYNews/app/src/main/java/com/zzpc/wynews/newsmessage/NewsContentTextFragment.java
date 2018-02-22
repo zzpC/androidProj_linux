@@ -2,6 +2,7 @@ package com.zzpc.wynews.newsmessage;
 
 
 
+import android.annotation.SuppressLint;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 import com.allen.library.SuperTextView;
 import com.zzpc.wynews.R;
 
+import com.zzpc.wynews.TaskActivity;
 import com.zzpc.wynews.data.database.NewsDBHelper;
 
 import org.jsoup.Jsoup;
@@ -35,18 +37,14 @@ import java.io.IOException;
  * Created by zzp on 18-2-1.
  */
 
-public class NewsContentTextFragment extends Fragment {
+public class NewsContentTextFragment extends Fragment  {
     private static final String TAG = "NewsContentTextFragment";
 
 
     private SuperTextView stv_content;
 
-    private String newsContent;
-    private String newsTitleStr;
-
-    //
-
-
+    private String mNewsContent;
+    private String mNewsTitle;
 
     @Nullable
     @Override
@@ -79,6 +77,7 @@ public class NewsContentTextFragment extends Fragment {
 
 
 
+    @SuppressLint("StaticFieldLeak")
     public class mTask extends AsyncTask<String, Integer, String> {
         private static final String TAG = "DOWNLOAD_TASK";
         private String name = "DownloadTask";
@@ -105,19 +104,19 @@ public class NewsContentTextFragment extends Fragment {
                 if (pElements1 == null)
                     return null;
                 Elements pElements = pElements1.getElementsByTag("p");
-                newsTitleStr = document.getElementById("epContentLeft").getElementsByTag("h1").text();
+                mNewsTitle = document.getElementById("epContentLeft").getElementsByTag("h1").text();
                 StringBuilder stringBuilder = new StringBuilder();
                 for (int i = 1; i < pElements.size(); i++) {
 //                                    Log.e(TAG, "onClick: "+i + ". " + pElements.get(i).text() );
                     stringBuilder.append(pElements.get(i).text());
                 }
-                newsContent = stringBuilder.toString();
-                Log.e(TAG, "run: " + newsTitleStr + "  **  " + newsContent);
+                mNewsContent = stringBuilder.toString();
+                Log.e(TAG, "run: " + mNewsTitle + "  **  " + mNewsContent);
             } catch (IOException e) {
                 Log.e(TAG, "run: " + "解析出错！");
                 e.printStackTrace();
             }
-            return newsTitleStr + "#" + newsContent;
+            return mNewsTitle + "#" + mNewsContent;
         }
 
         @Override
@@ -141,6 +140,18 @@ public class NewsContentTextFragment extends Fragment {
             stv_content.setCenterTopString(title);
             stv_content.setCenterTopTextColor(R.color.blue);
             stv_content.setCenterString(content);
+            stv_content.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    NewsDBHelper newsDBHelper=new NewsDBHelper(getContext());
+                    if (stv_content==null || newsDBHelper==null){
+                        return false;
+                    }
+                    return newsDBHelper.insertNewsTwo_start(stv_content.getCenterTopString(),stv_content.getCenterString());
+                }
+            });
+
+            //record to history
             addContent(title, content);
 
         }

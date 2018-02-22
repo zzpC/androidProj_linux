@@ -6,19 +6,19 @@
     density="xxhdpi"
     format="10"
     plugin-version="3.0.1"
-    timestamp="1519283985787"
+    timestamp="1519297938474"
     token="6368884198045034902"
     verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="1788" />
+        duration="1603" />
     <task
         name="instant-run-dex"
-        duration="34" />
+        duration="25" />
     <task
         name="instant-run-transform"
-        duration="28" />
+        duration="29" />
     <task
         name="verifier"
         duration="2" />
@@ -29,13 +29,16 @@
 
     <build
         build-mode="FULL"
-        timestamp="1519281157855"
+        timestamp="1519293026454"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/split-apk/mock/debug/slices/slice_7.apk"
+            location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/split-apk/mock/debug/slices/slice_4.apk"
             type="SPLIT" />
         <artifact
             location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/split-apk/mock/debug/slices/slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/split-apk/mock/debug/slices/slice_7.apk"
             type="SPLIT" />
         <artifact
             location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/split-apk/mock/debug/slices/slice_8.apk"
@@ -44,13 +47,10 @@
             location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/split-apk/mock/debug/slices/slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/split-apk/mock/debug/slices/slice_4.apk"
+            location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/split-apk/mock/debug/dep/dependencies.apk"
             type="SPLIT" />
         <artifact
             location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/split-apk/mock/debug/slices/slice_5.apk"
-            type="SPLIT" />
-        <artifact
-            location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/split-apk/mock/debug/dep/dependencies.apk"
             type="SPLIT" />
         <artifact
             location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/split-apk/mock/debug/slices/slice_0.apk"
@@ -70,73 +70,43 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1519282221577"
-        verifier="FIELD_REMOVED" >
-        <artifact
-            location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/split-apk/mock/debug/slices/slice_9.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="CLASS_ADDED"
-        timestamp="1519282852296"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1519296739459"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/split-apk/mock/debug/slices/slice_0.apk"
             type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="METHOD_ADDED"
+        timestamp="1519297643405"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/split-apk/mock/debug/slices/slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/split-apk/mock/debug/slices/slice_3.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="FIELD_REMOVED"
+        timestamp="1519297918889"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/split-apk/mock/debug/slices/slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/split-apk/mock/debug/slices/slice_6.apk"
             type="SPLIT" />
         <artifact
             location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/split-apk/mock/debug/slices/slice_5.apk"
             type="SPLIT" />
     </build>
     <build
-        build-mode="COLD"
-        timestamp="1519283467691"
-        verifier="METHOD_DELETED" >
-        <artifact
-            location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/split-apk/mock/debug/slices/slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/split-apk/mock/debug/slices/slice_6.apk"
-            type="SPLIT" />
-    </build>
-    <build
         build-mode="HOT_WARM"
-        timestamp="1519283603363"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/builds/mock/debug/1519283603363/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1519283728692"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/builds/mock/debug/1519283728692/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1519283853080"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/builds/mock/debug/1519283853080/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1519283916958"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/builds/mock/debug/1519283916958/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1519283985787"
+        timestamp="1519297938474"
         verifier="COMPATIBLE" >
         <artifact
             location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/reload-dex/mock/debug/classes.dex"

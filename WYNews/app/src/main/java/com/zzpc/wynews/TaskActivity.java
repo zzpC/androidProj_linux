@@ -35,8 +35,9 @@ import android.support.v7.widget.SearchView;
 
 
 import com.zzpc.wynews.data.database.NewsDBHelper;
-import com.zzpc.wynews.personality.readinghistory.HistoryDetailsFragment;
+
 import com.zzpc.wynews.personality.readinghistory.MyHistoryFragment;
+
 
 import com.zzpc.wynews.personality.readingstart.MyStartFragment;
 
@@ -53,7 +54,7 @@ import com.zzpc.wynews.personality.loginqq.LoginFragment;
 import com.zzpc.wynews.personality.loginqq.RegisterFragment;
 
 
-import java.util.Collections;
+
 import java.util.HashMap;
 
 
@@ -63,23 +64,27 @@ public class TaskActivity extends AppCompatActivity implements
         SettingsFragment.OnClickNightModeListener,
         SwipeRefreshLayoutBasicFragment.OnLoadWebSiteNewsListner,
         LoginFragment.OnSwitchRegisterFragmentListener,
-        MyStartFragment.OnSwitchStartDetailsFragment,
-        MyHistoryFragment.OnMyHistoryDetailsFragment{
+        MyStartFragment.OnSwitchStartDetailsFragment {
 
 
     private static final String TAG = "TaskActivity";
     private BottomNavigationView mBottomNavigationView;
     private Toolbar mToolbar;
     private FragmentManager mFragmentManager;
+    private FloatingActionButton mFloatingActionButton;
 
-//    private List<Fragment> startDetailsFragments=new ArrayList<Fragment>();
     private HashMap<String,StartDetailsFragment> startDetailsFragments=new HashMap<String,StartDetailsFragment>();
 
     static {
 //        System.loadLibrary("native-lib");
     }
 
-//    private TasksPresenter mTasksPresenter;
+
+
+    @Override
+    public void onAttachFragment(Fragment fragment) {
+        super.onAttachFragment(fragment);
+    }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
@@ -115,6 +120,7 @@ public class TaskActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
 
 
+
         if (NewsApp.night_mode) {
             setTheme(R.style.PreferenceFixTheme_NoActionBar);
         } else {
@@ -137,14 +143,7 @@ public class TaskActivity extends AppCompatActivity implements
 
 
         CoordinatorLayout mCoordinatorLayout = findViewById(R.id.main_coor_layout);
-        FloatingActionButton floatingActionButton = findViewById(R.id.fab);
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                ((BaseFragment) mCurrFragment).smoothScrollToTop();
-            }
-        });
-
+        mFloatingActionButton = findViewById(R.id.fab);
         SearchView mSearchView = findViewById(R.id.searchview);
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         mSearchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
@@ -190,6 +189,7 @@ public class TaskActivity extends AppCompatActivity implements
         //DB,init count
         NewsDBHelper newsDBHelper=new NewsDBHelper(this);
         NewsApp.history_amount=newsDBHelper.getHistoryCount();
+        NewsApp.start_amount=newsDBHelper.getStartCount();
     }
 
 
@@ -241,6 +241,7 @@ public class TaskActivity extends AppCompatActivity implements
                 } else {
                     manager.beginTransaction().show(currentFragment2).commit();
                 }
+                mBottomNavigationView.setVisibility(View.VISIBLE);
                 break;
             case 2:
                 if (currentFragment1!=null)
@@ -257,11 +258,13 @@ public class TaskActivity extends AppCompatActivity implements
                 } else {
                     manager.beginTransaction().show(currentFragment3).commit();
                 }
-
+                mBottomNavigationView.setVisibility(View.VISIBLE);
                 break;
             default:
+                mBottomNavigationView.setVisibility(View.VISIBLE);
                 break;
         }
+
     }
 
 
@@ -335,7 +338,6 @@ public class TaskActivity extends AppCompatActivity implements
                 manager.beginTransaction().replace(R.id.bottom_pager,myStartFragment).addToBackStack(MyStartFragment.class.getName()).commit();
                 break;
             case 2:
-
                 MyHistoryFragment myHistoryFragment=new MyHistoryFragment();
                 manager.beginTransaction().replace(R.id.bottom_pager,myHistoryFragment).addToBackStack(MyHistoryFragment.class.getName()).commit();
                 break;
@@ -344,14 +346,12 @@ public class TaskActivity extends AppCompatActivity implements
                 //使用了replace而没有hide(),注意问题
                 SettingsFragment settingsFragment=new SettingsFragment();
                 manager.beginTransaction().replace(R.id.bottom_pager, settingsFragment).addToBackStack(SettingsFragment.class.getName()).commit();
-                mBottomNavigationView.setVisibility(View.INVISIBLE);
-
-                break;
             default:
                 Log.e(TAG, "OpenSpecificFragment: " + pos);
         }
-
+        mBottomNavigationView.setVisibility(View.INVISIBLE);
     }
+
 
 
     @Override
@@ -368,7 +368,6 @@ public class TaskActivity extends AppCompatActivity implements
     @Override
     public void onLoadWebSiteNews(String info) {
         NewsContentTextFragment newsContentTextFragment = new NewsContentTextFragment();
-
         Bundle bundle = new Bundle();
         bundle.putString("url", info);
         newsContentTextFragment.setArguments(bundle);
@@ -417,21 +416,4 @@ public class TaskActivity extends AppCompatActivity implements
         mBottomNavigationView.setVisibility(View.INVISIBLE);
     }
 
-    @Override
-    public void MyHistoryDetailsFragment(String title, String content) {
-        mBottomNavigationView = findViewById(R.id.navigation);
-        mBottomNavigationView.setVisibility(View.INVISIBLE);
-        Bundle bundle=new Bundle();
-        bundle.putString("title",title);
-        bundle.putString("content",content);
-
-
-
-        HistoryDetailsFragment historyDetailsFragment=new HistoryDetailsFragment();
-        historyDetailsFragment.setArguments(bundle);
-        FragmentManager manager = getSupportFragmentManager();
-        //使用了replace而没有hide(),注意问题
-        manager.beginTransaction().replace(R.id.bottom_pager, historyDetailsFragment).addToBackStack(HistoryDetailsFragment.class.getName()).commit();
-
-    }
 }
