@@ -282,15 +282,6 @@ public class TaskActivity extends AppCompatActivity implements
 
     }
 
-//    //修复bacakPressed问题
-//    public static void reorderIndices(FragmentManager fragmentManager) {
-//        if (!(fragmentManager instanceof FragmentManagerImpl))
-//            return;
-//        FragmentManagerImpl fragmentManagerImpl = (FragmentManagerImpl) fragmentManager;
-//        if (fragmentManagerImpl.mAvailIndices != null && fragmentManagerImpl.mAvailIndices.size() > 1) {
-//            Collections.sort(fragmentManagerImpl.mAvailIndices, Collections.reverseOrder());
-//        }
-//    }
 
     @Override
     protected void onStart() {
@@ -350,10 +341,13 @@ public class TaskActivity extends AppCompatActivity implements
                 //使用了replace而没有hide(),注意问题
                 SettingsFragment settingsFragment=new SettingsFragment();
                 manager.beginTransaction().replace(R.id.bottom_pager, settingsFragment).addToBackStack(SettingsFragment.class.getName()).commit();
+                mBottomNavigationView.setVisibility(View.INVISIBLE);
+
+                break;
             default:
                 Log.e(TAG, "OpenSpecificFragment: " + pos);
         }
-        mBottomNavigationView.setVisibility(View.INVISIBLE);
+
     }
 
 
@@ -389,6 +383,7 @@ public class TaskActivity extends AppCompatActivity implements
     public void OnClickNightMode() {
         this.recreate();
         NewsApp.changing_Theme = true;
+
     }
 
 
