@@ -36,6 +36,7 @@ import android.support.v7.widget.SearchView;
 
 import com.zzpc.wynews.data.database.NewsDBHelper;
 
+import com.zzpc.wynews.personality.readinghistory.HistoryDetailsFragment;
 import com.zzpc.wynews.personality.readinghistory.MyHistoryFragment;
 
 
@@ -64,7 +65,8 @@ public class TaskActivity extends AppCompatActivity implements
         SettingsFragment.OnClickNightModeListener,
         SwipeRefreshLayoutBasicFragment.OnLoadWebSiteNewsListner,
         LoginFragment.OnSwitchRegisterFragmentListener,
-        MyStartFragment.OnSwitchStartDetailsFragment {
+        MyStartFragment.OnSwitchStartDetailsFragment ,
+        MyHistoryFragment.OnMyHistoryDetailsFragment{
 
 
     private static final String TAG = "TaskActivity";
@@ -111,8 +113,20 @@ public class TaskActivity extends AppCompatActivity implements
         }
     };
 
+    @Override
+    public void MyHistoryDetailsFragment(String title, String content) {
+        Bundle bundle=new Bundle();
+        bundle.putString("title",title);
+        bundle.putString("content",content);
 
 
+
+        HistoryDetailsFragment historyDetailsFragment=new HistoryDetailsFragment();
+        historyDetailsFragment.setArguments(bundle);
+        FragmentManager manager = getSupportFragmentManager();
+        //使用了replace而没有hide(),注意问题
+        manager.beginTransaction().replace(R.id.bottom_pager, historyDetailsFragment).addToBackStack(HistoryDetailsFragment.class.getName()).commit();
+    }
 
 
     @Override

@@ -44,7 +44,7 @@ public class MyHistoryFragment extends Fragment{
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        mOnMyHistoryDetailsFragment=(OnMyHistoryDetailsFragment) context;
+        mOnMyHistoryDetailsFragment=(OnMyHistoryDetailsFragment)context;
     }
 
     @Override
@@ -119,6 +119,9 @@ public class MyHistoryFragment extends Fragment{
             holder.mSuperTextView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    if (mOnMyHistoryDetailsFragment==null){
+                        return;
+                    }
                     mOnMyHistoryDetailsFragment.MyHistoryDetailsFragment(item.mTitle,item.mContent);
                 }
             });

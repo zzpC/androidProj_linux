@@ -35,8 +35,7 @@ public class StartDetailsFragment extends Fragment  {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        NewsDBHelper databaseHelper=new NewsDBHelper(getContext());
-//        databaseHelper.dropDataBase();
+
         fetchDetaisFromDB();
     }
 
@@ -53,13 +52,8 @@ public class StartDetailsFragment extends Fragment  {
         Bundle args = getArguments();
         String theme=args.getString("Theme");
 
-
-
-
-//        String strValue="ttemmpp";
-//                String strContent="temp";
-//        mDetailsItemList.add(new DetailsItem(strValue,strContent));
         StartDetailsAdapter detailsAdapter=new StartDetailsAdapter(getContext(),mDetailsItemList);
+        Log.e(TAG, "onCreateView: size "+mDetailsItemList.size() );
 
         mRecyclerView.setAdapter(detailsAdapter);
 
@@ -72,6 +66,8 @@ public class StartDetailsFragment extends Fragment  {
         NewsDBHelper newsDBHelper =new NewsDBHelper(getContext());
 
         Cursor cursor= newsDBHelper.getAllData_start();
+
+        mDetailsItemList.clear();
 
         try {
             while (cursor.moveToNext()) {

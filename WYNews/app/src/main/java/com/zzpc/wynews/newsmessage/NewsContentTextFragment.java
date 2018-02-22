@@ -1,7 +1,6 @@
 package com.zzpc.wynews.newsmessage;
 
 
-
 import android.annotation.SuppressLint;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -37,7 +36,7 @@ import java.io.IOException;
  * Created by zzp on 18-2-1.
  */
 
-public class NewsContentTextFragment extends Fragment  {
+public class NewsContentTextFragment extends Fragment {
     private static final String TAG = "NewsContentTextFragment";
 
 
@@ -70,12 +69,9 @@ public class NewsContentTextFragment extends Fragment  {
         String text = "Hello Android!";
 
         new mTask("f").execute();
-        NewsDBHelper newsDBHelper =new NewsDBHelper(getContext());
+        NewsDBHelper newsDBHelper = new NewsDBHelper(getContext());
 
     }
-
-
-
 
     @SuppressLint("StaticFieldLeak")
     public class mTask extends AsyncTask<String, Integer, String> {
@@ -130,24 +126,38 @@ public class NewsContentTextFragment extends Fragment  {
             int separate = result.indexOf("#");
             String title = result.substring(0, separate - 1);
             //有空格则去掉空格后边的字符
-            String content;
-            int space_shorten=title.indexOf(" ");
-            if (space_shorten<title.length() && space_shorten>0){
-                title=title.substring(0,space_shorten);
+            final String content;
+            int space_shorten = title.indexOf(" ");
+            if (space_shorten < title.length() && space_shorten > 0) {
+                title = title.substring(0, space_shorten);
             }
             content = result.substring(separate + 1);
 //            tv_tiltle.setText(title);
             stv_content.setCenterTopString(title);
             stv_content.setCenterTopTextColor(R.color.blue);
             stv_content.setCenterString(content);
+
+            final String title_=title;
             stv_content.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                    NewsDBHelper newsDBHelper=new NewsDBHelper(getContext());
-                    if (stv_content==null || newsDBHelper==null){
+                    try {
+                        NewsDBHelper newsDBHelper = new NewsDBHelper(getContext());
+                        if (stv_content == null || newsDBHelper == null) {
+                            return false;
+                        }
+                        NewsDBHelper dbHelper = new NewsDBHelper(getContext());
+                        boolean isInserted = dbHelper.insertNewsTwo_start(title_, content);
+                        if (isInserted) {
+                            Toast.makeText(getContext(), "Data Inserted", Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(getContext(), "Data not Inserted", Toast.LENGTH_LONG).show();
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
                         return false;
                     }
-                    return newsDBHelper.insertNewsTwo_start(stv_content.getCenterTopString(),stv_content.getCenterString());
+                    return true;
                 }
             });
 
@@ -170,7 +180,7 @@ public class NewsContentTextFragment extends Fragment  {
             NewsDBHelper dbHelper = new NewsDBHelper(getContext());
             SQLiteDatabase mydb = dbHelper.getWritableDatabase();
 
-            boolean isInserted = dbHelper.insertNewsTwo(title,content);
+            boolean isInserted = dbHelper.insertNewsTwo(title, content);
             if (isInserted) {
                 Toast.makeText(getContext(), "Data Inserted", Toast.LENGTH_LONG).show();
             } else {
@@ -187,7 +197,7 @@ public class NewsContentTextFragment extends Fragment  {
                     String strValue = cursor.getString(1);
                     String strContent = cursor.getString(2);
                     Log.e("Exception", "addContent:V " + strValue);
-                    Log.e("Exception", "addContent:C " + content.substring(0,16));
+                    Log.e("Exception", "addContent:C " + content.substring(0, 16));
 
                 }
             } catch (Exception e) {
