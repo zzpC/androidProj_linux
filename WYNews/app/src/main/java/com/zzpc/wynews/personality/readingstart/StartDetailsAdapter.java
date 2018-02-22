@@ -7,7 +7,6 @@
 package com.zzpc.wynews.personality.readingstart;
 
 import android.content.Context;
-import android.database.Cursor;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,7 +15,6 @@ import android.view.ViewGroup;
 
 import com.allen.library.SuperTextView;
 import com.zzpc.wynews.R;
-import com.zzpc.wynews.data.database.DatabaseHelper;
 
 import java.util.List;
 

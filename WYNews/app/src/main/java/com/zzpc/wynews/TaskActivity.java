@@ -34,6 +34,7 @@ import android.view.View;
 import android.support.v7.widget.SearchView;
 
 
+import com.zzpc.wynews.data.database.NewsDBHelper;
 import com.zzpc.wynews.personality.readinghistory.HistoryDetailsFragment;
 import com.zzpc.wynews.personality.readinghistory.MyHistoryFragment;
 
@@ -73,9 +74,6 @@ public class TaskActivity extends AppCompatActivity implements
 
 //    private List<Fragment> startDetailsFragments=new ArrayList<Fragment>();
     private HashMap<String,StartDetailsFragment> startDetailsFragments=new HashMap<String,StartDetailsFragment>();
-
-
-//    private MyStartFragment myStartFragment;
 
     static {
 //        System.loadLibrary("native-lib");
@@ -188,6 +186,10 @@ public class TaskActivity extends AppCompatActivity implements
 
 
         mFragmentManager=getSupportFragmentManager();
+
+        //DB,init count
+        NewsDBHelper newsDBHelper=new NewsDBHelper(this);
+        NewsApp.history_amount=newsDBHelper.getHistoryCount();
     }
 
 
@@ -255,7 +257,7 @@ public class TaskActivity extends AppCompatActivity implements
                 } else {
                     manager.beginTransaction().show(currentFragment3).commit();
                 }
-//                manager.beginTransaction().replace(R.id.bottom_pager,new AccountManagerFragment()).addToBackStack(AccountManagerFragment.class.getName()).commit();
+
                 break;
             default:
                 break;
@@ -333,6 +335,7 @@ public class TaskActivity extends AppCompatActivity implements
                 manager.beginTransaction().replace(R.id.bottom_pager,myStartFragment).addToBackStack(MyStartFragment.class.getName()).commit();
                 break;
             case 2:
+
                 MyHistoryFragment myHistoryFragment=new MyHistoryFragment();
                 manager.beginTransaction().replace(R.id.bottom_pager,myHistoryFragment).addToBackStack(MyHistoryFragment.class.getName()).commit();
                 break;
@@ -410,11 +413,14 @@ public class TaskActivity extends AppCompatActivity implements
         FragmentManager manager = getSupportFragmentManager();
         //使用了replace而没有hide(),注意问题
         manager.beginTransaction().replace(R.id.bottom_pager, startDetailsFragment).addToBackStack(StartDetailsFragment.class.getName()).commit();
+        mBottomNavigationView = findViewById(R.id.navigation);
         mBottomNavigationView.setVisibility(View.INVISIBLE);
     }
 
     @Override
     public void MyHistoryDetailsFragment(String title, String content) {
+        mBottomNavigationView = findViewById(R.id.navigation);
+        mBottomNavigationView.setVisibility(View.INVISIBLE);
         Bundle bundle=new Bundle();
         bundle.putString("title",title);
         bundle.putString("content",content);
@@ -426,5 +432,6 @@ public class TaskActivity extends AppCompatActivity implements
         FragmentManager manager = getSupportFragmentManager();
         //使用了replace而没有hide(),注意问题
         manager.beginTransaction().replace(R.id.bottom_pager, historyDetailsFragment).addToBackStack(HistoryDetailsFragment.class.getName()).commit();
+
     }
 }

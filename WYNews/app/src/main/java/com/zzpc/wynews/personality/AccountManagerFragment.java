@@ -7,10 +7,12 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.zzpc.wynews.NewsApp;
 import com.zzpc.wynews.R;
 import com.zzpc.wynews.data.model.AccountData;
 import com.zzpc.wynews.data.model.AccountDataBuilder;
@@ -32,7 +34,6 @@ public class AccountManagerFragment extends Fragment implements AccountManagerCo
     private RecyclerView mRecyclerView;
     private OpenSpecificFragmentListener mListener;
 
-    private AccountManagerContract.Presenter mPresenter;
 
 
     List<AccountData> items=new ArrayList<>();
@@ -70,7 +71,7 @@ public class AccountManagerFragment extends Fragment implements AccountManagerCo
         mAccountManageAdapter=new AccountManageAdapter(items,getContext(),mListener);
         mRecyclerView.setAdapter(mAccountManageAdapter);
 
-
+        Log.e(TAG, "onCreateView: NewHistory"+ NewsApp.history_amount);
         return view;
     }
 

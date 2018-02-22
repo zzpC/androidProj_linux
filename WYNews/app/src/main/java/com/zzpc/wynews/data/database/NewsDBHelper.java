@@ -6,7 +6,10 @@ import android.database.Cursor;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteStatement;
 import android.util.Log;
+
+import com.zzpc.wynews.NewsApp;
 
 import static com.mob.tools.utils.Data.MD5;
 
@@ -14,8 +17,8 @@ import static com.mob.tools.utils.Data.MD5;
  * Created by zzp on 18-2-20.
  */
 
-public class DatabaseHelper extends SQLiteOpenHelper {
-    private static final String TAG = "DatabaseHelper";
+public class NewsDBHelper extends SQLiteOpenHelper {
+    private static final String TAG = "NewsDBHelper";
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "pharmabarcode.db";
     private static final String TABLE_NAME = "pbstable";
@@ -24,13 +27,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String URL_HASH="url_hash";
     private static final String CONTENT="content";
 
-    public DatabaseHelper(Context context){
+    public NewsDBHelper(Context context){
         super(context,DATABASE_NAME,null,DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
 //
+
         String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(" + KEY_ID
                 + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME + " TEXT NOT NULL UNIQUE," + CONTENT + " TEXT NOT NULL" +")";
 
@@ -66,7 +70,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public boolean insertNewsTwo(String title,String content){
 
         SQLiteDatabase db = this.getWritableDatabase();
-
         String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(" + KEY_ID
                 + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME + " TEXT NOT NULL UNIQUE," + CONTENT + " TEXT NOT NULL" +")";
 
@@ -80,8 +83,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if(rslt == -1)
             return false;
         else{
+            ++NewsApp.history_amount;
             Log.e(TAG, "insertData: NO row: "+rslt );
-            return true;}
+            return true;
+        }
+
+
     }
 
     public Cursor getAllData(){
@@ -107,6 +114,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // create books table
         db.execSQL(CREATE_StartTheme_TABLE);
+
     }
 
     public void dropDataBase(){
@@ -116,4 +124,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         this.onUpgrade(db,0,0);
     }
 
+
+    public long getHistoryCount(){
+        String sql = "SELECT COUNT(*) FROM "+TABLE_NAME;
+        SQLiteDatabase db=this.getReadableDatabase();
+        SQLiteStatement statement = db.compileStatement(sql);
+        return statement.simpleQueryForLong();
+    }
 }

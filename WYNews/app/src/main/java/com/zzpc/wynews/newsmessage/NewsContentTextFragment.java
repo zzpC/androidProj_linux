@@ -14,15 +14,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.SeekBar;
-import android.widget.TextView;
 
 import android.widget.Toast;
 
 import com.allen.library.SuperTextView;
 import com.zzpc.wynews.R;
 
-import com.zzpc.wynews.data.database.DatabaseHelper;
+import com.zzpc.wynews.data.database.NewsDBHelper;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -74,7 +72,7 @@ public class NewsContentTextFragment extends Fragment {
         String text = "Hello Android!";
 
         new mTask("f").execute();
-        DatabaseHelper databaseHelper=new DatabaseHelper(getContext());
+        NewsDBHelper newsDBHelper =new NewsDBHelper(getContext());
 
     }
 
@@ -158,7 +156,7 @@ public class NewsContentTextFragment extends Fragment {
     public void addContent(String title, String content) {
 
         try {
-            DatabaseHelper dbHelper = new DatabaseHelper(getContext());
+            NewsDBHelper dbHelper = new NewsDBHelper(getContext());
             SQLiteDatabase mydb = dbHelper.getWritableDatabase();
 
             boolean isInserted = dbHelper.insertNewsTwo(title,content);
@@ -171,7 +169,7 @@ public class NewsContentTextFragment extends Fragment {
             Log.d("Exception occures", "" + e);
 
         } finally {
-            DatabaseHelper dbHelper = new DatabaseHelper(getContext());
+            NewsDBHelper dbHelper = new NewsDBHelper(getContext());
             try {
                 Cursor cursor = dbHelper.getAllData();
                 while (cursor.moveToNext()) {

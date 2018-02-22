@@ -11,11 +11,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.allen.library.SuperTextView;
 import com.zzpc.wynews.R;
-import com.zzpc.wynews.data.database.DatabaseHelper;
+import com.zzpc.wynews.data.database.NewsDBHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,9 +77,9 @@ public class MyStartFragment extends Fragment  {
         mStartItemListList.add(defaultItem);
         mStartItemListList.add(favouriteItem);
 
-        DatabaseHelper databaseHelper=new DatabaseHelper(getContext());
-        databaseHelper.createDBbyName("defalut");
-        databaseHelper.createDBbyName("favourite");
+        NewsDBHelper newsDBHelper =new NewsDBHelper(getContext());
+        newsDBHelper.createDBbyName("defalut");
+        newsDBHelper.createDBbyName("favourite");
 
     }
 

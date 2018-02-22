@@ -1,6 +1,5 @@
 package com.zzpc.wynews.personality.readingstart;
 
-import android.arch.persistence.room.Database;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -14,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.zzpc.wynews.R;
-import com.zzpc.wynews.data.database.DatabaseHelper;
+import com.zzpc.wynews.data.database.NewsDBHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +31,7 @@ public class StartDetailsFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        DatabaseHelper databaseHelper=new DatabaseHelper(getContext());
+//        NewsDBHelper databaseHelper=new NewsDBHelper(getContext());
 //        databaseHelper.dropDataBase();
         fetchDetaisFromDB();
     }
@@ -66,9 +65,9 @@ public class StartDetailsFragment extends Fragment {
 
     private void fetchDetaisFromDB() {
 
-        DatabaseHelper databaseHelper=new DatabaseHelper(getContext());
+        NewsDBHelper newsDBHelper =new NewsDBHelper(getContext());
 
-        Cursor cursor= databaseHelper.getAllData();
+        Cursor cursor= newsDBHelper.getAllData();
 
         try {
             while (cursor.moveToNext()) {

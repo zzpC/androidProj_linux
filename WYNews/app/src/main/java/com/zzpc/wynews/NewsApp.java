@@ -29,6 +29,7 @@ public class NewsApp extends Application {
     public static boolean changing_Theme = false;
     public static boolean video_Full = false;
     public static int read_amount;
+    public static long history_amount;
 
 
     @Override

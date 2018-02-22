@@ -17,7 +17,7 @@ import android.view.ViewGroup;
 
 import com.allen.library.SuperTextView;
 import com.zzpc.wynews.R;
-import com.zzpc.wynews.data.database.DatabaseHelper;
+import com.zzpc.wynews.data.database.NewsDBHelper;
 
 
 
@@ -75,9 +75,9 @@ public class MyHistoryFragment extends Fragment {
     }
 
     private void fetchDetaisFromDB() {
-        DatabaseHelper databaseHelper=new DatabaseHelper(getContext());
+        NewsDBHelper newsDBHelper =new NewsDBHelper(getContext());
 
-        Cursor cursor= databaseHelper.getAllData();
+        Cursor cursor= newsDBHelper.getAllData();
 
         try {
             while (cursor.moveToNext()) {
