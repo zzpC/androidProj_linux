@@ -174,8 +174,8 @@ public class NewsContentTextFragment extends Fragment {
             DatabaseHelper dbHelper = new DatabaseHelper(getContext());
             SQLiteDatabase mydb = dbHelper.getWritableDatabase();
 
-            boolean isInserted = dbHelper.insertData(title);
-            if (isInserted = true) {
+            boolean isInserted = dbHelper.insertNewsTwo(title,content);
+            if (isInserted) {
                 Toast.makeText(getContext(), "Data Inserted", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(getContext(), "Data not Inserted", Toast.LENGTH_LONG).show();

@@ -22,6 +22,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String KEY_ID = "id";
     private static final String KEY_NAME = "result";
     private static final String URL_HASH="url_hash";
+    private static final String CONTENT="content";
 
     public DatabaseHelper(Context context){
         super(context,DATABASE_NAME,null,DATABASE_VERSION);
@@ -30,7 +31,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 //
-        String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME + " TEXT NOT NULL UNIQUE" +")";
+        String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(" + KEY_ID
+                + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME + " TEXT NOT NULL UNIQUE," + CONTENT + " TEXT NOT NULL" +")";
 
         db.execSQL(CREATE_TABLE);
     }
@@ -44,12 +46,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public boolean insertData(String result){
 
         SQLiteDatabase db = this.getWritableDatabase();
+        String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(" + KEY_ID
+                + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME + " TEXT NOT NULL UNIQUE," + CONTENT + " TEXT NOT NULL" +")";
 
-        String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME + " TEXT NOT NULL UNIQUE" +")";
         db.execSQL(CREATE_TABLE);
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(KEY_NAME, result);
+        contentValues.put(CONTENT, "NULL");
         long rslt = db.insert(TABLE_NAME,null,contentValues);
 
         if(rslt == -1)
@@ -58,6 +62,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             Log.e(TAG, "insertData: NO row: "+rslt );
             return true;}
     }
+
+    public boolean insertNewsTwo(String title,String content){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(" + KEY_ID
+                + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME + " TEXT NOT NULL UNIQUE," + CONTENT + " TEXT NOT NULL" +")";
+
+        db.execSQL(CREATE_TABLE);
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(KEY_NAME, title);
+        contentValues.put(CONTENT,content);
+        long rslt = db.insert(TABLE_NAME,null,contentValues);
+
+        if(rslt == -1)
+            return false;
+        else{
+            Log.e(TAG, "insertData: NO row: "+rslt );
+            return true;}
+    }
+
     public Cursor getAllData(){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("select * from "+ TABLE_NAME,null );
@@ -84,8 +110,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void dropDataBase(){
+        Log.e(TAG, "dropDataBase: " );
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
+        this.onUpgrade(db,0,0);
     }
 
 }

@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Feb 20 23:13:50 CST 2018
+#Thu Feb 22 10:49:49 CST 2018
 17.baseType=DIRECTORY
 4.path=lib/armeabi-v7a/libijkplayer.so
 8.set=NATIVE_RESOURCE

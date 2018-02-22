@@ -75,9 +75,8 @@ public class MyHistoryFragment extends Fragment {
             while (cursor.moveToNext()) {
                 String strValue = cursor.getString(1);
                 Log.e(TAG, "addContent: " + strValue);
-//                String strContent=cursor.getString(2);
+                String strContent=cursor.getString(2);
 //                String strValue="ttemmpp";
-                String strContent="temp";
                 mHistoryItemList.add(new MyHistoryItem(strValue,strContent));
             }
         }catch (Exception e){
