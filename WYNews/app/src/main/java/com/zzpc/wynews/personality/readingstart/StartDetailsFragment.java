@@ -83,4 +83,6 @@ public class StartDetailsFragment extends Fragment {
             e.printStackTrace();
         }
     }
+
+
 }

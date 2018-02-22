@@ -21,6 +21,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
 
+
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
@@ -33,6 +34,7 @@ import android.view.View;
 import android.support.v7.widget.SearchView;
 
 
+import com.zzpc.wynews.personality.readinghistory.HistoryDetailsFragment;
 import com.zzpc.wynews.personality.readinghistory.MyHistoryFragment;
 
 import com.zzpc.wynews.personality.readingstart.MyStartFragment;
@@ -50,6 +52,7 @@ import com.zzpc.wynews.personality.loginqq.LoginFragment;
 import com.zzpc.wynews.personality.loginqq.RegisterFragment;
 
 
+import java.util.Collections;
 import java.util.HashMap;
 
 
@@ -59,12 +62,14 @@ public class TaskActivity extends AppCompatActivity implements
         SettingsFragment.OnClickNightModeListener,
         SwipeRefreshLayoutBasicFragment.OnLoadWebSiteNewsListner,
         LoginFragment.OnSwitchRegisterFragmentListener,
-        MyStartFragment.OnSwitchStartDetailsFragment{
+        MyStartFragment.OnSwitchStartDetailsFragment,
+        MyHistoryFragment.OnMyHistoryDetailsFragment{
 
 
     private static final String TAG = "TaskActivity";
     private BottomNavigationView mBottomNavigationView;
     private Toolbar mToolbar;
+    private FragmentManager mFragmentManager;
 
 //    private List<Fragment> startDetailsFragments=new ArrayList<Fragment>();
     private HashMap<String,StartDetailsFragment> startDetailsFragments=new HashMap<String,StartDetailsFragment>();
@@ -182,11 +187,7 @@ public class TaskActivity extends AppCompatActivity implements
         switchToFragment(0);
 
 
-//        myStartFragment=new MyStartFragment();
-//        new MyStartPresenter(
-//                Injection.provideTasksRepository(getApplicationContext()),myStartFragment );
-
-
+        mFragmentManager=getSupportFragmentManager();
     }
 
 
@@ -264,14 +265,32 @@ public class TaskActivity extends AppCompatActivity implements
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-
-        mBottomNavigationView.setVisibility(View.VISIBLE);
-        mToolbar.setVisibility(View.VISIBLE);
-        TaskActivity.this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
+         mFragmentManager = getSupportFragmentManager();
+        int count = mFragmentManager.getBackStackEntryCount();
+        if (count > 0) {
+            mFragmentManager.popBackStackImmediate();
+            if (count==1){
+                mBottomNavigationView.setVisibility(View.VISIBLE);
+                mToolbar.setVisibility(View.VISIBLE);
+            }
+        }  else {
+            super.onBackPressed();
+            mBottomNavigationView.setVisibility(View.VISIBLE);
+            mToolbar.setVisibility(View.VISIBLE);
+            TaskActivity.this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        }
 
     }
+
+//    //修复bacakPressed问题
+//    public static void reorderIndices(FragmentManager fragmentManager) {
+//        if (!(fragmentManager instanceof FragmentManagerImpl))
+//            return;
+//        FragmentManagerImpl fragmentManagerImpl = (FragmentManagerImpl) fragmentManager;
+//        if (fragmentManagerImpl.mAvailIndices != null && fragmentManagerImpl.mAvailIndices.size() > 1) {
+//            Collections.sort(fragmentManagerImpl.mAvailIndices, Collections.reverseOrder());
+//        }
+//    }
 
     @Override
     protected void onStart() {
@@ -399,5 +418,18 @@ public class TaskActivity extends AppCompatActivity implements
         mBottomNavigationView.setVisibility(View.INVISIBLE);
     }
 
+    @Override
+    public void MyHistoryDetailsFragment(String title, String content) {
+        Bundle bundle=new Bundle();
+        bundle.putString("title",title);
+        bundle.putString("content",content);
 
+
+
+        HistoryDetailsFragment historyDetailsFragment=new HistoryDetailsFragment();
+        historyDetailsFragment.setArguments(bundle);
+        FragmentManager manager = getSupportFragmentManager();
+        //使用了replace而没有hide(),注意问题
+        manager.beginTransaction().replace(R.id.bottom_pager, historyDetailsFragment).addToBackStack(HistoryDetailsFragment.class.getName()).commit();
+    }
 }

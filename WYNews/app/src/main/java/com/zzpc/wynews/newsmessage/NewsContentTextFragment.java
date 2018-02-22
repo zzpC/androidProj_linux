@@ -1,7 +1,7 @@
 package com.zzpc.wynews.newsmessage;
 
 
-import android.content.ContentValues;
+
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
@@ -9,14 +9,14 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.TextViewCompat;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.util.TypedValue;
+
 import android.widget.Toast;
 
 import com.allen.library.SuperTextView;
@@ -40,22 +40,15 @@ import java.io.IOException;
 public class NewsContentTextFragment extends Fragment {
     private static final String TAG = "NewsContentTextFragment";
 
-    private TextView tv_tiltle;
-    private SuperTextView tv_content;
 
-    private SeekBar sb_width;
-    private SeekBar sb_height;
+    private SuperTextView stv_content;
 
     private String newsContent;
     private String newsTitleStr;
 
     //
-    private static final int oHeight = 400;
-    private static final int oWidth = 200;
-    private int content_Height = oHeight;
-    private int content_width = oWidth;
 
-    private static volatile int id = 1;
+
 
     @Nullable
     @Override
@@ -64,10 +57,7 @@ public class NewsContentTextFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_newscontenttext, container, false);
 
 
-////        tv_tiltle = view.findViewById(R.id.tv_title);
-        tv_content = view.findViewById(R.id.tv_content);
-//        sb_height = view.findViewById(R.id.sb_height);
-//        sb_width = view.findViewById(R.id.sb_width);
+        stv_content = view.findViewById(R.id.tv_content);
 
         init();
         return view;
@@ -85,9 +75,6 @@ public class NewsContentTextFragment extends Fragment {
 
         new mTask("f").execute();
         DatabaseHelper databaseHelper=new DatabaseHelper(getContext());
-//        databaseHelper.
-
-//        tv_content.setText(text);
 
     }
 
@@ -153,9 +140,9 @@ public class NewsContentTextFragment extends Fragment {
             }
             content = result.substring(separate + 1);
 //            tv_tiltle.setText(title);
-            tv_content.setCenterTopString(title);
-            tv_content.setCenterTopTextColor(R.color.blue);
-            tv_content.setCenterString(content);
+            stv_content.setCenterTopString(title);
+            stv_content.setCenterTopTextColor(R.color.blue);
+            stv_content.setCenterString(content);
             addContent(title, content);
 
         }
