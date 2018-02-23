@@ -36,6 +36,7 @@ import android.support.v7.widget.SearchView;
 
 import com.zzpc.wynews.data.database.NewsDBHelper;
 
+import com.zzpc.wynews.newsmessage.newscomment.ui.NewsCommentFragment;
 import com.zzpc.wynews.personality.readinghistory.HistoryDetailsFragment;
 import com.zzpc.wynews.personality.readinghistory.MyHistoryFragment;
 
@@ -66,7 +67,8 @@ public class TaskActivity extends AppCompatActivity implements
         SwipeRefreshLayoutBasicFragment.OnLoadWebSiteNewsListner,
         LoginFragment.OnSwitchRegisterFragmentListener,
         MyStartFragment.OnSwitchStartDetailsFragment ,
-        MyHistoryFragment.OnMyHistoryDetailsFragment{
+        MyHistoryFragment.OnMyHistoryDetailsFragment,
+        NewsCommentFragment.OnSwitchNewsCommentFragment{
 
 
     private static final String TAG = "TaskActivity";
@@ -387,7 +389,7 @@ public class TaskActivity extends AppCompatActivity implements
         newsContentTextFragment.setArguments(bundle);
 
         FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.full, newsContentTextFragment).addToBackStack("newscontextstr").commit();
+        manager.beginTransaction().replace(R.id.full, newsContentTextFragment).addToBackStack(NewsContentTextFragment.class.getName()).commit();
         mBottomNavigationView.setVisibility(View.INVISIBLE);
 
     }
@@ -430,4 +432,11 @@ public class TaskActivity extends AppCompatActivity implements
         mBottomNavigationView.setVisibility(View.INVISIBLE);
     }
 
+    @Override
+    public void SwitchNewsCommentFragment() {
+        NewsCommentFragment * = new NewsCommentFragment();
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.full, newsCommentFragment).addToBackStack(NewsCommentFragment.class.getName()).commit();
+        mBottomNavigationView.setVisibility(View.INVISIBLE);
+    }
 }
