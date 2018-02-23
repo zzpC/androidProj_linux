@@ -13,7 +13,8 @@ import com.zzpc.wynews.newsmessage.newscomment.view.FloorListView;
 
 
 public class TopicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    static final int TYPE_TOPIC_BODY = 999;
+//    static final int TYPE_TOPIC_BODY = 999;
+
     static final int TYPE_TOPIC_COMMENTS = 666;
 
     private Topic topic;
@@ -21,8 +22,8 @@ public class TopicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         switch (viewType) {
-            case TYPE_TOPIC_BODY:
-                return new HeaderHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_comment_post_body, parent, false));
+//            case TYPE_TOPIC_BODY:
+//                return new HeaderHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_comment_post_body, parent, false));
             case TYPE_TOPIC_COMMENTS:
                 return new CommentsHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_comment_post_comments, parent, false));
         }
@@ -36,15 +37,15 @@ public class TopicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         switch (getItemViewType(position)) {
-            case TYPE_TOPIC_BODY:
-                HeaderHolder headerHolder = ((HeaderHolder) holder);
-                headerHolder.title.setText(topic.getTitle());
-                headerHolder.content.setText(topic.getContent());
-                headerHolder.praise.setText("赞 " + topic.getPraise());
-                headerHolder.tread.setText("踩 " + topic.getTread() + "");
-                headerHolder.reply.setText("回复 " + topic.getReply() + "");
-                headerHolder.share.setText("分享 " + topic.getShare());
-                break;
+//            case TYPE_TOPIC_BODY:
+//                HeaderHolder headerHolder = ((HeaderHolder) holder);
+//                headerHolder.title.setText(topic.getTitle());
+//                headerHolder.content.setText(topic.getContent());
+//                headerHolder.praise.setText("赞 " + topic.getPraise());
+//                headerHolder.tread.setText("踩 " + topic.getTread() + "");
+//                headerHolder.reply.setText("回复 " + topic.getReply() + "");
+//                headerHolder.share.setText("分享 " + topic.getShare());
+//                break;
             case TYPE_TOPIC_COMMENTS:
                 CommentsHolder commentsHolder = ((CommentsHolder) holder);
                 Comments comments = getItemByPosition(position);
@@ -62,16 +63,17 @@ public class TopicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     }
 
     public int getItemViewType(int position) {
-        return position == 0 ? TYPE_TOPIC_BODY : TYPE_TOPIC_COMMENTS;
+        return  TYPE_TOPIC_COMMENTS;
+//        return position == 0 ? TYPE_TOPIC_BODY : TYPE_TOPIC_COMMENTS;
     }
 
     public Comments getItemByPosition(int position) {
-        Comments comments = null;
-        position -= 1;
-        if (topic != null && position < topic.getCommentsList().size()) {
-            comments = topic.getCommentsList().get(position);
-        }
-        return comments;
+//        Comments comments = null;
+//        position -= 1;
+//        if (topic != null && position < topic.getCommentsList().size()) {
+//            comments = topic.getCommentsList().get(position);
+//        }
+        return topic.getCommentsList().get(position);
     }
 
     private static class HeaderHolder extends RecyclerView.ViewHolder {
@@ -84,12 +86,12 @@ public class TopicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
         public HeaderHolder(View itemView) {
             super(itemView);
-            title = (TextView) itemView.findViewById(R.id.title);
-            content = (TextView) itemView.findViewById(R.id.content);
-            praise = (TextView) itemView.findViewById(R.id.praise);
-            tread = (TextView) itemView.findViewById(R.id.tread);
-            reply = (TextView) itemView.findViewById(R.id.reply);
-            share = (TextView) itemView.findViewById(R.id.share);
+//            title = (TextView) itemView.findViewById(R.id.title);
+//            content = (TextView) itemView.findViewById(R.id.content);
+//            praise = (TextView) itemView.findViewById(R.id.praise);
+//            tread = (TextView) itemView.findViewById(R.id.tread);
+//            reply = (TextView) itemView.findViewById(R.id.reply);
+//            share = (TextView) itemView.findViewById(R.id.share);
         }
     }
 

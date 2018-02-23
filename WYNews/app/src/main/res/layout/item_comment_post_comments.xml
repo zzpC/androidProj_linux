@@ -14,7 +14,7 @@
         android:textSize="14sp"
         android:textStyle="bold" />
 
-    <com.cutler.neteasenewscomments.view.FloorListView
+    <com.zzpc.wynews.newsmessage.newscomment.view.FloorListView
         android:id="@+id/commentsView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

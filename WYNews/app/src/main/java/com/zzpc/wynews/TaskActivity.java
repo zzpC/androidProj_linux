@@ -68,7 +68,7 @@ public class TaskActivity extends AppCompatActivity implements
         LoginFragment.OnSwitchRegisterFragmentListener,
         MyStartFragment.OnSwitchStartDetailsFragment ,
         MyHistoryFragment.OnMyHistoryDetailsFragment,
-        NewsCommentFragment.OnSwitchNewsCommentFragment{
+        NewsContentTextFragment.OnToldMainSwitchNewsCommentFragment{
 
 
     private static final String TAG = "TaskActivity";
@@ -432,9 +432,11 @@ public class TaskActivity extends AppCompatActivity implements
         mBottomNavigationView.setVisibility(View.INVISIBLE);
     }
 
+    //中介监听
+
     @Override
-    public void SwitchNewsCommentFragment() {
-        NewsCommentFragment * = new NewsCommentFragment();
+    public void ToldMainSwitchNewsCommentFragment() {
+        NewsCommentFragment newsCommentFragment= new NewsCommentFragment();
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().replace(R.id.full, newsCommentFragment).addToBackStack(NewsCommentFragment.class.getName()).commit();
         mBottomNavigationView.setVisibility(View.INVISIBLE);

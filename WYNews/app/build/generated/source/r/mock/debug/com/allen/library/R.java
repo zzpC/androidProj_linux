@@ -283,21 +283,21 @@ public final class R {
         public static final int linear = 0x7f0900b9;
         public static final int none = 0x7f0900d4;
         public static final int oval = 0x7f0900da;
-        public static final int radial = 0x7f0900f0;
-        public static final int rectangle = 0x7f0900f8;
-        public static final int right = 0x7f090100;
-        public static final int right_center = 0x7f090101;
-        public static final int ring = 0x7f090104;
-        public static final int sCenterViewId = 0x7f090107;
-        public static final int sLeftImgId = 0x7f090108;
-        public static final int sLeftViewId = 0x7f090109;
-        public static final int sRightCheckBoxId = 0x7f09010a;
-        public static final int sRightImgId = 0x7f09010b;
-        public static final int sRightSwitchId = 0x7f09010c;
-        public static final int sRightViewId = 0x7f09010d;
-        public static final int sweep = 0x7f090155;
-        public static final int switchBtn = 0x7f09015b;
-        public static final int top = 0x7f090179;
+        public static final int radial = 0x7f0900ef;
+        public static final int rectangle = 0x7f0900f7;
+        public static final int right = 0x7f0900fe;
+        public static final int right_center = 0x7f0900ff;
+        public static final int ring = 0x7f090102;
+        public static final int sCenterViewId = 0x7f090105;
+        public static final int sLeftImgId = 0x7f090106;
+        public static final int sLeftViewId = 0x7f090107;
+        public static final int sRightCheckBoxId = 0x7f090108;
+        public static final int sRightImgId = 0x7f090109;
+        public static final int sRightSwitchId = 0x7f09010a;
+        public static final int sRightViewId = 0x7f09010b;
+        public static final int sweep = 0x7f090154;
+        public static final int switchBtn = 0x7f09015a;
+        public static final int top = 0x7f090178;
     }
     public static final class string {
         public static final int app_name = 0x7f0f0026;

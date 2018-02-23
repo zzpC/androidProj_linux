@@ -2,6 +2,7 @@ package com.zzpc.wynews.newsmessage;
 
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
@@ -15,6 +16,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.allen.library.SuperTextView;
@@ -45,6 +48,22 @@ public class NewsContentTextFragment extends Fragment {
     private String mNewsContent;
     private String mNewsTitle;
 
+    //comment
+    private TextView mTextView;
+    private Button mButton;
+    private OnToldMainSwitchNewsCommentFragment mOnToldMainSwitchNewsCommentFragment;
+
+    public interface OnToldMainSwitchNewsCommentFragment{
+        void ToldMainSwitchNewsCommentFragment();
+    }
+
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mOnToldMainSwitchNewsCommentFragment=(OnToldMainSwitchNewsCommentFragment)context;
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -52,9 +71,24 @@ public class NewsContentTextFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_newscontenttext, container, false);
 
 
-        stv_content = view.findViewById(R.id.tv_content);
 
-        init();
+
+        stv_content = view.findViewById(R.id.tv_content);
+        mTextView=view.findViewById(R.id.send_comment_tv);
+        mTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mOnToldMainSwitchNewsCommentFragment.ToldMainSwitchNewsCommentFragment();
+            }
+        });
+        mButton=view.findViewById(R.id.send_comment_btn);
+        mButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mOnToldMainSwitchNewsCommentFragment.ToldMainSwitchNewsCommentFragment();
+            }
+        });
+        initDBTask();
         return view;
 
     }
@@ -64,7 +98,7 @@ public class NewsContentTextFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
     }
 
-    private void init() {
+    private void initDBTask() {
 
         String text = "Hello Android!";
 

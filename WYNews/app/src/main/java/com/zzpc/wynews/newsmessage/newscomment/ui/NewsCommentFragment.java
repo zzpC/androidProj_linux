@@ -23,16 +23,12 @@ public class NewsCommentFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
     private TopicAdapter mAdapter;
-    private OnSwitchNewsCommentFragment mOnSwitchNewsCommentFragment;
 
-    public interface OnSwitchNewsCommentFragment{
-        void SwitchNewsCommentFragment();
-    }
+
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        mOnSwitchNewsCommentFragment=(OnSwitchNewsCommentFragment)context;
     }
 
     @Nullable
