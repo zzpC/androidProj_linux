@@ -106,8 +106,6 @@ public class MyHistoryFragment extends Fragment{
         @Override
         public MyHistoryHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.myhistory_recyclerview_item, parent, false);
-//        v.findViewById(R.id.myhistory_stv);
-
             return new MyHistoryHolder(v);
         }
 

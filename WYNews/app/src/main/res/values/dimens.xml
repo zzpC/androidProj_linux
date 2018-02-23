@@ -13,7 +13,7 @@
     <dimen name="qqshare_item_container_margin_right">0dip</dimen>
 
 
-    //wx_sdk
+    <!--//wx_sdk-->
     <dimen name="LargeTextSize">16sp</dimen>
     <dimen name="BasicTextSize">15dp</dimen>
     <dimen name="TitleTextSize">18dp</dimen>
@@ -26,5 +26,8 @@
     <dimen name="ConversationItemHeight">58dp</dimen>
     <dimen name="LargeAvatarSize">56dp</dimen>
 
+
+    <!--//newscomment-->
+    <dimen name="activity_vertical_margin">16dp</dimen>
 
 </resources>

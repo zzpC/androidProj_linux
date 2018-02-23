@@ -29,8 +29,7 @@ public class StartDetailsFragment extends Fragment  {
     private static final String TAG = "StartDetailsFragment";
     private RecyclerView mRecyclerView;
     private List<DetailsItem> mDetailsItemList=new ArrayList<DetailsItem>();
-    private String mTitle;
-    private String mContent;
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
