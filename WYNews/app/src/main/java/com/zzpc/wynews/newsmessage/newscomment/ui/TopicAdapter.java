@@ -63,7 +63,7 @@ public class TopicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     }
 
     public int getItemViewType(int position) {
-        return  TYPE_TOPIC_COMMENTS;
+        return TYPE_TOPIC_COMMENTS;
 //        return position == 0 ? TYPE_TOPIC_BODY : TYPE_TOPIC_COMMENTS;
     }
 
@@ -73,6 +73,8 @@ public class TopicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 //        if (topic != null && position < topic.getCommentsList().size()) {
 //            comments = topic.getCommentsList().get(position);
 //        }
+
+        position = Math.min(position, topic.getCommentsList().size() - 1);
         return topic.getCommentsList().get(position);
     }
 

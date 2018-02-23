@@ -7,19 +7,19 @@
     format="10"
     ir-eligibility="COMPATIBLE"
     plugin-version="3.0.1"
-    timestamp="1519353680773"
+    timestamp="1519353957569"
     token="6368884198045034902"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="1451" />
+        duration="1462" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="23" />
+        duration="11" />
     <task
         name="verifier"
         duration="1" />
@@ -113,7 +113,7 @@
     <build
         build-mode="COLD"
         ir-eligibility="COMPATIBLE"
-        timestamp="1519353680773"
+        timestamp="1519353957569"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/split-apk/mock/debug/slices/slice_7.apk"
