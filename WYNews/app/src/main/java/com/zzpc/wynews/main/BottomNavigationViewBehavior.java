@@ -1,4 +1,4 @@
-package com.zzpc.wynews;
+package com.zzpc.wynews.main;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;

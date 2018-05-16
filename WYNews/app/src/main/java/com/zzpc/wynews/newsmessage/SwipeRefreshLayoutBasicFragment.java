@@ -175,7 +175,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         mRecyclerView = view.findViewById(R.id.swiperefresh_list);
         mRecyclerView.setNestedScrollingEnabled(true);
         mRecyclerView.setLongPressDragEnabled(true); // 拖拽排序，默认关闭。
-        mRecyclerView.setItemViewSwipeEnabled(true); // 策划删除，默认关闭。
+        mRecyclerView.setItemViewSwipeEnabled(false); // 策划删除，默认关闭。
         mRecyclerView.setOnItemMoveListener(new OnItemMoveListener() {
             @Override
             public boolean onItemMove(RecyclerView.ViewHolder srcHolder, RecyclerView.ViewHolder targetHolder) {

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/incremental/mergeMockDebugResources/merged.dir/values-zh/values-zh.xml",
+            "outputFile": "/home/zzp/Documents/CodeLib/androidProj_linux/WYNews/app/build/intermediates/incremental/mergeMockDebugResources/merged.dir/values-zh/values-zh.xml",
             "map": [
                 {
-                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/loading-1.0.2.aar/1cc4386ef68f1a82e2aa868aee0ab2f4/res/values-zh/values-zh.xml",
+                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/loading-1.0.2.aar/70e10891d728552d93f34151c47a5575/res/values-zh/values-zh.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/recyclerview-swipe-1.1.4.aar/ed8cf73c42ca6c8b4c114255fc17355b/res/values-zh/values-zh.xml",
+                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/recyclerview-swipe-1.1.4.aar/47b8b2ec5497c3e04a33df391e64c993/res/values-zh/values-zh.xml",
                     "from": {
                         "startLines": "2,3,4,5,6",
                         "startColumns": "4,4,4,4,4",

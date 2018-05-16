@@ -1,27 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "/home/zzp/Programs/androidProj_linux/WYNews/app/build/intermediates/incremental/mergeMockDebugResources/merged.dir/values-zh-rHK/values-zh-rHK.xml",
+            "outputFile": "/home/zzp/Documents/CodeLib/androidProj_linux/WYNews/app/build/intermediates/incremental/mergeMockDebugResources/merged.dir/values-zh-rHK/values-zh-rHK.xml",
             "map": [
                 {
-                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.0.aar/73f57be26a322017fc0c4b437bc811cf/res/values-zh-rHK/values-zh-rHK.xml",
+                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/recyclerview-swipe-1.1.4.aar/47b8b2ec5497c3e04a33df391e64c993/res/values-zh-rHK/values-zh-rHK.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "101",
-                        "endOffsets": "152"
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,121,182,248,322",
+                        "endColumns": "65,60,65,73,59",
+                        "endOffsets": "116,177,243,317,377"
                     },
                     "to": {
-                        "startLines": "25",
-                        "startColumns": "4",
-                        "startOffsets": "2137",
-                        "endColumns": "101",
-                        "endOffsets": "2234"
+                        "startLines": "19,20,21,22,23",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "1732,1798,1859,1925,1999",
+                        "endColumns": "65,60,65,73,59",
+                        "endOffsets": "1793,1854,1920,1994,2054"
                     }
                 },
                 {
-                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/1b753380921e6873f1a999ca8c57ab4d/res/values-zh-rHK/values-zh-rHK.xml",
+                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/5664cf7c2ee3758e12b9574f97275bd0/res/values-zh-rHK/values-zh-rHK.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,20 +38,20 @@
                     }
                 },
                 {
-                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/recyclerview-swipe-1.1.4.aar/ed8cf73c42ca6c8b4c114255fc17355b/res/values-zh-rHK/values-zh-rHK.xml",
+                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.0.aar/4c1a768dd90874641741951b4e3910ff/res/values-zh-rHK/values-zh-rHK.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "55,121,182,248,322",
-                        "endColumns": "65,60,65,73,59",
-                        "endOffsets": "116,177,243,317,377"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "101",
+                        "endOffsets": "152"
                     },
                     "to": {
-                        "startLines": "19,20,21,22,23",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "1732,1798,1859,1925,1999",
-                        "endColumns": "65,60,65,73,59",
-                        "endOffsets": "1793,1854,1920,1994,2054"
+                        "startLines": "25",
+                        "startColumns": "4",
+                        "startOffsets": "2137",
+                        "endColumns": "101",
+                        "endOffsets": "2234"
                     }
                 }
             ]

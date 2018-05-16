@@ -74,20 +74,20 @@ public class NewsContentTextFragment extends Fragment {
 
 
         stv_content = view.findViewById(R.id.tv_content);
-        mTextView=view.findViewById(R.id.send_comment_tv);
-        mTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mOnToldMainSwitchNewsCommentFragment.ToldMainSwitchNewsCommentFragment();
-            }
-        });
-        mButton=view.findViewById(R.id.send_comment_btn);
-        mButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mOnToldMainSwitchNewsCommentFragment.ToldMainSwitchNewsCommentFragment();
-            }
-        });
+//        mTextView=view.findViewById(R.id.send_comment_tv);
+//        mTextView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mOnToldMainSwitchNewsCommentFragment.ToldMainSwitchNewsCommentFragment();
+//            }
+//        });
+//        mButton=view.findViewById(R.id.send_comment_btn);
+//        mButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mOnToldMainSwitchNewsCommentFragment.ToldMainSwitchNewsCommentFragment();
+//            }
+//        });
         initDBTask();
         return view;
 

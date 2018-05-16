@@ -36,6 +36,7 @@ import android.support.v7.widget.SearchView;
 
 import com.zzpc.wynews.data.database.NewsDBHelper;
 
+import com.zzpc.wynews.main.BottomNavigationViewBehavior;
 import com.zzpc.wynews.newsmessage.newscomment.ui.NewsCommentFragment;
 import com.zzpc.wynews.personality.readinghistory.HistoryDetailsFragment;
 import com.zzpc.wynews.personality.readinghistory.MyHistoryFragment;
@@ -438,7 +439,7 @@ public class TaskActivity extends AppCompatActivity implements
     public void ToldMainSwitchNewsCommentFragment() {
         NewsCommentFragment newsCommentFragment= new NewsCommentFragment();
         FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.full, newsCommentFragment).addToBackStack(NewsCommentFragment.class.getName()).commit();
+        manager.beginTransaction().replace(R.id.container, newsCommentFragment).addToBackStack(NewsCommentFragment.class.getName()).commit();
         mBottomNavigationView.setVisibility(View.INVISIBLE);
     }
 }

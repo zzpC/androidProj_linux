@@ -26,7 +26,7 @@ import java.util.List;
  * Created by zzp on 18-2-4.
  */
 
-public class AccountManagerFragment extends Fragment implements AccountManagerContract.View {
+public class AccountManagerFragment extends Fragment  {
     private static final String TAG = AccountManagerFragment.class.getName();
 
 
@@ -80,12 +80,6 @@ public class AccountManagerFragment extends Fragment implements AccountManagerCo
         super.onViewCreated(view, savedInstanceState);
     }
 
-
-    @SuppressLint("RestrictedApi")
-    @Override
-    public void setPresenter(@NonNull AccountManagerContract.Presenter presenter) {
-//        mPresenter = checkNotNull(presenter);
-    }
 
 
 }

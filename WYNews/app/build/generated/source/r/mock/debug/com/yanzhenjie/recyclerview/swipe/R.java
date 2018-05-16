@@ -8,13 +8,13 @@ package com.yanzhenjie.recyclerview.swipe;
 
 public final class R {
     public static final class attr {
-        public static final int contentViewId = 0x7f0400cc;
-        public static final int layoutManager = 0x7f040129;
-        public static final int leftViewId = 0x7f04015f;
-        public static final int reverseLayout = 0x7f0401a9;
-        public static final int rightViewId = 0x7f0401aa;
-        public static final int spanCount = 0x7f040256;
-        public static final int stackFromEnd = 0x7f04025c;
+        public static final int contentViewId = 0x7f0400d1;
+        public static final int layoutManager = 0x7f04012f;
+        public static final int leftViewId = 0x7f04016c;
+        public static final int reverseLayout = 0x7f0401b6;
+        public static final int rightViewId = 0x7f0401b7;
+        public static final int spanCount = 0x7f040263;
+        public static final int stackFromEnd = 0x7f040269;
     }
     public static final class color {
         public static final int recycler_swipe_color_loading_color1 = 0x7f060065;
@@ -28,13 +28,13 @@ public final class R {
         public static final int item_touch_helper_swipe_escape_velocity = 0x7f070093;
     }
     public static final class id {
-        public static final int item_touch_helper_previous_elevation = 0x7f0900ac;
-        public static final int loading_tv_message = 0x7f0900c0;
-        public static final int loading_view = 0x7f0900c1;
-        public static final int swipe_content = 0x7f090155;
-        public static final int swipe_left = 0x7f090156;
-        public static final int swipe_right = 0x7f090157;
-        public static final int tv_load_more_message = 0x7f09018b;
+        public static final int item_touch_helper_previous_elevation = 0x7f0900bb;
+        public static final int loading_tv_message = 0x7f0900d5;
+        public static final int loading_view = 0x7f0900d6;
+        public static final int swipe_content = 0x7f09016c;
+        public static final int swipe_left = 0x7f09016d;
+        public static final int swipe_right = 0x7f09016e;
+        public static final int tv_load_more_message = 0x7f0901a4;
     }
     public static final class layout {
         public static final int loading_wait_dialog = 0x7f0b0044;
@@ -50,11 +50,11 @@ public final class R {
         public static final int recycler_swipe_more_not = 0x7f0f0099;
     }
     public static final class style {
-        public static final int loadingDialog = 0x7f1001b5;
-        public static final int loadingDialog_Loading = 0x7f1001b6;
+        public static final int loadingDialog = 0x7f1001b8;
+        public static final int loadingDialog_Loading = 0x7f1001b9;
     }
     public static final class styleable {
-        public static final int[] RecyclerView = { 0x010100c4, 0x010100f1, 0x7f0400fc, 0x7f0400fd, 0x7f0400fe, 0x7f0400ff, 0x7f040100, 0x7f040129, 0x7f0401a9, 0x7f040256, 0x7f04025c };
+        public static final int[] RecyclerView = { 0x010100c4, 0x010100f1, 0x7f040102, 0x7f040103, 0x7f040104, 0x7f040105, 0x7f040106, 0x7f04012f, 0x7f0401b6, 0x7f040263, 0x7f040269 };
         public static final int RecyclerView_android_orientation = 0;
         public static final int RecyclerView_android_descendantFocusability = 1;
         public static final int RecyclerView_fastScrollEnabled = 2;
@@ -66,7 +66,7 @@ public final class R {
         public static final int RecyclerView_reverseLayout = 8;
         public static final int RecyclerView_spanCount = 9;
         public static final int RecyclerView_stackFromEnd = 10;
-        public static final int[] recycler_swipe_SwipeMenuLayout = { 0x7f0400cc, 0x7f04015f, 0x7f0401aa };
+        public static final int[] recycler_swipe_SwipeMenuLayout = { 0x7f0400d1, 0x7f04016c, 0x7f0401b7 };
         public static final int recycler_swipe_SwipeMenuLayout_contentViewId = 0;
         public static final int recycler_swipe_SwipeMenuLayout_leftViewId = 1;
         public static final int recycler_swipe_SwipeMenuLayout_rightViewId = 2;

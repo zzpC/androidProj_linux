@@ -62,7 +62,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
     View mDoubleClickView;
     /**
      * Allows complete controover the colors drawn in the tab layout. Set with
-     * {@link #setCustomTabColorizer(TabColorizer)}.
+     * .
      */
     public interface TabColorizer {
 
@@ -90,7 +90,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
     private ViewPager mViewPager;
     private ViewPager.OnPageChangeListener mViewPagerPageChangeListener;
 
-    private final SlidingTabStrip mTabStrip;
+    private final com.zzpc.wynews.newsmessage.SlidingTabStrip mTabStrip;
     private SlidingTabsColorsFragment mSlidingTabsColorsFragment;
 
 
@@ -118,7 +118,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
         mTitleOffset = (int) (TITLE_OFFSET_DIPS * getResources().getDisplayMetrics().density);
 
-        mTabStrip = new SlidingTabStrip(context);
+        mTabStrip = new com.zzpc.wynews.newsmessage.SlidingTabStrip(context);
 
 
 
