@@ -12,13 +12,13 @@ public final class R {
         public static final int loading_view = 0x7f0900d6;
     }
     public static final class layout {
-        public static final int loading_wait_dialog = 0x7f0b0044;
+        public static final int loading_wait_dialog = 0x7f0b0046;
     }
     public static final class string {
-        public static final int loading_default_messsage = 0x7f0f006b;
+        public static final int loading_default_messsage = 0x7f0f006c;
     }
     public static final class style {
-        public static final int loadingDialog = 0x7f1001b8;
-        public static final int loadingDialog_Loading = 0x7f1001b9;
+        public static final int loadingDialog = 0x7f1001a2;
+        public static final int loadingDialog_Loading = 0x7f1001a3;
     }
 }

@@ -29,12 +29,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/PreferenceFixTheme.NoActionBar"
+        android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:replace="android:name"
         android:fullBackupContent="@xml/backup_descriptor">
 
         <activity
             android:name="com.zzpc.wynews.TaskActivity"
+            android:theme="@style/AppTheme.SettingsTheme"
+
             android:label="@string/app_name">
 
             <intent-filter>

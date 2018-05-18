@@ -101,6 +101,8 @@ public class TaskActivity extends AppCompatActivity implements
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     switchToFragment(0);
@@ -139,9 +141,11 @@ public class TaskActivity extends AppCompatActivity implements
 
 
         if (NewsApp.night_mode) {
-            setTheme(R.style.PreferenceFixTheme_NoActionBar);
+//            setTheme(R.style.Theme_AppCompat_DayNight_NoActionBar);
+            setTheme(R.style.Theme_AppCompat_NoActionBar);
         } else {
-            setTheme(R.style.PreferenceFixTheme_Light_NoActionBar);
+//            setTheme(R.style.Theme_Design_Light_NoActionBar);
+            setTheme(R.style.Theme_AppCompat_Light_NoActionBar);
         }
         setContentView(R.layout.activity_main);
         mBottomNavigationView = findViewById(R.id.navigation);
@@ -195,7 +199,7 @@ public class TaskActivity extends AppCompatActivity implements
 
         if (NewsApp.changing_Theme) {
             NewsApp.changing_Theme = false;
-            switchToFragment(2);
+//            super.onBackPressed();
             return;
         }
         switchToFragment(0);
@@ -212,6 +216,12 @@ public class TaskActivity extends AppCompatActivity implements
 
     public void switchToFragment(int ftNo) {
 
+        FragmentManager manager0 = getSupportFragmentManager();
+        Fragment currentFragment0 =manager0.findFragmentByTag(SettingsFragment.class.getName());
+        if (currentFragment0!=null && currentFragment0.isVisible()){
+            Log.e(TAG, "SettingsFragment is Visible: ");
+            manager0.beginTransaction().hide(currentFragment0).commit();
+        }
 
         FragmentManager manager = getSupportFragmentManager();
         Fragment currentFragment1 =getSupportFragmentManager().findFragmentByTag(SlidingTabsColorsFragment.class.getName());
@@ -402,6 +412,7 @@ public class TaskActivity extends AppCompatActivity implements
     public void OnClickNightMode() {
         this.recreate();
         NewsApp.changing_Theme = true;
+
 
     }
 

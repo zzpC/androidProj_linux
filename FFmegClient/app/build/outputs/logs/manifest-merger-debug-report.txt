@@ -1,0 +1,127 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:2:1-40:12
+INJECTED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:2:1-40:12
+INJECTED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:2:1-40:12
+INJECTED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:2:1-40:12
+MERGED from [com.android.support:support-v4:27.1.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/41b04ae44941389654dcfdfc559dc7ae/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/cf03d5c3f17b7252121b4e6da8e964d9/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/678acffffaa2f600fcd27f3ed428757e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/c7ec3b48ea1987970821d17eb4cd6cf1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/eaf14a0acf317cd6430f8393247f2a7a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/5572c76735956294f0eb5f1de724fa45/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/3dc51be285221f374616d1c714f545be/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/5208d79a715e32dc6367b55ee9684155/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/f06d3abc492a45e355ced34fd4ff540d/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/923c15dd881319a030571cf25dc3514f/AndroidManifest.xml:17:1-22:12
+INJECTED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:2:1-40:12
+INJECTED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:2:1-40:12
+INJECTED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:2:1-40:12
+	package
+		ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:3:5-39
+		INJECTED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml
+		INJECTED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml
+	android:versionName
+		ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:5:5-30
+		INJECTED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml
+		INJECTED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:4:5-28
+		INJECTED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml
+		INJECTED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml
+uses-sdk
+ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:7:5-9:41
+INJECTED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:7:5-9:41
+INJECTED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-v4:27.1.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/41b04ae44941389654dcfdfc559dc7ae/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/41b04ae44941389654dcfdfc559dc7ae/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/cf03d5c3f17b7252121b4e6da8e964d9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/cf03d5c3f17b7252121b4e6da8e964d9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/678acffffaa2f600fcd27f3ed428757e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/678acffffaa2f600fcd27f3ed428757e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/c7ec3b48ea1987970821d17eb4cd6cf1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/c7ec3b48ea1987970821d17eb4cd6cf1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/eaf14a0acf317cd6430f8393247f2a7a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/eaf14a0acf317cd6430f8393247f2a7a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/5572c76735956294f0eb5f1de724fa45/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/5572c76735956294f0eb5f1de724fa45/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/3dc51be285221f374616d1c714f545be/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/3dc51be285221f374616d1c714f545be/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/5208d79a715e32dc6367b55ee9684155/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/5208d79a715e32dc6367b55ee9684155/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/f06d3abc492a45e355ced34fd4ff540d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/f06d3abc492a45e355ced34fd4ff540d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/923c15dd881319a030571cf25dc3514f/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /home/zzp/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/923c15dd881319a030571cf25dc3514f/AndroidManifest.xml:20:5-44
+INJECTED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:7:5-9:41
+INJECTED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:7:5-9:41
+	android:targetSdkVersion
+		ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:9:9-38
+		INJECTED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml
+		INJECTED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:8:9-35
+		INJECTED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml
+		INJECTED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:11:22-64
+uses-permission#android.permission.WAKE_LOCK
+ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:12:5-68
+	android:name
+		ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:12:22-65
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:13:5-81
+	android:name
+		ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:13:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:14:5-79
+	android:name
+		ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:14:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:15:5-81
+	android:name
+		ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:15:22-78
+uses-permission#android.permission.RECEIVE_SMS
+ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:16:5-70
+	android:name
+		ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:16:22-67
+application
+ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:18:5-38:19
+	android:label
+		ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:21:9-41
+	android:icon
+		ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:20:9-45
+	android:allowBackup
+		ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:19:9-35
+	android:theme
+		ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:22:9-40
+activity#com.example.ffmpegclient.MainActivity
+ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:23:9-32:20
+	android:screenOrientation
+		ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:26:13-50
+	android:label
+		ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:25:13-45
+	android:name
+		ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:24:13-65
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:27:13-31:29
+action#android.intent.action.MAIN
+ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:28:17-69
+	android:name
+		ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:28:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:30:17-77
+	android:name
+		ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:30:27-74
+activity#com.example.ffmpegclient.VideoActivity
+ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:33:10-37:20
+	android:screenOrientation
+		ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:36:13-50
+	android:label
+		ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:35:13-45
+	android:name
+		ADDED from /home/zzp/Documents/CodeLib/androidProj_linux/FFmegClient/app/src/main/AndroidManifest.xml:34:13-66

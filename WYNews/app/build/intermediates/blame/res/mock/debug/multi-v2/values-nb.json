@@ -4,7 +4,7 @@
             "outputFile": "/home/zzp/Documents/CodeLib/androidProj_linux/WYNews/app/build/intermediates/incremental/mergeMockDebugResources/merged.dir/values-nb/values-nb.xml",
             "map": [
                 {
-                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.0.aar/4c1a768dd90874641741951b4e3910ff/res/values-nb/values-nb.xml",
+                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/74362bf55a4eb25ff9b280e7362e7013/res/values-nb/values-nb.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/5664cf7c2ee3758e12b9574f97275bd0/res/values-nb/values-nb.xml",
+                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/182e666b84567b58665e8dfc1db9728d/res/values-nb/values-nb.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

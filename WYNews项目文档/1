@@ -1,0 +1,11 @@
+// BottomNavigationView
+// 简单工厂模式,显示相应的fragment,替换时隐藏当前fragment再替换
+// FM可以获取隐藏显示相应fragment
+
+// SlidingTabsColorsFragment,支持横向Tab
+// 横向的tab有标题,图片,两Tab间的分隔线,标题下划线颜色
+// SlidingTabLayout 绑定它所依附的fragment,ViewPager  
+// 
+
+// SlidingTabLayout+ViewPager+FragmentStatePagerAdapter(PagerAdapter)
+// FragmentStatePagerAdapter->PagerAdapter

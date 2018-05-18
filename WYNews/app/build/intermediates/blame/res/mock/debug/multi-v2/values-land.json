@@ -4,7 +4,7 @@
             "outputFile": "/home/zzp/Documents/CodeLib/androidProj_linux/WYNews/app/build/intermediates/incremental/mergeMockDebugResources/merged.dir/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/5664cf7c2ee3758e12b9574f97275bd0/res/values-land/values-land.xml",
+                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/182e666b84567b58665e8dfc1db9728d/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/a485030d1db60a3c60840a735350c27b/res/values-land/values-land.xml",
+                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/1f13b816f25bce2a9b0567cfceb03362/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

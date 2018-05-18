@@ -8,12 +8,16 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceFragmentCompat;
 import android.support.v7.preference.PreferenceScreen;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.zzpc.wynews.NewsApp;
 import com.zzpc.wynews.R;
@@ -45,7 +49,22 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
     }
 
     @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        BottomNavigationView mBottomNavigationView;
+        Toolbar mToolbar;
+        View view=inflater.inflate(R.layout.activity_main,null,false);
+        mBottomNavigationView = view.findViewById(R.id.navigation);
+        mToolbar = view.findViewById(R.id.toolbar);
+        mBottomNavigationView.setVisibility(View.GONE);
+        mToolbar.setVisibility(View.GONE);
+        return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
+
+
+        Log.e(TAG, "onCreate: ");
         super.onCreate(savedInstanceState);
 
         if (savedInstanceState != null) {
@@ -76,6 +95,8 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 
         Preference preference= findPreference("example_key");
         preference.setTitle("已阅读数目： "+ NewsApp.read_amount);
+
+
     }
 
     @Override

@@ -33,8 +33,7 @@
         <android.support.v7.preference.PreferenceScreen
             android:key="shareApp"
             android:summary="分享本App,发送至其他应用,可调用系统分享"
-            android:title="分享App" >
-        </android.support.v7.preference.PreferenceScreen>>
+            android:title="分享App" />>
 
     </PreferenceCategory>
 
