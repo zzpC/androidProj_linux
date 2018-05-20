@@ -37,8 +37,9 @@ import android.support.v7.widget.SearchView;
 import com.zzpc.wynews.data.database.NewsDBHelper;
 
 import com.zzpc.wynews.main.BottomNavigationViewBehavior;
-import com.zzpc.wynews.newsmessage.SpecificTextFragment;
+
 import com.zzpc.wynews.newsmessage.newscomment.ui.NewsCommentFragment;
+import com.zzpc.wynews.newsmessage.specifictext.SpecificTextFragment;
 import com.zzpc.wynews.personality.readinghistory.HistoryDetailsFragment;
 import com.zzpc.wynews.personality.readinghistory.MyHistoryFragment;
 
