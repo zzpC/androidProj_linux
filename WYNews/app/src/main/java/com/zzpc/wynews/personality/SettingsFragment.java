@@ -48,17 +48,6 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        BottomNavigationView mBottomNavigationView;
-        Toolbar mToolbar;
-        View view=inflater.inflate(R.layout.activity_main,null,false);
-        mBottomNavigationView = view.findViewById(R.id.navigation);
-        mToolbar = view.findViewById(R.id.toolbar);
-        mBottomNavigationView.setVisibility(View.GONE);
-        mToolbar.setVisibility(View.GONE);
-        return super.onCreateView(inflater, container, savedInstanceState);
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

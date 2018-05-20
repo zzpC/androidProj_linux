@@ -29,9 +29,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 //创建TabLayout+viewpager的视图作为acitvity一部分,getitem生成新的fragment,覆盖本fragment
-public class SlidingTabsColorsFragment extends Fragment {
+public class SlidingTabsColorsFragment extends Fragment implements MessageView {
 
-    private static final String TAG = "SlidingTabsColorsFragment";
+    private static final String TAG = "SlidingTabsColors";
     private boolean Isfirst = true;
 
     private FragmentManager mFragmentManager;
@@ -45,12 +45,15 @@ public class SlidingTabsColorsFragment extends Fragment {
     SlidingTabsFragmentPagerAdapter mSlidingTabsColorsFragmentPagerAdapter;
     ViewPager mViewPager;
 
+    //MVP
+    MessagePresenter mMessagePresenter;
 
 
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        Log.e(TAG, "onAttach: ");
 
     }
 
@@ -105,17 +108,8 @@ public class SlidingTabsColorsFragment extends Fragment {
         }
     }
 
-
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        Log.e("testt", "onCreate: " );
-        if (savedInstanceState != null && mFragmentManager != null) {
-            mFragmentStatus = mFragmentManager.getFragment(savedInstanceState, TAG);
-            return;
-        }
-
+    public void initTabs() {
         mTabs.add(new ViewPagerTopTab(
                 getString(R.string.top_tab), // Title
                 R.mipmap.topline,
@@ -144,36 +138,35 @@ public class SlidingTabsColorsFragment extends Fragment {
                 Color.GREEN, // Indicator color
                 Color.GRAY // Divider color
         ));
+
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        Log.e(TAG, "onCreate: ");
+        if (savedInstanceState != null && mFragmentManager != null) {
+            mFragmentStatus = mFragmentManager.getFragment(savedInstanceState, TAG);
+            return;
+        }
+
+
         // END_INCLUDE (populate_tabs)
+        mMessagePresenter=new MessagePresenter(this);
+
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.slidingtabscolorsfragment, container, false);
-    }
-
-
-    @Override
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-
-        mViewPager = view.findViewById(R.id.viewpager);
+    public void initViewPagerAndTabLayout() {
         mViewPager.setOffscreenPageLimit(4);
-
 
         mSlidingTabsColorsFragmentPagerAdapter = new SlidingTabsFragmentPagerAdapter(getChildFragmentManager());
         mViewPager.setAdapter(mSlidingTabsColorsFragmentPagerAdapter);
 
-        mSlidingTabLayout = view.findViewById(R.id.sliding_tabs);
 
         mSlidingTabLayout.addFragmentAttached(this);
-
-
         mSlidingTabLayout.setViewPager(mViewPager);
-
-
-
-
         mSlidingTabLayout.setCustomTabCo1lorizer(new com.zzpc.wynews.newsmessage.SlidingTabLayout.TabColorizer() {
             @Override
             public int getIndicatorColor(int position) {
@@ -185,7 +178,23 @@ public class SlidingTabsColorsFragment extends Fragment {
                 return mTabs.get(position).getDividerColor();
             }
         });
+    }
 
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        Log.e(TAG, "onCreateView: ");
+        return inflater.inflate(R.layout.slidingtabscolorsfragment, container, false);
+    }
+
+
+
+    @Override
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+
+        mViewPager = view.findViewById(R.id.viewpager);
+        mSlidingTabLayout = view.findViewById(R.id.sliding_tabs);
+        mMessagePresenter.pViewCreated();
     }
 
     //与viewpager关联,同时可改变Tab的外观和行为
@@ -215,7 +224,6 @@ public class SlidingTabsColorsFragment extends Fragment {
         void deletePage(int position)
         {
             // Remove the corresponding item in the data set
-
             mTabs.remove(position);
             // Notify the adapter that the data set is changed
             notifyDataSetChanged();
@@ -273,25 +281,25 @@ public class SlidingTabsColorsFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-        Log.e("ZZZZZZ", "onPause: " + TAG);
+        Log.e(TAG, "onPause: " + TAG);
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        Log.e("ZZZZZZ", "onStop: " + TAG);
+        Log.e(TAG, "onStop: " + TAG);
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        Log.e("ZZZZZZ", "onStart: " + TAG);
+        Log.e(TAG, "onStart: " + TAG);
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        Log.e("ZZZZZZ", "onDestroyView: " + TAG);
+        Log.e(TAG, "onDestroyView: " + TAG);
     }
 
     @Override
@@ -301,10 +309,10 @@ public class SlidingTabsColorsFragment extends Fragment {
             Isfirst = false;
         }
 //        getActivity().finish();
-        Log.e("ZZZZZZ", "onResume: " + TAG);
+        Log.e(TAG, "onResume: " + TAG);
     }
 
-
+    @Override
     public void deleteTab(int position) {
         mSlidingTabsColorsFragmentPagerAdapter.deletePage(position);
         mSlidingTabsColorsFragmentPagerAdapter.notifyDataSetChanged();

@@ -37,6 +37,7 @@ import android.support.v7.widget.SearchView;
 import com.zzpc.wynews.data.database.NewsDBHelper;
 
 import com.zzpc.wynews.main.BottomNavigationViewBehavior;
+import com.zzpc.wynews.newsmessage.SpecificTextFragment;
 import com.zzpc.wynews.newsmessage.newscomment.ui.NewsCommentFragment;
 import com.zzpc.wynews.personality.readinghistory.HistoryDetailsFragment;
 import com.zzpc.wynews.personality.readinghistory.MyHistoryFragment;
@@ -46,7 +47,6 @@ import com.zzpc.wynews.personality.readingstart.MyStartFragment;
 
 import com.zzpc.wynews.personality.readingstart.StartDetailsFragment;
 import com.zzpc.wynews.videoplay.VideoFragment;
-import com.zzpc.wynews.newsmessage.NewsContentTextFragment;
 import com.zzpc.wynews.newsmessage.SlidingTabsColorsFragment;
 import com.zzpc.wynews.newsmessage.SwipeRefreshLayoutBasicFragment;
 import com.zzpc.wynews.personality.AccountManagerFragment;
@@ -69,7 +69,7 @@ public class TaskActivity extends AppCompatActivity implements
         LoginFragment.OnSwitchRegisterFragmentListener,
         MyStartFragment.OnSwitchStartDetailsFragment ,
         MyHistoryFragment.OnMyHistoryDetailsFragment,
-        NewsContentTextFragment.OnToldMainSwitchNewsCommentFragment{
+        SpecificTextFragment.OnToldMainSwitchNewsCommentFragment{
 
 
     private static final String TAG = "TaskActivity";
@@ -152,7 +152,7 @@ public class TaskActivity extends AppCompatActivity implements
         mToolbar = findViewById(R.id.toolbar);
 
 
-        Log.e("ZZZZZZ", "onCreate: ");
+        Log.e("AA", "onCreate: ");
 
         mBottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
@@ -173,35 +173,29 @@ public class TaskActivity extends AppCompatActivity implements
         Toolbar mToolbar = findViewById(R.id.toolbar);
         mToolbar.setTitle(R.string.nav_girls);
         setSupportActionBar(mToolbar);
-//        mToolbar.setOnTouchListener(new View.OnTouchListener() {
-//            @Override
-//            public boolean onTouch(View v, MotionEvent event) {
-//                return mGestureDetector.onTouchEvent(event);
-//            }
-//        });
+
 
         if (NewsApp.video_Full) {
-            Log.e("XXXX", "onCreate: 全屏");
+            Log.e("AA", "onCreate: 全屏1");
 
             mBottomNavigationView.setVisibility(View.INVISIBLE);
             mToolbar.setVisibility(View.INVISIBLE);
 
-//            bottomNavigationView.setVisibility(View.GONE);
-//            mToolbar.
-//            mToolbar.setVisibility(View.GONE);
-//            getActionBar().hide();
             return;
         } else {
             mBottomNavigationView.setVisibility(View.VISIBLE);
             mToolbar.setVisibility(View.VISIBLE);
         }
-
+        Log.e("AA", "onCreate: 全屏2");
 
         if (NewsApp.changing_Theme) {
             NewsApp.changing_Theme = false;
-//            super.onBackPressed();
+            Log.e("AA", "onCreate: 全屏3");
+            mBottomNavigationView.setVisibility(View.GONE);
+            mToolbar.setVisibility(View.GONE);
             return;
         }
+        Log.e("AA", "onCreate: 全屏4");
         switchToFragment(0);
 
 
@@ -216,24 +210,18 @@ public class TaskActivity extends AppCompatActivity implements
 
     public void switchToFragment(int ftNo) {
 
-        FragmentManager manager0 = getSupportFragmentManager();
-        Fragment currentFragment0 =manager0.findFragmentByTag(SettingsFragment.class.getName());
-        if (currentFragment0!=null && currentFragment0.isVisible()){
-            Log.e(TAG, "SettingsFragment is Visible: ");
-            manager0.beginTransaction().hide(currentFragment0).commit();
-        }
 
         FragmentManager manager = getSupportFragmentManager();
         Fragment currentFragment1 =getSupportFragmentManager().findFragmentByTag(SlidingTabsColorsFragment.class.getName());
         Fragment currentFragment2=getSupportFragmentManager().findFragmentByTag(VideoFragment.class.getName());
         Fragment currentFragment3=getSupportFragmentManager().findFragmentByTag(AccountManagerFragment.class.getName());
-        Fragment specificFragment;
 
         ActionBar actionBar = getSupportActionBar();
         Log.e("换肤", "switchToFragment: " + ftNo);
 
         switch (ftNo) {
             case 0:
+
                 if (currentFragment1!=null)
                   manager.beginTransaction().hide(currentFragment1).commit();
                 if (currentFragment2!=null)
@@ -246,10 +234,10 @@ public class TaskActivity extends AppCompatActivity implements
                 if (actionBar != null) actionBar.setTitle(R.string.title_home);
                 if (currentFragment1 == null) {
                     manager.beginTransaction().add(R.id.bottom_pager, new SlidingTabsColorsFragment(), SlidingTabsColorsFragment.class.getName()).commit();
-
+                    Log.e("换肤", "switchToFragment:1 ");
                 } else {
-//                    manager.beginTransaction().replace(R.id.bottom_pager, fragment).commit();
                     manager.beginTransaction().show(currentFragment1).commit();
+                    Log.e("换肤", "switchToFragment:2 ");
                 }
                 break;
             case 1:
@@ -358,8 +346,6 @@ public class TaskActivity extends AppCompatActivity implements
                 LoginFragment loginFragment = new LoginFragment();
                 manager.beginTransaction().replace(R.id.bottom_pager, loginFragment).addToBackStack(LoginFragment.class.getName()).commit();
                 break;
-//                Intent intent=new Intent(TaskActivity.this, LoginActivity.class);
-//                startActivity(intent);
             case 1:
                 MyStartFragment myStartFragment=new MyStartFragment();
                 manager.beginTransaction().replace(R.id.bottom_pager,myStartFragment).addToBackStack(MyStartFragment.class.getName()).commit();
@@ -394,13 +380,13 @@ public class TaskActivity extends AppCompatActivity implements
 
     @Override
     public void onLoadWebSiteNews(String info) {
-        NewsContentTextFragment newsContentTextFragment = new NewsContentTextFragment();
+        SpecificTextFragment specificTextFragment = new SpecificTextFragment();
         Bundle bundle = new Bundle();
         bundle.putString("url", info);
-        newsContentTextFragment.setArguments(bundle);
+        specificTextFragment.setArguments(bundle);
 
         FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.full, newsContentTextFragment).addToBackStack(NewsContentTextFragment.class.getName()).commit();
+        manager.beginTransaction().replace(R.id.full, specificTextFragment).addToBackStack(SpecificTextFragment.class.getName()).commit();
         mBottomNavigationView.setVisibility(View.INVISIBLE);
 
     }
