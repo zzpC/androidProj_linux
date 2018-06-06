@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/zzp/Documents/CodeLib/androidProj_linux/WYNews/app/build/intermediates/incremental/mergeMockDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "outputFile": "C:\\Users\\a1348\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\incremental\\mergeMockDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/182e666b84567b58665e8dfc1db9728d/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\a1348\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\da8525d8eca409f69488be6602996b72\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/1f13b816f25bce2a9b0567cfceb03362/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\a1348\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\0f6e5a4cd27e2f936fd7d330c10cfa1a\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/zzp/Documents/CodeLib/androidProj_linux/WYNews/app/build/intermediates/incremental/mergeMockDebugResources/merged.dir/values-lv/values-lv.xml",
+            "outputFile": "C:\\Users\\a1348\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\incremental\\mergeMockDebugResources\\merged.dir\\values-lv\\values-lv.xml",
             "map": [
                 {
-                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/182e666b84567b58665e8dfc1db9728d/res/values-lv/values-lv.xml",
+                    "source": "C:\\Users\\a1348\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\da8525d8eca409f69488be6602996b72\\res\\values-lv\\values-lv.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/zzp/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/74362bf55a4eb25ff9b280e7362e7013/res/values-lv/values-lv.xml",
+                    "source": "C:\\Users\\a1348\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\bb7991a1254206d5acc930ac24d1311e\\res\\values-lv\\values-lv.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

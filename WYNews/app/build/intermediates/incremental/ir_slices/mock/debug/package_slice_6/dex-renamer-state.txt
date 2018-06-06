@@ -1,4 +1,4 @@
-#Sun May 20 12:15:34 CST 2018
-base.0=/home/zzp/Documents/CodeLib/androidProj_linux/WYNews/app/build/intermediates/transforms/dexMerger/mock/debug/7
+#Wed Jun 06 09:10:26 CST 2018
+base.0=C\:\\Users\\a1348\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\transforms\\dexMerger\\mock\\debug\\7
 path.0=classes.dex
 renamed.0=classes.dex

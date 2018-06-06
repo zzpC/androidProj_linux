@@ -35,10 +35,10 @@ import com.zzpc.wynews.R;
 //import com.xyzlf.share.library.util.ShareUtil;
 import com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView;
 import com.yanzhenjie.recyclerview.swipe.touch.OnItemMoveListener;
-import com.zzpc.wynews.util.pitcure.MyBitmapUtils;
+import com.zzpc.wynews.newsmessage.util.pitcure.MyBitmapUtils;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
+import java.io.InputStream;import java.io.BufferedReader;
+
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -232,7 +232,6 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
         if (mRecyclerView.getChildCount() == 0) {
             initiateRefresh();
-
         }
 
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -351,6 +350,8 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                 super(itemView);
                 this.itemView = itemView;
                 iv_pic = itemView.findViewById(R.id.item_pic);
+
+                Log.e(TAG, "ViewHolder: "+iv_pic.getWidth() );
                 tv_title = itemView.findViewById(R.id.item_title);
             }
         }
@@ -425,8 +426,16 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
             News news = mNewsInfoList.get(position);
 
             holder.tv_title.setText(news.getTitle());
+            Log.e(TAG, "onBindViewHolder: 1");
             if (holder.iv_pic != null) {
+                Log.e(TAG, "onBindViewHolder: 2" );
+                if (!NewsApp.pic_only_WIFI){
+                    Log.e(TAG, "onBindViewHolder: 可从网络" );
+                }else{
+                    Log.e(TAG, "onBindViewHolder: 只能wifi" );
+                }
                 if (!NewsApp.pic_only_WIFI || NewsApp.isConnectedViaWifi()) {
+                    Log.e(TAG, "onBindViewHolder: 3" );
                     MyBitmapUtils myBitmapUtils = new MyBitmapUtils();
                     myBitmapUtils.disPlay(holder.iv_pic, news.getPicUrl());
                 }
