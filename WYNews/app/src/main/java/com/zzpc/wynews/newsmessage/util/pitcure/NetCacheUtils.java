@@ -119,10 +119,6 @@ private static final String TAG = "NetCacheUtils";
 //                options.inPreferredConfig = Bitmap.Config.ARGB_4444;
 //                return BitmapFactory.decodeStream(conn.getInputStream(), null, options);
 
-
-
-
-
                 InputStream inputStream= conn.getInputStream();
                 final BitmapFactory.Options options = new BitmapFactory.Options();
 //                options.inJustDecodeBounds = true;
@@ -138,13 +134,7 @@ private static final String TAG = "NetCacheUtils";
                 return BitmapFactory.decodeStream(conn.getInputStream(),null,options);
 
 
-
-
-
 //                return BitmapEffectiveLoad.decodeSampledBitmapFromStream(conn,null,300,300);
-            }else {
-
-                Log.e(TAG, "downLoadBitmap: fei200" );
             }
         } catch (IOException e) {
             e.printStackTrace();

@@ -2,13 +2,14 @@ package com.zzpc.wynews.newsmessage.util.pitcure;
 
 import android.graphics.Bitmap;
 import android.support.v4.util.LruCache;
+import android.util.Log;
 
 /**
  * Created by zzp on 17-11-23.
  */
 
 public class MemoryCacheUtils {
-
+    private static final String TAG = "MemoryCacheUtils";
     // private HashMap<String,Bitmap> mMemoryCache=new HashMap<>();//1.因为强引用,容易造成内存溢出，所以考虑使用下面弱引用的方法
     // private HashMap<String, SoftReference<Bitmap>> mMemoryCache = new HashMap<>();//2.因为在Android2.3+后,系统会优先考虑回收弱引用对象,官方提出使用LruCache
     private LruCache<String, Bitmap> mMemoryCache;
@@ -30,34 +31,38 @@ public class MemoryCacheUtils {
     /**
      * 从内存中读图片
      *
-     * @param url
+     * @param fileName
      */
-    Bitmap getBitmapFromMemory(String url) {
+    Bitmap getBitmapFromMemory(String fileName) {
+        Log.e(TAG, "getBitmapFromMemory: ");
 
-        //Bitmap bitmap = mMemoryCache.get(url);//1.强引用方法
+        //Bitmap bitmap = mMemoryCache.get(fileName);//1.强引用方法
             /*2.弱引用方法
-            SoftReference<Bitmap> bitmapSoftReference = mMemoryCache.get(url);
+            SoftReference<Bitmap> bitmapSoftReference = mMemoryCache.get(fileName);
             if (bitmapSoftReference != null) {
                 Bitmap bitmap = bitmapSoftReference.get();
                 return bitmap;
             }
             */
-        return mMemoryCache.get(url);
+        return mMemoryCache.get(fileName);
 
     }
 
     /**
      * 往内存中写图片
      *
-     * @param url
+     * @param fileName
      * @param bitmap
      */
-    void setBitmapToMemory(String url, Bitmap bitmap) {
-        //mMemoryCache.put(url, bitmap);//1.强引用方法
+    void setBitmapToMemory(String fileName, Bitmap bitmap) {
+        //mMemoryCache.put(fileName, bitmap);//1.强引用方法
             /*2.弱引用方法
-            mMemoryCache.put(url, new SoftReference<>(bitmap));
+            mMemoryCache.put(fileName, new SoftReference<>(bitmap));
             */
-        mMemoryCache.put(url, bitmap);
+
+        Log.e(TAG, "存内存中，fileName，图片hash"+fileName+"   "+bitmap );
+
+        mMemoryCache.put(fileName, bitmap);
     }
 
 }

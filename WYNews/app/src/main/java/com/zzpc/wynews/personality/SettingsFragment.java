@@ -95,7 +95,12 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(Objects.requireNonNull(getContext()));
         SharedPreferences.Editor editor = preferences.edit();
         editor.putBoolean("switch_onlywifi",NewsApp.pic_only_WIFI);
-        editor.apply();
+        if (editor.commit()){
+            Log.e(TAG, "wifi setting" );
+            Log.e(TAG, "onViewCreated: pic onlly wifi "+NewsApp.pic_only_WIFI );
+        }else {
+            editor.apply();
+        }
 
 
     }

@@ -64,6 +64,8 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
     private List<News> mNewsInfoList = new ArrayList<>();
 
+    MyBitmapUtils myBitmapUtils = new MyBitmapUtils();
+
 
 
     public interface OnLoadWebSiteNewsListner{
@@ -436,7 +438,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                 }
                 if (!NewsApp.pic_only_WIFI || NewsApp.isConnectedViaWifi()) {
                     Log.e(TAG, "onBindViewHolder: 3" );
-                    MyBitmapUtils myBitmapUtils = new MyBitmapUtils();
+
                     myBitmapUtils.disPlay(holder.iv_pic, news.getPicUrl());
                 }
 
