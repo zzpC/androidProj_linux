@@ -1,11 +1,12 @@
 package a;
 
+import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
 public class AThread extends Thread{
 	int i = 0;
-	//é‡å†™runæ–¹æ³•ï¼Œrunæ–¹æ³•çš„æ–¹æ³•ä½“å°±æ˜¯ç°åœºæ‰§è¡Œä½“
+	//ÖØĞ´run·½·¨£¬run·½·¨µÄ·½·¨Ìå¾ÍÊÇÏÖ³¡Ö´ĞĞÌå
 	public void run()
 	{
 		for(;i<5;i++){
@@ -20,14 +21,14 @@ public class AThread extends Thread{
 		
 		new Thread(new BThread()).start();
 		
-		//FutureTaskçš„ä½¿ç”¨
+		//FutureTaskµÄÊ¹ÓÃ
 		FutureTask<Integer> ft=new FutureTask<Integer>(new CThread());
 	
-		new Thread(ft,"æœ‰è¿”å›å€¼çš„çº¿ç¨‹").start();
+		new Thread(ft,"ÓĞ·µ»ØÖµµÄÏß³Ì").start();
 		
 		try
 		{
-			System.out.println("å­çº¿ç¨‹çš„è¿”å›å€¼ï¼š"+ft.get());
+			System.out.println("×ÓÏß³ÌµÄ·µ»ØÖµ£º"+ft.get());
 		} catch (InterruptedException e)
 		{
 			e.printStackTrace();
