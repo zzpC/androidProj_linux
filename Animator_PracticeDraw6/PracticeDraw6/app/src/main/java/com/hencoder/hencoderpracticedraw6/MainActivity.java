@@ -11,7 +11,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class MainActivity extends AppCompatActivity {
     TabLayout tabLayout;
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.setupWithViewPager(pager);
+
     }
 
     @Override

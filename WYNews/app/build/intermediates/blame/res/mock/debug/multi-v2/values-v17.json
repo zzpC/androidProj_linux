@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\a1348\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\incremental\\mergeMockDebugResources\\merged.dir\\values-v17\\values-v17.xml",
+            "outputFile": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\incremental\\mergeMockDebugResources\\merged.dir\\values-v17\\values-v17.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\a1348\\.gradle\\caches\\transforms-1\\files-1.1\\preference-v7-27.1.1.aar\\cb547d41f7826200f90c4a96695122de\\res\\values-v17\\values-v17.xml",
+                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\preference-v7-27.1.1.aar\\9203ee117973ebe2f0e7f6d3ad95b3c7\\res\\values-v17\\values-v17.xml",
                     "from": {
                         "startLines": "2,7,11",
                         "startColumns": "4,4,4",
@@ -15,7 +15,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\a1348\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\da8525d8eca409f69488be6602996b72\\res\\values-v17\\values-v17.xml",
+                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\fd6f52c6ce2ba4259ff7a8e5631c180a\\res\\values-v17\\values-v17.xml",
                     "from": {
                         "startLines": "2,5,9,12,15,18,22,26,29,32,35,39,42,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",

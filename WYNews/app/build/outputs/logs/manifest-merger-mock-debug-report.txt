@@ -1,327 +1,327 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:2:1-86:12
-INJECTED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:2:1-86:12
-INJECTED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:2:1-86:12
-INJECTED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:2:1-86:12
-MERGED from [cn.smssdk:SMSSDK:3.2.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\SMSSDK-3.2.1.aar\edf94c4e68fbd632c14431de67d6a575\AndroidManifest.xml:2:1-11:12
-MERGED from [cn.smssdk:ShortMessageSDKGUI:3.2.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.aar\777016bec70bdf8abeec2066fb32f302\AndroidManifest.xml:2:1-16:12
-MERGED from [com.android.support:design:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\0f6e5a4cd27e2f936fd7d330c10cfa1a\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:preference-v7:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\preference-v7-27.1.1.aar\cb547d41f7826200f90c4a96695122de\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\da8525d8eca409f69488be6602996b72\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\14016c16f392007a89f4135acf8b299f\AndroidManifest.xml:2:1-11:12
-MERGED from [com.yanzhenjie:recyclerview-swipe:1.1.4] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\recyclerview-swipe-1.1.4.aar\fff47c90676c11ef16b40b167da329fd\AndroidManifest.xml:17:1-25:12
-MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\ab1031f605543cd5d428a79219b42c2a\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\31a40bedb6807083dc1de62b00ee742f\AndroidManifest.xml:17:1-22:12
-MERGED from [tv.danmaku.ijk.media:ijkplayer-exo:0.8.4] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ijkplayer-exo-0.8.4.aar\53523cb1fa7c3e22bac357bd8e0d75f5\AndroidManifest.xml:2:1-15:12
-MERGED from [tv.danmaku.ijk.media:ijkplayer-java:0.8.5.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ijkplayer-java-0.8.5.1.aar\2114c30395739232234676c78d1c63df\AndroidManifest.xml:2:1-9:12
-MERGED from [tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.4] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ijkplayer-armv7a-0.8.4.aar\a10e2a29c7ec435e5ee88663e4dddae9\AndroidManifest.xml:2:1-9:12
-MERGED from [tv.danmaku.ijk.media:ijkplayer-armv5:0.8.4] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ijkplayer-armv5-0.8.4.aar\fe2426b38421465f0bd2e4342f7faba6\AndroidManifest.xml:2:1-9:12
-MERGED from [tv.danmaku.ijk.media:ijkplayer-arm64:0.8.4] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ijkplayer-arm64-0.8.4.aar\f062d62cafdd4398e6c8e33e75568d41\AndroidManifest.xml:2:1-9:12
-MERGED from [tv.danmaku.ijk.media:ijkplayer-x86:0.8.4] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ijkplayer-x86-0.8.4.aar\280c41e059371b8a32ea7a1e600d014d\AndroidManifest.xml:2:1-9:12
-MERGED from [tv.danmaku.ijk.media:ijkplayer-x86_64:0.8.4] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ijkplayer-x86_64-0.8.4.aar\0992b228338bb90ab047d6befbcd27a7\AndroidManifest.xml:2:1-9:12
-MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\Android-AdvancedWebView-v3.0.0.aar\e4eed930daf30fbd84d76d4330569e76\AndroidManifest.xml:2:1-11:12
-MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\eea3d72a3f0594f470169e2193388889\AndroidManifest.xml:2:1-7:12
-MERGED from [com.android.support:multidex:1.0.3] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\multidex-1.0.3.aar\6caaddaeacde913cff5668ce3193dac2\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.persistence.room:runtime:1.1.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\93864421e6ace0230dbf804b1b399279\AndroidManifest.xml:17:1-22:12
-MERGED from [com.github.lygttpod:SuperTextView:2.1.6] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\SuperTextView-2.1.6.aar\434de2ac1034343f5108c89d13a3f2b6\AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:support-v4:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\e9306fcd649ef0fd6c765da843e16177\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\f9bdbd2c7c8ef66579b79ea66fdfbc84\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\83e3bc3b4ce0be7110061b8807cdbbd6\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\d63e852b5cfa785e5aceae6620579a82\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:transition:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\d005fc07e34a2464aed1eebf0a604c0f\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\1d99154532244fb2b387770ab129e4c9\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.persistence:db-framework:1.1.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.0.aar\5e2bb891baedbc3abf9135406def4db7\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.persistence:db:1.1.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\db-1.1.0.aar\bedfe90ceef1f65a14b42a2eee04a5dd\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\f2d075b6392bca64e9fed1b614b794d1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\5fdd9f643f7f9806c5fcaedc93fe28c9\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\bb7991a1254206d5acc930ac24d1311e\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\a4bd168b7979d82e5e5ae778f49f6bfc\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\5c6aed867e12162b29eb1dd12139ae11\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\d28e7cef2c56f1b28ead3347f6a3c79b\AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.android.exoplayer:exoplayer:r1.5.11] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\exoplayer-r1.5.11.aar\60363b8321beeab4c8ab887e22c3ba2b\AndroidManifest.xml:17:1-28:12
-MERGED from [com.yanzhenjie:loading:1.0.2] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\loading-1.0.2.aar\08c54843b5f4a22c1e733bfde65b6f61\AndroidManifest.xml:17:1-25:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\8bd45283dfeb1bf3b597897e4ea773b1\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:2:1-86:12
-INJECTED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:2:1-86:12
-INJECTED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:2:1-86:12
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:2:1-86:12
+INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:2:1-86:12
+INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:2:1-86:12
+INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:2:1-86:12
+MERGED from [cn.smssdk:SMSSDK:3.2.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\SMSSDK-3.2.1.aar\a6d574e147b5c051915a7ca475763ea8\AndroidManifest.xml:2:1-11:12
+MERGED from [cn.smssdk:ShortMessageSDKGUI:3.2.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.aar\dc11e1a8469591501ca50784acc4a2ff\AndroidManifest.xml:2:1-16:12
+MERGED from [com.android.support:design:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\b13bcbba7691450726f3824067659196\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:preference-v7:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\preference-v7-27.1.1.aar\9203ee117973ebe2f0e7f6d3ad95b3c7\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\fd6f52c6ce2ba4259ff7a8e5631c180a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\e58b9ad22b43491cd0754e353c1b6de0\AndroidManifest.xml:2:1-11:12
+MERGED from [com.yanzhenjie:recyclerview-swipe:1.1.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\recyclerview-swipe-1.1.4.aar\450540c88c8fabb14e4ad7e95d06f49b\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\8278824e855a43210576e8a3343ff6c0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\cab9e8e95124a4424464744ee8a4b1cb\AndroidManifest.xml:17:1-22:12
+MERGED from [tv.danmaku.ijk.media:ijkplayer-exo:0.8.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-exo-0.8.4.aar\3c9bf67a3f913958b4bf711cb811260c\AndroidManifest.xml:2:1-15:12
+MERGED from [tv.danmaku.ijk.media:ijkplayer-java:0.8.5.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-java-0.8.5.1.aar\8aac1057d17fe54f1539aa6b612895e7\AndroidManifest.xml:2:1-9:12
+MERGED from [tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-armv7a-0.8.4.aar\b118e2eeb7d19eb71dc45e88da6ab6bf\AndroidManifest.xml:2:1-9:12
+MERGED from [tv.danmaku.ijk.media:ijkplayer-armv5:0.8.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-armv5-0.8.4.aar\47529cc99cf39f7e69316bdbc6eacead\AndroidManifest.xml:2:1-9:12
+MERGED from [tv.danmaku.ijk.media:ijkplayer-arm64:0.8.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-arm64-0.8.4.aar\08f801545bc8b4f25e26b32e79ec36a9\AndroidManifest.xml:2:1-9:12
+MERGED from [tv.danmaku.ijk.media:ijkplayer-x86:0.8.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-x86-0.8.4.aar\b8c6011f37630c074febe1c7223430a1\AndroidManifest.xml:2:1-9:12
+MERGED from [tv.danmaku.ijk.media:ijkplayer-x86_64:0.8.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-x86_64-0.8.4.aar\61431e9b31e5fa83dc66246aab87d1c9\AndroidManifest.xml:2:1-9:12
+MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\Android-AdvancedWebView-v3.0.0.aar\109d9211e57bef4ee3c4171e57aedeb4\AndroidManifest.xml:2:1-11:12
+MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\995e75df584857de8a85cf00c60c2058\AndroidManifest.xml:2:1-7:12
+MERGED from [com.android.support:multidex:1.0.3] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\multidex-1.0.3.aar\e4de1c50dba08758193d058c762e9e12\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.persistence.room:runtime:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\bfaf20b0d9e7962098df3deacfadca75\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.lygttpod:SuperTextView:2.1.6] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\SuperTextView-2.1.6.aar\b57f4134782b763937171cd1f09a66bc\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\bfb77ffb3d23c4458b2fdb5c8180f126\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\2faabd1794d2e25fed26d29ab334db0a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\6e6324df575872b0d6e08d0ce0ad250e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\b3f85cb4c02745c82a23c6d3503a719b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\61a39055356216b431e72400e94deec3\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\dae1c547f41597a9f396fdf0af3254a6\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.persistence:db-framework:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.0.aar\490befc30c32b2447a07861f81654410\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.persistence:db:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\db-1.1.0.aar\03591bf18dc70d43205ced6a63dee03c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\bbe1806803625b5010254aff64aee779\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\d7918bba58110e8a4a24beaf0178ba75\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\036282666a8b0210d10a655f8d050c83\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\6a0ac2db5d618e4a23f1095d502a6ece\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\5ca2df53dc07cf19a4e6ac248cac2a88\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\ba82548e5db21b8e524d3227b7fc6f40\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.exoplayer:exoplayer:r1.5.11] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\exoplayer-r1.5.11.aar\c3443e34b08499e4763d5a952fc15d1b\AndroidManifest.xml:17:1-28:12
+MERGED from [com.yanzhenjie:loading:1.0.2] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\loading-1.0.2.aar\53b6e73de98aee9417cf1b9b7c100388\AndroidManifest.xml:17:1-25:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\623d5535d8cf5aec8eae752c7226d39e\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:2:1-86:12
+INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:2:1-86:12
+INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:2:1-86:12
 	package
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:4:5-30
-		INJECTED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:4:5-30
+		INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:2:1-86:12
-		INJECTED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:2:1-86:12
+		INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
 	xmlns:tools
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:3:5-51
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:2:1-86:12
-		INJECTED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:2:1-86:12
+		INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:6:5-79
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:6:5-79
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:6:22-76
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:6:22-76
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:7:5-67
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:7:5-67
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:7:22-64
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:7:22-64
 uses-permission#android.permission.RECEIVE_USER_PRESENT
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:9:5-79
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:9:5-79
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:9:22-76
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:9:22-76
 uses-permission#android.permission.WAKE_LOCK
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:10:5-68
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:10:5-68
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:10:22-65
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:10:22-65
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:11:5-75
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:11:5-75
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:11:22-72
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:11:22-72
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:12:5-81
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:12:5-81
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:12:22-78
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:12:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:13:5-80
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:13:5-80
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:13:22-77
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:13:22-77
 uses-permission#android.permission.WRITE_SETTINGS
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:14:5-73
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:14:5-73
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:14:22-70
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:14:22-70
 uses-permission#android.permission.VIBRATE
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:15:5-66
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:15:5-66
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:15:22-63
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:15:22-63
 uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:17:5-84
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:17:5-84
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:17:22-81
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:17:22-81
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:19:5-76
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:19:5-76
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:19:22-73
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:19:22-73
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:20:5-81
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:20:5-81
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:20:22-78
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:20:22-78
 application
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:25:5-84:19
-MERGED from [cn.smssdk:ShortMessageSDKGUI:3.2.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.aar\777016bec70bdf8abeec2066fb32f302\AndroidManifest.xml:13:5-14:19
-MERGED from [cn.smssdk:ShortMessageSDKGUI:3.2.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.aar\777016bec70bdf8abeec2066fb32f302\AndroidManifest.xml:13:5-14:19
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\14016c16f392007a89f4135acf8b299f\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\14016c16f392007a89f4135acf8b299f\AndroidManifest.xml:9:5-20
-MERGED from [tv.danmaku.ijk.media:ijkplayer-exo:0.8.4] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ijkplayer-exo-0.8.4.aar\53523cb1fa7c3e22bac357bd8e0d75f5\AndroidManifest.xml:9:5-13:19
-MERGED from [tv.danmaku.ijk.media:ijkplayer-exo:0.8.4] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ijkplayer-exo-0.8.4.aar\53523cb1fa7c3e22bac357bd8e0d75f5\AndroidManifest.xml:9:5-13:19
-MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\Android-AdvancedWebView-v3.0.0.aar\e4eed930daf30fbd84d76d4330569e76\AndroidManifest.xml:9:5-20
-MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\Android-AdvancedWebView-v3.0.0.aar\e4eed930daf30fbd84d76d4330569e76\AndroidManifest.xml:9:5-20
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:25:5-84:19
+MERGED from [cn.smssdk:ShortMessageSDKGUI:3.2.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.aar\dc11e1a8469591501ca50784acc4a2ff\AndroidManifest.xml:13:5-14:19
+MERGED from [cn.smssdk:ShortMessageSDKGUI:3.2.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.aar\dc11e1a8469591501ca50784acc4a2ff\AndroidManifest.xml:13:5-14:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\e58b9ad22b43491cd0754e353c1b6de0\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\e58b9ad22b43491cd0754e353c1b6de0\AndroidManifest.xml:9:5-20
+MERGED from [tv.danmaku.ijk.media:ijkplayer-exo:0.8.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-exo-0.8.4.aar\3c9bf67a3f913958b4bf711cb811260c\AndroidManifest.xml:9:5-13:19
+MERGED from [tv.danmaku.ijk.media:ijkplayer-exo:0.8.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-exo-0.8.4.aar\3c9bf67a3f913958b4bf711cb811260c\AndroidManifest.xml:9:5-13:19
+MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\Android-AdvancedWebView-v3.0.0.aar\109d9211e57bef4ee3c4171e57aedeb4\AndroidManifest.xml:9:5-20
+MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\Android-AdvancedWebView-v3.0.0.aar\109d9211e57bef4ee3c4171e57aedeb4\AndroidManifest.xml:9:5-20
 	android:supportsRtl
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:31:9-35
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:31:9-35
 	android:label
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:29:9-41
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:29:9-41
 	android:fullBackupContent
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:34:9-59
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:34:9-59
 	android:roundIcon
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:30:9-54
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:30:9-54
 	android:icon
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:28:9-43
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:28:9-43
 	android:allowBackup
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:27:9-35
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:27:9-35
 	android:theme
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:32:9-59
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:32:9-59
 	tools:replace
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:33:9-37
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:33:9-37
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:26:9-47
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:26:9-47
 activity#com.zzpc.wynews.TaskActivity
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:36:9-49:20
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:36:9-49:20
 	android:label
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:40:13-45
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:40:13-45
 	android:theme
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:38:13-58
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:38:13-58
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:37:13-56
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:37:13-56
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:42:13-48:29
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:42:13-48:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:43:17-69
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:43:17-69
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:43:25-66
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:43:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:45:17-47:55
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:45:17-47:55
 	android:launchMode
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:47:21-52
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:47:21-52
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:46:21-68
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:46:21-68
 activity#com.zzpc.wynews.personality.loginqq.QQShareActivity
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:51:9-54:63
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:51:9-54:63
 	android:windowSoftInputMode
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:54:13-60
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:54:13-60
 	android:configChanges
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:53:13-63
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:53:13-63
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:52:13-64
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:52:13-64
 activity#com.tencent.connect.common.AssistActivity
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:55:9-59:75
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:55:9-59:75
 	android:screenOrientation
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:58:13-47
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:58:13-47
 	android:configChanges
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:57:13-63
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:57:13-63
 	android:theme
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:59:13-72
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:59:13-72
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:56:13-69
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:56:13-69
 activity#com.tencent.tauth.AuthActivity
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:61:9-72:20
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:61:9-72:20
 	android:launchMode
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:63:13-44
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:63:13-44
 	android:noHistory
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:64:13-37
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:64:13-37
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:62:13-58
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:62:13-58
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:tencent1106726824
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:65:13-71:29
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:65:13-71:29
 action#android.intent.action.VIEW
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:66:17-69
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:66:17-69
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:66:25-66
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:66:25-66
 category#android.intent.category.DEFAULT
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:67:17-76
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:67:17-76
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:67:27-73
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:67:27-73
 category#android.intent.category.BROWSABLE
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:68:17-78
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:68:17-78
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:68:27-75
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:68:27-75
 data
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:69:17-60
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:69:17-60
 	android:scheme
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:69:23-57
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:69:23-57
 activity#com.zzpc.wynews.personality.loginwx.SendToWXActivity
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:75:9-74
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:75:9-74
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:75:19-71
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:75:19-71
 activity#com.zzpc.wynews.personality.loginwx.ShowFromWXActivity
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:76:9-76
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:76:9-76
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:76:19-73
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:76:19-73
 activity#com.zzpc.wynews.personality.loginwx.WXEntryActivity
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:77:9-73
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:77:9-73
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:77:19-70
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:77:19-70
 activity#com.zzpc.wynews.personality.loginwx.ScanQRCodeLoginActivity
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:78:9-81
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:78:9-81
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:78:19-78
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:78:19-78
 activity#com.zzpc.wynews.personality.loginwx.GetFromWXActivity
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:79:9-75
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:79:9-75
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:79:19-72
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:79:19-72
 meta-data#Mob-AppKey
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:80:9-77
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:80:9-77
 	android:value
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:80:46-75
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:80:46-75
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:80:20-45
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:80:20-45
 meta-data#Mob-AppSecret
-ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:81:9-99
+ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:81:9-99
 	android:value
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:81:49-97
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:81:49-97
 	android:name
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:81:20-48
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:81:20-48
 uses-sdk
-INJECTED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
-MERGED from [cn.smssdk:SMSSDK:3.2.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\SMSSDK-3.2.1.aar\edf94c4e68fbd632c14431de67d6a575\AndroidManifest.xml:7:5-9:41
-MERGED from [cn.smssdk:SMSSDK:3.2.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\SMSSDK-3.2.1.aar\edf94c4e68fbd632c14431de67d6a575\AndroidManifest.xml:7:5-9:41
-MERGED from [cn.smssdk:ShortMessageSDKGUI:3.2.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.aar\777016bec70bdf8abeec2066fb32f302\AndroidManifest.xml:8:5-11:45
-MERGED from [cn.smssdk:ShortMessageSDKGUI:3.2.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.aar\777016bec70bdf8abeec2066fb32f302\AndroidManifest.xml:8:5-11:45
-MERGED from [com.android.support:design:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\0f6e5a4cd27e2f936fd7d330c10cfa1a\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:design:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\0f6e5a4cd27e2f936fd7d330c10cfa1a\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:preference-v7:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\preference-v7-27.1.1.aar\cb547d41f7826200f90c4a96695122de\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:preference-v7:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\preference-v7-27.1.1.aar\cb547d41f7826200f90c4a96695122de\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\da8525d8eca409f69488be6602996b72\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\da8525d8eca409f69488be6602996b72\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\14016c16f392007a89f4135acf8b299f\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\14016c16f392007a89f4135acf8b299f\AndroidManifest.xml:5:5-7:41
-MERGED from [com.yanzhenjie:recyclerview-swipe:1.1.4] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\recyclerview-swipe-1.1.4.aar\fff47c90676c11ef16b40b167da329fd\AndroidManifest.xml:21:5-23:41
-MERGED from [com.yanzhenjie:recyclerview-swipe:1.1.4] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\recyclerview-swipe-1.1.4.aar\fff47c90676c11ef16b40b167da329fd\AndroidManifest.xml:21:5-23:41
-MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\ab1031f605543cd5d428a79219b42c2a\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\ab1031f605543cd5d428a79219b42c2a\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\31a40bedb6807083dc1de62b00ee742f\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\31a40bedb6807083dc1de62b00ee742f\AndroidManifest.xml:20:5-44
-MERGED from [tv.danmaku.ijk.media:ijkplayer-exo:0.8.4] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ijkplayer-exo-0.8.4.aar\53523cb1fa7c3e22bac357bd8e0d75f5\AndroidManifest.xml:5:5-7:41
-MERGED from [tv.danmaku.ijk.media:ijkplayer-exo:0.8.4] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ijkplayer-exo-0.8.4.aar\53523cb1fa7c3e22bac357bd8e0d75f5\AndroidManifest.xml:5:5-7:41
-MERGED from [tv.danmaku.ijk.media:ijkplayer-java:0.8.5.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ijkplayer-java-0.8.5.1.aar\2114c30395739232234676c78d1c63df\AndroidManifest.xml:5:5-7:41
-MERGED from [tv.danmaku.ijk.media:ijkplayer-java:0.8.5.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ijkplayer-java-0.8.5.1.aar\2114c30395739232234676c78d1c63df\AndroidManifest.xml:5:5-7:41
-MERGED from [tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.4] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ijkplayer-armv7a-0.8.4.aar\a10e2a29c7ec435e5ee88663e4dddae9\AndroidManifest.xml:5:5-7:41
-MERGED from [tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.4] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ijkplayer-armv7a-0.8.4.aar\a10e2a29c7ec435e5ee88663e4dddae9\AndroidManifest.xml:5:5-7:41
-MERGED from [tv.danmaku.ijk.media:ijkplayer-armv5:0.8.4] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ijkplayer-armv5-0.8.4.aar\fe2426b38421465f0bd2e4342f7faba6\AndroidManifest.xml:5:5-7:41
-MERGED from [tv.danmaku.ijk.media:ijkplayer-armv5:0.8.4] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ijkplayer-armv5-0.8.4.aar\fe2426b38421465f0bd2e4342f7faba6\AndroidManifest.xml:5:5-7:41
-MERGED from [tv.danmaku.ijk.media:ijkplayer-arm64:0.8.4] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ijkplayer-arm64-0.8.4.aar\f062d62cafdd4398e6c8e33e75568d41\AndroidManifest.xml:5:5-7:41
-MERGED from [tv.danmaku.ijk.media:ijkplayer-arm64:0.8.4] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ijkplayer-arm64-0.8.4.aar\f062d62cafdd4398e6c8e33e75568d41\AndroidManifest.xml:5:5-7:41
-MERGED from [tv.danmaku.ijk.media:ijkplayer-x86:0.8.4] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ijkplayer-x86-0.8.4.aar\280c41e059371b8a32ea7a1e600d014d\AndroidManifest.xml:5:5-7:41
-MERGED from [tv.danmaku.ijk.media:ijkplayer-x86:0.8.4] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ijkplayer-x86-0.8.4.aar\280c41e059371b8a32ea7a1e600d014d\AndroidManifest.xml:5:5-7:41
-MERGED from [tv.danmaku.ijk.media:ijkplayer-x86_64:0.8.4] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ijkplayer-x86_64-0.8.4.aar\0992b228338bb90ab047d6befbcd27a7\AndroidManifest.xml:5:5-7:41
-MERGED from [tv.danmaku.ijk.media:ijkplayer-x86_64:0.8.4] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ijkplayer-x86_64-0.8.4.aar\0992b228338bb90ab047d6befbcd27a7\AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\Android-AdvancedWebView-v3.0.0.aar\e4eed930daf30fbd84d76d4330569e76\AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\Android-AdvancedWebView-v3.0.0.aar\e4eed930daf30fbd84d76d4330569e76\AndroidManifest.xml:5:5-7:41
-MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\eea3d72a3f0594f470169e2193388889\AndroidManifest.xml:5:5-43
-MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\eea3d72a3f0594f470169e2193388889\AndroidManifest.xml:5:5-43
-MERGED from [com.android.support:multidex:1.0.3] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\multidex-1.0.3.aar\6caaddaeacde913cff5668ce3193dac2\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:multidex:1.0.3] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\multidex-1.0.3.aar\6caaddaeacde913cff5668ce3193dac2\AndroidManifest.xml:20:5-43
-MERGED from [android.arch.persistence.room:runtime:1.1.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\93864421e6ace0230dbf804b1b399279\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence.room:runtime:1.1.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\93864421e6ace0230dbf804b1b399279\AndroidManifest.xml:20:5-44
-MERGED from [com.github.lygttpod:SuperTextView:2.1.6] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\SuperTextView-2.1.6.aar\434de2ac1034343f5108c89d13a3f2b6\AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.lygttpod:SuperTextView:2.1.6] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\SuperTextView-2.1.6.aar\434de2ac1034343f5108c89d13a3f2b6\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:support-v4:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\e9306fcd649ef0fd6c765da843e16177\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\e9306fcd649ef0fd6c765da843e16177\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\f9bdbd2c7c8ef66579b79ea66fdfbc84\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\f9bdbd2c7c8ef66579b79ea66fdfbc84\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\83e3bc3b4ce0be7110061b8807cdbbd6\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\83e3bc3b4ce0be7110061b8807cdbbd6\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\d63e852b5cfa785e5aceae6620579a82\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\d63e852b5cfa785e5aceae6620579a82\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\d005fc07e34a2464aed1eebf0a604c0f\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\d005fc07e34a2464aed1eebf0a604c0f\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\1d99154532244fb2b387770ab129e4c9\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\1d99154532244fb2b387770ab129e4c9\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence:db-framework:1.1.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.0.aar\5e2bb891baedbc3abf9135406def4db7\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence:db-framework:1.1.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.0.aar\5e2bb891baedbc3abf9135406def4db7\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence:db:1.1.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\db-1.1.0.aar\bedfe90ceef1f65a14b42a2eee04a5dd\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence:db:1.1.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\db-1.1.0.aar\bedfe90ceef1f65a14b42a2eee04a5dd\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\f2d075b6392bca64e9fed1b614b794d1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\f2d075b6392bca64e9fed1b614b794d1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\5fdd9f643f7f9806c5fcaedc93fe28c9\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\5fdd9f643f7f9806c5fcaedc93fe28c9\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\bb7991a1254206d5acc930ac24d1311e\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\bb7991a1254206d5acc930ac24d1311e\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\a4bd168b7979d82e5e5ae778f49f6bfc\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\a4bd168b7979d82e5e5ae778f49f6bfc\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\5c6aed867e12162b29eb1dd12139ae11\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\5c6aed867e12162b29eb1dd12139ae11\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\d28e7cef2c56f1b28ead3347f6a3c79b\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\d28e7cef2c56f1b28ead3347f6a3c79b\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.exoplayer:exoplayer:r1.5.11] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\exoplayer-r1.5.11.aar\60363b8321beeab4c8ab887e22c3ba2b\AndroidManifest.xml:24:5-26:41
-MERGED from [com.google.android.exoplayer:exoplayer:r1.5.11] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\exoplayer-r1.5.11.aar\60363b8321beeab4c8ab887e22c3ba2b\AndroidManifest.xml:24:5-26:41
-MERGED from [com.yanzhenjie:loading:1.0.2] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\loading-1.0.2.aar\08c54843b5f4a22c1e733bfde65b6f61\AndroidManifest.xml:21:5-23:41
-MERGED from [com.yanzhenjie:loading:1.0.2] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\loading-1.0.2.aar\08c54843b5f4a22c1e733bfde65b6f61\AndroidManifest.xml:21:5-23:41
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\8bd45283dfeb1bf3b597897e4ea773b1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\8bd45283dfeb1bf3b597897e4ea773b1\AndroidManifest.xml:20:5-44
-INJECTED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
+MERGED from [cn.smssdk:SMSSDK:3.2.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\SMSSDK-3.2.1.aar\a6d574e147b5c051915a7ca475763ea8\AndroidManifest.xml:7:5-9:41
+MERGED from [cn.smssdk:SMSSDK:3.2.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\SMSSDK-3.2.1.aar\a6d574e147b5c051915a7ca475763ea8\AndroidManifest.xml:7:5-9:41
+MERGED from [cn.smssdk:ShortMessageSDKGUI:3.2.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.aar\dc11e1a8469591501ca50784acc4a2ff\AndroidManifest.xml:8:5-11:45
+MERGED from [cn.smssdk:ShortMessageSDKGUI:3.2.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.aar\dc11e1a8469591501ca50784acc4a2ff\AndroidManifest.xml:8:5-11:45
+MERGED from [com.android.support:design:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\b13bcbba7691450726f3824067659196\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\b13bcbba7691450726f3824067659196\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:preference-v7:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\preference-v7-27.1.1.aar\9203ee117973ebe2f0e7f6d3ad95b3c7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:preference-v7:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\preference-v7-27.1.1.aar\9203ee117973ebe2f0e7f6d3ad95b3c7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\fd6f52c6ce2ba4259ff7a8e5631c180a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\fd6f52c6ce2ba4259ff7a8e5631c180a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\e58b9ad22b43491cd0754e353c1b6de0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\e58b9ad22b43491cd0754e353c1b6de0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.yanzhenjie:recyclerview-swipe:1.1.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\recyclerview-swipe-1.1.4.aar\450540c88c8fabb14e4ad7e95d06f49b\AndroidManifest.xml:21:5-23:41
+MERGED from [com.yanzhenjie:recyclerview-swipe:1.1.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\recyclerview-swipe-1.1.4.aar\450540c88c8fabb14e4ad7e95d06f49b\AndroidManifest.xml:21:5-23:41
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\8278824e855a43210576e8a3343ff6c0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\8278824e855a43210576e8a3343ff6c0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\cab9e8e95124a4424464744ee8a4b1cb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\cab9e8e95124a4424464744ee8a4b1cb\AndroidManifest.xml:20:5-44
+MERGED from [tv.danmaku.ijk.media:ijkplayer-exo:0.8.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-exo-0.8.4.aar\3c9bf67a3f913958b4bf711cb811260c\AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-exo:0.8.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-exo-0.8.4.aar\3c9bf67a3f913958b4bf711cb811260c\AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-java:0.8.5.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-java-0.8.5.1.aar\8aac1057d17fe54f1539aa6b612895e7\AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-java:0.8.5.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-java-0.8.5.1.aar\8aac1057d17fe54f1539aa6b612895e7\AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-armv7a-0.8.4.aar\b118e2eeb7d19eb71dc45e88da6ab6bf\AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-armv7a-0.8.4.aar\b118e2eeb7d19eb71dc45e88da6ab6bf\AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-armv5:0.8.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-armv5-0.8.4.aar\47529cc99cf39f7e69316bdbc6eacead\AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-armv5:0.8.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-armv5-0.8.4.aar\47529cc99cf39f7e69316bdbc6eacead\AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-arm64:0.8.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-arm64-0.8.4.aar\08f801545bc8b4f25e26b32e79ec36a9\AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-arm64:0.8.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-arm64-0.8.4.aar\08f801545bc8b4f25e26b32e79ec36a9\AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-x86:0.8.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-x86-0.8.4.aar\b8c6011f37630c074febe1c7223430a1\AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-x86:0.8.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-x86-0.8.4.aar\b8c6011f37630c074febe1c7223430a1\AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-x86_64:0.8.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-x86_64-0.8.4.aar\61431e9b31e5fa83dc66246aab87d1c9\AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-x86_64:0.8.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-x86_64-0.8.4.aar\61431e9b31e5fa83dc66246aab87d1c9\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\Android-AdvancedWebView-v3.0.0.aar\109d9211e57bef4ee3c4171e57aedeb4\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\Android-AdvancedWebView-v3.0.0.aar\109d9211e57bef4ee3c4171e57aedeb4\AndroidManifest.xml:5:5-7:41
+MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\995e75df584857de8a85cf00c60c2058\AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\995e75df584857de8a85cf00c60c2058\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:multidex:1.0.3] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\multidex-1.0.3.aar\e4de1c50dba08758193d058c762e9e12\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.3] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\multidex-1.0.3.aar\e4de1c50dba08758193d058c762e9e12\AndroidManifest.xml:20:5-43
+MERGED from [android.arch.persistence.room:runtime:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\bfaf20b0d9e7962098df3deacfadca75\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence.room:runtime:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\bfaf20b0d9e7962098df3deacfadca75\AndroidManifest.xml:20:5-44
+MERGED from [com.github.lygttpod:SuperTextView:2.1.6] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\SuperTextView-2.1.6.aar\b57f4134782b763937171cd1f09a66bc\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.lygttpod:SuperTextView:2.1.6] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\SuperTextView-2.1.6.aar\b57f4134782b763937171cd1f09a66bc\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\bfb77ffb3d23c4458b2fdb5c8180f126\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\bfb77ffb3d23c4458b2fdb5c8180f126\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\2faabd1794d2e25fed26d29ab334db0a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\2faabd1794d2e25fed26d29ab334db0a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\6e6324df575872b0d6e08d0ce0ad250e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\6e6324df575872b0d6e08d0ce0ad250e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\b3f85cb4c02745c82a23c6d3503a719b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\b3f85cb4c02745c82a23c6d3503a719b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\61a39055356216b431e72400e94deec3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\61a39055356216b431e72400e94deec3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\dae1c547f41597a9f396fdf0af3254a6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\dae1c547f41597a9f396fdf0af3254a6\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db-framework:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.0.aar\490befc30c32b2447a07861f81654410\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db-framework:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.0.aar\490befc30c32b2447a07861f81654410\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\db-1.1.0.aar\03591bf18dc70d43205ced6a63dee03c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\db-1.1.0.aar\03591bf18dc70d43205ced6a63dee03c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\bbe1806803625b5010254aff64aee779\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\bbe1806803625b5010254aff64aee779\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\d7918bba58110e8a4a24beaf0178ba75\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\d7918bba58110e8a4a24beaf0178ba75\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\036282666a8b0210d10a655f8d050c83\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\036282666a8b0210d10a655f8d050c83\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\6a0ac2db5d618e4a23f1095d502a6ece\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\6a0ac2db5d618e4a23f1095d502a6ece\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\5ca2df53dc07cf19a4e6ac248cac2a88\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\5ca2df53dc07cf19a4e6ac248cac2a88\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\ba82548e5db21b8e524d3227b7fc6f40\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\ba82548e5db21b8e524d3227b7fc6f40\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.exoplayer:exoplayer:r1.5.11] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\exoplayer-r1.5.11.aar\c3443e34b08499e4763d5a952fc15d1b\AndroidManifest.xml:24:5-26:41
+MERGED from [com.google.android.exoplayer:exoplayer:r1.5.11] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\exoplayer-r1.5.11.aar\c3443e34b08499e4763d5a952fc15d1b\AndroidManifest.xml:24:5-26:41
+MERGED from [com.yanzhenjie:loading:1.0.2] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\loading-1.0.2.aar\53b6e73de98aee9417cf1b9b7c100388\AndroidManifest.xml:21:5-23:41
+MERGED from [com.yanzhenjie:loading:1.0.2] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\loading-1.0.2.aar\53b6e73de98aee9417cf1b9b7c100388\AndroidManifest.xml:21:5-23:41
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\623d5535d8cf5aec8eae752c7226d39e\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\623d5535d8cf5aec8eae752c7226d39e\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
 	tools:overrideLibrary
-		ADDED from [cn.smssdk:ShortMessageSDKGUI:3.2.1] C:\Users\a1348\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.aar\777016bec70bdf8abeec2066fb32f302\AndroidManifest.xml:11:9-42
+		ADDED from [cn.smssdk:ShortMessageSDKGUI:3.2.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.aar\dc11e1a8469591501ca50784acc4a2ff\AndroidManifest.xml:11:9-42
 	android:targetSdkVersion
-		INJECTED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\a1348\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
