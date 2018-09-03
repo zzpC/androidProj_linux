@@ -1,12 +1,10 @@
 package com.zzpc.wynews;
 
 
-import android.Manifest;
 import android.app.SearchManager;
 import android.content.Context;
 
 import android.content.pm.ActivityInfo;
-import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
@@ -19,12 +17,11 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
 
-import android.support.v4.content.ContextCompat;
+
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
@@ -225,15 +222,6 @@ public class TaskActivity extends AppCompatActivity implements
 
         switch (ftNo) {
             case 0:
-
-                //缓存机制需要权限
-                if (ContextCompat.checkSelfPermission(NewsApp.getContext(), Manifest.permission.
-                        WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                    Log.e(TAG, "setBitmapToLocal: 权限不够");
-                    ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
-
-                }
-
 
                 if (currentFragment1!=null)
                   manager.beginTransaction().hide(currentFragment1).commit();

@@ -1,4 +1,4 @@
-package com.zzpc.wynews.newsmessage.util.pitcure;
+package com.zzpc.wynews.util.pitcure;
 
 /**
  * Created by zzp on 18-2-1.

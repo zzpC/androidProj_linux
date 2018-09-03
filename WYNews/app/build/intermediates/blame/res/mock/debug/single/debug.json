@@ -125,7 +125,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable_smssdk_edittext_bg_selector.xml.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable\\smssdk_edittext_bg_selector.xml"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable\\smssdk_edittext_bg_selector.xml"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable_abc_spinner_textfield_background_material.xml.flat",
@@ -225,7 +225,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xhdpi-v4_smssdk_clear_search.png.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable-xhdpi-v4\\smssdk_clear_search.png"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable-xhdpi-v4\\smssdk_clear_search.png"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable_ic_dashboard_black_24dp.xml.flat",
@@ -253,7 +253,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xhdpi-v4_smssdk_dialog_back.9.png.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable-xhdpi-v4\\smssdk_dialog_back.9.png"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable-xhdpi-v4\\smssdk_dialog_back.9.png"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
@@ -349,7 +349,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable_smssdk_popup_dialog_bg.xml.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable\\smssdk_popup_dialog_bg.xml"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable\\smssdk_popup_dialog_bg.xml"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-mdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
@@ -401,7 +401,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xhdpi-v4_smssdk_back_arrow2.png.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable-xhdpi-v4\\smssdk_back_arrow2.png"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable-xhdpi-v4\\smssdk_back_arrow2.png"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xxxhdpi-v4_design_ic_visibility_off.png.flat",
@@ -453,7 +453,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable_smssdk_back_arrow_bitmap.xml.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable\\smssdk_back_arrow_bitmap.xml"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable\\smssdk_back_arrow_bitmap.xml"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable_abc_list_selector_holo_dark.xml.flat",
@@ -465,7 +465,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\raw_smssdk_pydb.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\raw\\smssdk_pydb"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\raw\\smssdk_pydb"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\layout_preference_recyclerview.xml.flat",
@@ -601,7 +601,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xhdpi-v4_smssdk_input_bg_special_focus.9.png.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable-xhdpi-v4\\smssdk_input_bg_special_focus.9.png"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable-xhdpi-v4\\smssdk_input_bg_special_focus.9.png"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-ldrtl-xhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
@@ -613,7 +613,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable_smssdk_btn_disenable.xml.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable\\smssdk_btn_disenable.xml"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable\\smssdk_btn_disenable.xml"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
@@ -637,7 +637,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xhdpi-v4_smssdk_ic_popup_dialog_close.png.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable-xhdpi-v4\\smssdk_ic_popup_dialog_close.png"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable-xhdpi-v4\\smssdk_ic_popup_dialog_close.png"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\layout_fragment_video.xml.flat",
@@ -713,7 +713,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xhdpi-v4_smssdk_input_bg_normal.9.png.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable-xhdpi-v4\\smssdk_input_bg_normal.9.png"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable-xhdpi-v4\\smssdk_input_bg_normal.9.png"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\anim_abc_popup_enter.xml.flat",
@@ -801,7 +801,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable_smssdk_btn_line_bg.xml.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable\\smssdk_btn_line_bg.xml"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable\\smssdk_btn_line_bg.xml"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xxhdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
@@ -841,7 +841,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xhdpi-v4_smssdk_arrow_right.png.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable-xhdpi-v4\\smssdk_arrow_right.png"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable-xhdpi-v4\\smssdk_arrow_right.png"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-hdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
@@ -989,7 +989,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xhdpi-v4_smssdk_dialog_bg.9.png.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable-xhdpi-v4\\smssdk_dialog_bg.9.png"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable-xhdpi-v4\\smssdk_dialog_bg.9.png"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-mdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
@@ -1005,7 +1005,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xhdpi-v4_smssdk_input_bg_focus.9.png.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable-xhdpi-v4\\smssdk_input_bg_focus.9.png"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable-xhdpi-v4\\smssdk_input_bg_focus.9.png"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\layout_send_to_wx.xml.flat",
@@ -1049,7 +1049,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xhdpi-v4_smssdk_input_bg_special_normal.9.png.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable-xhdpi-v4\\smssdk_input_bg_special_normal.9.png"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable-xhdpi-v4\\smssdk_input_bg_special_normal.9.png"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
@@ -1133,11 +1133,11 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\layout_smssdk_avatar_picker_page.xml.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\layout\\smssdk_avatar_picker_page.xml"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\layout\\smssdk_avatar_picker_page.xml"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable_smssdk_country_bg_selector.xml.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable\\smssdk_country_bg_selector.xml"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable\\smssdk_country_bg_selector.xml"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\layout_design_layout_tab_icon.xml.flat",
@@ -1213,7 +1213,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\layout_smssdk_personal_info.xml.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\layout\\smssdk_personal_info.xml"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\layout\\smssdk_personal_info.xml"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-mdpi-v4_abc_ic_star_half_black_48dp.png.flat",
@@ -1329,7 +1329,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xhdpi-v4_smssdk_phone.png.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable-xhdpi-v4\\smssdk_phone.png"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable-xhdpi-v4\\smssdk_phone.png"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable_abc_list_selector_background_transition_holo_dark.xml.flat",
@@ -1377,7 +1377,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xhdpi-v4_smssdk_search_icon.png.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable-xhdpi-v4\\smssdk_search_icon.png"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable-xhdpi-v4\\smssdk_search_icon.png"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xxhdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
@@ -1389,7 +1389,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xhdpi-v4_smssdk_cl_divider.png.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable-xhdpi-v4\\smssdk_cl_divider.png"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable-xhdpi-v4\\smssdk_cl_divider.png"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable_abc_ic_voice_search_api_material.xml.flat",
@@ -1401,7 +1401,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable_smssdk_corners_bg_nor.xml.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable\\smssdk_corners_bg_nor.xml"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable\\smssdk_corners_bg_nor.xml"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable_abc_ratingbar_indicator_material.xml.flat",
@@ -1537,7 +1537,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable_smssdk_btn_enable.xml.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable\\smssdk_btn_enable.xml"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable\\smssdk_btn_enable.xml"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\layout_fragment_historydetails.xml.flat",
@@ -1553,7 +1553,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable_smssdk_country_group_scroll_down.xml.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable\\smssdk_country_group_scroll_down.xml"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable\\smssdk_country_group_scroll_down.xml"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xxxhdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
@@ -1585,7 +1585,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\layout_smssdk_popup_dialog.xml.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\layout\\smssdk_popup_dialog.xml"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\layout\\smssdk_popup_dialog.xml"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\layout_abc_tooltip.xml.flat",
@@ -1593,7 +1593,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable_smssdk_dialog_btn_back.xml.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable\\smssdk_dialog_btn_back.xml"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable\\smssdk_dialog_btn_back.xml"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
@@ -1637,7 +1637,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable_smssdk_country_group_scroll_up.xml.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable\\smssdk_country_group_scroll_up.xml"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable\\smssdk_country_group_scroll_up.xml"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\layout_design_menu_item_action_area.xml.flat",
@@ -1781,7 +1781,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xhdpi-v4_smssdk_back_arrow.png.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable-xhdpi-v4\\smssdk_back_arrow.png"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable-xhdpi-v4\\smssdk_back_arrow.png"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\layout_get_from_wx.xml.flat",
@@ -1789,7 +1789,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable_smssdk_corners_bg.xml.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable\\smssdk_corners_bg.xml"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable\\smssdk_corners_bg.xml"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xxhdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
@@ -2093,7 +2093,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xhdpi-v4_smssdk_default_avatar.png.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable-xhdpi-v4\\smssdk_default_avatar.png"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable-xhdpi-v4\\smssdk_default_avatar.png"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
@@ -2137,7 +2137,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\layout_smssdk_titlebar.xml.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\layout\\smssdk_titlebar.xml"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\layout\\smssdk_titlebar.xml"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xxhdpi_ic_volume_up_white_36dp.png.flat",
@@ -2169,7 +2169,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xhdpi-v4_smssdk_cp_default_avatar.png.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable-xhdpi-v4\\smssdk_cp_default_avatar.png"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable-xhdpi-v4\\smssdk_cp_default_avatar.png"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-hdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
@@ -2181,7 +2181,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable_smssdk_corners_bg_pre.xml.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable\\smssdk_corners_bg_pre.xml"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable\\smssdk_corners_bg_pre.xml"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable_btn_style_alert_dialog_cancel.xml.flat",
@@ -2313,7 +2313,7 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable_smssdk_conners_edittext_bg.xml.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\drawable\\smssdk_conners_edittext_bg.xml"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\drawable\\smssdk_conners_edittext_bg.xml"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-xxhdpi_share_wechat.png.flat",
@@ -2393,11 +2393,11 @@
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\layout_smssdk_avatar_page.xml.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\layout\\smssdk_avatar_page.xml"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\layout\\smssdk_avatar_page.xml"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\layout_smssdk_avatar_picker_item.xml.flat",
-        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.aar\\dc11e1a8469591501ca50784acc4a2ff\\res\\layout\\smssdk_avatar_picker_item.xml"
+        "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\ShortMessageSDKGUI-3.2.1.1.aar\\8a844705e336b2df0767721205f3137b\\res\\layout\\smssdk_avatar_picker_item.xml"
     },
     {
         "merged": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\res\\merged\\mock\\debug\\drawable-hdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",

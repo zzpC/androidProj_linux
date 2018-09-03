@@ -1,14 +1,12 @@
-package com.zzpc.wynews.newsmessage.util.pitcure;
+package com.zzpc.wynews.util.pitcure;
 
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.widget.ImageView;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -16,8 +14,6 @@ import java.net.URL;
  * Created by zzp on 17-11-23.
  */
 public class NetCacheUtils {
-//    private int
-private static final String TAG = "NetCacheUtils";
 
     private LocalCacheUtils mLocalCacheUtils;
     private MemoryCacheUtils mMemoryCacheUtils;
@@ -34,7 +30,6 @@ private static final String TAG = "NetCacheUtils";
      * @param url   下载图片的网络地址
      */
     void getBitmapFromNet(ImageView ivPic, String url) {
-        Log.e(TAG, "getBitmapFromNet: ");
         new BitmapTask().execute(ivPic, url);//启动AsyncTask
 
     }
@@ -61,7 +56,7 @@ private static final String TAG = "NetCacheUtils";
         protected Bitmap doInBackground(Object[] params) {
             ivPic = (ImageView) params[0];
             url = (String) params[1];
-            Log.e(TAG, "doInBackground: down bitmap url " );
+
             return downLoadBitmap(url);
         }
 
@@ -111,30 +106,11 @@ private static final String TAG = "NetCacheUtils";
 
             int responseCode = conn.getResponseCode();
             if (responseCode == 200) {
-                Log.e(TAG, "downLoadBitmap: 解析图片");
-
                 //图片压缩
-//                BitmapFactory.Options options = new BitmapFactory.Options();
-//                options.inSampleSize = 2;//宽高压缩为原来的1/2
-//                options.inPreferredConfig = Bitmap.Config.ARGB_4444;
-//                return BitmapFactory.decodeStream(conn.getInputStream(), null, options);
-
-                InputStream inputStream= conn.getInputStream();
-                final BitmapFactory.Options options = new BitmapFactory.Options();
-//                options.inJustDecodeBounds = true;
-//                BitmapFactory.decodeStream(conn.getInputStream(),null,options);
-//                 Calculate inSampleSize
-//                int inSampleSize = calculateInSampleSize(options,50,50);
-//                Log.e(TAG, "decodeSampledBitmapFromStream: 采样率"+inSampleSize );
-//                 Decode bitmap with inSampleSize set
-                options.inJustDecodeBounds = false;
+                BitmapFactory.Options options = new BitmapFactory.Options();
+                options.inSampleSize = 2;//宽高压缩为原来的1/2
                 options.inPreferredConfig = Bitmap.Config.ARGB_4444;
-                options.inSampleSize=2;
-                Log.e(TAG, "decodeSampledBitmapFromStream: " );
-                return BitmapFactory.decodeStream(conn.getInputStream(),null,options);
-
-
-//                return BitmapEffectiveLoad.decodeSampledBitmapFromStream(conn,null,300,300);
+                return BitmapFactory.decodeStream(conn.getInputStream(), null, options);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -143,26 +119,7 @@ private static final String TAG = "NetCacheUtils";
                 conn.disconnect();
             }
         }
+
         return null;
     }
-
-
-    public static int calculateInSampleSize(
-            BitmapFactory.Options options,int reqWidth,int reqHeight) {
-        // Raw height and width of image
-        final int height = options.outHeight;
-        final int width = options.outWidth;
-        int inSampleSize = 1;
-        if (height > reqHeight || width > reqWidth) {
-            final int halfHeight = height / 2;
-            final int halfWidth = width / 2;
-            // Calculate the largest inSampleSize value that is a power of 2 and keeps both
-            // height and width larger than the requested height and width.
-            while ((halfHeight / inSampleSize) >= reqHeight && (halfWidth / inSampleSize) >= reqWidth) {
-                inSampleSize *= 2;
-            }
-        }
-        return inSampleSize;
-    }
-
 }

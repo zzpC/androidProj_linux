@@ -10,19 +10,11 @@
             android:title="已阅读数目: "
             android:summary="Reading Record" />
 
-        <!--<SwitchPreference-->
-            <!--android:defaultValue="true"-->
-            <!--android:key="switch_pic_wifi"-->
-            <!--android:summary="WIFI下加载图片以省流"-->
-            <!--android:title="图片仅WIFI" />-->
         <SwitchPreference
-            android:defaultValue="true"
-            android:key="switch_onlywifi"
+            android:defaultValue="false"
+            android:key="switch_pic_wifi"
             android:summary="WIFI下加载图片以省流"
             android:title="图片仅WIFI" />
-
-
-
         <SwitchPreference
             android:defaultValue="true"
             android:key="switch_night"

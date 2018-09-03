@@ -4,12 +4,12 @@ ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\A
 INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:2:1-86:12
 INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:2:1-86:12
 INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:2:1-86:12
-MERGED from [cn.smssdk:SMSSDK:3.2.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\SMSSDK-3.2.1.aar\a6d574e147b5c051915a7ca475763ea8\AndroidManifest.xml:2:1-11:12
-MERGED from [cn.smssdk:ShortMessageSDKGUI:3.2.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.aar\dc11e1a8469591501ca50784acc4a2ff\AndroidManifest.xml:2:1-16:12
+MERGED from [cn.smssdk:SMSSDK:3.2.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\SMSSDK-3.2.1.1.aar\f15433f20edfb7287f38804ca3d4fbdf\AndroidManifest.xml:2:1-11:12
+MERGED from [cn.smssdk:ShortMessageSDKGUI:3.2.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.1.aar\8a844705e336b2df0767721205f3137b\AndroidManifest.xml:2:1-16:12
 MERGED from [com.android.support:design:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\b13bcbba7691450726f3824067659196\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:preference-v7:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\preference-v7-27.1.1.aar\9203ee117973ebe2f0e7f6d3ad95b3c7\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\fd6f52c6ce2ba4259ff7a8e5631c180a\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\e58b9ad22b43491cd0754e353c1b6de0\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\1e9de0fa7b3e869a48876ea15060dea9\AndroidManifest.xml:2:1-11:12
 MERGED from [com.yanzhenjie:recyclerview-swipe:1.1.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\recyclerview-swipe-1.1.4.aar\450540c88c8fabb14e4ad7e95d06f49b\AndroidManifest.xml:17:1-25:12
 MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\8278824e855a43210576e8a3343ff6c0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\cab9e8e95124a4424464744ee8a4b1cb\AndroidManifest.xml:17:1-22:12
@@ -23,7 +23,7 @@ MERGED from [tv.danmaku.ijk.media:ijkplayer-x86_64:0.8.4] C:\Users\zzp\.gradle\c
 MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\Android-AdvancedWebView-v3.0.0.aar\109d9211e57bef4ee3c4171e57aedeb4\AndroidManifest.xml:2:1-11:12
 MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\995e75df584857de8a85cf00c60c2058\AndroidManifest.xml:2:1-7:12
 MERGED from [com.android.support:multidex:1.0.3] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\multidex-1.0.3.aar\e4de1c50dba08758193d058c762e9e12\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.persistence.room:runtime:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\bfaf20b0d9e7962098df3deacfadca75\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.persistence.room:runtime:1.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\e258674c425763d0cba2fa4e400735ea\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.lygttpod:SuperTextView:2.1.6] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\SuperTextView-2.1.6.aar\b57f4134782b763937171cd1f09a66bc\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:support-v4:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\bfb77ffb3d23c4458b2fdb5c8180f126\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\2faabd1794d2e25fed26d29ab334db0a\AndroidManifest.xml:17:1-22:12
@@ -31,8 +31,8 @@ MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\zzp\.
 MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\b3f85cb4c02745c82a23c6d3503a719b\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:transition:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\61a39055356216b431e72400e94deec3\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\dae1c547f41597a9f396fdf0af3254a6\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.persistence:db-framework:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.0.aar\490befc30c32b2447a07861f81654410\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.persistence:db:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\db-1.1.0.aar\03591bf18dc70d43205ced6a63dee03c\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.persistence:db-framework:1.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.1.aar\6c4572bf3af10eae8e61caa33e9492bc\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.persistence:db:1.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\db-1.1.1.aar\299ffa39fae5008d445b7e92fccf35fb\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\bbe1806803625b5010254aff64aee779\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\d7918bba58110e8a4a24beaf0178ba75\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-compat:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\036282666a8b0210d10a655f8d050c83\AndroidManifest.xml:17:1-22:12
@@ -111,10 +111,10 @@ ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\A
 		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:20:22-78
 application
 ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:25:5-84:19
-MERGED from [cn.smssdk:ShortMessageSDKGUI:3.2.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.aar\dc11e1a8469591501ca50784acc4a2ff\AndroidManifest.xml:13:5-14:19
-MERGED from [cn.smssdk:ShortMessageSDKGUI:3.2.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.aar\dc11e1a8469591501ca50784acc4a2ff\AndroidManifest.xml:13:5-14:19
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\e58b9ad22b43491cd0754e353c1b6de0\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\e58b9ad22b43491cd0754e353c1b6de0\AndroidManifest.xml:9:5-20
+MERGED from [cn.smssdk:ShortMessageSDKGUI:3.2.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.1.aar\8a844705e336b2df0767721205f3137b\AndroidManifest.xml:13:5-14:19
+MERGED from [cn.smssdk:ShortMessageSDKGUI:3.2.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.1.aar\8a844705e336b2df0767721205f3137b\AndroidManifest.xml:13:5-14:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\1e9de0fa7b3e869a48876ea15060dea9\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\1e9de0fa7b3e869a48876ea15060dea9\AndroidManifest.xml:9:5-20
 MERGED from [tv.danmaku.ijk.media:ijkplayer-exo:0.8.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-exo-0.8.4.aar\3c9bf67a3f913958b4bf711cb811260c\AndroidManifest.xml:9:5-13:19
 MERGED from [tv.danmaku.ijk.media:ijkplayer-exo:0.8.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-exo-0.8.4.aar\3c9bf67a3f913958b4bf711cb811260c\AndroidManifest.xml:9:5-13:19
 MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\Android-AdvancedWebView-v3.0.0.aar\109d9211e57bef4ee3c4171e57aedeb4\AndroidManifest.xml:9:5-20
@@ -237,18 +237,18 @@ uses-sdk
 INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
-MERGED from [cn.smssdk:SMSSDK:3.2.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\SMSSDK-3.2.1.aar\a6d574e147b5c051915a7ca475763ea8\AndroidManifest.xml:7:5-9:41
-MERGED from [cn.smssdk:SMSSDK:3.2.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\SMSSDK-3.2.1.aar\a6d574e147b5c051915a7ca475763ea8\AndroidManifest.xml:7:5-9:41
-MERGED from [cn.smssdk:ShortMessageSDKGUI:3.2.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.aar\dc11e1a8469591501ca50784acc4a2ff\AndroidManifest.xml:8:5-11:45
-MERGED from [cn.smssdk:ShortMessageSDKGUI:3.2.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.aar\dc11e1a8469591501ca50784acc4a2ff\AndroidManifest.xml:8:5-11:45
+MERGED from [cn.smssdk:SMSSDK:3.2.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\SMSSDK-3.2.1.1.aar\f15433f20edfb7287f38804ca3d4fbdf\AndroidManifest.xml:7:5-9:41
+MERGED from [cn.smssdk:SMSSDK:3.2.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\SMSSDK-3.2.1.1.aar\f15433f20edfb7287f38804ca3d4fbdf\AndroidManifest.xml:7:5-9:41
+MERGED from [cn.smssdk:ShortMessageSDKGUI:3.2.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.1.aar\8a844705e336b2df0767721205f3137b\AndroidManifest.xml:8:5-11:45
+MERGED from [cn.smssdk:ShortMessageSDKGUI:3.2.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.1.aar\8a844705e336b2df0767721205f3137b\AndroidManifest.xml:8:5-11:45
 MERGED from [com.android.support:design:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\b13bcbba7691450726f3824067659196\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\b13bcbba7691450726f3824067659196\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:preference-v7:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\preference-v7-27.1.1.aar\9203ee117973ebe2f0e7f6d3ad95b3c7\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:preference-v7:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\preference-v7-27.1.1.aar\9203ee117973ebe2f0e7f6d3ad95b3c7\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\fd6f52c6ce2ba4259ff7a8e5631c180a\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\fd6f52c6ce2ba4259ff7a8e5631c180a\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\e58b9ad22b43491cd0754e353c1b6de0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\e58b9ad22b43491cd0754e353c1b6de0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\1e9de0fa7b3e869a48876ea15060dea9\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\1e9de0fa7b3e869a48876ea15060dea9\AndroidManifest.xml:5:5-7:41
 MERGED from [com.yanzhenjie:recyclerview-swipe:1.1.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\recyclerview-swipe-1.1.4.aar\450540c88c8fabb14e4ad7e95d06f49b\AndroidManifest.xml:21:5-23:41
 MERGED from [com.yanzhenjie:recyclerview-swipe:1.1.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\recyclerview-swipe-1.1.4.aar\450540c88c8fabb14e4ad7e95d06f49b\AndroidManifest.xml:21:5-23:41
 MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\8278824e855a43210576e8a3343ff6c0\AndroidManifest.xml:20:5-44
@@ -275,8 +275,8 @@ MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\zzp\.gradle\caches\tran
 MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\995e75df584857de8a85cf00c60c2058\AndroidManifest.xml:5:5-43
 MERGED from [com.android.support:multidex:1.0.3] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\multidex-1.0.3.aar\e4de1c50dba08758193d058c762e9e12\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:multidex:1.0.3] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\multidex-1.0.3.aar\e4de1c50dba08758193d058c762e9e12\AndroidManifest.xml:20:5-43
-MERGED from [android.arch.persistence.room:runtime:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\bfaf20b0d9e7962098df3deacfadca75\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence.room:runtime:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\bfaf20b0d9e7962098df3deacfadca75\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence.room:runtime:1.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\e258674c425763d0cba2fa4e400735ea\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence.room:runtime:1.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\e258674c425763d0cba2fa4e400735ea\AndroidManifest.xml:20:5-44
 MERGED from [com.github.lygttpod:SuperTextView:2.1.6] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\SuperTextView-2.1.6.aar\b57f4134782b763937171cd1f09a66bc\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.lygttpod:SuperTextView:2.1.6] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\SuperTextView-2.1.6.aar\b57f4134782b763937171cd1f09a66bc\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:support-v4:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\bfb77ffb3d23c4458b2fdb5c8180f126\AndroidManifest.xml:20:5-44
@@ -291,10 +291,10 @@ MERGED from [com.android.support:transition:27.1.1] C:\Users\zzp\.gradle\caches\
 MERGED from [com.android.support:transition:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\61a39055356216b431e72400e94deec3\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\dae1c547f41597a9f396fdf0af3254a6\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\dae1c547f41597a9f396fdf0af3254a6\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence:db-framework:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.0.aar\490befc30c32b2447a07861f81654410\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence:db-framework:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.0.aar\490befc30c32b2447a07861f81654410\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence:db:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\db-1.1.0.aar\03591bf18dc70d43205ced6a63dee03c\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence:db:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\db-1.1.0.aar\03591bf18dc70d43205ced6a63dee03c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db-framework:1.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.1.aar\6c4572bf3af10eae8e61caa33e9492bc\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db-framework:1.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.1.aar\6c4572bf3af10eae8e61caa33e9492bc\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db:1.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\db-1.1.1.aar\299ffa39fae5008d445b7e92fccf35fb\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db:1.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\db-1.1.1.aar\299ffa39fae5008d445b7e92fccf35fb\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\bbe1806803625b5010254aff64aee779\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\bbe1806803625b5010254aff64aee779\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\d7918bba58110e8a4a24beaf0178ba75\AndroidManifest.xml:20:5-44
@@ -316,7 +316,7 @@ MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\zzp\.gradle\caches
 INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
 	tools:overrideLibrary
-		ADDED from [cn.smssdk:ShortMessageSDKGUI:3.2.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.aar\dc11e1a8469591501ca50784acc4a2ff\AndroidManifest.xml:11:9-42
+		ADDED from [cn.smssdk:ShortMessageSDKGUI:3.2.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.1.aar\8a844705e336b2df0767721205f3137b\AndroidManifest.xml:11:9-42
 	android:targetSdkVersion
 		INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
 		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml

@@ -12,7 +12,6 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceFragmentCompat;
-import android.support.v7.preference.PreferenceManager;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -22,9 +21,6 @@ import android.view.ViewGroup;
 
 import com.zzpc.wynews.NewsApp;
 import com.zzpc.wynews.R;
-import com.zzpc.wynews.data.model.News;
-
-import java.util.Objects;
 //import com.xyzlf.share.library.bean.ShareEntity;
 
 
@@ -88,19 +84,6 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 
         Preference preference= findPreference("example_key");
         preference.setTitle("已阅读数目： "+ NewsApp.read_amount);
-//         preference= findPreference("switch_onlywifi");
-//        preference.setDefaultValue(NewsApp.pic_only_WIFI);
-
-
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(Objects.requireNonNull(getContext()));
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putBoolean("switch_onlywifi",NewsApp.pic_only_WIFI);
-        if (editor.commit()){
-            Log.e(TAG, "wifi setting" );
-            Log.e(TAG, "onViewCreated: pic onlly wifi "+NewsApp.pic_only_WIFI );
-        }else {
-            editor.apply();
-        }
 
 
     }
@@ -128,7 +111,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
 
         Log.e(TAG, String.format("%s %s", sharedPreferences, key));
-        NewsApp.pic_only_WIFI = sharedPreferences.getBoolean("switch_onlywifi", true);
+        NewsApp.pic_only_WIFI = sharedPreferences.getBoolean("switch_pic_wifi", true);
         NewsApp.night_mode = sharedPreferences.getBoolean("switch_night", true);
         Log.e(TAG, "onSharedPreferenceChanged: " + NewsApp.share_default_item + " " + NewsApp.pic_only_WIFI);
 
