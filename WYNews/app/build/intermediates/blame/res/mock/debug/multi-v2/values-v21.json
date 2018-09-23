@@ -4,6 +4,25 @@
             "outputFile": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\incremental\\mergeMockDebugResources\\merged.dir\\values-v21\\values-v21.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\leakcanary-android-1.6.1.aar\\350db127f52a094ec17a208cec09ff2f\\res\\values-v21\\values-v21.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "3",
+                        "endColumns": "10",
+                        "endOffsets": "140"
+                    },
+                    "to": {
+                        "startLines": "291",
+                        "startColumns": "4",
+                        "startOffsets": "21242",
+                        "endLines": "292",
+                        "endColumns": "10",
+                        "endOffsets": "21327"
+                    }
+                },
+                {
                     "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\036282666a8b0210d10a655f8d050c83\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",

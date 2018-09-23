@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Sep 03 17:48:29 CST 2018
+#Sun Sep 23 20:35:15 CST 2018
 17.baseType=DIRECTORY
 4.path=lib/x86_64/libijksdl.so
 8.set=DEX

@@ -59,7 +59,7 @@ public final class CameraUtil {
 
 	public static String resolvePhotoFromIntent(final Context ctx, final Intent data, final String dir) {
 		if (ctx == null || data == null || dir == null) {
-			Log.e(TAG, "resolvePhotoFromIntent fail, invalid argument");
+			
 			return null;
 		}
 
@@ -71,7 +71,7 @@ public final class CameraUtil {
 			try {
 				cu.moveToFirst();
 				final int pathIndex = cu.getColumnIndex(MediaColumns.DATA);
-				Log.e(TAG, "orition: " + cu.getString(cu.getColumnIndex(MediaStore.Images.ImageColumns.ORIENTATION)));
+				
 				filePath = cu.getString(pathIndex);
 				Log.d(TAG, "photo from resolver, path:" + filePath);
 
@@ -114,7 +114,7 @@ public final class CameraUtil {
 				cu.close();
 				cu = null;
 			}
-			Log.e(TAG, "resolve photo from intent failed");
+			
 			return null;
 		}
 		if (cu != null) {

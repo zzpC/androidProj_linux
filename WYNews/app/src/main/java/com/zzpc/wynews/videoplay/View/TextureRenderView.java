@@ -30,7 +30,7 @@ import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-import com.zzpc.wynews.helper.MeasureHelper;
+import com.zzpc.wynews.data.helper.MeasureHelper;
 
 import java.lang.ref.WeakReference;
 import java.util.Map;

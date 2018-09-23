@@ -1,11 +1,7 @@
 package com.zzpc.wynews.newsmessage.specifictext;
 
 
-import android.annotation.SuppressLint;
 import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -23,17 +19,7 @@ import android.widget.Toast;
 import com.allen.library.SuperTextView;
 import com.zzpc.wynews.R;
 
-import com.zzpc.wynews.TaskActivity;
 import com.zzpc.wynews.data.database.NewsDBHelper;
-import com.zzpc.wynews.newsmessage.specifictext.SpecificTextPresenter;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
-
-import java.io.IOException;
 
 
 /**
@@ -63,7 +49,7 @@ public class SpecificTextFragment extends Fragment implements SpecificTextView {
 
     @Override
     public void showResultFromNet(String title,String content) {
-        Log.e(TAG, "showResultFromNet: "+title);
+        
         stv_content.setCenterTopString(title);
         stv_content.setCenterTopTextColor(R.color.blue);
         stv_content.setCenterString(content);

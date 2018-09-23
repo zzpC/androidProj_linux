@@ -17,7 +17,6 @@ import android.view.ViewGroup;
 
 import com.allen.library.SuperTextView;
 import com.zzpc.wynews.R;
-import com.zzpc.wynews.TaskActivity;
 import com.zzpc.wynews.data.database.NewsDBHelper;
 
 
@@ -65,7 +64,7 @@ public class MyHistoryFragment extends Fragment{
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(layoutManager);
 
-        Log.e(TAG, "onCreateView: "+mHistoryItemList.size() );
+        
         MyHistoryAdapter myHistoryAdapter = new MyHistoryAdapter(mHistoryItemList, getContext());
 
         mRecyclerView.setAdapter(myHistoryAdapter);
@@ -82,7 +81,7 @@ public class MyHistoryFragment extends Fragment{
         try {
             while (cursor.moveToNext()) {
                 String strValue = cursor.getString(1);
-                Log.e(TAG, "addContent: " + strValue);
+                
                 String strContent=cursor.getString(2);
                 mHistoryItemList.add(new MyHistoryItem(strValue,strContent));
             }

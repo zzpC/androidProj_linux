@@ -90,8 +90,8 @@ public class SlidingTabLayout extends HorizontalScrollView {
     private ViewPager mViewPager;
     private ViewPager.OnPageChangeListener mViewPagerPageChangeListener;
 
-    private final com.zzpc.wynews.newsmessage.SlidingTabStrip mTabStrip;
-    private SlidingTabsColorsFragment mSlidingTabsColorsFragment;
+    private final SlidingTabStrip mTabStrip;
+    private NewsModuleFragment mNewsModuleFragment;
 
 
 
@@ -127,8 +127,8 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
 
 
-    public void addFragmentAttached(SlidingTabsColorsFragment slidingTabsColorsFragment){
-        mSlidingTabsColorsFragment=slidingTabsColorsFragment;
+    public void addFragmentAttached(NewsModuleFragment newsModuleFragment){
+        mNewsModuleFragment = newsModuleFragment;
     }
 
 
@@ -372,7 +372,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
                     for (int i = 0; i < mTabStrip.getChildCount(); i++) {
                         if (mDoubleClickView == mTabStrip.getChildAt(i)) {
                             mViewPager.setCurrentItem(i);
-                            Log.e(TAG, "handleMessage: 1-> "+i );
+                            
                             return;
                         }
                     }
@@ -381,10 +381,8 @@ public class SlidingTabLayout extends HorizontalScrollView {
                     Toast.makeText(getContext(), "这是双击事件", Toast.LENGTH_LONG).show();
                     for (int i = 0; i < mTabStrip.getChildCount(); i++) {
                         if (mDoubleClickView == mTabStrip.getChildAt(i)) {
-                            Log.e(TAG, "handleMessage: 2-> "+i );
 
-
-                            mSlidingTabsColorsFragment.deleteTab(i);
+                            mNewsModuleFragment.deleteTab(i);
                             break;
                         }
 

@@ -6,6 +6,8 @@ INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\mai
 INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:2:1-86:12
 MERGED from [cn.smssdk:SMSSDK:3.2.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\SMSSDK-3.2.1.1.aar\f15433f20edfb7287f38804ca3d4fbdf\AndroidManifest.xml:2:1-11:12
 MERGED from [cn.smssdk:ShortMessageSDKGUI:3.2.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.1.aar\8a844705e336b2df0767721205f3137b\AndroidManifest.xml:2:1-16:12
+MERGED from [com.squareup.leakcanary:leakcanary-support-fragment:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-support-fragment-1.6.1.aar\a530e8d8b161c5c2510ab904e9ba959f\AndroidManifest.xml:17:1-25:12
+MERGED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:17:1-72:12
 MERGED from [com.android.support:design:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\b13bcbba7691450726f3824067659196\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:preference-v7:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\preference-v7-27.1.1.aar\9203ee117973ebe2f0e7f6d3ad95b3c7\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\fd6f52c6ce2ba4259ff7a8e5631c180a\AndroidManifest.xml:17:1-22:12
@@ -25,16 +27,17 @@ MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\zzp\.gradle\caches\tran
 MERGED from [com.android.support:multidex:1.0.3] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\multidex-1.0.3.aar\e4de1c50dba08758193d058c762e9e12\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.persistence.room:runtime:1.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\e258674c425763d0cba2fa4e400735ea\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.lygttpod:SuperTextView:2.1.6] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\SuperTextView-2.1.6.aar\b57f4134782b763937171cd1f09a66bc\AndroidManifest.xml:2:1-11:12
+MERGED from [com.squareup.leakcanary:leakcanary-analyzer:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-analyzer-1.6.1.aar\0741a6f89e6bf0dd19b4d39901f84c35\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:support-v4:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\bfb77ffb3d23c4458b2fdb5c8180f126\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\2faabd1794d2e25fed26d29ab334db0a\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\6e6324df575872b0d6e08d0ce0ad250e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\2faabd1794d2e25fed26d29ab334db0a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\dae1c547f41597a9f396fdf0af3254a6\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\d7918bba58110e8a4a24beaf0178ba75\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\b3f85cb4c02745c82a23c6d3503a719b\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:transition:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\61a39055356216b431e72400e94deec3\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\dae1c547f41597a9f396fdf0af3254a6\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.persistence:db-framework:1.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.1.aar\6c4572bf3af10eae8e61caa33e9492bc\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.persistence:db:1.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\db-1.1.1.aar\299ffa39fae5008d445b7e92fccf35fb\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\bbe1806803625b5010254aff64aee779\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\d7918bba58110e8a4a24beaf0178ba75\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-compat:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\036282666a8b0210d10a655f8d050c83\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\6a0ac2db5d618e4a23f1095d502a6ece\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\5ca2df53dc07cf19a4e6ac248cac2a88\AndroidManifest.xml:17:1-22:12
@@ -83,10 +86,14 @@ ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\A
 		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:11:22-72
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:12:5-81
+MERGED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:24:5-81
+MERGED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:24:5-81
 	android:name
 		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:12:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:13:5-80
+MERGED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:23:5-80
+MERGED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:23:5-80
 	android:name
 		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:13:22-77
 uses-permission#android.permission.WRITE_SETTINGS
@@ -113,12 +120,18 @@ application
 ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:25:5-84:19
 MERGED from [cn.smssdk:ShortMessageSDKGUI:3.2.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.1.aar\8a844705e336b2df0767721205f3137b\AndroidManifest.xml:13:5-14:19
 MERGED from [cn.smssdk:ShortMessageSDKGUI:3.2.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.1.aar\8a844705e336b2df0767721205f3137b\AndroidManifest.xml:13:5-14:19
+MERGED from [com.squareup.leakcanary:leakcanary-support-fragment:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-support-fragment-1.6.1.aar\a530e8d8b161c5c2510ab904e9ba959f\AndroidManifest.xml:22:5-23:19
+MERGED from [com.squareup.leakcanary:leakcanary-support-fragment:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-support-fragment-1.6.1.aar\a530e8d8b161c5c2510ab904e9ba959f\AndroidManifest.xml:22:5-23:19
+MERGED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:26:5-70:19
+MERGED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:26:5-70:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\1e9de0fa7b3e869a48876ea15060dea9\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\1e9de0fa7b3e869a48876ea15060dea9\AndroidManifest.xml:9:5-20
 MERGED from [tv.danmaku.ijk.media:ijkplayer-exo:0.8.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-exo-0.8.4.aar\3c9bf67a3f913958b4bf711cb811260c\AndroidManifest.xml:9:5-13:19
 MERGED from [tv.danmaku.ijk.media:ijkplayer-exo:0.8.4] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ijkplayer-exo-0.8.4.aar\3c9bf67a3f913958b4bf711cb811260c\AndroidManifest.xml:9:5-13:19
 MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\Android-AdvancedWebView-v3.0.0.aar\109d9211e57bef4ee3c4171e57aedeb4\AndroidManifest.xml:9:5-20
 MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\Android-AdvancedWebView-v3.0.0.aar\109d9211e57bef4ee3c4171e57aedeb4\AndroidManifest.xml:9:5-20
+MERGED from [com.squareup.leakcanary:leakcanary-analyzer:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-analyzer-1.6.1.aar\0741a6f89e6bf0dd19b4d39901f84c35\AndroidManifest.xml:22:5-20
+MERGED from [com.squareup.leakcanary:leakcanary-analyzer:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-analyzer-1.6.1.aar\0741a6f89e6bf0dd19b4d39901f84c35\AndroidManifest.xml:22:5-20
 	android:supportsRtl
 		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:31:9-35
 	android:label
@@ -137,7 +150,7 @@ MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] C:\Users\zzp\
 		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:33:9-37
 	android:name
 		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:26:9-47
-activity#com.zzpc.wynews.TaskActivity
+activity#com.zzpc.wynews.HomeActivity
 ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:36:9-49:20
 	android:label
 		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml:40:13-45
@@ -241,6 +254,10 @@ MERGED from [cn.smssdk:SMSSDK:3.2.1.1] C:\Users\zzp\.gradle\caches\transforms-1\
 MERGED from [cn.smssdk:SMSSDK:3.2.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\SMSSDK-3.2.1.1.aar\f15433f20edfb7287f38804ca3d4fbdf\AndroidManifest.xml:7:5-9:41
 MERGED from [cn.smssdk:ShortMessageSDKGUI:3.2.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.1.aar\8a844705e336b2df0767721205f3137b\AndroidManifest.xml:8:5-11:45
 MERGED from [cn.smssdk:ShortMessageSDKGUI:3.2.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\ShortMessageSDKGUI-3.2.1.1.aar\8a844705e336b2df0767721205f3137b\AndroidManifest.xml:8:5-11:45
+MERGED from [com.squareup.leakcanary:leakcanary-support-fragment:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-support-fragment-1.6.1.aar\a530e8d8b161c5c2510ab904e9ba959f\AndroidManifest.xml:20:5-44
+MERGED from [com.squareup.leakcanary:leakcanary-support-fragment:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-support-fragment-1.6.1.aar\a530e8d8b161c5c2510ab904e9ba959f\AndroidManifest.xml:20:5-44
+MERGED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:20:5-44
+MERGED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\b13bcbba7691450726f3824067659196\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\b13bcbba7691450726f3824067659196\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:preference-v7:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\preference-v7-27.1.1.aar\9203ee117973ebe2f0e7f6d3ad95b3c7\AndroidManifest.xml:20:5-44
@@ -279,26 +296,28 @@ MERGED from [android.arch.persistence.room:runtime:1.1.1] C:\Users\zzp\.gradle\c
 MERGED from [android.arch.persistence.room:runtime:1.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\e258674c425763d0cba2fa4e400735ea\AndroidManifest.xml:20:5-44
 MERGED from [com.github.lygttpod:SuperTextView:2.1.6] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\SuperTextView-2.1.6.aar\b57f4134782b763937171cd1f09a66bc\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.lygttpod:SuperTextView:2.1.6] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\SuperTextView-2.1.6.aar\b57f4134782b763937171cd1f09a66bc\AndroidManifest.xml:7:5-9:41
+MERGED from [com.squareup.leakcanary:leakcanary-analyzer:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-analyzer-1.6.1.aar\0741a6f89e6bf0dd19b4d39901f84c35\AndroidManifest.xml:20:5-44
+MERGED from [com.squareup.leakcanary:leakcanary-analyzer:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-analyzer-1.6.1.aar\0741a6f89e6bf0dd19b4d39901f84c35\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\bfb77ffb3d23c4458b2fdb5c8180f126\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\bfb77ffb3d23c4458b2fdb5c8180f126\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\2faabd1794d2e25fed26d29ab334db0a\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\2faabd1794d2e25fed26d29ab334db0a\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\6e6324df575872b0d6e08d0ce0ad250e\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\6e6324df575872b0d6e08d0ce0ad250e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\2faabd1794d2e25fed26d29ab334db0a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\2faabd1794d2e25fed26d29ab334db0a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\dae1c547f41597a9f396fdf0af3254a6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\dae1c547f41597a9f396fdf0af3254a6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\d7918bba58110e8a4a24beaf0178ba75\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\d7918bba58110e8a4a24beaf0178ba75\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\b3f85cb4c02745c82a23c6d3503a719b\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\b3f85cb4c02745c82a23c6d3503a719b\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:transition:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\61a39055356216b431e72400e94deec3\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:transition:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\61a39055356216b431e72400e94deec3\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\dae1c547f41597a9f396fdf0af3254a6\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\dae1c547f41597a9f396fdf0af3254a6\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.persistence:db-framework:1.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.1.aar\6c4572bf3af10eae8e61caa33e9492bc\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.persistence:db-framework:1.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.1.aar\6c4572bf3af10eae8e61caa33e9492bc\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.persistence:db:1.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\db-1.1.1.aar\299ffa39fae5008d445b7e92fccf35fb\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.persistence:db:1.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\db-1.1.1.aar\299ffa39fae5008d445b7e92fccf35fb\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\bbe1806803625b5010254aff64aee779\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\bbe1806803625b5010254aff64aee779\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\d7918bba58110e8a4a24beaf0178ba75\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\d7918bba58110e8a4a24beaf0178ba75\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\036282666a8b0210d10a655f8d050c83\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:27.1.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\036282666a8b0210d10a655f8d050c83\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\6a0ac2db5d618e4a23f1095d502a6ece\AndroidManifest.xml:20:5-44
@@ -325,3 +344,71 @@ INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\mai
 		INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
 		ADDED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\src\main\AndroidManifest.xml
+service#com.squareup.leakcanary.internal.HeapAnalyzerService
+ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:27:9-30:45
+	android:process
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:30:13-42
+	android:enabled
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:29:13-36
+	android:name
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:28:13-80
+service#com.squareup.leakcanary.DisplayLeakService
+ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:31:9-34:45
+	android:process
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:34:13-42
+	android:enabled
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:33:13-36
+	android:name
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:32:13-70
+provider#com.squareup.leakcanary.internal.LeakCanaryFileProvider
+ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:36:9-44:20
+	android:grantUriPermissions
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:40:13-47
+	android:authorities
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:38:13-88
+	android:exported
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:39:13-37
+	android:name
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:37:13-83
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:41:13-43:66
+	android:resource
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:43:17-63
+	android:name
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:42:17-67
+activity#com.squareup.leakcanary.internal.DisplayLeakActivity
+ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:46:9-59:20
+	android:process
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:51:13-42
+	android:enabled
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:48:13-36
+	android:label
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:50:13-71
+	android:icon
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:49:13-52
+	android:theme
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:53:13-63
+	android:taskAffinity
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:52:13-76
+	android:name
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:47:13-80
+activity#com.squareup.leakcanary.internal.RequestStoragePermissionActivity
+ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:60:9-69:68
+	android:process
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:66:13-42
+	android:enabled
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:62:13-36
+	android:label
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:65:13-82
+	android:excludeFromRecents
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:63:13-46
+	android:roundIcon
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:67:13-57
+	android:icon
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:64:13-52
+	android:theme
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:69:13-65
+	android:taskAffinity
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:68:13-76
+	android:name
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.6.1] C:\Users\zzp\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.6.1.aar\350db127f52a094ec17a208cec09ff2f\AndroidManifest.xml:61:13-93

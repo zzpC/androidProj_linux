@@ -8,20 +8,14 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceFragmentCompat;
 import android.support.v7.preference.PreferenceScreen;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.zzpc.wynews.NewsApp;
 import com.zzpc.wynews.R;
-//import com.xyzlf.share.library.bean.ShareEntity;
 
 
 
@@ -53,13 +47,8 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
     public void onCreate(Bundle savedInstanceState) {
 
 
-        Log.e(TAG, "onCreate: ");
+        
         super.onCreate(savedInstanceState);
-
-        if (savedInstanceState != null) {
-            mFragmentManager = getFragmentManager();
-            mFragmentStatus = (PreferenceFragmentCompat) mFragmentManager.getFragment(savedInstanceState, TAG);
-        }
 
         addPreferencesFromResource(R.xml.preferences);
 
@@ -110,13 +99,14 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
 
-        Log.e(TAG, String.format("%s %s", sharedPreferences, key));
+        
         NewsApp.pic_only_WIFI = sharedPreferences.getBoolean("switch_pic_wifi", true);
         NewsApp.night_mode = sharedPreferences.getBoolean("switch_night", true);
-        Log.e(TAG, "onSharedPreferenceChanged: " + NewsApp.share_default_item + " " + NewsApp.pic_only_WIFI);
+        
 
         if (key.equals("switch_night")) {
             OnClickNightModeListener onClickNightModeListener=(SettingsFragment.OnClickNightModeListener)getActivity();
+            assert onClickNightModeListener != null;
             onClickNightModeListener.OnClickNightMode();
         }
 
@@ -129,16 +119,8 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 //
 //        Uri uri = Uri.parse("android.resource://"+getContext().getPackageName()+"/drawable/share_wechat");
 //        testBean.setImgUrl(uri.toString());
-//        Log.e(TAG, "showShareDialog: "+"" );
+//
     }
 
-
-    @Override
-    public void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-        if (outState != null && mFragmentStatus != null) {
-            mFragmentManager.putFragment(outState, TAG, mFragmentStatus);
-        }
-    }
 
 }

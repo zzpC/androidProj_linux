@@ -93,7 +93,7 @@ public class ScanQRCodeLoginActivity extends Activity implements OAuthListener{
 		
 		Bitmap bmp = BitmapFactory.decodeFile(qrcodeImgPath);
 		if (bmp == null) {
-			Log.e(TAG, "onAuthGotQrcode, decode bitmap is null");
+			
 			return;
 		}
 

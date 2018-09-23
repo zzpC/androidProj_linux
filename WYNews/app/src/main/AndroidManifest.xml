@@ -34,7 +34,7 @@
         android:fullBackupContent="@xml/backup_descriptor">
 
         <activity
-            android:name="com.zzpc.wynews.TaskActivity"
+            android:name="com.zzpc.wynews.HomeActivity"
             android:theme="@style/AppTheme.SettingsTheme"
 
             android:label="@string/app_name">

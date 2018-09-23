@@ -164,7 +164,7 @@ public class SimplePlayer extends FrameLayout {
             IjkMediaPlayer.native_profileBegin("libijkplayer.so");
             playerSupport = true;
         } catch (Throwable e) {
-            Log.e("GiraffePlayer", "loadLibraries error", e);
+            e.printStackTrace();
         }
         this.activity = (Activity) context;
         screenWidthPixels = activity.getResources().getDisplayMetrics().widthPixels;
@@ -600,6 +600,7 @@ public class SimplePlayer extends FrameLayout {
         orientationEventListener.disable();
         handler.removeCallbacksAndMessages(null);
         videoView.stopPlayback();
+        handler.removeCallbacksAndMessages(null);
     }
 
 

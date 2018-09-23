@@ -3,15 +3,11 @@ package com.zzpc.wynews.data.database;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
-import android.util.Log;
 
 import com.zzpc.wynews.NewsApp;
-
-import static com.mob.tools.utils.Data.MD5;
 
 /**
  * Created by zzp on 18-2-20.
@@ -71,7 +67,6 @@ public class NewsDBHelper extends SQLiteOpenHelper {
             return false;
         else {
             ++NewsApp.history_amount;
-            Log.e(TAG, "insertData: NO row: " + rslt);
             return true;
         }
 
@@ -105,8 +100,7 @@ public class NewsDBHelper extends SQLiteOpenHelper {
     }
 
     public void dropDataBase() {
-        Log.e(TAG, "dropDataBase: ");
-        SQLiteDatabase db = this.getWritableDatabase();
+         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         this.onUpgrade(db, 0, 0);
     }
@@ -137,8 +131,7 @@ public class NewsDBHelper extends SQLiteOpenHelper {
             return false;
         else {
             ++NewsApp.start_amount;
-            Log.e(TAG, "insertData: NO row: " + rslt);
-            return true;
+             return true;
         }
     }
 

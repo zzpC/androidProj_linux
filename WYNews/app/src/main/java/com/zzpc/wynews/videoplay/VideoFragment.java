@@ -41,13 +41,6 @@ public class VideoFragment extends Fragment {
     private FragmentManager mFragmentManager = getFragmentManager();
     private int oldOptions;
 
-    @Override
-    public void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-        if (mFragmentStatus != null && outState != null && mFragmentManager != null)
-            mFragmentManager.putFragment(outState, TAG, mFragmentStatus);
-
-    }
 
     @Override
     public void onAttach(Context context) {

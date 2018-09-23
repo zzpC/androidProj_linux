@@ -52,7 +52,7 @@ public class StartDetailsFragment extends Fragment  {
         String theme=args.getString("Theme");
 
         StartDetailsAdapter detailsAdapter=new StartDetailsAdapter(getContext(),mDetailsItemList);
-        Log.e(TAG, "onCreateView: size "+mDetailsItemList.size() );
+        
 
         mRecyclerView.setAdapter(detailsAdapter);
 
@@ -71,7 +71,7 @@ public class StartDetailsFragment extends Fragment  {
         try {
             while (cursor.moveToNext()) {
                 String strValue = cursor.getString(1);
-                Log.e("Exception", "addContent: " + strValue);
+                
                 String strContent=cursor.getString(2);;
                 mDetailsItemList.add(new DetailsItem(strValue,strContent));
             }
@@ -104,7 +104,7 @@ public class StartDetailsFragment extends Fragment  {
         public void onBindViewHolder(DetailsHolder holder, int position) {
             DetailsItem item = items.get(position);
             //TODO Fill in your logic for binding the view.
-            Log.e(TAG, "onBindViewHolder: "+item.mTitle );
+            
             holder.mSuperTextView.setCenterString(item.mTitle);
         }
 

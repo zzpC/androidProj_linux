@@ -40,8 +40,8 @@ public class SpecificTextModelImpl implements SpecificTextModel {
                 while (cursor.moveToNext()) {
                     String strValue = cursor.getString(1);
                     String strContent = cursor.getString(2);
-                    Log.e("Exception", "addContent:V " + strValue);
-                    Log.e("Exception", "addContent:C " + content.substring(0, 16));
+                    
+                    
 
                 }
             } catch (Exception e) {

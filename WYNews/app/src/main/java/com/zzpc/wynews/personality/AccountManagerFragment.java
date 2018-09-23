@@ -38,6 +38,7 @@ public class AccountManagerFragment extends Fragment  {
 
     List<AccountData> items=new ArrayList<>();
 
+
     public interface  OpenSpecificFragmentListener{
         void OpenSpecificFragment(int pos);
     }
@@ -71,7 +72,7 @@ public class AccountManagerFragment extends Fragment  {
         mAccountManageAdapter=new AccountManageAdapter(items,getContext(),mListener);
         mRecyclerView.setAdapter(mAccountManageAdapter);
 
-        Log.e(TAG, "onCreateView: NewHistory"+ NewsApp.history_amount);
+        
         return view;
     }
 

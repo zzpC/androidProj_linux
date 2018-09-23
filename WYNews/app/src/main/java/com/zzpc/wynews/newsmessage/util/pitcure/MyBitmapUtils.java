@@ -1,4 +1,4 @@
-package com.zzpc.wynews.util.pitcure;
+package com.zzpc.wynews.newsmessage.util.pitcure;
 
 import android.graphics.Bitmap;
 import android.util.Log;
@@ -30,7 +30,7 @@ public class MyBitmapUtils {
         if (bitmap!=null){
             ivPic.setImageBitmap(bitmap);
             System.out.println("从内存获取图片啦.....");
-            Log.e(TAG, "disPlay: 从内存获取图片啦....." );
+            
             return;
         }
 
@@ -39,7 +39,7 @@ public class MyBitmapUtils {
         if(bitmap !=null){
             ivPic.setImageBitmap(bitmap);
             System.out.println("从本地获取图片啦.....");
-            Log.e(TAG, "disPlay: 从本地获取图片啦....." );
+            
             //从本地获取图片后,保存至内存中
             mMemoryCacheUtils.setBitmapToMemory(url,bitmap);
             return;

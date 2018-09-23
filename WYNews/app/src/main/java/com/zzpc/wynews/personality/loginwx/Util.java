@@ -94,15 +94,15 @@ public class Util {
 		Log.d(TAG, "readFromFile : offset = " + offset + " len = " + len + " offset + len = " + (offset + len));
 
 		if(offset <0){
-			Log.e(TAG, "readFromFile invalid offset:" + offset);
+			
 			return null;
 		}
 		if(len <=0 ){
-			Log.e(TAG, "readFromFile invalid len:" + len);
+			
 			return null;
 		}
 		if(offset + len > (int) file.length()){
-			Log.e(TAG, "readFromFile invalid file len:" + file.length());
+			
 			return null;
 		}
 
@@ -115,7 +115,7 @@ public class Util {
 			in.close();
 
 		} catch (Exception e) {
-			Log.e(TAG, "readFromFile : errMsg = " + e.getMessage());
+			
 			e.printStackTrace();
 		}
 		return b;
@@ -170,7 +170,7 @@ public class Util {
 			Log.i(TAG, "bitmap required size=" + newWidth + "x" + newHeight + ", orig=" + options.outWidth + "x" + options.outHeight + ", sample=" + options.inSampleSize);
 			Bitmap bm = BitmapFactory.decodeFile(path, options);
 			if (bm == null) {
-				Log.e(TAG, "bitmap decode failed");
+				
 				return null;
 			}
 
@@ -194,7 +194,7 @@ public class Util {
 			return bm;
 
 		} catch (final OutOfMemoryError e) {
-			Log.e(TAG, "decode bitmap failed: " + e.getMessage());
+			
 			options = null;
 		}
 

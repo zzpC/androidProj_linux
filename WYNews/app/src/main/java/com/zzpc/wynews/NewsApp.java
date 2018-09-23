@@ -7,7 +7,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 import com.mob.MobSDK;
-import com.mob.commons.SMSSDK;
+import com.squareup.leakcanary.LeakCanary;
 
 import java.util.HashMap;
 
@@ -36,10 +36,19 @@ public class NewsApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        // Leak Canary 初始化工作
+        if(LeakCanary.isInAnalyzerProcess(this)){
+            // This process is dedicated to LeakCanary for heap analysis.
+            // You should not init your app in this process.
+            return;
+        }
+        LeakCanary.install(this);
+
+        // Normal app init code...
         context = getApplicationContext();
         newsUrlMap();
         MobSDK.init(this,"244498eb62d58","25c17a5bf483437f9555774bbb119be5");//
-
     }
 
     public static HashMap<String, String> hashMap = new HashMap<String, String>();

@@ -4,7 +4,6 @@ package com.zzpc.wynews.newsmessage;
 import android.annotation.SuppressLint;
 import android.content.Context;
 
-import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -28,14 +27,14 @@ import android.widget.Toast;
 
 import com.zzpc.wynews.NewsApp;
 import com.zzpc.wynews.data.model.News;
-import com.zzpc.wynews.data.ParseDatas;
+import com.zzpc.wynews.data.helper.ParseDatas;
 import com.zzpc.wynews.R;
 //import com.xyzlf.share.library.bean.ShareEntity;
 //import com.xyzlf.share.library.interfaces.ShareConstant;
 //import com.xyzlf.share.library.util.ShareUtil;
 import com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView;
 import com.yanzhenjie.recyclerview.swipe.touch.OnItemMoveListener;
-import com.zzpc.wynews.util.pitcure.MyBitmapUtils;
+import com.zzpc.wynews.newsmessage.util.pitcure.MyBitmapUtils;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -45,6 +44,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 import static com.mob.tools.utils.Data.MD5;
 import static com.zzpc.wynews.NewsApp.isNetworkAvailable;
@@ -73,42 +73,17 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
     private OnLoadWebSiteNewsListner mListener;
 
-    private final static String SAVED_RECYCLER_VIEW_STATUS_ID = "recylerview_status";
-
-    private Parcelable mRecyclerlistStatus;
-
-    private Fragment mFragmentStatus;
-
-    private String mTitle;
-
-    private static List<SwipeRefreshLayoutBasicFragment> mSwipeRefreshLayoutBasicFragments=new ArrayList<>();
-
-//    private NewsContentTextContract.Presenter mPresenter;
-
-
     public static SwipeRefreshLayoutBasicFragment newInstance(String title, int... argument) {
-
-
         //保证fragment只有无参版本的构造函数,避免恢复fragment时失效
         SwipeRefreshLayoutBasicFragment swipeRefreshLayoutBasicFragment = new SwipeRefreshLayoutBasicFragment();
         Bundle bundle = new Bundle();
         bundle.putInt("sliding_tab_no", argument[0]);
-//        bundle.putString("news_info", NewsApp.getContext().getResources()
-//                .getStringArray(R.array.pager_item_info)[argument[0]]);
-
-
         bundle.putString("news_info", NewsApp.hashMap.get(title));
-//        Log.e("newsinfo", "newInstance: "+title+" "+NewsApp.hashMap.get(title) );
-
         swipeRefreshLayoutBasicFragment.setArguments(bundle);
-        mSwipeRefreshLayoutBasicFragments.add(swipeRefreshLayoutBasicFragment);
-
         return swipeRefreshLayoutBasicFragment;
     }
 
-    public static void DestroyFragment(int i) {
-        mSwipeRefreshLayoutBasicFragments.get(i).onDestroy();
-    }
+
 
     //检测是否实现了接口
     @Override
@@ -124,39 +99,18 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-//        mPresenter.start();
+
     }
 
-    @Override
-    public void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-         if (mRecyclerView==null) return;
-        if (mRecyclerView.getLayoutManager()==null)
-            return;
-        mRecyclerlistStatus = mRecyclerView.getLayoutManager().onSaveInstanceState();
-        outState.putParcelable(SAVED_RECYCLER_VIEW_STATUS_ID, mRecyclerlistStatus);
-        if (mFragmentStatus != null) {
-            getFragmentManager().putFragment(outState, TAG, mFragmentStatus);
-        }
-    }
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (savedInstanceState != null) {
-            mRecyclerlistStatus = savedInstanceState.getParcelable(SAVED_RECYCLER_VIEW_STATUS_ID);
-            if (mFragmentStatus != null) {
-                mFragmentStatus = getFragmentManager().getFragment(savedInstanceState, TAG);
-            }
-            return;
-        }
-
         //mStyle 标签的编号
         mTopTab = getArguments().getInt("sliding_tab_no");
 
-        Log.e("123", "onCreate: " + mTopTab);
     }
 
     // BEGIN_INCLUDE (inflate_view)
@@ -250,7 +204,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         /**
          * Execute the background task, which uses {@link AsyncTask} to load the data.
          */
-        Log.e("1", "initiateRefresh: ");
+
         new DummyBackgroundTask().execute();
 
     }
@@ -260,7 +214,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
 //        mListAdapter.addAll(result);
         mListAdapter.notifyDataSetChanged();
-        Log.e("123", "onRefreshComplete: ");
+
         // Stop the refreshing indicator
         mSwipeRefreshLayout.setRefreshing(false);
     }
@@ -279,10 +233,10 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                 if (isNetworkAvailable()) {
                     HttpURLConnection connection = null;
                     try {
-                        String url_string = getArguments().getString("news_info");
+                        String url_string = Objects.requireNonNull(getArguments()).getString("news_info");
 
 //                        url_string=url_string+ String.valueOf(RAMDOM.nextInt(80));
-                        Log.e("urltest", "doInBackground: " + url_string);
+
                         URL url = new URL(url_string);
 
                         connection = (HttpURLConnection) url.openConnection();
@@ -300,14 +254,13 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
                         while ((line = reader.readLine()) != null) {
                             response.append(line);
-                            Log.e("run", "run: " + response);
-                            Log.e("解析结果", "doInBackground: " + response);
+                            
+                            
                         }
                         in.close();//????????????
                         List<News> list = ParseDatas.parseJSON(response.toString());
-                        Log.e("list size test", "doInBackground: " + list.size());
+                        
                         mNewsInfoList.addAll(0, list);
-
 
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -328,7 +281,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
             // Tell the Fragment that the refresh has completed
             onRefreshComplete(result);
-            Log.e("123", "onPostExecute: " + result.size());
+            
         }
 
     }
@@ -369,12 +322,6 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                     final News news = mNewsInfoList.get(position);
                     final String url = news.getUrl();
 
-//                    ShareEntity testBean = new ShareEntity(news.getTitle(), news.getDescription() + " " + news.getCtime());
-//                    testBean.setUrl(news.getUrl()); //分享链接
-//                    testBean.setImgUrl(news.getPicUrl());
-//
-//                    Log.e(TAG, "showShareDialog: " + " ");
-//                    ShareUtil.showShareDialog(getActivity(), testBean, ShareConstant.REQUEST_CODE);
                 }
             });
 
@@ -386,28 +333,14 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                     final String url = news.getUrl();
 
                     ++NewsApp.read_amount;
-//                    mListener.onWebView(url);
                     mListener.onLoadWebSiteNews(url);
-                    Log.e(TAG, "onClick: " +url);
+                    
                     MD5(url);
 
-
-//                    mPresenter.onLoadWebSiteNews_mvp();
 
                 }
             });
 
-//            viewHolder.iv_pic.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Toast.makeText(getContext(), "bitmap !!!", Toast.LENGTH_LONG).show();
-//                    int position = viewHolder.getAdapterPosition();
-//                    final News news = mNewsInfoList.get(position);
-//                    if (viewHolder.iv_pic != null) {
-//                        MyBitmapUtils myBitmapUtils = new MyBitmapUtils();
-//                        myBitmapUtils.disPlay(holder.iv_pic, news.getPicUrl());                    }
-//                }
-//            });
 
             viewHolder.tv_title.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
@@ -445,10 +378,6 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         }
     }
 
-//    @Override
-//    public void setPresenter(NewsContentTextContract.Presenter presenter) {
-//        mPresenter=checkNotNull(presenter);
-//    }
 }
 
 

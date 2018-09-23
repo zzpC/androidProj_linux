@@ -35,18 +35,14 @@ import com.tencent.tauth.Tencent;
 import com.tencent.tauth.UiError;
 import com.zzpc.wynews.Config;
 import com.zzpc.wynews.R;
-import com.zzpc.wynews.TaskActivity;
 import com.zzpc.wynews.personality.loginwx.WXEntryActivity;
 import com.zzpc.wynews.util.LoginUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.HashMap;
-
 import cn.smssdk.EventHandler;
 import cn.smssdk.SMSSDK;
-import cn.smssdk.gui.RegisterPage;
 
 /**
  * Created by zzp on 18-2-4.
@@ -354,7 +350,7 @@ public class LoginFragment extends Fragment {
     };
 
     private void onClickLogin() {
-        Log.e("SDKQQAgentPref", "onClickLogin: ");
+        
         if (!mTencent.isSessionValid()) {
             mTencent.login(this, "all", loginListener);
             isServerSideLogin = false;
@@ -534,7 +530,7 @@ public class LoginFragment extends Fragment {
     class NewClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-            Log.e("SDKQQAgentPref", "onClick: 2323" );
+            
             Context context = v.getContext();
 //			Animation shake = AnimationUtils.loadAnimation(context,
 //					R.anim.shake);
@@ -568,19 +564,19 @@ public class LoginFragment extends Fragment {
 //                cls = SocialApiActivity.class;
 //                break;*/
 //			case R.id.main_is_qq_installed_btn:
-//				Toast.makeText(TaskActivity.this, mTencent.isQQInstalled(TaskActivity.this) + "" , Toast.LENGTH_SHORT).show();
+//				Toast.makeText(HomeActivity.this, mTencent.isQQInstalled(HomeActivity.this) + "" , Toast.LENGTH_SHORT).show();
 //				break;
 //			case R.id.check_token_valid:
 //				JSONObject jsonObject = null;
 //				boolean isValid = mTencent.checkSessionValid(mAppid);
 //				if(!isValid) {
-//					LoginUtil.showResultDialog(TaskActivity.this, "token过期，请调用登录接口拉起手Q授权登录", "登录失败");
+//					LoginUtil.showResultDialog(HomeActivity.this, "token过期，请调用登录接口拉起手Q授权登录", "登录失败");
 //					return;
 //				} else {
 //					jsonObject = mTencent.loadSession(mAppid);
 //					mTencent.initSessionCache(jsonObject);
 //				}
-//				LoginUtil.showResultDialog(TaskActivity.this, jsonObject.toString(), "登录成功");
+//				LoginUtil.showResultDialog(HomeActivity.this, jsonObject.toString(), "登录成功");
 //				updateUserInfo();
 //				updateLoginButton();
 //				break;
@@ -618,10 +614,10 @@ public class LoginFragment extends Fragment {
                 if (result == SMSSDK.RESULT_COMPLETE) {
                     // TODO 处理成功得到验证码的结果
                     // 请注意，此时只是完成了发送验证码的请求，验证码短信还需要几秒钟之后才送达
-                    Log.e(TAG, "afterEvent: sendCode succes" );
+                    
                 } else{
                     // TODO 处理错误的结果
-                    Log.e(TAG, "afterEvent:sendCode failed" );
+                    
                 }
 
             }
@@ -638,11 +634,11 @@ public class LoginFragment extends Fragment {
             public void afterEvent(int event, int result, Object data) {
                 if (result == SMSSDK.RESULT_COMPLETE) {
                     // TODO 处理验证成功的结果
-                    Log.e(TAG, "afterEvent: submitCode succes" );
+                    
 
                 } else{
                     // TODO 处理错误的结果
-                    Log.e(TAG, "afterEvent:submitCode failed" );
+                    
 
                 }
 

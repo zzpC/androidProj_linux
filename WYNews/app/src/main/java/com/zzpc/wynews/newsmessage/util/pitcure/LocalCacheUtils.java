@@ -1,4 +1,4 @@
-package com.zzpc.wynews.util.pitcure;
+package com.zzpc.wynews.newsmessage.util.pitcure;
 
 import android.Manifest;
 import android.app.Activity;

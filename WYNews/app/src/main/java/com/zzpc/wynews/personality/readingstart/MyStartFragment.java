@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 
 import com.allen.library.SuperTextView;
 import com.zzpc.wynews.R;
-import com.zzpc.wynews.TaskActivity;
 import com.zzpc.wynews.data.database.NewsDBHelper;
 
 import java.util.ArrayList;
@@ -30,6 +29,8 @@ public class MyStartFragment extends Fragment   {
     private static final String TAG = "MyStartFragment";
 
     private RecyclerView mRecyclerView;
+
+
     private List<StartItem> mStartItemListList = new ArrayList<>();
     private OnSwitchStartDetailsFragment mOnSwitchStartDetailsFragment;
 
@@ -48,7 +49,7 @@ public class MyStartFragment extends Fragment   {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.e(TAG, "onCreate: fdfsdfsfsdfsdfsddfs" );
+        
         initStarts();
     }
 
@@ -110,7 +111,7 @@ public class MyStartFragment extends Fragment   {
             startViewHolder.mSuperTextView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Log.e(TAG, "onClick: " );
+                    
                     int position=startViewHolder.getAdapterPosition();
                     StartItem startItem=items.get(position);
                     createSpecificDetailsFragment(startItem.mTheme);
