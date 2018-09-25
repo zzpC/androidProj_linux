@@ -15,10 +15,10 @@
     <string name="tech">科技</string>
     <string name="mobile">产品</string>
 
-    <string name="health_url">"http://api.tianapi.com/health/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=3&#38;rand=1"</string>
-    <string name="football_url">"http://api.tianapi.com/football/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=3&#38;rand=1"</string>
-    <string name="tech_url">"http://api.tianapi.com/it/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=3&#38;rand=1"</string>
-    <string name="mobile_url">"http://api.tianapi.com/mobile/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=3&#38;rand=1"</string>
+    <string name="health_url">"http://api.tianapi.com/health/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=5&#38;"</string>
+    <string name="football_url">"http://api.tianapi.com/football/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=5&#38;"</string>
+    <string name="tech_url">"http://api.tianapi.com/it/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=10&#38;"</string>
+    <string name="mobile_url">"http://api.tianapi.com/mobile/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=5&#38;"</string>
 
 
 

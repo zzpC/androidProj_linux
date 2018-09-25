@@ -2,83 +2,51 @@
 <instant-run
     abi="arm64-v8a,armeabi-v7a,armeabi"
     api-level="24"
-    build-mode="FULL"
+    build-mode="COLD"
     density="xxhdpi"
     format="10"
+    ir-eligibility="SYNTHETIC_CONSTRUCTOR_CHANGE"
     plugin-version="3.1.2"
-    timestamp="1537709043012"
+    timestamp="1537864044313"
     token="4787768397158354477"
-    verifier="FULL_BUILD_REQUESTED" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="7190" />
+        duration="4258" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="368" />
+        duration="67" />
     <task
         name="verifier"
-        duration="302" />
+        duration="55" />
 
-    <artifact
-        location="C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\build\intermediates\split-apk\mock\debug\slices\slice_8.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\build\intermediates\split-apk\mock\debug\slices\slice_7.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\build\intermediates\split-apk\mock\debug\slices\slice_0.apk"
-        type="SPLIT" />
     <artifact
         location="C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\build\intermediates\split-apk\mock\debug\slices\slice_1.apk"
         type="SPLIT" />
-    <artifact
-        location="C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\build\intermediates\split-apk\mock\debug\slices\slice_5.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\build\intermediates\split-apk\mock\debug\slices\slice_2.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\build\intermediates\split-apk\mock\debug\slices\slice_3.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\build\intermediates\split-apk\mock\debug\dep\dependencies.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\build\intermediates\split-apk\mock\debug\slices\slice_9.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\build\intermediates\split-apk\mock\debug\slices\slice_4.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\build\intermediates\split-apk\mock\debug\slices\slice_6.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\build\intermediates\instant-run-apk\mock\debug\app-mock-debug.apk"
-        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1537709043012"
+        timestamp="1537858833566"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\build\intermediates\split-apk\mock\debug\slices\slice_8.apk"
+            location="C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\build\intermediates\split-apk\mock\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\build\intermediates\split-apk\mock\debug\slices\slice_7.apk"
+            location="C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\build\intermediates\split-apk\mock\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\build\intermediates\split-apk\mock\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\build\intermediates\split-apk\mock\debug\slices\slice_1.apk"
-            type="SPLIT" />
-        <artifact
             location="C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\build\intermediates\split-apk\mock\debug\slices\slice_5.apk"
             type="SPLIT" />
+        <artifact
+            location="C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\build\intermediates\instant-run-apk\mock\debug\app-mock-debug.apk"
+            type="SPLIT_MAIN" />
         <artifact
             location="C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\build\intermediates\split-apk\mock\debug\slices\slice_2.apk"
             type="SPLIT" />
@@ -95,11 +63,28 @@
             location="C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\build\intermediates\split-apk\mock\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
+            location="C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\build\intermediates\split-apk\mock\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
             location="C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\build\intermediates\split-apk\mock\debug\slices\slice_6.apk"
             type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1537861617611"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\build\intermediates\instant-run-apk\mock\debug\app-mock-debug.apk"
             type="SPLIT_MAIN" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="SYNTHETIC_CONSTRUCTOR_CHANGE"
+        timestamp="1537864044313"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\zzp\Documents\GitHub\androidProj_linux\WYNews\app\build\intermediates\split-apk\mock\debug\slices\slice_1.apk"
+            type="SPLIT" />
     </build>
 
 </instant-run>

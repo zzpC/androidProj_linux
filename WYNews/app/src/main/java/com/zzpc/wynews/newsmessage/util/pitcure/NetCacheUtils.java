@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.os.Handler;
+import android.os.Message;
 import android.widget.ImageView;
 
 import java.io.IOException;
@@ -25,14 +27,14 @@ public class NetCacheUtils {
 
     /**
      * 从网络下载图片
-     *
-     * @param ivPic 显示图片的imageview
      * @param url   下载图片的网络地址
      */
-    void getBitmapFromNet(ImageView ivPic, String url) {
-        new BitmapTask().execute(ivPic, url);//启动AsyncTask
+    void getBitmapFromNet(String url,Handler handler) {
+        new BitmapTask(url,handler).execute();//启动AsyncTask
 
     }
+
+
 
     /**
      * AsyncTask就是对handler和线程池的封装
@@ -43,8 +45,15 @@ public class NetCacheUtils {
     @SuppressLint("StaticFieldLeak")
     class BitmapTask extends AsyncTask<Object, Void, Bitmap> {
 
-        private ImageView ivPic;
+
         private String url;
+        private Handler handler;
+
+        public BitmapTask(String url,Handler handler) {
+            super();
+            this.url=url;
+            this.handler=handler;
+        }
 
         /**
          * 后台耗时操作,存在于子线程中
@@ -54,9 +63,6 @@ public class NetCacheUtils {
          */
         @Override
         protected Bitmap doInBackground(Object[] params) {
-            ivPic = (ImageView) params[0];
-            url = (String) params[1];
-
             return downLoadBitmap(url);
         }
 
@@ -77,8 +83,8 @@ public class NetCacheUtils {
          */
         @Override
         protected void onPostExecute(Bitmap result) {
+            Message msg = handler.obtainMessage();
             if (result != null) {
-                ivPic.setImageBitmap(result);
                 System.out.println("从网络缓存图片啦.....");
 
                 //从网络获取图片后,保存至本地缓存
@@ -86,7 +92,14 @@ public class NetCacheUtils {
                 //保存至内存中
                 mMemoryCacheUtils.setBitmapToMemory(url, result);
 
+                msg.what=1;
+                msg.obj=result;
+
+
+            }else {
+                msg.what=2;
             }
+            handler.sendMessage(msg);
         }
     }
 

@@ -25,6 +25,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
+import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.Toolbar;
 
 import android.util.Log;
@@ -80,7 +81,7 @@ public class HomeActivity extends AppCompatActivity implements
     private FloatingActionButton mFloatingActionButton;
 
     private HashMap<String,StartDetailsFragment> startDetailsFragments=new HashMap<String,StartDetailsFragment>();
-
+    public static boolean night_mode;
     static {
 //        System.loadLibrary("native-lib");
     }
@@ -138,11 +139,16 @@ public class HomeActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
 
 
+        night_mode= PreferenceManager.getDefaultSharedPreferences(this).getBoolean("switch_night",false);
 
-        if (NewsApp.night_mode) {
+
+        if (night_mode) {
+            Log.e("夜间模式", "onCreate: 夜间模式 strue");
 //            setTheme(R.style.Theme_AppCompat_DayNight_NoActionBar);
             setTheme(R.style.Theme_AppCompat_NoActionBar);
         } else {
+            Log.e("夜间模式", "onCreate:HA 夜间模式  false");
+
 //            setTheme(R.style.Theme_Design_Light_NoActionBar);
             setTheme(R.style.Theme_AppCompat_Light_NoActionBar);
         }
@@ -366,6 +372,7 @@ public class HomeActivity extends AppCompatActivity implements
     @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
     @Override
     public void OnClickNightMode() {
+        Log.e("夜间模式", " HA夜间模式 reccreate: " );
         this.recreate();
         NewsApp.changing_Theme = true;
 

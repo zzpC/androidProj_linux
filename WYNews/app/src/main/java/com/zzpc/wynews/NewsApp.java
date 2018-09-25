@@ -24,8 +24,8 @@ public class NewsApp extends Application {
         return context;
     }
 
-    public static boolean pic_only_WIFI = true;
-    public static boolean night_mode = true;
+//    public static boolean pic_only_WIFI = true;
+//    public static boolean night_mode = true;
     public static boolean changing_Theme = false;
     public static boolean video_Full = false;
     public static int read_amount;

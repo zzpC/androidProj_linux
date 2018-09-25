@@ -4,17 +4,21 @@ package com.zzpc.wynews.newsmessage;
 import android.annotation.SuppressLint;
 import android.content.Context;
 
+import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Parcelable;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.NonNull;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.GridLayoutManager;
 
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,11 +33,7 @@ import com.zzpc.wynews.NewsApp;
 import com.zzpc.wynews.data.model.News;
 import com.zzpc.wynews.data.helper.ParseDatas;
 import com.zzpc.wynews.R;
-//import com.xyzlf.share.library.bean.ShareEntity;
-//import com.xyzlf.share.library.interfaces.ShareConstant;
-//import com.xyzlf.share.library.util.ShareUtil;
-import com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView;
-import com.yanzhenjie.recyclerview.swipe.touch.OnItemMoveListener;
+
 import com.zzpc.wynews.newsmessage.util.pitcure.MyBitmapUtils;
 
 import java.io.BufferedReader;
@@ -42,7 +42,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -51,21 +50,15 @@ import static com.zzpc.wynews.NewsApp.isNetworkAvailable;
 
 
 public class SwipeRefreshLayoutBasicFragment extends Fragment {
-    private static final String TAG = "SwipeRefreshLayoutBasic";
 
     private SwipeRefreshLayout mSwipeRefreshLayout;
 
-    private SwipeMenuRecyclerView mRecyclerView;
-
     //Tab编号
     private int mTopTab;
-
     private NewsPagerAdapter mListAdapter;
-
     private List<News> mNewsInfoList = new ArrayList<>();
 
-
-
+    public static boolean pic_only_WIFI;
     public interface OnLoadWebSiteNewsListner{
         void onLoadWebSiteNews(String info);
     }
@@ -74,8 +67,8 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
     private OnLoadWebSiteNewsListner mListener;
 
     public static SwipeRefreshLayoutBasicFragment newInstance(String title, int... argument) {
-        //保证fragment只有无参版本的构造函数,避免恢复fragment时失效
-        SwipeRefreshLayoutBasicFragment swipeRefreshLayoutBasicFragment = new SwipeRefreshLayoutBasicFragment();
+        // 保证fragment只有无参版本的构造函数,避免恢复fragment时失效
+        SwipeRefreshLayoutBasicFragment  swipeRefreshLayoutBasicFragment = new SwipeRefreshLayoutBasicFragment();
         Bundle bundle = new Bundle();
         bundle.putInt("sliding_tab_no", argument[0]);
         bundle.putString("news_info", NewsApp.hashMap.get(title));
@@ -109,8 +102,9 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         //mStyle 标签的编号
-        mTopTab = getArguments().getInt("sliding_tab_no");
-
+        mTopTab = Objects.requireNonNull(getArguments()).getInt("sliding_tab_no");
+        pic_only_WIFI= PreferenceManager.getDefaultSharedPreferences(Objects.requireNonNull(getActivity())).getBoolean("switch_pic_wifi",true);
+        Log.e("wifi下图", "SRLBF: "+pic_only_WIFI);
     }
 
     // BEGIN_INCLUDE (inflate_view)
@@ -126,34 +120,10 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                 getResources().getColor(R.color.cardview_shadow_start_color));
         // END_INCLUDE (change_colors)
 
-        mRecyclerView = view.findViewById(R.id.swiperefresh_list);
+        RecyclerView mRecyclerView = view.findViewById(R.id.swiperefresh_list);
         mRecyclerView.setNestedScrollingEnabled(true);
-        mRecyclerView.setLongPressDragEnabled(true); // 拖拽排序，默认关闭。
-        mRecyclerView.setItemViewSwipeEnabled(false); // 策划删除，默认关闭。
-        mRecyclerView.setOnItemMoveListener(new OnItemMoveListener() {
-            @Override
-            public boolean onItemMove(RecyclerView.ViewHolder srcHolder, RecyclerView.ViewHolder targetHolder) {
-                int fromPosition = srcHolder.getAdapterPosition();
-                int toPosition = targetHolder.getAdapterPosition();
-                if (fromPosition < toPosition)
-                    for (int i = fromPosition; i < toPosition; i++)
-                        Collections.swap(mNewsInfoList, i, i + 1);
-                else
-                    for (int i = fromPosition; i > toPosition; i--)
-                        Collections.swap(mNewsInfoList, i, i - 1);
+        mRecyclerView.setItemViewCacheSize(0);
 
-                mListAdapter.notifyItemMoved(fromPosition, toPosition);
-                return true;
-            }
-
-            @Override
-            public void onItemDismiss(RecyclerView.ViewHolder srcHolder) {
-                int position = srcHolder.getAdapterPosition();
-                // Item被侧滑删除时，删除数据，并更新adapter。
-                mNewsInfoList.remove(position);
-                mListAdapter.notifyItemRemoved(position);
-            }
-        });
         ViewCompat.setNestedScrollingEnabled(mRecyclerView, true);
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
@@ -173,7 +143,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         mRecyclerView.setAdapter(mListAdapter);
         if (mRecyclerView.getChildCount() == 0) {
             new DummyBackgroundTask().execute();
-            mListAdapter.notifyDataSetChanged();
+//            mListAdapter.notifyDataSetChanged();
         }
 
         return view;
@@ -183,18 +153,14 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
-        if (mRecyclerView.getChildCount() == 0) {
-            initiateRefresh();
-
-        }
-
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 initiateRefresh();
             }
         });
+
+
 
     }
 
@@ -204,15 +170,11 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         /**
          * Execute the background task, which uses {@link AsyncTask} to load the data.
          */
-
         new DummyBackgroundTask().execute();
 
     }
 
     private void onRefreshComplete(List<News> result) {
-
-
-//        mListAdapter.addAll(result);
         mListAdapter.notifyDataSetChanged();
 
         // Stop the refreshing indicator
@@ -238,6 +200,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 //                        url_string=url_string+ String.valueOf(RAMDOM.nextInt(80));
 
                         URL url = new URL(url_string);
+                        Log.e("新闻加载", "doInBackground: "+url_string );
 
                         connection = (HttpURLConnection) url.openConnection();
                         connection.setRequestMethod("GET");
@@ -245,7 +208,6 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                         connection.setReadTimeout(8000);
                         connection.setDoInput(true);
                         connection.setDoOutput(true);
-
                         InputStream in = connection.getInputStream();
 
                         BufferedReader reader = new BufferedReader(new InputStreamReader(in));
@@ -286,7 +248,6 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
     }
 
-
     class NewsPagerAdapter extends RecyclerView.Adapter<NewsPagerAdapter.ViewHolder> {
         private static final int SOCIAL_NEWS = 0;
         private static final int CHINA_NEWS = 1;
@@ -308,8 +269,9 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
             }
         }
 
+        @NonNull
         @Override
-        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_swiperefresh, parent, false);
             final ViewHolder viewHolder = new ViewHolder(view);
@@ -317,12 +279,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
             viewHolder.iv_pic.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-                    int position = viewHolder.getAdapterPosition();
-                    final News news = mNewsInfoList.get(position);
-                    final String url = news.getUrl();
-
-                }
+                                    }
             });
 
             viewHolder.tv_title.setOnClickListener(new View.OnClickListener() {
@@ -331,13 +288,9 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                     int position = viewHolder.getAdapterPosition();
                     final News news = mNewsInfoList.get(position);
                     final String url = news.getUrl();
-
                     ++NewsApp.read_amount;
                     mListener.onLoadWebSiteNews(url);
-                    
                     MD5(url);
-
-
                 }
             });
 
@@ -353,15 +306,55 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
             return viewHolder;
         }
 
-        @Override
-        public void onBindViewHolder(ViewHolder holder, int position) {
-            News news = mNewsInfoList.get(position);
 
-            holder.tv_title.setText(news.getTitle());
+        @Override
+        public void onViewRecycled(@NonNull ViewHolder holder) {
+            super.onViewRecycled(holder);
+            holder.iv_pic.setImageResource(R.drawable.bg_comment_line);
+            Handler handler= (Handler) holder.itemView.getTag();
+            if(handler!=null){
+                handler.removeCallbacksAndMessages(0);
+            }
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
+            // 没加载图片之前,ImageView 和 图片的 url 一一对应起来
+            final News news = mNewsInfoList.get(position);
+            holder.iv_pic.setBackgroundResource(R.drawable.bg_comment_line);
+            holder.iv_pic.setTag(news.getPicUrl());
+
+
+
             if (holder.iv_pic != null) {
-                if (!NewsApp.pic_only_WIFI || NewsApp.isConnectedViaWifi()) {
-                    MyBitmapUtils myBitmapUtils = new MyBitmapUtils();
-                    myBitmapUtils.disPlay(holder.iv_pic, news.getPicUrl());
+                if (!pic_only_WIFI || NewsApp.isConnectedViaWifi()) {
+                    holder.tv_title.setText(news.getTitle());
+
+                    @SuppressLint("HandlerLeak")
+                    Handler handler=new Handler(){
+                        @Override
+                        public void handleMessage(Message msg) {
+                            if (TextUtils.equals((String) holder.iv_pic.getTag(), news.getPicUrl())) {
+                                switch (msg.what) {
+                                    case 1:
+                                        Bitmap bitmap = (Bitmap) msg.obj;
+                                        if (bitmap != null) {
+                                            holder.iv_pic.setImageBitmap(bitmap);
+                                        }
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }else{
+                                holder.iv_pic.setBackgroundResource(R.drawable.bg_comment_line);
+                            }
+                        }
+                    };
+                    MyBitmapUtils myBitmapUtils=new MyBitmapUtils();
+                    myBitmapUtils.getBitmap(news.getPicUrl(),handler);
+                    holder.itemView.setTag(handler);
+
+
                 }
 
             }

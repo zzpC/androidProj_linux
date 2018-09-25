@@ -1,8 +1,13 @@
 package com.zzpc.wynews.newsmessage.util.pitcure;
 
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
-import android.util.Log;
+import android.os.Handler;
+import android.os.Message;
+
 import android.widget.ImageView;
+
+
 
 import static android.content.ContentValues.TAG;
 
@@ -22,30 +27,34 @@ public class MyBitmapUtils {
         mNetCacheUtils=new NetCacheUtils(mLocalCacheUtils,mMemoryCacheUtils);
     }
 
-    public void disPlay(ImageView ivPic, String url) {
-
+    public  void getBitmap(String url,Handler handler){
         Bitmap bitmap;
         //内存缓存
         bitmap=mMemoryCacheUtils.getBitmapFromMemory(url);
         if (bitmap!=null){
-            ivPic.setImageBitmap(bitmap);
             System.out.println("从内存获取图片啦.....");
-            
-            return;
+
         }
 
         //本地缓存
         bitmap = mLocalCacheUtils.getBitmapFromLocal(url);
         if(bitmap !=null){
-            ivPic.setImageBitmap(bitmap);
             System.out.println("从本地获取图片啦.....");
-            
+
             //从本地获取图片后,保存至内存中
             mMemoryCacheUtils.setBitmapToMemory(url,bitmap);
-            return;
         }
-        //网络缓存
-        mNetCacheUtils.getBitmapFromNet(ivPic,url);
+
+        Message msg = handler.obtainMessage();
+        if (bitmap != null) {
+            System.out.println("从网络缓存图片啦.....");
+            msg.what=1;
+            msg.obj=bitmap;
+        }else {
+            msg.what=2;
+        }
+        handler.sendMessage(msg);
+        mNetCacheUtils.getBitmapFromNet(url,handler);
     }
 }
 
