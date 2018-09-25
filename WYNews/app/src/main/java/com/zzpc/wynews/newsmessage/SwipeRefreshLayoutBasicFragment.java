@@ -39,6 +39,7 @@ import com.zzpc.wynews.newsmessage.util.pitcure.MyBitmapUtils;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
@@ -57,12 +58,17 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
     private int mTopTab;
     private NewsPagerAdapter mListAdapter;
     private List<News> mNewsInfoList = new ArrayList<>();
-
+    public  String url_string;
     public static boolean pic_only_WIFI;
     public interface OnLoadWebSiteNewsListner{
         void onLoadWebSiteNews(String info);
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+    }
 
     private OnLoadWebSiteNewsListner mListener;
 
@@ -72,6 +78,8 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         Bundle bundle = new Bundle();
         bundle.putInt("sliding_tab_no", argument[0]);
         bundle.putString("news_info", NewsApp.hashMap.get(title));
+        swipeRefreshLayoutBasicFragment.url_string=NewsApp.hashMap.get(title);
+//        String url_string=NewsApp.hashMap.get(title);
         swipeRefreshLayoutBasicFragment.setArguments(bundle);
         return swipeRefreshLayoutBasicFragment;
     }
@@ -92,10 +100,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-
     }
-
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -142,8 +147,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         // Set the adapter between the ListView and its backing data.
         mRecyclerView.setAdapter(mListAdapter);
         if (mRecyclerView.getChildCount() == 0) {
-            new DummyBackgroundTask().execute();
-//            mListAdapter.notifyDataSetChanged();
+            new DummyBackgroundTask(this).execute();
         }
 
         return view;
@@ -159,18 +163,11 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                 initiateRefresh();
             }
         });
-
-
-
     }
 
 
     private void initiateRefresh() {
-
-        /**
-         * Execute the background task, which uses {@link AsyncTask} to load the data.
-         */
-        new DummyBackgroundTask().execute();
+        new DummyBackgroundTask(this).execute();
 
     }
 
@@ -183,7 +180,15 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
 
     @SuppressLint("StaticFieldLeak")
-    private class DummyBackgroundTask extends AsyncTask<Void, Void, List<News>> {
+    private static class DummyBackgroundTask extends AsyncTask<Void, Void, List<News>> {
+        final WeakReference<SwipeRefreshLayoutBasicFragment> swipeRefreshLayoutBasicFragmentWeakReference;
+
+
+        DummyBackgroundTask(SwipeRefreshLayoutBasicFragment fragment) {
+            super();
+            swipeRefreshLayoutBasicFragmentWeakReference=new WeakReference<>(fragment);
+
+        }
 
         @Override
         protected List<News> doInBackground(Void... params) {
@@ -195,13 +200,10 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                 if (isNetworkAvailable()) {
                     HttpURLConnection connection = null;
                     try {
-                        String url_string = Objects.requireNonNull(getArguments()).getString("news_info");
+                        String url_string =swipeRefreshLayoutBasicFragmentWeakReference.get().url_string;
 
-//                        url_string=url_string+ String.valueOf(RAMDOM.nextInt(80));
 
                         URL url = new URL(url_string);
-                        Log.e("新闻加载", "doInBackground: "+url_string );
-
                         connection = (HttpURLConnection) url.openConnection();
                         connection.setRequestMethod("GET");
                         connection.setConnectTimeout(8000);
@@ -221,8 +223,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                         }
                         in.close();//????????????
                         List<News> list = ParseDatas.parseJSON(response.toString());
-                        
-                        mNewsInfoList.addAll(0, list);
+                        swipeRefreshLayoutBasicFragmentWeakReference.get().mNewsInfoList.addAll(0, list);
 
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -234,7 +235,8 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                 }
 
             }
-            return mNewsInfoList;
+            return swipeRefreshLayoutBasicFragmentWeakReference.get().mNewsInfoList;
+
         }
 
         @Override
@@ -242,7 +244,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
             super.onPostExecute(result);
 
             // Tell the Fragment that the refresh has completed
-            onRefreshComplete(result);
+            swipeRefreshLayoutBasicFragmentWeakReference.get().onRefreshComplete(result);
             
         }
 
