@@ -87,6 +87,27 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         return swipeRefreshLayoutBasicFragment;
     }
 
+<<<<<<< HEAD
+=======
+
+
+    //检测是否实现了接口
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try {
+            mListener = (OnLoadWebSiteNewsListner) context;
+        } catch (final ClassCastException e) {
+            throw new ClassCastException(context.toString() + " must implement OnWebViewListener");
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+>>>>>>> 28527d0a83bfa1279ec20d67356765d953815445
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -133,6 +154,10 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         mRecyclerView.setAdapter(mListAdapter);
         if (mRecyclerView.getChildCount() == 0) {
             new DummyBackgroundTask(this).execute();
+<<<<<<< HEAD
+=======
+//            mListAdapter.notifyDataSetChanged();
+>>>>>>> 28527d0a83bfa1279ec20d67356765d953815445
         }
 
         return view;
@@ -210,6 +235,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                         }
                         in.close();//????????????
                         List<News> list = ParseDatas.parseJSON(response.toString());
+<<<<<<< HEAD
                         if(swipeRefreshLayoutBasicFragmentWeakReference.get().mNewsInfoList!=null){
                             swipeRefreshLayoutBasicFragmentWeakReference.get().mNewsInfoList.addAll(0, list);
                         }else {
@@ -217,6 +243,9 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                             Log.e("", "doInBackground: Fragment弱引用被回收,可能引发bug");
                         }
 
+=======
+                        swipeRefreshLayoutBasicFragmentWeakReference.get().mNewsInfoList.addAll(0, list);
+>>>>>>> 28527d0a83bfa1279ec20d67356765d953815445
 
                     } catch (Exception e) {
                         e.printStackTrace();

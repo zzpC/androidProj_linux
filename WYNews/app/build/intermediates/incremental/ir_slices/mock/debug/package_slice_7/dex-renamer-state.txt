@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 #Wed Oct 10 11:48:32 CST 2018
 base.0=C\:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\transforms\\dexMerger\\mock\\debug\\45
+=======
+#Tue Sep 25 17:04:09 CST 2018
+base.0=C\:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\transforms\\dexMerger\\mock\\debug\\7
+>>>>>>> 28527d0a83bfa1279ec20d67356765d953815445
 path.0=classes.dex
 renamed.0=classes.dex

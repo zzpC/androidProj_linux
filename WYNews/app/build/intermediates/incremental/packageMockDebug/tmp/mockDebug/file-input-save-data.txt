@@ -1,5 +1,9 @@
 #Internal package file, do not edit.
+<<<<<<< HEAD
 #Wed Oct 10 11:48:33 CST 2018
+=======
+#Tue Sep 25 17:04:11 CST 2018
+>>>>>>> 28527d0a83bfa1279ec20d67356765d953815445
 17.baseType=DIRECTORY
 4.path=lib/armeabi/libijkplayer.so
 8.set=DEX
