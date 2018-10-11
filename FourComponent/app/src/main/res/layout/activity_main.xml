@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/recreate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="重建activity!" />
+    <TextView
+        android:id="@+id/startProviderATY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="启动Provideractivity!" />
+    <TextView
+        android:id="@+id/stopService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="停止服务!" />
+    <TextView
+        android:id="@+id/eventbusact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="启动eventbus!" />
+
+    <TextView
+        android:id="@+id/dialogact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="启动dialogact!" />
+
+    <TextView
+        android:id="@+id/notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="启动notificationact!" />
+</LinearLayout>

@@ -35,7 +35,6 @@ public class StartDetailsFragment extends Fragment  {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        fetchDetaisFromDB();
     }
 
     @Nullable
@@ -50,6 +49,7 @@ public class StartDetailsFragment extends Fragment  {
 
         Bundle args = getArguments();
         String theme=args.getString("Theme");
+        fetchDetaisFromDB();
 
         StartDetailsAdapter detailsAdapter=new StartDetailsAdapter(getContext(),mDetailsItemList);
         

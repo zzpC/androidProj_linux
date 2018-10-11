@@ -125,13 +125,6 @@ public class NewsModuleFragment extends Fragment implements MessageView {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        
-        if (savedInstanceState != null && mFragmentManager != null) {
-            mFragmentStatus = mFragmentManager.getFragment(savedInstanceState, TAG);
-            return;
-        }
-
-
         // END_INCLUDE (populate_tabs)
         mMessagePresenter=new MessagePresenter(this);
     }
@@ -142,7 +135,6 @@ public class NewsModuleFragment extends Fragment implements MessageView {
 
         mSlidingTabsColorsFragmentPagerAdapter = new SlidingTabsFragmentPagerAdapter(getChildFragmentManager());
         mViewPager.setAdapter(mSlidingTabsColorsFragmentPagerAdapter);
-
 
         mSlidingTabLayout.addFragmentAttached(this);
         mSlidingTabLayout.setViewPager(mViewPager);
@@ -166,11 +158,8 @@ public class NewsModuleFragment extends Fragment implements MessageView {
         return inflater.inflate(R.layout.fragment_newsmodule, container, false);
     }
 
-
-
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-
         mViewPager = view.findViewById(R.id.viewpager);
         mSlidingTabLayout = view.findViewById(R.id.sliding_tabs);
         mMessagePresenter.pViewCreated();
@@ -178,9 +167,6 @@ public class NewsModuleFragment extends Fragment implements MessageView {
 
     //与viewpager关联,同时可改变Tab的外观和行为
     class SlidingTabsFragmentPagerAdapter extends FragmentStatePagerAdapter {
-
-
-
         SlidingTabsFragmentPagerAdapter(FragmentManager fm) {
             super(fm);
         }

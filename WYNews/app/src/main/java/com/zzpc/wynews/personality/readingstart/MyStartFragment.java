@@ -7,14 +7,16 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.allen.library.SuperTextView;
+import com.zzpc.wynews.BaseEvent;
 import com.zzpc.wynews.R;
 import com.zzpc.wynews.data.database.NewsDBHelper;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,25 +28,11 @@ import java.util.List;
 
 public class MyStartFragment extends Fragment   {
 
-    private static final String TAG = "MyStartFragment";
 
     private RecyclerView mRecyclerView;
 
 
     private List<StartItem> mStartItemListList = new ArrayList<>();
-    private OnSwitchStartDetailsFragment mOnSwitchStartDetailsFragment;
-
-    public interface OnSwitchStartDetailsFragment{
-        void switchStartDetailsFragment(String startTheme);
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        mOnSwitchStartDetailsFragment=(OnSwitchStartDetailsFragment)context;
-    }
-
-
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -102,8 +90,9 @@ public class MyStartFragment extends Fragment   {
 
 
 
+        @NonNull
         @Override
-        public StartViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        public StartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.start_item, parent, false);
             mSuperTextView=v.findViewById(R.id.start_theme_stv);
 
@@ -122,7 +111,7 @@ public class MyStartFragment extends Fragment   {
         }
 
         @Override
-        public void onBindViewHolder(StartViewHolder holder, int position) {
+        public void onBindViewHolder(@NonNull StartViewHolder holder, int position) {
             StartItem item = items.get(position);
             //TODO Fill in your logic for binding the view.
             mSuperTextView.setCenterString(item.mTheme);
@@ -150,7 +139,13 @@ public class MyStartFragment extends Fragment   {
         }
 
         private void createSpecificDetailsFragment(String theme){
-            mOnSwitchStartDetailsFragment.switchStartDetailsFragment(theme);
+            sendLoadMoreNewsEvent(theme);
+        }
+        private void sendLoadMoreNewsEvent(String theme){
+            BaseEvent.CommonEvent event = BaseEvent.CommonEvent.C;
+            event.setObject(theme); //传入一个String对象
+            EventBus.getDefault().post(event);
+
         }
 
     }

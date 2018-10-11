@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\incremental\\mergeMockDebugResources\\merged.dir\\values-zh-rTW\\values-zh-rTW.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\fd6f52c6ce2ba4259ff7a8e5631c180a\\res\\values-zh-rTW\\values-zh-rTW.xml",
+                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\039741adb46a441a844ef3559c1519b4\\res\\values-zh-rTW\\values-zh-rTW.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\036282666a8b0210d10a655f8d050c83\\res\\values-zh-rTW\\values-zh-rTW.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "25",
-                        "startColumns": "4",
-                        "startOffsets": "2138",
-                        "endColumns": "100",
-                        "endOffsets": "2234"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\recyclerview-swipe-1.1.4.aar\\450540c88c8fabb14e4ad7e95d06f49b\\res\\values-zh-rTW\\values-zh-rTW.xml",
+                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\recyclerview-swipe-1.1.4.aar\\280bd050b6ed8f72acdbee97e12f3c04\\res\\values-zh-rTW\\values-zh-rTW.xml",
                     "from": {
                         "startLines": "2,3,4,5,6",
                         "startColumns": "4,4,4,4,4",
@@ -52,6 +35,23 @@
                         "startOffsets": "1733,1799,1860,1926,2000",
                         "endColumns": "65,60,65,73,59",
                         "endOffsets": "1794,1855,1921,1995,2055"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5f0ada20ccc699d4b9089ad2d7921283\\res\\values-zh-rTW\\values-zh-rTW.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "25",
+                        "startColumns": "4",
+                        "startOffsets": "2138",
+                        "endColumns": "100",
+                        "endOffsets": "2234"
                     }
                 }
             ]

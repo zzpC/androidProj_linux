@@ -6,8 +6,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
+import android.util.Log;
 
 import com.zzpc.wynews.NewsApp;
+import com.zzpc.wynews.newsmessage.specifictext.SpecificTextModelImpl;
 
 /**
  * Created by zzp on 18-2-20.
@@ -66,7 +68,8 @@ public class NewsDBHelper extends SQLiteOpenHelper {
         if (rslt == -1)
             return false;
         else {
-            ++NewsApp.history_amount;
+            ++SpecificTextModelImpl.history_amount;
+            Log.e("历史记录", "insertData: NO row: " + rslt);
             return true;
         }
 

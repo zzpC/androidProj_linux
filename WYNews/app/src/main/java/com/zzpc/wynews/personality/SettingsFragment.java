@@ -13,12 +13,17 @@ import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceFragmentCompat;
 import android.support.v7.preference.PreferenceScreen;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
+import com.zzpc.wynews.BaseEvent;
 import com.zzpc.wynews.HomeActivity;
 import com.zzpc.wynews.NewsApp;
 import com.zzpc.wynews.R;
 import com.zzpc.wynews.newsmessage.SwipeRefreshLayoutBasicFragment;
+
+import org.greenrobot.eventbus.EventBus;
 
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -30,9 +35,36 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
     private PreferenceFragmentCompat mFragmentStatus;
     private FragmentManager mFragmentManager;
 
+    public void sendDayNightEvent(){
+        BaseEvent.CommonEvent event = BaseEvent.CommonEvent.A;
+        event.setObject("Send Event"); //传入一个String对象
+        EventBus.getDefault().post(event);
 
-    public interface OnClickNightModeListener {
-         void OnClickNightMode();
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+//        EventBus.getDefault().register(this);
+
+
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+      //  EventBus.getDefault().unregister(this);onD
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+//        EventBus.getDefault().unregister(this);
     }
 
     @Override
@@ -44,7 +76,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
+//        EventBus.getDefault().register(this);
 
         
         super.onCreate(savedInstanceState);
@@ -83,14 +115,14 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
     @Override
     public void onResume() {
         super.onResume();
-
+//        EventBus.getDefault().register(this);
         getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
     }
 
     @Override
     public void onPause() {
         super.onPause();
-
+//        EventBus.getDefault().unregister(this);
         getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
     }
 
@@ -106,9 +138,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 
         if (key.equals("switch_night")) {
             Log.e("夜间模式", "SF 夜间模式 true: " );
-            OnClickNightModeListener onClickNightModeListener=(SettingsFragment.OnClickNightModeListener)getActivity();
-            assert onClickNightModeListener != null;
-            onClickNightModeListener.OnClickNightMode();
+            sendDayNightEvent();
         }
 
     }

@@ -4,26 +4,7 @@
             "outputFile": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\incremental\\mergeMockDebugResources\\merged.dir\\values-v26\\values-v26.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\fd6f52c6ce2ba4259ff7a8e5631c180a\\res\\values-v26\\values-v26.xml",
-                    "from": {
-                        "startLines": "2,3,4,8,12,16",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "55,130,217,431,657,896",
-                        "endLines": "2,3,7,11,15,16",
-                        "endColumns": "74,86,12,12,12,92",
-                        "endOffsets": "125,212,426,652,891,984"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,8,12,20",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "55,130,217,431,657,1140",
-                        "endLines": "2,3,7,11,15,20",
-                        "endColumns": "74,86,12,12,12,92",
-                        "endOffsets": "125,212,426,652,891,1228"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\b13bcbba7691450726f3824067659196\\res\\values-v26\\values-v26.xml",
+                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\1d17d68b30498d4b449be5287671d95a\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,6",
                         "startColumns": "4,4",
@@ -39,6 +20,25 @@
                         "endLines": "19,21",
                         "endColumns": "12,96",
                         "endOffsets": "1135,1325"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\039741adb46a441a844ef3559c1519b4\\res\\values-v26\\values-v26.xml",
+                    "from": {
+                        "startLines": "2,3,4,8,12,16",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "55,130,217,431,657,896",
+                        "endLines": "2,3,7,11,15,16",
+                        "endColumns": "74,86,12,12,12,92",
+                        "endOffsets": "125,212,426,652,891,984"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,8,12,20",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "55,130,217,431,657,1140",
+                        "endLines": "2,3,7,11,15,20",
+                        "endColumns": "74,86,12,12,12,92",
+                        "endOffsets": "125,212,426,652,891,1228"
                     }
                 }
             ]

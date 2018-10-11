@@ -16,10 +16,12 @@ import android.view.ViewGroup;
 
 
 import com.allen.library.SuperTextView;
+import com.zzpc.wynews.BaseEvent;
 import com.zzpc.wynews.R;
 import com.zzpc.wynews.data.database.NewsDBHelper;
 
 
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +34,6 @@ public class MyHistoryFragment extends Fragment{
 
     private static final String TAG = "MyHistoryFragment";
 
-    private RecyclerView mRecyclerView;
     private List<MyHistoryItem> mHistoryItemList=new ArrayList<MyHistoryItem>();
     private OnMyHistoryDetailsFragment mOnMyHistoryDetailsFragment;
 
@@ -43,13 +44,13 @@ public class MyHistoryFragment extends Fragment{
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        mOnMyHistoryDetailsFragment=(OnMyHistoryDetailsFragment)context;
+//        mOnMyHistoryDetailsFragment=(OnMyHistoryDetailsFragment)context;
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        fetchDetaisFromDB();
+
 
     }
 
@@ -60,11 +61,11 @@ public class MyHistoryFragment extends Fragment{
         super.onCreateView(inflater, container, savedInstanceState);
         View view;
         view = inflater.inflate(R.layout.fragment_myhistory, container, false);
-        mRecyclerView = view.findViewById(R.id.recyclerview_myhistory);
+        RecyclerView mRecyclerView = view.findViewById(R.id.recyclerview_myhistory);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(layoutManager);
 
-        
+        fetchDetaisFromDB();
         MyHistoryAdapter myHistoryAdapter = new MyHistoryAdapter(mHistoryItemList, getContext());
 
         mRecyclerView.setAdapter(myHistoryAdapter);
@@ -79,6 +80,9 @@ public class MyHistoryFragment extends Fragment{
         Cursor cursor= newsDBHelper.getAllData();
 
         try {
+            if(!cursor.moveToNext()){
+                Log.e("历史纪录", "fetchDetaisFromDB 为空 ");
+            }
             while (cursor.moveToNext()) {
                 String strValue = cursor.getString(1);
                 
@@ -119,9 +123,17 @@ public class MyHistoryFragment extends Fragment{
                     if (mOnMyHistoryDetailsFragment==null){
                         return;
                     }
-                    mOnMyHistoryDetailsFragment.MyHistoryDetailsFragment(item.mTitle,item.mContent);
+//                    mOnMyHistoryDetailsFragment.MyHistoryDetailsFragment(item.mTitle,item.mContent);
+                    sendHistoryDetailsEvent(item.mTitle,item.mContent);
                 }
             });
+        }
+
+        public void sendHistoryDetailsEvent(String title, String content){
+            BaseEvent.CommonEvent event = BaseEvent.CommonEvent.D;
+            event.setObject(title,content); //传入一个String对象
+            EventBus.getDefault().post(event);
+
         }
 
         @Override

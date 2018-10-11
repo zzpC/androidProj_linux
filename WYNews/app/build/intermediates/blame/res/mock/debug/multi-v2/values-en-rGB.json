@@ -4,17 +4,7 @@
             "outputFile": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\incremental\\mergeMockDebugResources\\merged.dir\\values-en-rGB\\values-en-rGB.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\fd6f52c6ce2ba4259ff7a8e5631c180a\\res\\values-en-rGB\\values-en-rGB.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,209,309,417,501,601,716,793,869,951,1054,1158,1257,1362,1465,1569,1725,1825",
-                        "endColumns": "103,99,107,83,99,114,76,75,81,102,103,98,104,102,103,155,99,81",
-                        "endOffsets": "204,304,412,496,596,711,788,864,946,1049,1153,1252,1357,1460,1564,1720,1820,1902"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\036282666a8b0210d10a655f8d050c83\\res\\values-en-rGB\\values-en-rGB.xml",
+                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5f0ada20ccc699d4b9089ad2d7921283\\res\\values-en-rGB\\values-en-rGB.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -28,6 +18,16 @@
                         "startOffsets": "1907",
                         "endColumns": "100",
                         "endOffsets": "2003"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\039741adb46a441a844ef3559c1519b4\\res\\values-en-rGB\\values-en-rGB.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,209,309,417,501,601,716,793,869,951,1054,1158,1257,1362,1465,1569,1725,1825",
+                        "endColumns": "103,99,107,83,99,114,76,75,81,102,103,98,104,102,103,155,99,81",
+                        "endOffsets": "204,304,412,496,596,711,788,864,946,1049,1153,1252,1357,1460,1564,1720,1820,1902"
                     }
                 }
             ]

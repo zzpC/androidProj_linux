@@ -29,12 +29,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.zzpc.wynews.BaseEvent;
 import com.zzpc.wynews.NewsApp;
 import com.zzpc.wynews.data.model.News;
 import com.zzpc.wynews.data.helper.ParseDatas;
 import com.zzpc.wynews.R;
 
 import com.zzpc.wynews.newsmessage.util.pitcure.MyBitmapUtils;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -60,9 +63,9 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
     private List<News> mNewsInfoList = new ArrayList<>();
     public  String url_string;
     public static boolean pic_only_WIFI;
-    public interface OnLoadWebSiteNewsListner{
-        void onLoadWebSiteNews(String info);
-    }
+//    public interface OnLoadWebSiteNewsListner{
+//        void onLoadWebSiteNews(String info);
+//    }
 
     @Override
     public void onDestroy() {
@@ -70,7 +73,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
     }
 
-    private OnLoadWebSiteNewsListner mListener;
+//    private OnLoadWebSiteNewsListner mListener;
 
     public static SwipeRefreshLayoutBasicFragment newInstance(String title, int... argument) {
         // 保证fragment只有无参版本的构造函数,避免恢复fragment时失效
@@ -82,24 +85,6 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 //        String url_string=NewsApp.hashMap.get(title);
         swipeRefreshLayoutBasicFragment.setArguments(bundle);
         return swipeRefreshLayoutBasicFragment;
-    }
-
-
-
-    //检测是否实现了接口
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        try {
-            mListener = (OnLoadWebSiteNewsListner) context;
-        } catch (final ClassCastException e) {
-            throw new ClassCastException(context.toString() + " must implement OnWebViewListener");
-        }
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
     }
 
     @Override
@@ -161,6 +146,8 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
             @Override
             public void onRefresh() {
                 initiateRefresh();
+                Log.e("三级缓存", "onRefresh: ");
+                mListAdapter.notifyDataSetChanged();
             }
         });
     }
@@ -223,7 +210,13 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                         }
                         in.close();//????????????
                         List<News> list = ParseDatas.parseJSON(response.toString());
-                        swipeRefreshLayoutBasicFragmentWeakReference.get().mNewsInfoList.addAll(0, list);
+                        if(swipeRefreshLayoutBasicFragmentWeakReference.get().mNewsInfoList!=null){
+                            swipeRefreshLayoutBasicFragmentWeakReference.get().mNewsInfoList.addAll(0, list);
+                        }else {
+                            SwipeRefreshLayoutBasicFragment.newInstance("").mNewsInfoList.addAll(0,list);
+                            Log.e("", "doInBackground: Fragment弱引用被回收,可能引发bug");
+                        }
+
 
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -280,8 +273,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
             viewHolder.iv_pic.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v) {
-                                    }
+                public void onClick(View v) { }
             });
 
             viewHolder.tv_title.setOnClickListener(new View.OnClickListener() {
@@ -291,7 +283,8 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                     final News news = mNewsInfoList.get(position);
                     final String url = news.getUrl();
                     ++NewsApp.read_amount;
-                    mListener.onLoadWebSiteNews(url);
+//                    mListener.onLoadWebSiteNews(url);
+                    sendLoadMoreNewsEvent(url);
                     MD5(url);
                 }
             });
@@ -308,6 +301,13 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
             return viewHolder;
         }
 
+
+        public void sendLoadMoreNewsEvent(String url){
+            BaseEvent.CommonEvent event = BaseEvent.CommonEvent.B;
+            event.setObject(url); //传入一个String对象
+            EventBus.getDefault().post(event);
+
+        }
 
         @Override
         public void onViewRecycled(@NonNull ViewHolder holder) {
@@ -326,11 +326,11 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
             holder.iv_pic.setBackgroundResource(R.drawable.bg_comment_line);
             holder.iv_pic.setTag(news.getPicUrl());
 
-
+            holder.tv_title.setText(news.getTitle());
 
             if (holder.iv_pic != null) {
                 if (!pic_only_WIFI || NewsApp.isConnectedViaWifi()) {
-                    holder.tv_title.setText(news.getTitle());
+
 
                     @SuppressLint("HandlerLeak")
                     Handler handler=new Handler(){
@@ -353,6 +353,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                         }
                     };
                     MyBitmapUtils myBitmapUtils=new MyBitmapUtils();
+                    Log.e("图片加载", "onBindViewHolder: "+ news.getPicUrl());
                     myBitmapUtils.getBitmap(news.getPicUrl(),handler);
                     holder.itemView.setTag(handler);
 

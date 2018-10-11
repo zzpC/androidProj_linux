@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\incremental\\mergeMockDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\bbe1806803625b5010254aff64aee779\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\fa59062a37e3d2fe75f056ed808ce9fa\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\fd6f52c6ce2ba4259ff7a8e5631c180a\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\039741adb46a441a844ef3559c1519b4\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

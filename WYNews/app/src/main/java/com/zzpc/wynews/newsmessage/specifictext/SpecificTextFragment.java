@@ -21,6 +21,8 @@ import com.zzpc.wynews.R;
 
 import com.zzpc.wynews.data.database.NewsDBHelper;
 
+import java.util.Objects;
+
 
 /**
  * Created by zzp on 18-2-1.
@@ -45,7 +47,7 @@ public class SpecificTextFragment extends Fragment implements SpecificTextView {
     }
 
     private SpecificTextPresenter mSpecificTextPresenter;
-    private SpecificTextModel mSpecificTextModel=new SpecificTextModelImpl(getContext());
+//    private SpecificTextModel mSpecificTextModel=new SpecificTextModelImpl(getContext());
 
     @Override
     public void showResultFromNet(String title,String content) {
@@ -56,21 +58,16 @@ public class SpecificTextFragment extends Fragment implements SpecificTextView {
 
         final String title_=title;
         final String content_=content;
+        mSpecificTextPresenter.saveToHistory(title_,content_);
         stv_content.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
                 try {
-                    NewsDBHelper newsDBHelper = new NewsDBHelper(getContext());
-                    if (stv_content == null || newsDBHelper == null) {
+                    if (stv_content == null) {
                         return false;
                     }
-                    NewsDBHelper dbHelper = new NewsDBHelper(getContext());
-                    boolean isInserted = dbHelper.insertNewsTwo_start(title_, content_);
-                    if (isInserted) {
-                        Toast.makeText(getContext(), "Data Inserted", Toast.LENGTH_LONG).show();
-                    } else {
-                        Toast.makeText(getContext(), "Data not Inserted", Toast.LENGTH_LONG).show();
-                    }
+                    mSpecificTextPresenter.saveToStart(title_, content_);
+
                 } catch (Exception e) {
                     e.printStackTrace();
                     return false;
@@ -79,15 +76,9 @@ public class SpecificTextFragment extends Fragment implements SpecificTextView {
             }
         });
 
-        //record to history
-        addContent(title, content);
+
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        mOnToldMainSwitchNewsCommentFragment=(OnToldMainSwitchNewsCommentFragment)context;
-    }
 
     @Nullable
     @Override
@@ -96,9 +87,10 @@ public class SpecificTextFragment extends Fragment implements SpecificTextView {
         View view = inflater.inflate(R.layout.fragment_newscontenttext, container, false);
         stv_content = view.findViewById(R.id.tv_content);
 
-        mSpecificTextPresenter=new SpecificTextPresenter(this);
+        mSpecificTextPresenter=new SpecificTextPresenter(this,getContext());
 
-        mSpecificTextPresenter.initDBTask(getArguments().get("url").toString());
+        assert getArguments() != null;
+        mSpecificTextPresenter.initDBTask(Objects.requireNonNull(getArguments().get("url")).toString());
 
         return view;
 
@@ -109,8 +101,8 @@ public class SpecificTextFragment extends Fragment implements SpecificTextView {
         super.onViewCreated(view, savedInstanceState);
     }
 
-    public void addContent(String title, String content) {
-        mSpecificTextModel.addContent(title,content);
-    }
+//    public void addContent(String title, String content) {
+//        mSpecificTextModel.addContent(title,content);
+//    }
 
 }

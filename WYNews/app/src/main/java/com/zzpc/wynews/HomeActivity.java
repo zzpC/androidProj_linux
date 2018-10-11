@@ -6,12 +6,10 @@ import android.content.Context;
 
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
-import android.os.Build;
 import android.os.Bundle;
 
 
 import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.CoordinatorLayout;
@@ -39,8 +37,8 @@ import com.zzpc.wynews.data.database.NewsDBHelper;
 
 import com.zzpc.wynews.main.BottomNavigationViewBehavior;
 
-import com.zzpc.wynews.newsmessage.newscomment.ui.NewsCommentFragment;
 import com.zzpc.wynews.newsmessage.specifictext.SpecificTextFragment;
+import com.zzpc.wynews.newsmessage.specifictext.SpecificTextModelImpl;
 import com.zzpc.wynews.personality.readinghistory.HistoryDetailsFragment;
 import com.zzpc.wynews.personality.readinghistory.MyHistoryFragment;
 
@@ -50,7 +48,6 @@ import com.zzpc.wynews.personality.readingstart.MyStartFragment;
 import com.zzpc.wynews.personality.readingstart.StartDetailsFragment;
 import com.zzpc.wynews.videoplay.VideoFragment;
 import com.zzpc.wynews.newsmessage.NewsModuleFragment;
-import com.zzpc.wynews.newsmessage.SwipeRefreshLayoutBasicFragment;
 import com.zzpc.wynews.personality.AccountManagerFragment;
 import com.zzpc.wynews.personality.SettingsFragment;
 
@@ -59,6 +56,9 @@ import com.zzpc.wynews.personality.loginqq.LoginFragment;
 import com.zzpc.wynews.personality.loginqq.RegisterFragment;
 
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.HashMap;
 import java.util.Objects;
@@ -66,15 +66,9 @@ import java.util.Objects;
 
 public class HomeActivity extends AppCompatActivity implements
         AccountManagerFragment.OpenSpecificFragmentListener,
-        SettingsFragment.OnClickNightModeListener,
-        SwipeRefreshLayoutBasicFragment.OnLoadWebSiteNewsListner,
-        LoginFragment.OnSwitchRegisterFragmentListener,
-        MyStartFragment.OnSwitchStartDetailsFragment ,
-        MyHistoryFragment.OnMyHistoryDetailsFragment,
-        SpecificTextFragment.OnToldMainSwitchNewsCommentFragment{
+        LoginFragment.OnSwitchRegisterFragmentListener{
 
 
-    private static final String TAG = "HomeActivity";
     private BottomNavigationView mBottomNavigationView;
     private Toolbar mToolbar;
     private FragmentManager mFragmentManager;
@@ -88,10 +82,7 @@ public class HomeActivity extends AppCompatActivity implements
 
 
 
-    @Override
-    public void onAttachFragment(Fragment fragment) {
-        super.onAttachFragment(fragment);
-    }
+
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
@@ -120,18 +111,18 @@ public class HomeActivity extends AppCompatActivity implements
         }
     };
 
-    @Override
-    public void MyHistoryDetailsFragment(String title, String content) {
-        Bundle bundle=new Bundle();
-        bundle.putString("title",title);
-        bundle.putString("content",content);
-
-        HistoryDetailsFragment historyDetailsFragment=new HistoryDetailsFragment();
-        historyDetailsFragment.setArguments(bundle);
-        FragmentManager manager = getSupportFragmentManager();
-        //使用了replace而没有hide(),注意问题
-        manager.beginTransaction().replace(R.id.bottom_pager, historyDetailsFragment).addToBackStack(HistoryDetailsFragment.class.getName()).commit();
-    }
+//    @Override
+//    public void MyHistoryDetailsFragment(String title, String content) {
+//        Bundle bundle=new Bundle();
+//        bundle.putString("title",title);
+//        bundle.putString("content",content);
+//
+//        HistoryDetailsFragment historyDetailsFragment=new HistoryDetailsFragment();
+//        historyDetailsFragment.setArguments(bundle);
+//        FragmentManager manager = getSupportFragmentManager();
+//        //使用了replace而没有hide(),注意问题
+//        manager.beginTransaction().replace(R.id.bottom_pager, historyDetailsFragment).addToBackStack(HistoryDetailsFragment.class.getName()).commit();
+//    }
 
 
     @Override
@@ -203,7 +194,7 @@ public class HomeActivity extends AppCompatActivity implements
 
         //DB,init count
         NewsDBHelper newsDBHelper=new NewsDBHelper(this);
-        NewsApp.history_amount=newsDBHelper.getHistoryCount();
+        SpecificTextModelImpl.history_amount=newsDBHelper.getHistoryCount();
         NewsApp.start_amount=newsDBHelper.getStartCount();
     }
 
@@ -230,11 +221,16 @@ public class HomeActivity extends AppCompatActivity implements
                 mBottomNavigationView.setVisibility(View.VISIBLE);
                 NewsApp.video_Full = false;
                 if (actionBar != null) actionBar.setTitle(R.string.title_home);
+
                 if (currentFragment1 == null) {
                     manager.beginTransaction().add(R.id.bottom_pager, new NewsModuleFragment(), NewsModuleFragment.class.getName()).commit();
+                    Log.e("fm1", "switchToFragment: 复用 ");
                 } else {
-                    manager.beginTransaction().show(currentFragment1).commit();
+//                    manager.beginTransaction().show(currentFragment1).commit();
+                    manager.beginTransaction().add(R.id.bottom_pager, new NewsModuleFragment(), NewsModuleFragment.class.getName()).commit();
+                    Log.e("fm1", "switchToFragment: 重建");
                 }
+
                 break;
             case 1:
                 NewsApp.video_Full = true;
@@ -282,22 +278,27 @@ public class HomeActivity extends AppCompatActivity implements
 
     }
 
-
-    @Override
-    protected void onStart() {
-        super.onStart();
+    protected void registEventBus(){
+        //子类如果需要注册eventbus，则重写此方法
+        EventBus.getDefault().register(this);
     }
 
-    @Override
-    protected void onResume() {
+    protected void unRegistEventBus(){
+        //子类如果需要注销eventbus，则重写此方法
+        EventBus.getDefault().unregister(this);
+    }
+
+    public void onResume() {
         super.onResume();
-
+        registEventBus();
     }
 
     @Override
-    protected void onPause() {
+    public void onPause() {
         super.onPause();
+        unRegistEventBus();
     }
+
 
     @Override
     protected void onStop() {
@@ -307,6 +308,8 @@ public class HomeActivity extends AppCompatActivity implements
     @Override
     protected void onDestroy() {
         super.onDestroy();
+
+
     }
 
 
@@ -354,66 +357,72 @@ public class HomeActivity extends AppCompatActivity implements
     }
 
 
-    @Override
-    public void onLoadWebSiteNews(String info) {
-        SpecificTextFragment specificTextFragment = new SpecificTextFragment();
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onHandleEventBus(BaseEvent.CommonEvent  baseEvent){
         Bundle bundle = new Bundle();
-        bundle.putString("url", info);
-        specificTextFragment.setArguments(bundle);
-
         FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.full, specificTextFragment).addToBackStack(SpecificTextFragment.class.getName()).commit();
-        mBottomNavigationView.setVisibility(View.INVISIBLE);
-
-    }
-
-
-
-    @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
-    @Override
-    public void OnClickNightMode() {
-        Log.e("夜间模式", " HA夜间模式 reccreate: " );
-        this.recreate();
-        NewsApp.changing_Theme = true;
+        switch (baseEvent){
+            case A:
+                Log.e("EventBus", "onHandleEventBus: 组件通信成功");
+                Log.e("夜间模式", " HA夜间模式 reccreate: " );
+                this.recreate();
+                NewsApp.changing_Theme = true;
+                break;
+            case B:
+                SpecificTextFragment specificTextFragment = new SpecificTextFragment();
+                bundle.putString("url", (String) baseEvent.getObject()[0]);
+                specificTextFragment.setArguments(bundle);
 
 
-    }
+                manager.beginTransaction().replace(R.id.full, specificTextFragment).addToBackStack(SpecificTextFragment.class.getName()).commit();
+                mBottomNavigationView.setVisibility(View.INVISIBLE);
+                break;
 
+            case C:
+                StartDetailsFragment startDetailsFragment;
+                String startTheme= (String) baseEvent.getObject()[0];
+                if (startDetailsFragments.containsKey(startTheme)){
+                    startDetailsFragment =(StartDetailsFragment)startDetailsFragments.get(startTheme);
+                    if (startDetailsFragment==null){
+                        startDetailsFragment=new StartDetailsFragment();
+                    }
 
+                }else {
+                    startDetailsFragment=(StartDetailsFragment)new StartDetailsFragment();
+                    startDetailsFragments.put(startTheme,startDetailsFragment);
 
-    @Override
-    public void switchStartDetailsFragment(String startTheme) {
-        
-        StartDetailsFragment startDetailsFragment;
-        if (startDetailsFragments.containsKey(startTheme)){
-            startDetailsFragment =(StartDetailsFragment)startDetailsFragments.get(startTheme);
-            if (startDetailsFragment==null){
-                startDetailsFragment=new StartDetailsFragment();
-            }
+                }
 
-        }else {
-            startDetailsFragment=(StartDetailsFragment)new StartDetailsFragment();
-            startDetailsFragments.put(startTheme,startDetailsFragment);
+                bundle.putString("Theme",startTheme);
+                startDetailsFragment.setArguments(bundle);
+                //使用了replace而没有hide(),注意问题
+                manager.beginTransaction().replace(R.id.bottom_pager, startDetailsFragment).addToBackStack(StartDetailsFragment.class.getName()).commit();
+                mBottomNavigationView = findViewById(R.id.navigation);
+                mBottomNavigationView.setVisibility(View.INVISIBLE);
+                break;
+            case D:
+                bundle.putString("title", (String) baseEvent.getObject()[0]);
+                bundle.putString("content", (String) baseEvent.getObject()[1]);
 
+                HistoryDetailsFragment historyDetailsFragment=new HistoryDetailsFragment();
+                historyDetailsFragment.setArguments(bundle);
+                //使用了replace而没有hide(),注意问题
+                manager.beginTransaction().replace(R.id.bottom_pager, historyDetailsFragment).addToBackStack(HistoryDetailsFragment.class.getName()).commit();
+                break;
+                default:
+                    Log.e("EventBus", "onHandleEventBus: 组件不是A");
         }
 
-        Bundle bundle=new Bundle();
-        bundle.putString("Theme",startTheme);
-        startDetailsFragment.setArguments(bundle);
-        FragmentManager manager = getSupportFragmentManager();
-        //使用了replace而没有hide(),注意问题
-        manager.beginTransaction().replace(R.id.bottom_pager, startDetailsFragment).addToBackStack(StartDetailsFragment.class.getName()).commit();
-        mBottomNavigationView = findViewById(R.id.navigation);
-        mBottomNavigationView.setVisibility(View.INVISIBLE);
     }
 
-    //中介监听
 
-    @Override
-    public void ToldMainSwitchNewsCommentFragment() {
-        NewsCommentFragment newsCommentFragment= new NewsCommentFragment();
-        FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.container, newsCommentFragment).addToBackStack(NewsCommentFragment.class.getName()).commit();
-        mBottomNavigationView.setVisibility(View.INVISIBLE);
-    }
+
+// 实现评论Fragment
+//    @Override
+//    public void ToldMainSwitchNewsCommentFragment() {
+//        NewsCommentFragment newsCommentFragment= new NewsCommentFragment();
+//        FragmentManager manager = getSupportFragmentManager();
+//        manager.beginTransaction().replace(R.id.container, newsCommentFragment).addToBackStack(NewsCommentFragment.class.getName()).commit();
+//        mBottomNavigationView.setVisibility(View.INVISIBLE);
+//    }
 }

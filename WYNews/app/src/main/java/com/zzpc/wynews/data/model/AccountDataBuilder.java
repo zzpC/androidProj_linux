@@ -1,6 +1,7 @@
 package com.zzpc.wynews.data.model;
 
 import com.zzpc.wynews.NewsApp;
+import com.zzpc.wynews.newsmessage.specifictext.SpecificTextModelImpl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +18,7 @@ public class AccountDataBuilder {
         mDatas=new ArrayList<>();
         mDatas.add( AccountData.createAccountData("登录(含注册)") );
         mDatas.add(AccountData.createAccountData("我的收藏夹"+Long.toString( NewsApp.start_amount)));
-        mDatas.add(AccountData.createAccountData("最近浏览"+Long.toString( NewsApp.history_amount)));
+        mDatas.add(AccountData.createAccountData("最近浏览"+Long.toString( SpecificTextModelImpl.history_amount)));
         mDatas.add( AccountData.createAccountData("消息") );
         mDatas.add( AccountData.createAccountData("我的书评") );
         mDatas.add( AccountData.createAccountData("我的笔记") );

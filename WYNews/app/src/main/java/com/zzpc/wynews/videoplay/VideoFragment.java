@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.view.Window;
 import android.widget.TextView;
 
 
@@ -25,6 +26,7 @@ import com.zzpc.wynews.util.VideoDataUtil;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 
 /**
@@ -135,14 +137,17 @@ public class VideoFragment extends Fragment {
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        if (mSimplePlayer != null) {
             mSimplePlayer.onConfigurationChanged(newConfig);
         }
 
 
+       if(getActivity()==null || getActivity().getWindow()==null){
+            return;
+       }
+
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE)
         {
-            oldOptions = getActivity().getWindow().getDecorView().getSystemUiVisibility();
+            oldOptions = Objects.requireNonNull(getActivity()).getWindow().getDecorView().getSystemUiVisibility();
             int newOptions = oldOptions;
             newOptions &= ~View.SYSTEM_UI_FLAG_LOW_PROFILE;
             newOptions |= View.SYSTEM_UI_FLAG_FULLSCREEN;
@@ -150,12 +155,17 @@ public class VideoFragment extends Fragment {
             newOptions |= View.SYSTEM_UI_FLAG_IMMERSIVE;
             newOptions &= ~View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
             getActivity().getWindow().getDecorView().setSystemUiVisibility(newOptions);
-            getActivity().getActionBar().hide();
+            if(getActivity().getActionBar()!=null){
+                getActivity().getActionBar().hide();
+            }
+
         }
         else
         {
             getActivity().getWindow().getDecorView().setSystemUiVisibility(oldOptions);
-            getActivity().getActionBar().show();
+            if(getActivity().getActionBar()!=null){
+                getActivity().getActionBar().show();
+            }
         }
     }
 
@@ -179,8 +189,9 @@ public class VideoFragment extends Fragment {
         }
 
 
+        @NonNull
         @Override
-        public VideoHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        public VideoHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_video_listitem, parent, false);
             final VideoHolder videoHolder = new VideoHolder(view);
@@ -201,7 +212,7 @@ public class VideoFragment extends Fragment {
         }
 
         @Override
-        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
             VideoData videoData = mVideoDataList.get(position);
             VideoHolder videoHolder = (VideoHolder) holder;
             videoHolder.tv_playurl.setText(videoData.getPlayurl());

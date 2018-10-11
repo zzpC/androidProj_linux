@@ -16,6 +16,7 @@ import com.zzpc.wynews.NewsApp;
 import com.zzpc.wynews.R;
 import com.zzpc.wynews.data.model.AccountData;
 import com.zzpc.wynews.data.model.AccountDataBuilder;
+import com.zzpc.wynews.newsmessage.specifictext.SpecificTextModelImpl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +54,7 @@ public class AccountManagerFragment extends Fragment  {
     public void onResume() {
         super.onResume();
 //        mPresenter.start();
+        Log.e("账号", "onResume: "+ SpecificTextModelImpl.history_amount);
     }
 
     @Override
@@ -70,16 +72,30 @@ public class AccountManagerFragment extends Fragment  {
         mRecyclerView.addItemDecoration(new DividerItemDecoration(50));
 
         mAccountManageAdapter=new AccountManageAdapter(items,getContext(),mListener);
+        Log.e("账号", "账号信息如历史量应该更新了 onCreateView: "+ SpecificTextModelImpl.history_amount);
         mRecyclerView.setAdapter(mAccountManageAdapter);
 
-        
         return view;
+    }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if (!hidden){
+            items=new AccountDataBuilder().generateAccountList();
+            mAccountManageAdapter=new AccountManageAdapter(items,getContext(),mListener);
+            mRecyclerView.setAdapter(mAccountManageAdapter);
+            Log.e("账号", "账号信息如历史量应该更新了 onHiddenChanged: "+ SpecificTextModelImpl.history_amount);
+        }
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        Log.e("账号", "onViewCreated: "+ SpecificTextModelImpl.history_amount);
     }
+
+
 
 
 
