@@ -352,10 +352,10 @@ public class SlidingTabLayout extends HorizontalScrollView {
             mLastTime = mCurTime;
             mCurTime = System.currentTimeMillis();
             if (mCurTime - mLastTime < 300) {//双击事件
-                mCurTime = 0;
-                mLastTime = 0;
+//                mCurTime = 0;
+//                mLastTime = 0;
                 handler.removeMessages(1);
-                handler.sendEmptyMessage(2);
+//                handler.sendEmptyMessage(2);
             } else {//单击事件
                 handler.sendEmptyMessageDelayed(1, 310);
             }

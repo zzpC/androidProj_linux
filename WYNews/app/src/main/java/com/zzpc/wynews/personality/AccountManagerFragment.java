@@ -53,7 +53,6 @@ public class AccountManagerFragment extends Fragment  {
     @Override
     public void onResume() {
         super.onResume();
-//        mPresenter.start();
         Log.e("账号", "onResume: "+ SpecificTextModelImpl.history_amount);
     }
 
@@ -94,9 +93,6 @@ public class AccountManagerFragment extends Fragment  {
         super.onViewCreated(view, savedInstanceState);
         Log.e("账号", "onViewCreated: "+ SpecificTextModelImpl.history_amount);
     }
-
-
-
 
 
 }

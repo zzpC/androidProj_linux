@@ -1,10 +1,21 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\incremental\\mergeMockDebugResources\\merged.dir\\values-v17\\values-v17.xml",
+            "outputFile": "C:\\Users\\a1348\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\incremental\\mergeMockDebugResources\\merged.dir\\values-v17\\values-v17.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\039741adb46a441a844ef3559c1519b4\\res\\values-v17\\values-v17.xml",
+                    "source": "C:\\Users\\a1348\\.gradle\\caches\\transforms-1\\files-1.1\\preference-v7-27.1.1.aar\\91c44c213302a4e400d13e3e61145529\\res\\values-v17\\values-v17.xml",
+                    "from": {
+                        "startLines": "2,7,11",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,280,441",
+                        "endLines": "6,10,14",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "275,436,604"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\a1348\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\6d789247d28d48766f19995e9c3f4ef2\\res\\values-v17\\values-v17.xml",
                     "from": {
                         "startLines": "2,5,9,12,15,18,22,26,29,32,35,39,42,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -20,17 +31,6 @@
                         "endLines": "17,21,24,27,30,34,38,41,44,47,51,54,58,62",
                         "endColumns": "12,12,12,12,12,12,12,12,12,12,12,12,12,12",
                         "endOffsets": "777,1005,1163,1313,1485,1713,1955,2126,2300,2469,2742,2942,3146,3475"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\preference-v7-27.1.1.aar\\f874309826154658ce4f4a119e24707d\\res\\values-v17\\values-v17.xml",
-                    "from": {
-                        "startLines": "2,7,11",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,280,441",
-                        "endLines": "6,10,14",
-                        "endColumns": "12,12,12",
-                        "endOffsets": "275,436,604"
                     }
                 }
             ]

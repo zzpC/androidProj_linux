@@ -29,7 +29,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.zzpc.wynews.BaseEvent;
+import com.zzpc.wynews.data.model.BaseEvent;
 import com.zzpc.wynews.NewsApp;
 import com.zzpc.wynews.data.model.News;
 import com.zzpc.wynews.data.helper.ParseDatas;
@@ -87,16 +87,13 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         return swipeRefreshLayoutBasicFragment;
     }
 
-<<<<<<< HEAD
-=======
-
 
     //检测是否实现了接口
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         try {
-            mListener = (OnLoadWebSiteNewsListner) context;
+//            mListener = (OnLoadWebSiteNewsListner) context;
         } catch (final ClassCastException e) {
             throw new ClassCastException(context.toString() + " must implement OnWebViewListener");
         }
@@ -107,7 +104,6 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         super.onResume();
     }
 
->>>>>>> 28527d0a83bfa1279ec20d67356765d953815445
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -130,7 +126,6 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                 getResources().getColor(R.color.cardview_light_background),
                 getResources().getColor(R.color.cardview_shadow_start_color));
         // END_INCLUDE (change_colors)
-
         RecyclerView mRecyclerView = view.findViewById(R.id.swiperefresh_list);
         mRecyclerView.setNestedScrollingEnabled(true);
         mRecyclerView.setItemViewCacheSize(0);
@@ -154,10 +149,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         mRecyclerView.setAdapter(mListAdapter);
         if (mRecyclerView.getChildCount() == 0) {
             new DummyBackgroundTask(this).execute();
-<<<<<<< HEAD
-=======
 //            mListAdapter.notifyDataSetChanged();
->>>>>>> 28527d0a83bfa1279ec20d67356765d953815445
         }
 
         return view;
@@ -189,6 +181,8 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         // Stop the refreshing indicator
         mSwipeRefreshLayout.setRefreshing(false);
     }
+
+
 
 
     @SuppressLint("StaticFieldLeak")
@@ -235,7 +229,6 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                         }
                         in.close();//????????????
                         List<News> list = ParseDatas.parseJSON(response.toString());
-<<<<<<< HEAD
                         if(swipeRefreshLayoutBasicFragmentWeakReference.get().mNewsInfoList!=null){
                             swipeRefreshLayoutBasicFragmentWeakReference.get().mNewsInfoList.addAll(0, list);
                         }else {
@@ -243,9 +236,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                             Log.e("", "doInBackground: Fragment弱引用被回收,可能引发bug");
                         }
 
-=======
                         swipeRefreshLayoutBasicFragmentWeakReference.get().mNewsInfoList.addAll(0, list);
->>>>>>> 28527d0a83bfa1279ec20d67356765d953815445
 
                     } catch (Exception e) {
                         e.printStackTrace();

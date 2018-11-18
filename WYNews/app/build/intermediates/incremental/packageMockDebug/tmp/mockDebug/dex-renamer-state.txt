@@ -1,23 +1,7 @@
-<<<<<<< HEAD
-#Wed Oct 10 11:48:33 CST 2018
-=======
-#Tue Sep 25 17:04:11 CST 2018
->>>>>>> 28527d0a83bfa1279ec20d67356765d953815445
+#Mon Nov 19 01:39:04 CST 2018
+base.0=C\:\\Users\\a1348\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\transforms\\dexMerger\\mock\\debug\\0
 path.1=classes.dex
-path.0=classes.dex
-renamed.5=classes6.dex
-renamed.4=classes5.dex
-renamed.3=classes4.dex
-renamed.2=classes3.dex
 renamed.1=classes2.dex
+path.0=classes.dex
 renamed.0=classes.dex
-base.5=C\:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\transforms\\dexMerger\\mock\\debug\\50
-base.4=C\:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\transforms\\dexMerger\\mock\\debug\\53
-base.3=C\:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\transforms\\dexMerger\\mock\\debug\\54
-base.2=C\:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\transforms\\dexMerger\\mock\\debug\\51
-base.1=C\:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\transforms\\dexMerger\\mock\\debug\\52
-base.0=C\:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\transforms\\dexMerger\\mock\\debug\\49
-path.5=classes.dex
-path.4=classes.dex
-path.3=classes.dex
-path.2=classes.dex
+base.1=C\:\\Users\\a1348\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\transforms\\dexMerger\\mock\\debug\\1

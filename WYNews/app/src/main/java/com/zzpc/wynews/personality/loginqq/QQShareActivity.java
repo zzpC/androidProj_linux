@@ -23,9 +23,10 @@ import com.tencent.connect.share.QQShare;
 import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.Tencent;
 import com.tencent.tauth.UiError;
-import com.zzpc.wynews.Config;
+import com.zzpc.wynews.data.model.Config;
+import com.zzpc.wynews.LoginActivity;
 import com.zzpc.wynews.R;
-import com.zzpc.wynews.util.LoginUtil;
+import com.zzpc.wynews.personality.util.LoginUtil;
 
 
 public class QQShareActivity extends Activity implements OnClickListener, OnCheckedChangeListener {
@@ -108,28 +109,28 @@ public class QQShareActivity extends Activity implements OnClickListener, OnChec
     }
 
     protected void checkTencentInstance() {
-        if (null == LoginFragment.mTencent) {
-            LoginFragment.mAppid = "222222";
+        if (null == LoginActivity.mTencent) {
+             LoginActivity.mAppid = "222222";
             final EditText mEtAppid = new EditText(this);
-            mEtAppid.setText(LoginFragment.mAppid);
+            mEtAppid.setText( LoginActivity.mAppid);
             final DialogInterface.OnClickListener mAppidCommitListener = new DialogInterface.OnClickListener() {
 
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    LoginFragment.mAppid = Config.APP_ID;
+                     LoginActivity.mAppid = Config.APP_ID;
                     switch (which) {
                         case DialogInterface.BUTTON_POSITIVE:
                             // 用输入的appid
                             String editTextContent = mEtAppid.getText().toString().trim();
                             if (!TextUtils.isEmpty(editTextContent)) {
-                                LoginFragment.mAppid = editTextContent;
+                                 LoginActivity.mAppid = editTextContent;
                             }
                             break;
                         case DialogInterface.BUTTON_NEGATIVE:
                             // 默认appid
                             break;
                     }
-                    LoginFragment.mTencent = Tencent.createInstance(LoginFragment.mAppid, getBaseContext());
+                     LoginActivity.mTencent = Tencent.createInstance( LoginActivity.mAppid, getBaseContext());
                 }
             };
 
@@ -322,8 +323,8 @@ public class QQShareActivity extends Activity implements OnClickListener, OnChec
 
             @Override
             public void run() {
-                if (null != LoginFragment.mTencent) {
-                    LoginFragment.mTencent.shareToQQ(QQShareActivity.this, params, qqShareListener);
+                if (null !=  LoginActivity.mTencent) {
+                     LoginActivity.mTencent.shareToQQ(QQShareActivity.this, params, qqShareListener);
                 }
             }
         });
@@ -343,8 +344,8 @@ public class QQShareActivity extends Activity implements OnClickListener, OnChec
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (LoginFragment.mTencent != null) {
-            LoginFragment.mTencent.releaseResource();
+        if ( LoginActivity.mTencent != null) {
+             LoginActivity.mTencent.releaseResource();
         }
     }
 

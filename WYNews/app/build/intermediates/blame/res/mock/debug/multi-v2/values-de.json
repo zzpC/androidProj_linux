@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\incremental\\mergeMockDebugResources\\merged.dir\\values-de\\values-de.xml",
+            "outputFile": "C:\\Users\\a1348\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\incremental\\mergeMockDebugResources\\merged.dir\\values-de\\values-de.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5f0ada20ccc699d4b9089ad2d7921283\\res\\values-de\\values-de.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "69",
-                        "startColumns": "4",
-                        "startOffsets": "5817",
-                        "endColumns": "100",
-                        "endOffsets": "5913"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\039741adb46a441a844ef3559c1519b4\\res\\values-de\\values-de.xml",
+                    "source": "C:\\Users\\a1348\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\6d789247d28d48766f19995e9c3f4ef2\\res\\values-de\\values-de.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\leakcanary-android-1.6.1.aar\\d5f80dfa7c07feaec438431b3e63c236\\res\\values-de\\values-de.xml",
+                    "source": "C:\\Users\\a1348\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\97ad417f1618e8ba55b1bdca075a2f71\\res\\values-de\\values-de.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "69",
+                        "startColumns": "4",
+                        "startOffsets": "5817",
+                        "endColumns": "100",
+                        "endOffsets": "5913"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\a1348\\.gradle\\caches\\transforms-1\\files-1.1\\leakcanary-android-1.6.1.aar\\58c96dba43f4926d3cbbdcdfab22c198\\res\\values-de\\values-de.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

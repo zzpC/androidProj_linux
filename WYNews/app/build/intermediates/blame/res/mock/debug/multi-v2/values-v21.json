@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\zzp\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\incremental\\mergeMockDebugResources\\merged.dir\\values-v21\\values-v21.xml",
+            "outputFile": "C:\\Users\\a1348\\Documents\\GitHub\\androidProj_linux\\WYNews\\app\\build\\intermediates\\incremental\\mergeMockDebugResources\\merged.dir\\values-v21\\values-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\1d17d68b30498d4b449be5287671d95a\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\a1348\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\593906ba0c645f71108fa972d9eeaa5e\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,5",
                         "startColumns": "4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\leakcanary-android-1.6.1.aar\\d5f80dfa7c07feaec438431b3e63c236\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\a1348\\.gradle\\caches\\transforms-1\\files-1.1\\leakcanary-android-1.6.1.aar\\58c96dba43f4926d3cbbdcdfab22c198\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -42,7 +42,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\039741adb46a441a844ef3559c1519b4\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\a1348\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\6d789247d28d48766f19995e9c3f4ef2\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,17,19,20,21,22,24,26,27,28,29,30,32,34,36,38,40,42,43,48,50,52,53,54,56,58,59,60,61,62,63,107,110,154,157,160,162,164,166,169,171,174,175,176,179,180,181,182,183,184,187,188,190,192,194,196,200,202,203,204,205,207,211,213,215,216,217,218,219,221,222,223,233,234,235,247",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -61,7 +61,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5f0ada20ccc699d4b9089ad2d7921283\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\a1348\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\97ad417f1618e8ba55b1bdca075a2f71\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -80,7 +80,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\zzp\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\fa59062a37e3d2fe75f056ed808ce9fa\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\a1348\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\1fa7b2999a111597e9bc434563219cbe\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,5,8,11",
                         "startColumns": "4,4,4,4",

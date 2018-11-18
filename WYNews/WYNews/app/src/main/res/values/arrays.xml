@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pager_item_info">
+        <item>"http://api.tianapi.com/health/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=3&#38;rand=1"</item>
+        <item>"http://api.tianapi.com/football/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=3&#38;rand=1"</item>
+        <item>"http://api.tianapi.com/it/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=3&#38;rand=1"</item>
+        <item>"http://api.tianapi.com/mobile/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=3&#38;rand=1"</item>
+
+
+
+        <item>"http://api.tianapi.com/vr/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=3&#38;rand=1"</item>
+        <item>"http://api.tianapi.com/qiwen/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=3&#38;rand=1"</item>
+        <item>"http://api.tianapi.com/travel/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=3&#38;rand=1"</item>
+        <item>"http://api.tianapi.com/military/?key=99045f5139f5f6be0de4946eb6bcc78b&#38;num=3&#38;rand=1"</item>
+
+
+
+
+    </string-array>
+
+
+
+    <array name="autosize_text_sizes">
+        <item>12</item>
+        <item>18</item>
+        <item>20</item>
+        <item>32</item>
+        <item>42</item>
+    </array>
+</resources>

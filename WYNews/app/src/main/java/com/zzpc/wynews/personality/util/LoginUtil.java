@@ -1,4 +1,4 @@
-package com.zzpc.wynews.util;
+package com.zzpc.wynews.personality.util;
 
 import android.app.Activity;
 import android.app.AlertDialog;

@@ -13,13 +13,11 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.FloatingActionButton;
 
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
 
-
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
@@ -31,12 +29,12 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.support.v7.widget.SearchView;
+import android.widget.Toast;
 
 
 import com.zzpc.wynews.data.database.NewsDBHelper;
 
-import com.zzpc.wynews.main.BottomNavigationViewBehavior;
-
+import com.zzpc.wynews.data.model.BaseEvent;
 import com.zzpc.wynews.newsmessage.specifictext.SpecificTextFragment;
 import com.zzpc.wynews.newsmessage.specifictext.SpecificTextModelImpl;
 import com.zzpc.wynews.personality.readinghistory.HistoryDetailsFragment;
@@ -51,11 +49,6 @@ import com.zzpc.wynews.newsmessage.NewsModuleFragment;
 import com.zzpc.wynews.personality.AccountManagerFragment;
 import com.zzpc.wynews.personality.SettingsFragment;
 
-import com.zzpc.wynews.personality.loginqq.LoginFragment;
-//
-import com.zzpc.wynews.personality.loginqq.RegisterFragment;
-
-
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -65,17 +58,24 @@ import java.util.Objects;
 
 
 public class HomeActivity extends AppCompatActivity implements
-        AccountManagerFragment.OpenSpecificFragmentListener,
-        LoginFragment.OnSwitchRegisterFragmentListener{
+        AccountManagerFragment.OpenSpecificFragmentListener{
 
 
     private BottomNavigationView mBottomNavigationView;
     private Toolbar mToolbar;
     private FragmentManager mFragmentManager;
-    private FloatingActionButton mFloatingActionButton;
 
     private HashMap<String,StartDetailsFragment> startDetailsFragments=new HashMap<String,StartDetailsFragment>();
     public static boolean night_mode;
+
+    private NewsModuleFragment mNewsModuleFragment;
+    private VideoFragment mVideoFragment;
+    private AccountManagerFragment mAccountManagerFragment;
+
+    private MyStartFragment myStartFragment;
+    private MyHistoryFragment myHistoryFragment;
+    private SettingsFragment settingsFragment;
+
     static {
 //        System.loadLibrary("native-lib");
     }
@@ -111,19 +111,6 @@ public class HomeActivity extends AppCompatActivity implements
         }
     };
 
-//    @Override
-//    public void MyHistoryDetailsFragment(String title, String content) {
-//        Bundle bundle=new Bundle();
-//        bundle.putString("title",title);
-//        bundle.putString("content",content);
-//
-//        HistoryDetailsFragment historyDetailsFragment=new HistoryDetailsFragment();
-//        historyDetailsFragment.setArguments(bundle);
-//        FragmentManager manager = getSupportFragmentManager();
-//        //使用了replace而没有hide(),注意问题
-//        manager.beginTransaction().replace(R.id.bottom_pager, historyDetailsFragment).addToBackStack(HistoryDetailsFragment.class.getName()).commit();
-//    }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -158,8 +145,6 @@ public class HomeActivity extends AppCompatActivity implements
         layoutParams.setBehavior(new BottomNavigationViewBehavior());
 
 
-        CoordinatorLayout mCoordinatorLayout = findViewById(R.id.main_coor_layout);
-        mFloatingActionButton = findViewById(R.id.fab);
         SearchView mSearchView = findViewById(R.id.searchview);
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         mSearchView.setSearchableInfo(Objects.requireNonNull(searchManager).getSearchableInfo(getComponentName()));
@@ -169,12 +154,9 @@ public class HomeActivity extends AppCompatActivity implements
         mToolbar.setTitle(R.string.nav_girls);
         setSupportActionBar(mToolbar);
 
-
         if (NewsApp.video_Full) {
-
             mBottomNavigationView.setVisibility(View.INVISIBLE);
             mToolbar.setVisibility(View.INVISIBLE);
-
             return;
         } else {
             mBottomNavigationView.setVisibility(View.VISIBLE);
@@ -201,61 +183,49 @@ public class HomeActivity extends AppCompatActivity implements
 
     public void switchToFragment(int ftNo) {
 
-
         FragmentManager manager = getSupportFragmentManager();
-        Fragment currentFragment1 =getSupportFragmentManager().findFragmentByTag(NewsModuleFragment.class.getName());
-        Fragment currentFragment2=getSupportFragmentManager().findFragmentByTag(VideoFragment.class.getName());
-        Fragment currentFragment3=getSupportFragmentManager().findFragmentByTag(AccountManagerFragment.class.getName());
+        hideFragment(manager);
 
         ActionBar actionBar = getSupportActionBar();
+        mBottomNavigationView.setVisibility(View.VISIBLE);
+        NewsApp.video_Full = false;
 
-
-        if (currentFragment1!=null)
-            manager.beginTransaction().hide(currentFragment1).commit();
-        if (currentFragment2!=null)
-            manager.beginTransaction().hide(currentFragment2).commit();
-        if (currentFragment3!=null)
-            manager.beginTransaction().hide(currentFragment3).commit();
         switch (ftNo) {
             case 0:
-                mBottomNavigationView.setVisibility(View.VISIBLE);
-                NewsApp.video_Full = false;
                 if (actionBar != null) actionBar.setTitle(R.string.title_home);
-
-                if (currentFragment1 == null) {
-                    manager.beginTransaction().add(R.id.bottom_pager, new NewsModuleFragment(), NewsModuleFragment.class.getName()).commit();
-                    Log.e("fm1", "switchToFragment: 复用 ");
+                if (mNewsModuleFragment == null) {
+                    mNewsModuleFragment=new NewsModuleFragment();
+                    manager.beginTransaction().add(R.id.bottom_pager, mNewsModuleFragment).commit();
                 } else {
 //                    manager.beginTransaction().show(currentFragment1).commit();
-                    manager.beginTransaction().add(R.id.bottom_pager, new NewsModuleFragment(), NewsModuleFragment.class.getName()).commit();
-                    Log.e("fm1", "switchToFragment: 重建");
+                    manager.beginTransaction().show(mNewsModuleFragment).commit();
                 }
 
                 break;
             case 1:
-                NewsApp.video_Full = true;
+//                NewsApp.video_Full = true;
                 if (actionBar != null) actionBar.setTitle(R.string.title_video);
-                if (currentFragment2 == null) {
-                    manager.beginTransaction().add(R.id.bottom_pager, new VideoFragment(), VideoFragment.class.getName()).commit();
+                if (mVideoFragment == null) {
+                    mVideoFragment=new VideoFragment();
+                    manager.beginTransaction().add(R.id.bottom_pager, mVideoFragment).commit();
                 } else {
-                    manager.beginTransaction().show(currentFragment2).commit();
+                    manager.beginTransaction().show(mVideoFragment).commit();
                 }
-                mBottomNavigationView.setVisibility(View.VISIBLE);
+
                 break;
             case 2:
                 if (actionBar != null) actionBar.setTitle(R.string.title_settings);
-                if (currentFragment3 == null) {
-                    manager.beginTransaction().add(R.id.bottom_pager, new AccountManagerFragment(), AccountManagerFragment.class.getName()).commit();
+                if (mAccountManagerFragment == null) {
+                    mAccountManagerFragment=new AccountManagerFragment();
+                    manager.beginTransaction().add(R.id.bottom_pager,mAccountManagerFragment).commit();
                 } else {
-                    manager.beginTransaction().show(currentFragment3).commit();
+                    manager.beginTransaction().show(mAccountManagerFragment).commit();
                 }
-                mBottomNavigationView.setVisibility(View.VISIBLE);
                 break;
             default:
-                mBottomNavigationView.setVisibility(View.VISIBLE);
                 break;
         }
-
+        mBottomNavigationView.setVisibility(View.VISIBLE);
     }
 
 
@@ -270,6 +240,7 @@ public class HomeActivity extends AppCompatActivity implements
                 mToolbar.setVisibility(View.VISIBLE);
             }
         }  else {
+            Toast.makeText(this,"FM回退栈空了",Toast.LENGTH_SHORT).show();
             super.onBackPressed();
             mBottomNavigationView.setVisibility(View.VISIBLE);
             mToolbar.setVisibility(View.VISIBLE);
@@ -308,34 +279,25 @@ public class HomeActivity extends AppCompatActivity implements
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
-
     }
 
 
     //interface
 
-
     @Override
     public void OpenSpecificFragment(int pos) {
-
         FragmentManager manager = getSupportFragmentManager();
-
         switch (pos) {
             case 0:
-                LoginFragment loginFragment = new LoginFragment();
-                manager.beginTransaction().replace(R.id.bottom_pager, loginFragment).addToBackStack(LoginFragment.class.getName()).commit();
-                break;
-            case 1:
                 MyStartFragment myStartFragment=new MyStartFragment();
                 manager.beginTransaction().replace(R.id.bottom_pager,myStartFragment).addToBackStack(MyStartFragment.class.getName()).commit();
                 break;
-            case 2:
+            case 1:
                 MyHistoryFragment myHistoryFragment=new MyHistoryFragment();
                 manager.beginTransaction().replace(R.id.bottom_pager,myHistoryFragment).addToBackStack(MyHistoryFragment.class.getName()).commit();
                 break;
 
-            case 8:
+            case 2:
                 //使用了replace而没有hide(),注意问题
                 SettingsFragment settingsFragment=new SettingsFragment();
                 manager.beginTransaction().replace(R.id.bottom_pager, settingsFragment).addToBackStack(SettingsFragment.class.getName()).commit();
@@ -346,15 +308,6 @@ public class HomeActivity extends AppCompatActivity implements
 
 
 
-    @Override
-    public void OnSwitchRegisterFragment() {
-        RegisterFragment registerFragment = new RegisterFragment();
-        FragmentManager manager = getSupportFragmentManager();
-        //使用了replace而没有hide(),注意问题
-        manager.beginTransaction().replace(R.id.bottom_pager, registerFragment).addToBackStack(RegisterFragment.class.getName()).commit();
-        mBottomNavigationView.setVisibility(View.INVISIBLE);
-
-    }
 
 
     @Subscribe(threadMode = ThreadMode.MAIN)
@@ -412,17 +365,37 @@ public class HomeActivity extends AppCompatActivity implements
                 default:
                     Log.e("EventBus", "onHandleEventBus: 组件不是A");
         }
-
     }
 
+    private void hideFragment(FragmentManager fragmentManager) {
+        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+        //如果此fragment不为空的话就隐藏起来
+        if (mNewsModuleFragment != null) {
+            fragmentTransaction.hide(mNewsModuleFragment);
+        }
+        if (mVideoFragment != null) {
+            fragmentTransaction.hide(mVideoFragment);
+        }
+        if (mAccountManagerFragment != null) {
+            fragmentTransaction.hide(mAccountManagerFragment);
+        }
+        fragmentTransaction.commit();
+    }
 
+    private void hideAccountSubFragment(FragmentManager fragmentManager) {
+        hideFragment(fragmentManager);
+        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+        //如果此fragment不为空的话就隐藏起来
 
-// 实现评论Fragment
-//    @Override
-//    public void ToldMainSwitchNewsCommentFragment() {
-//        NewsCommentFragment newsCommentFragment= new NewsCommentFragment();
-//        FragmentManager manager = getSupportFragmentManager();
-//        manager.beginTransaction().replace(R.id.container, newsCommentFragment).addToBackStack(NewsCommentFragment.class.getName()).commit();
-//        mBottomNavigationView.setVisibility(View.INVISIBLE);
-//    }
+        if (myStartFragment != null) {
+            fragmentTransaction.hide(myStartFragment);
+        }
+        if (myHistoryFragment != null) {
+            fragmentTransaction.hide(myHistoryFragment);
+        }
+        if (settingsFragment != null) {
+            fragmentTransaction.hide(settingsFragment);
+        }
+        fragmentTransaction.commit();
+    }
 }

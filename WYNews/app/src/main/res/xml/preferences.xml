@@ -22,15 +22,8 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="Results">
-
-        <SwitchPreference
-            android:defaultValue="true"
-            android:key="Average"
-            android:summary="Toggle to display your average"
-            android:title="Average" />
-
-        <android.support.v7.preference.PreferenceScreen
+    <PreferenceCategory android:title="Shared">
+        <PreferenceScreen
             android:key="shareApp"
             android:summary="分享本App,发送至其他应用,可调用系统分享"
             android:title="分享App" />>

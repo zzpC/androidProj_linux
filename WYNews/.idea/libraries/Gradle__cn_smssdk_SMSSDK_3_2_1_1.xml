@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: cn.smssdk:SMSSDK-3.2.1.1">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/SMSSDK-3.2.1.1.aar/06a985f7509b96efd8dabb10d03f0ebd/jars/classes.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/SMSSDK-3.2.1.1.aar/06a985f7509b96efd8dabb10d03f0ebd/jars/libs/SMSSDK-3.2.1.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/SMSSDK-3.2.1.1.aar/06a985f7509b96efd8dabb10d03f0ebd/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/SMSSDK-3.2.1.1.aar/e333097bbdd402000992e41a08042f58/jars/libs/SMSSDK-3.2.1.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/SMSSDK-3.2.1.1.aar/e333097bbdd402000992e41a08042f58/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/SMSSDK-3.2.1.1.aar/e333097bbdd402000992e41a08042f58/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
