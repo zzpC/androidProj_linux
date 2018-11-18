@@ -35,13 +35,13 @@ public class NewsApp extends Application {
     public void onCreate() {
         super.onCreate();
 
-        // Leak Canary 初始化工作
-        if(LeakCanary.isInAnalyzerProcess(this)){
-            // This process is dedicated to LeakCanary for heap analysis.
-            // You should not init your app in this process.
-            return;
-        }
-        LeakCanary.install(this);
+//        // Leak Canary 初始化工作
+//        if(LeakCanary.isInAnalyzerProcess(this)){
+//            // This process is dedicated to LeakCanary for heap analysis.
+//            // You should not init your app in this process.
+//            return;
+//        }
+//        LeakCanary.install(this);
 
         // Normal app init code...
         context = getApplicationContext();

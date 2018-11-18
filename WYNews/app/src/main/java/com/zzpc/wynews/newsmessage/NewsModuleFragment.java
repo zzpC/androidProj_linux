@@ -130,7 +130,7 @@ public class NewsModuleFragment extends Fragment implements MessageView {
 
     @Override
     public void initViewPagerAndTabLayout() {
-        mViewPager.setOffscreenPageLimit(4);
+        mViewPager.setOffscreenPageLimit(1);
 
         mSlidingTabsColorsFragmentPagerAdapter = new SlidingTabsFragmentPagerAdapter(getChildFragmentManager());
         mViewPager.setAdapter(mSlidingTabsColorsFragmentPagerAdapter);

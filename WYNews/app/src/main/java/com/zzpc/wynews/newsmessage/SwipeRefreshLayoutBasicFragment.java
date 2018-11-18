@@ -56,7 +56,13 @@ import static com.mob.tools.utils.Data.MD5;
 import static com.zzpc.wynews.NewsApp.isNetworkAvailable;
 
 
-public class SwipeRefreshLayoutBasicFragment extends Fragment {
+public class SwipeRefreshLayoutBasicFragment extends BasePageFragment {
+    @Override
+    public void fetchData() {
+        if (mRecyclerView.getChildCount() == 0 && !executorService.isShutdown()) {
+            executorService.submit(new BackTask());
+        }
+    }
 
     private SwipeRefreshLayout mSwipeRefreshLayout;
 
@@ -73,6 +79,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        executorService.shutdownNow();
         backTaskHandler.removeCallbacksAndMessages(null);
 
     }
@@ -80,7 +87,6 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        executorService.shutdownNow();
     }
 
     public static SwipeRefreshLayoutBasicFragment newInstance(String title, int... argument) {
@@ -147,9 +153,9 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
         // Set the adapter between the ListView and its backing data.
         mRecyclerView.setAdapter(mListAdapter);
-        if (mRecyclerView.getChildCount() == 0) {
-            executorService.submit(new BackTask());
-        }
+//        if (mRecyclerView.getChildCount() == 0 && !executorService.isShutdown()) {
+//            executorService.submit(new BackTask());
+//        }
 
         return view;
     }

@@ -23,7 +23,7 @@ public class MemoryCacheUtils {
             //用于计算每个条目的大小
             @Override
             protected int sizeOf(String key,  WeakReference<Bitmap> value) {
-                return value.get().getByteCount();
+                return (value.get()!=null)?value.get().getByteCount():0;
             }
         };
 

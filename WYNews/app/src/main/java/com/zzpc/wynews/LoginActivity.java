@@ -65,15 +65,16 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-  
 
-	public void onDestroy() {
-		Log.d(TAG, "-->onDestroy");
-		super.onDestroy();
+
+    public void onDestroy() {
+        Log.d(TAG, "-->onDestroy");
+
         SMSSDK.unregisterAllEventHandler();
         mHandler.removeCallbacksAndMessages(null);
-
-	}
+        super.onDestroy();
+        finish();
+    }
 
     private void initViews(){
         mNewLoginButton = findViewById(R.id.btn_new_login);
@@ -118,9 +119,7 @@ public class LoginActivity extends AppCompatActivity {
             } else {
                 mNewLoginButton.setTextColor(Color.RED);
                 mNewLoginButton.setText("退出帐号");
-                Intent intent=new Intent(LoginActivity.this,HomeActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
+
             }
         } else {
             mNewLoginButton.setTextColor(Color.BLUE);
@@ -141,30 +140,34 @@ public class LoginActivity extends AppCompatActivity {
                 // 此处返回QQ的登录数据
                 @Override
                 public void onComplete(final Object response) {
-//                    Message msg = new Message();
-//                    msg.obj = response;
-//                    msg.what = 0;
-//                    mHandler.sendMessage(msg);
-//                    new Thread(){
-//
-//                        @Override
-//                        public void run() {
-//                            JSONObject json = (JSONObject)response;
-//                            if(json.has("figureurl")){
-//                                Bitmap bitmap = null;
-//                                try {
-//                                    bitmap = LoginUtil.getbitmap(json.getString("figureurl_qq_2"));
-//                                } catch (JSONException e) {
-//
-//                                }
-//                                Message msg = new Message();
-//                                msg.obj = bitmap;
-//                                msg.what = 1;
-//                                mHandler.sendMessage(msg);
-//                            }
-//                        }
-//
-//                    }.start();
+                    Message msg = new Message();
+                    msg.obj = response;
+                    msg.what = 0;
+                    mHandler.sendMessage(msg);
+                    new Thread(){
+
+                        @Override
+                        public void run() {
+                            JSONObject json = (JSONObject)response;
+                            if(json.has("figureurl")){
+                                Bitmap bitmap = null;
+                                try {
+                                    bitmap = LoginUtil.getbitmap(json.getString("figureurl_qq_2"));
+                                } catch (JSONException e) {
+
+                                }
+                                Message msg = new Message();
+                                msg.obj = bitmap;
+                                msg.what = 1;
+                                mHandler.sendMessage(msg);
+
+                                Intent intent=new Intent(LoginActivity.this,HomeActivity.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent);
+                            }
+                        }
+
+                    }.start();
                 }
 
                 @Override
@@ -186,21 +189,24 @@ public class LoginActivity extends AppCompatActivity {
 
         @Override
         public void handleMessage(Message msg) {
-//            if (msg.what == 0) {
-//                JSONObject response = (JSONObject) msg.obj;
-//                if (response.has("nickname")) {
-//                    try {
-//                        mUserInfo.setVisibility(View.VISIBLE);
-//                        mUserInfo.setText(response.getString("nickname"));
-//                    } catch (JSONException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//            }else if(msg.what == 1){
-//                Bitmap bitmap = (Bitmap)msg.obj;
-//                mUserLogo.setImageBitmap(bitmap);
-//                mUserLogo.setVisibility(View.VISIBLE);
-//            }
+            if (msg.what == 0) {
+                JSONObject response = (JSONObject) msg.obj;
+                if (response.has("nickname")) {
+                    try {
+                        mUserInfo.setVisibility(View.VISIBLE);
+                        mUserInfo.setText(response.getString("nickname"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }else if(msg.what == 1){
+                Bitmap bitmap = (Bitmap)msg.obj;
+                mUserLogo.setImageBitmap(bitmap);
+                mUserLogo.setVisibility(View.VISIBLE);
+                Intent intent=new Intent(LoginActivity.this,HomeActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
         }
 
     };
