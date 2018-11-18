@@ -29,6 +29,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.common.util.concurrent.Runnables;
 import com.zzpc.wynews.data.model.BaseEvent;
 import com.zzpc.wynews.NewsApp;
 import com.zzpc.wynews.data.model.News;
@@ -48,6 +49,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import static com.mob.tools.utils.Data.MD5;
 import static com.zzpc.wynews.NewsApp.isNetworkAvailable;
@@ -60,20 +63,25 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
     //Tab编号
     private int mTopTab;
     private NewsPagerAdapter mListAdapter;
-    private List<News> mNewsInfoList = new ArrayList<>();
+    private volatile List<News> mNewsInfoList = new ArrayList<>();
     public  String url_string;
     public static boolean pic_only_WIFI;
-//    public interface OnLoadWebSiteNewsListner{
-//        void onLoadWebSiteNews(String info);
-//    }
+    private RecyclerView mRecyclerView;
+
+    private ExecutorService executorService;
 
     @Override
     public void onDestroy() {
         super.onDestroy();
+        backTaskHandler.removeCallbacksAndMessages(null);
 
     }
 
-//    private OnLoadWebSiteNewsListner mListener;
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        executorService.shutdownNow();
+    }
 
     public static SwipeRefreshLayoutBasicFragment newInstance(String title, int... argument) {
         // 保证fragment只有无参版本的构造函数,避免恢复fragment时失效
@@ -85,18 +93,6 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 //        String url_string=NewsApp.hashMap.get(title);
         swipeRefreshLayoutBasicFragment.setArguments(bundle);
         return swipeRefreshLayoutBasicFragment;
-    }
-
-
-    //检测是否实现了接口
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        try {
-//            mListener = (OnLoadWebSiteNewsListner) context;
-        } catch (final ClassCastException e) {
-            throw new ClassCastException(context.toString() + " must implement OnWebViewListener");
-        }
     }
 
     @Override
@@ -112,12 +108,16 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         mTopTab = Objects.requireNonNull(getArguments()).getInt("sliding_tab_no");
         pic_only_WIFI= PreferenceManager.getDefaultSharedPreferences(Objects.requireNonNull(getActivity())).getBoolean("switch_pic_wifi",true);
         Log.e("wifi下图", "SRLBF: "+pic_only_WIFI);
+        executorService= Executors.newFixedThreadPool(3);
+
     }
 
     // BEGIN_INCLUDE (inflate_view)
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
         View view = inflater.inflate(R.layout.fragment_swiperefreshlayoutbasic, container, false);
 
         mSwipeRefreshLayout = view.findViewById(R.id.swiperefresh);
@@ -126,7 +126,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                 getResources().getColor(R.color.cardview_light_background),
                 getResources().getColor(R.color.cardview_shadow_start_color));
         // END_INCLUDE (change_colors)
-        RecyclerView mRecyclerView = view.findViewById(R.id.swiperefresh_list);
+        mRecyclerView = view.findViewById(R.id.swiperefresh_list);
         mRecyclerView.setNestedScrollingEnabled(true);
         mRecyclerView.setItemViewCacheSize(0);
 
@@ -148,8 +148,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
         // Set the adapter between the ListView and its backing data.
         mRecyclerView.setAdapter(mListAdapter);
         if (mRecyclerView.getChildCount() == 0) {
-            new DummyBackgroundTask(this).execute();
-//            mListAdapter.notifyDataSetChanged();
+            executorService.submit(new BackTask());
         }
 
         return view;
@@ -158,47 +157,31 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                initiateRefresh();
+                executorService.submit(new BackTask());
                 Log.e("三级缓存", "onRefresh: ");
-                mListAdapter.notifyDataSetChanged();
             }
         });
     }
 
 
-    private void initiateRefresh() {
-        new DummyBackgroundTask(this).execute();
+    private void onRefreshComplete() {
 
-    }
-
-    private void onRefreshComplete(List<News> result) {
         mListAdapter.notifyDataSetChanged();
-
         // Stop the refreshing indicator
         mSwipeRefreshLayout.setRefreshing(false);
     }
 
 
+    @SuppressLint("HandlerLeak")
+    private Handler backTaskHandler=new Handler();
 
-
-    @SuppressLint("StaticFieldLeak")
-    private static class DummyBackgroundTask extends AsyncTask<Void, Void, List<News>> {
-        final WeakReference<SwipeRefreshLayoutBasicFragment> swipeRefreshLayoutBasicFragmentWeakReference;
-
-
-        DummyBackgroundTask(SwipeRefreshLayoutBasicFragment fragment) {
-            super();
-            swipeRefreshLayoutBasicFragmentWeakReference=new WeakReference<>(fragment);
-
-        }
-
+    private class BackTask implements Runnable{
+        String url_str=url_string;
         @Override
-        protected List<News> doInBackground(Void... params) {
-
+        public void run() {
             if (!isNetworkAvailable()) {
                 Toast.makeText(NewsApp.getContext(), "network is unavailable",
                         Toast.LENGTH_SHORT).show();
@@ -206,7 +189,7 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                 if (isNetworkAvailable()) {
                     HttpURLConnection connection = null;
                     try {
-                        String url_string =swipeRefreshLayoutBasicFragmentWeakReference.get().url_string;
+                        String url_string =url_str;
 
 
                         URL url = new URL(url_string);
@@ -224,44 +207,42 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
 
                         while ((line = reader.readLine()) != null) {
                             response.append(line);
-                            
-                            
+
+
                         }
-                        in.close();//????????????
+                        in.close();
                         List<News> list = ParseDatas.parseJSON(response.toString());
-                        if(swipeRefreshLayoutBasicFragmentWeakReference.get().mNewsInfoList!=null){
-                            swipeRefreshLayoutBasicFragmentWeakReference.get().mNewsInfoList.addAll(0, list);
+
+                        if(mNewsInfoList!=null){
+                            mNewsInfoList.addAll(0, list);
                         }else {
                             SwipeRefreshLayoutBasicFragment.newInstance("").mNewsInfoList.addAll(0,list);
                             Log.e("", "doInBackground: Fragment弱引用被回收,可能引发bug");
                         }
+                        assert mNewsInfoList != null;
+                        mNewsInfoList.addAll(0, list);
 
-                        swipeRefreshLayoutBasicFragmentWeakReference.get().mNewsInfoList.addAll(0, list);
-
+                        Runnable runnable = new Runnable() {
+                            @Override
+                            public void run() {
+                                onRefreshComplete();
+                            }
+                        };
+                        backTaskHandler.post(runnable);
                     } catch (Exception e) {
                         e.printStackTrace();
                     } finally {
                         if (connection != null) {
                             connection.disconnect();
                         }
+                        backTaskHandler.sendEmptyMessage(1);
                     }
                 }
-
             }
-            return swipeRefreshLayoutBasicFragmentWeakReference.get().mNewsInfoList;
 
         }
-
-        @Override
-        protected void onPostExecute(List<News> result) {
-            super.onPostExecute(result);
-
-            // Tell the Fragment that the refresh has completed
-            swipeRefreshLayoutBasicFragmentWeakReference.get().onRefreshComplete(result);
-            
-        }
-
     }
+
 
     class NewsPagerAdapter extends RecyclerView.Adapter<NewsPagerAdapter.ViewHolder> {
         private static final int SOCIAL_NEWS = 0;
@@ -376,8 +357,6 @@ public class SwipeRefreshLayoutBasicFragment extends Fragment {
                     Log.e("图片加载", "onBindViewHolder: "+ news.getPicUrl());
                     myBitmapUtils.getBitmap(news.getPicUrl(),handler);
                     holder.itemView.setTag(handler);
-
-
                 }
 
             }
