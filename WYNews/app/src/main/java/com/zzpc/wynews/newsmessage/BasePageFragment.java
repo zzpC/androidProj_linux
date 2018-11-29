@@ -4,9 +4,15 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
 public abstract class BasePageFragment extends Fragment {
-    protected boolean isViewInitiated;
-    protected boolean isVisibleToUser;
+
     protected boolean isDataInitiated;
+
+
+    //Fragment的View加载完毕的标记
+    private boolean isViewCreated;
+
+    //Fragment对用户可见的标记
+    private boolean isUIVisible;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -16,14 +22,14 @@ public abstract class BasePageFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        isViewInitiated = true;
+        isViewCreated = true;
         prepareFetchData();
     }
 
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-        this.isVisibleToUser = isVisibleToUser;
+        this.isUIVisible = isVisibleToUser;
         prepareFetchData();
     }
 
@@ -34,7 +40,7 @@ public abstract class BasePageFragment extends Fragment {
     }
 
     public boolean prepareFetchData(boolean forceUpdate) {
-        if (isVisibleToUser && isViewInitiated && (!isDataInitiated || forceUpdate)) {
+        if (isUIVisible && isViewCreated && (!isDataInitiated || forceUpdate)) {
             fetchData();
             isDataInitiated = true;
             return true;

@@ -376,18 +376,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
                             return;
                         }
                     }
-                    break;
-                case 2:
-                    Toast.makeText(getContext(), "这是双击事件", Toast.LENGTH_LONG).show();
-                    for (int i = 0; i < mTabStrip.getChildCount(); i++) {
-                        if (mDoubleClickView == mTabStrip.getChildAt(i)) {
-
-                            mNewsModuleFragment.deleteTab(i);
-                            break;
-                        }
-
-
-                    }
+                    default:
                     break;
             }
         }

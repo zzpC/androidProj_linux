@@ -57,6 +57,7 @@ import static com.zzpc.wynews.NewsApp.isNetworkAvailable;
 
 
 public class SwipeRefreshLayoutBasicFragment extends BasePageFragment {
+
     @Override
     public void fetchData() {
         if (mRecyclerView.getChildCount() == 0 && !executorService.isShutdown()) {
@@ -91,12 +92,11 @@ public class SwipeRefreshLayoutBasicFragment extends BasePageFragment {
 
     public static SwipeRefreshLayoutBasicFragment newInstance(String title, int... argument) {
         // 保证fragment只有无参版本的构造函数,避免恢复fragment时失效
-        SwipeRefreshLayoutBasicFragment  swipeRefreshLayoutBasicFragment = new SwipeRefreshLayoutBasicFragment();
+        SwipeRefreshLayoutBasicFragment swipeRefreshLayoutBasicFragment = new SwipeRefreshLayoutBasicFragment();
         Bundle bundle = new Bundle();
         bundle.putInt("sliding_tab_no", argument[0]);
         bundle.putString("news_info", NewsApp.hashMap.get(title));
         swipeRefreshLayoutBasicFragment.url_string=NewsApp.hashMap.get(title);
-//        String url_string=NewsApp.hashMap.get(title);
         swipeRefreshLayoutBasicFragment.setArguments(bundle);
         return swipeRefreshLayoutBasicFragment;
     }
@@ -276,38 +276,35 @@ public class SwipeRefreshLayoutBasicFragment extends BasePageFragment {
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_swiperefresh, parent, false);
-            final ViewHolder viewHolder = new ViewHolder(view);
+            return new ViewHolder(view);
+        }
 
-            viewHolder.iv_pic.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull List<Object> payloads) {
+            super.onBindViewHolder(holder, position, payloads);
+            holder.iv_pic.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) { }
             });
-
-            viewHolder.tv_title.setOnClickListener(new View.OnClickListener() {
+            News news = mNewsInfoList.get(position);
+            final String url = news.getUrl();
+            holder.tv_title.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    int position = viewHolder.getAdapterPosition();
-                    final News news = mNewsInfoList.get(position);
-                    final String url = news.getUrl();
                     ++NewsApp.read_amount;
-//                    mListener.onLoadWebSiteNews(url);
                     sendLoadMoreNewsEvent(url);
-                    MD5(url);
+//                    MD5(url);
                 }
             });
 
-
-            viewHolder.tv_title.setOnLongClickListener(new View.OnLongClickListener() {
+            holder.tv_title.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
                     return true;
                 }
             });
 
-
-            return viewHolder;
         }
-
 
         public void sendLoadMoreNewsEvent(String url){
             BaseEvent.CommonEvent event = BaseEvent.CommonEvent.B;
@@ -319,10 +316,11 @@ public class SwipeRefreshLayoutBasicFragment extends BasePageFragment {
         @Override
         public void onViewRecycled(@NonNull ViewHolder holder) {
             super.onViewRecycled(holder);
+            Log.e("滑动的卡顿优化", "onViewRecycled: " );
             holder.iv_pic.setImageResource(R.drawable.bg_comment_line);
             Handler handler= (Handler) holder.itemView.getTag();
             if(handler!=null){
-                handler.removeCallbacksAndMessages(0);
+                handler.removeCallbacksAndMessages(null);
             }
         }
 

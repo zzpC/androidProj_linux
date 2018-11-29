@@ -34,17 +34,6 @@ public class SpecificTextFragment extends Fragment implements SpecificTextView {
 
     private SuperTextView stv_content;
 
-    private String mNewsContent;
-    private String mNewsTitle;
-
-    //comment
-    private TextView mTextView;
-    private Button mButton;
-    private OnToldMainSwitchNewsCommentFragment mOnToldMainSwitchNewsCommentFragment;
-
-    public interface OnToldMainSwitchNewsCommentFragment{
-        void ToldMainSwitchNewsCommentFragment();
-    }
 
     private SpecificTextPresenter mSpecificTextPresenter;
 //    private SpecificTextModel mSpecificTextModel=new SpecificTextModelImpl(getContext());
@@ -100,9 +89,5 @@ public class SpecificTextFragment extends Fragment implements SpecificTextView {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
     }
-
-//    public void addContent(String title, String content) {
-//        mSpecificTextModel.addContent(title,content);
-//    }
 
 }

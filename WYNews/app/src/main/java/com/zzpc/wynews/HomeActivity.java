@@ -72,10 +72,6 @@ public class HomeActivity extends AppCompatActivity implements
     private VideoFragment mVideoFragment;
     private AccountManagerFragment mAccountManagerFragment;
 
-    private MyStartFragment myStartFragment;
-    private MyHistoryFragment myHistoryFragment;
-    private SettingsFragment settingsFragment;
-
     static {
 //        System.loadLibrary("native-lib");
     }
@@ -382,20 +378,4 @@ public class HomeActivity extends AppCompatActivity implements
         fragmentTransaction.commit();
     }
 
-    private void hideAccountSubFragment(FragmentManager fragmentManager) {
-        hideFragment(fragmentManager);
-        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-        //如果此fragment不为空的话就隐藏起来
-
-        if (myStartFragment != null) {
-            fragmentTransaction.hide(myStartFragment);
-        }
-        if (myHistoryFragment != null) {
-            fragmentTransaction.hide(myHistoryFragment);
-        }
-        if (settingsFragment != null) {
-            fragmentTransaction.hide(settingsFragment);
-        }
-        fragmentTransaction.commit();
-    }
 }
